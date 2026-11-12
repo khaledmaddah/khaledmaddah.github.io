@@ -69,12 +69,52 @@ tr.click{cursor:pointer}tr.click:hover td{background:#f6f9fd}
 .view{display:none}.view.on{display:block}
 .tip{position:fixed;pointer-events:none;background:#0f2742;color:#fff;font-size:12px;padding:8px 10px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.2);display:none;z-index:50;line-height:1.5;max-width:280px}
 .note{font-size:12px;color:var(--muted);margin-top:10px}
+
+.projsel{display:none}
+td.mo{display:none}
+body.v-project .projsel{display:inline-block}
+@media (max-width:820px){
+  .app{display:block}
+  aside{position:sticky;top:0;z-index:30;height:auto;padding:10px 12px 0;flex-direction:column;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+  .logo{margin:0 0 8px;font-size:12px}.logo span{width:28px;height:28px;font-size:11px}
+  .nav{display:flex;gap:4px;overflow-x:auto;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+  .nav button{width:auto;padding:8px 6px;font-size:12.5px;white-space:nowrap;flex:1;justify-content:center}.nav svg{display:none}
+  table.rt td.hm{display:none}
+  table.rt td.mo{display:flex}
+  .side-l,.proj-list,.foot{display:none}
+  main{padding:16px 12px 32px}
+  h1{font-size:20px}.sub{font-size:12.5px}
+  .top{flex-direction:column;align-items:stretch;gap:10px;margin-bottom:14px}
+  .ctl{flex-wrap:wrap}.ctl select{flex:1;min-width:0}
+  body.v-project .projsel{flex:1 1 100%}
+  .app .kpis{grid-template-columns:1fr 1fr;gap:10px}
+  .kpi{padding:12px}.kpi .v{font-size:18px}.kpi .l{font-size:10px}.kpi .n{font-size:11.5px}
+  .card{padding:14px 12px}
+  .card h3{flex-direction:column;gap:2px}
+  .chart{height:300px}.chart.tall{height:300px}.chart.short{height:260px}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts>div{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;padding:10px 12px}
+  .facts>div:nth-child(2n){border-right:0!important}.facts>div:nth-last-child(-n+2){border-bottom:0!important}
+  .facts .v{font-size:13px}
+  table.rt tr:has(th){display:none}
+  table.rt,table.rt tbody{display:block}
+  table.rt tr{display:block;border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin-bottom:10px;background:#fff}
+  table.rt tr.click:hover td{background:none}
+  table.rt td{display:flex;justify-content:space-between;align-items:center;gap:14px;border:0;padding:4px 0;text-align:right}
+  table.rt td::before{content:attr(data-label);font-size:10.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;text-align:left;flex:none}
+  table.rt td.lead{font-size:14.5px;justify-content:flex-start;text-align:left;font-weight:600;padding-bottom:6px;border-bottom:1px solid #eef1f5;margin-bottom:4px}
+  table.rt td.lead::before{display:none}
+  table.rt .bar2{flex:1;max-width:60%}
+  .disc-row{grid-template-columns:1fr 40px 40px 38px;grid-template-areas:"n p a s" "b b b b";row-gap:6px}
+  .disc-row>div:nth-child(1){grid-area:n}.disc-row>div:nth-child(2){grid-area:b}.disc-row>div:nth-child(3){grid-area:p}.disc-row>div:nth-child(4){grid-area:a}.disc-row>div:nth-child(5){grid-area:s}
+  .disc-row.h>div:nth-child(2){display:none}.disc-row.h{grid-template-areas:"n p a s"}
+}
 @media (max-width:1250px){.kpis{grid-template-columns:repeat(3,1fr)}.g3,.g2,.g31{grid-template-columns:1fr}}
-@media (max-width:820px){.app{grid-template-columns:1fr}aside{position:static;height:auto}.facts{grid-template-columns:1fr 1fr}}
+
 @media print{aside,.ctl{display:none}.app{grid-template-columns:1fr}.view{display:block!important;page-break-after:always}}
 </style>
 </head>
-<body>
+<body class="v-overview">
 <div class="app">
 <aside>
   <div class="logo"><span>PC</span><div>PORTFOLIO<br>CONTROLS</div></div>
@@ -91,7 +131,7 @@ tr.click{cursor:pointer}tr.click:hover td{background:#f6f9fd}
 <main>
   <div class="top">
     <div><div class="crumb" id="crumb">Portfolio / Overview</div><h1 id="title">Construction portfolio overview</h1><div class="sub" id="subtitle"></div></div>
-    <div class="ctl"><label for="dd">Data date</label><select id="dd"></select><button class="btn" onclick="window.print()">Print / PDF</button></div>
+    <div class="ctl"><select id="projSel" class="projsel" aria-label="Project"></select><label for="dd">Data date</label><select id="dd"></select><button class="btn" onclick="window.print()">Print / PDF</button></div>
   </div>
 
   <!-- OVERVIEW -->
@@ -100,7 +140,7 @@ tr.click{cursor:pointer}tr.click:hover td{background:#f6f9fd}
     <div class="card" style="margin-bottom:16px">
       <h3>Projects at a glance <small>click a project for its detail page</small></h3>
       <div class="cap">Planned vs actual progress (weighted by budgeted man-days), schedule performance and forecast completion from the latest P6 update.</div>
-      <div style="overflow-x:auto"><table id="projTable"></table></div>
+      <div style="overflow-x:auto"><table class="rt" id="projTable"></table></div>
     </div>
     <div class="card gantt" style="margin-bottom:16px">
       <h3>Portfolio timeline <small>baseline vs forecast</small></h3>
@@ -124,7 +164,7 @@ tr.click{cursor:pointer}tr.click:hover td{background:#f6f9fd}
       <div class="card"><h3>Slippage trend <small>weekly updates</small></h3><div class="cap">How each late project's forecast finish has moved, update by update.</div><div class="legend" id="slipLegend"></div><div class="chart"><canvas id="cSlipTrend"></canvas></div></div>
       <div class="card"><h3>Open risks by severity</h3><div class="cap">Count of open risks per project from the risk registers.</div><div class="chart"><canvas id="cRisk"></canvas></div></div>
     </div>
-    <div class="card"><h3>High risks across the portfolio</h3><div class="cap">Every risk rated High, with owner and impact.</div><div style="overflow-x:auto"><table id="hiRisk"></table></div></div>
+    <div class="card"><h3>High risks across the portfolio</h3><div class="cap">Every risk rated High, with owner and impact.</div><div style="overflow-x:auto"><table class="rt" id="hiRisk"></table></div></div>
   </section>
 
   <!-- PROJECT -->
@@ -143,11 +183,11 @@ tr.click{cursor:pointer}tr.click:hover td{background:#f6f9fd}
       <div class="card"><h3>Engineering & procurement</h3><div class="legend"><span><i style="background:var(--s1)"></i>Planned</span><span><i style="background:var(--s2)"></i>Actual</span></div><div class="chart short"><canvas id="cEP"></canvas></div></div>
     </div>
     <div class="grid g2">
-      <div class="card"><h3>Longest path activities</h3><div class="cap">Driving activities, variance in calendar days (negative = late).</div><table id="lpTable"></table></div>
-      <div class="card"><h3>Risk register</h3><div class="cap">Open risks with owner and impact.</div><table id="riskTable"></table></div>
+      <div class="card"><h3>Longest path activities</h3><div class="cap">Driving activities, variance in calendar days (negative = late).</div><table class="rt" id="lpTable"></table></div>
+      <div class="card"><h3>Risk register</h3><div class="cap">Open risks with owner and impact.</div><table class="rt" id="riskTable"></table></div>
     </div>
     <div class="grid g2">
-      <div class="card"><h3>Two-week look-ahead</h3><table id="laTable"></table></div>
+      <div class="card"><h3>Two-week look-ahead</h3><table class="rt" id="laTable"></table></div>
       <div class="card"><h3>Commercial status <small>AED millions</small></h3><div class="cap">Revised contract value vs submitted, certified and received.</div><div class="chart short"><canvas id="cComm"></canvas></div></div>
     </div>
   </section>
@@ -211,7 +251,15 @@ P.forEach((p,i) => $('#projList').insertAdjacentHTML('beforeend', `<button data-
 $('#projList').onclick = e => { const b = e.target.closest('button'); if (!b) return; curProj = +b.dataset.i; show('project'); };
 document.querySelectorAll('.nav button').forEach(b => b.onclick = () => show(b.dataset.v));
 let view = 'overview';
-function show(v){ view = v; document.querySelectorAll('.nav button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
+const isM = () => window.matchMedia('(max-width:820px)').matches;
+let lastM = isM();
+window.addEventListener('resize', () => { clearTimeout(window.__rt); window.__rt = setTimeout(() => { const m = isM(); if (m !== lastM || view === 'overview') { lastM = m; render(); } }, 200); });
+function labelize(){ document.querySelectorAll('table.rt').forEach(tb => { const hs = [...tb.querySelectorAll('tr th')].map(th => th.textContent);
+  tb.querySelectorAll('tr').forEach(tr => [...tr.children].forEach((td,i) => { if (td.tagName === 'TD') td.dataset.label = hs[i] || ''; })); }); }
+P.forEach((p,i) => $('#projSel').insertAdjacentHTML('beforeend', `<option value="${i}">${p.code} · ${p.name}</option>`));
+$('#projSel').onchange = e => { curProj = +e.target.value; render(); };
+
+function show(v){ view = v; document.body.className = 'v-' + v; document.querySelectorAll('.nav button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
   document.querySelectorAll('.view').forEach(s => s.classList.toggle('on', s.id === 'v-' + v));
   document.querySelectorAll('#projList button').forEach((b,i) => b.classList.toggle('on', v === 'project' && i === curProj));
   render(); window.scrollTo(0,0); }
@@ -234,12 +282,12 @@ function renderOverview(){
     ['Actual progress', pct(wac), `<span class="${wac>=wpl?'pos':'neg'}">${(wac-wpl>=0?'+':'') + (wac-wpl).toFixed(1)} pts</span> vs plan`],
     ['Portfolio SPI', (wac/wpl).toFixed(2), 'earned ÷ planned'],
     ['Needs attention', behind + watch, `<span class="neg">${behind} behind</span> · ${watch} on watch`]]);
-  let h = `<tr><th>#</th><th>Project</th><th>Type</th><th class="num">Value (AED m)</th><th>Progress (plan / actual)</th><th class="num">Plan</th><th class="num">Actual</th><th class="num">SPI</th><th>Baseline finish</th><th>Forecast finish</th><th class="num">Slip (d)</th><th>Status</th></tr>`;
+  let h = `<tr><th>#</th><th>Project</th><th>Type</th><th class="num">Value (AED m)</th><th>Progress</th><th class="num">Plan</th><th class="num">Actual</th><th class="num" style="display:none">Plan / actual</th><th class="num">SPI</th><th>Baseline finish</th><th>Forecast finish</th><th class="num">Slip (d)</th><th>Status</th></tr>`;
   P.forEach((p,i) => { const s = S[i], spi = spiOf(s);
-    h += `<tr class="click" data-i="${i}"><td>${p.code}</td><td><b>${p.name}</b></td><td>${p.type}</td><td class="num">${fmtM(s.newv)}</td>
+    h += `<tr class="click" data-i="${i}"><td class="hm">${p.code}</td><td class="lead"><b>${p.name}</b></td><td class="hm">${p.type}</td><td class="num">${fmtM(s.newv)}</td>
       <td><div class="bar2" title="Planned ${pct(s.pl)} / Actual ${pct(s.ac)}"><div class="p" style="width:${s.pl}%"></div><div class="a" style="width:${s.ac}%"></div></div></td>
-      <td class="num">${pct(s.pl)}</td><td class="num">${pct(s.ac)}</td><td class="num ${spi<0.95?'neg':''}">${spi.toFixed(2)}</td>
-      <td>${fmtD(p.finish)}</td><td>${fmtD(s.lp)}</td><td class="num ${s.slip>0?'neg':(s.slip<0?'pos':'')}">${s.slip>0?'+':''}${s.slip}</td><td>${pill(s)}</td></tr>`; });
+      <td class="num hm">${pct(s.pl)}</td><td class="num hm">${pct(s.ac)}</td><td class="num mo">${pct(s.pl)} / ${pct(s.ac)}</td><td class="num ${spi<0.95?'neg':''}">${spi.toFixed(2)}</td>
+      <td class="hm">${fmtD(p.finish)}</td><td>${fmtD(s.lp)}</td><td class="num ${s.slip>0?'neg':(s.slip<0?'pos':'')}">${s.slip>0?'+':''}${s.slip}</td><td>${pill(s)}</td></tr>`; });
   $('#projTable').innerHTML = h;
   document.querySelectorAll('#projTable tr.click').forEach(r => r.onclick = () => { curProj = +r.dataset.i; show('project'); });
   renderGantt(S);
@@ -249,30 +297,35 @@ function renderOverview(){
       {label:'Actual progress', data:S.map(s => s.ac), backgroundColor:'#eb6834', borderColor:'#fff', borderWidth:1}]},
     options:{indexAxis:'y', plugins:{legend:{display:true, position:'top', align:'start', labels:{boxWidth:12, boxHeight:8}}, tooltip:{callbacks:{label:c => ` ${c.dataset.label}: ${c.raw.toFixed(1)}%`}}},
       scales:{x:{max:100, grid:GRID, ticks:{callback:v => v + '%'}}, y:{grid:NOGRID}}}});
+  const M = isM();
   mk('cCommercial', {type:'bar', data:{labels:names, datasets:[
       {label:'Revised contract value', data:S.map(s => s.newv/1e6), backgroundColor:'#2a78d6', borderColor:'#fff', borderWidth:1},
       {label:'Certified to date', data:S.map(s => s.cert/1e6), backgroundColor:'#1baf7a', borderColor:'#fff', borderWidth:1}]},
-    options:{plugins:{legend:{display:true, position:'top', align:'start', labels:{boxWidth:12, boxHeight:8}}, tooltip:{callbacks:{label:c => ` ${c.dataset.label}: AED ${Math.round(c.raw).toLocaleString()}m`}}},
-      scales:{y:{grid:GRID, ticks:{callback:v => v.toLocaleString()}}, x:{grid:NOGRID, ticks:{maxRotation:40, minRotation:0}}}}});
+    options:{indexAxis:M?'y':'x', plugins:{legend:{display:true, position:'top', align:'start', labels:{boxWidth:12, boxHeight:8}}, tooltip:{callbacks:{label:c => ` ${c.dataset.label}: AED ${Math.round(c.raw).toLocaleString()}m`}}},
+      scales:M?{x:{grid:GRID, ticks:{callback:v => v.toLocaleString(), maxTicksLimit:5}}, y:{grid:NOGRID}}:{y:{grid:GRID, ticks:{callback:v => v.toLocaleString()}}, x:{grid:NOGRID, ticks:{maxRotation:40, minRotation:0}}}}});
 }
 
 function renderGantt(S){
-  const W = 1100, rowH = 34, top = 30, left = 230, right = 120, H = top + P.length * rowH + 10;
-  const t0 = new Date('2024-07-01'), t1 = new Date('2029-09-30');
+  const M = isM(), W = M ? 360 : 1100, rowH = M ? 46 : 34, top = 30, left = M ? 6 : 230, right = M ? 6 : 120, H = top + P.length * rowH + 14;
+  const t0 = new Date(M ? '2024-08-01' : '2024-07-01'), t1 = new Date(M ? '2029-09-30' : '2029-09-30');
   const x = d => left + (new Date(d) - t0) / (t1 - t0) * (W - left - right);
-  let g = `<svg viewBox="0 0 ${W} ${H}" font-family="Inter,system-ui" font-size="12">`;
+  let g = `<svg viewBox="0 0 ${W} ${H}" font-family="Inter,system-ui" font-size="${M?10.5:12}">`;
   for (let y = 2025; y <= 2029; y++){ const xx = x(y + '-01-01');
-    g += `<line x1="${xx}" x2="${xx}" y1="${top-8}" y2="${H}" stroke="#e3e8ef"/><text x="${xx+4}" y="${top-14}" fill="#5f6b7a" font-weight="600">${y}</text>`; }
+    g += `<line x1="${xx}" x2="${xx}" y1="${top-8}" y2="${H}" stroke="#e3e8ef"/><text x="${xx+3}" y="${top-14}" fill="#5f6b7a" font-weight="600">${M?"'"+String(y).slice(2):y}</text>`; }
   P.forEach((p,i) => { const s = S[i], y = top + i*rowH, [c] = status(s);
     const col = {good:'#13865c', warn:'#b7791f', crit:'#c73636'}[c];
-    g += `<g class="grow" data-i="${i}" style="cursor:pointer"><rect x="0" y="${y}" width="${W}" height="${rowH}" fill="${i%2?'#fafbfd':'#fff'}"/>
-      <text x="8" y="${y+21}" fill="#1f2933" font-weight="600">${p.code} · ${shortName(p.name)}</text>
-      <rect x="${x(p.start)}" y="${y+5}" width="${x(p.finish)-x(p.start)}" height="5" rx="2" fill="#c5ced8"/>
-      <rect x="${x(p.start)}" y="${y+13}" width="${x(s.lp)-x(p.start)}" height="14" rx="4" fill="#1d3a5f"/>
-      <rect x="${x(p.start)}" y="${y+13}" width="${(x(s.lp)-x(p.start))*s.ac/100}" height="14" rx="4" fill="#eb6834"/>
-      <text x="${x(s.lp)+6}" y="${y+24}" fill="${col}" font-weight="600" font-size="11.5">${fmtD(s.lp)}${s.slip>0?' (+'+s.slip+'d)':(s.slip<0?' ('+s.slip+'d)':'')}</text></g>`; });
+    const lbl = `${fmtD(s.lp)}${s.slip>0?' (+'+s.slip+'d)':(s.slip<0?' ('+s.slip+'d)':'')}`;
+    const by = M ? y + 20 : y;
+    g += `<g class="grow" data-i="${i}" style="cursor:pointer"><rect x="0" y="${y}" width="${W}" height="${rowH}" fill="${i%2?'#fafbfd':'#fff'}"/>`;
+    if (M) g += `<text x="${left+2}" y="${y+14}" fill="#1f2933" font-weight="600">${p.code} · ${shortName(p.name)}</text><text x="${W-right}" y="${y+14}" fill="${col}" font-weight="600" text-anchor="end">${lbl}</text>`;
+    else g += `<text x="8" y="${y+21}" fill="#1f2933" font-weight="600">${p.code} · ${shortName(p.name)}</text>`;
+    g += `<rect x="${x(p.start)}" y="${by+5}" width="${x(p.finish)-x(p.start)}" height="${M?4:5}" rx="2" fill="#c5ced8"/>
+      <rect x="${x(p.start)}" y="${by+(M?11:13)}" width="${x(s.lp)-x(p.start)}" height="${M?11:14}" rx="3" fill="#1d3a5f"/>
+      <rect x="${x(p.start)}" y="${by+(M?11:13)}" width="${(x(s.lp)-x(p.start))*s.ac/100}" height="${M?11:14}" rx="3" fill="#eb6834"/>`;
+    if (!M) g += `<text x="${x(s.lp)+6}" y="${y+24}" fill="${col}" font-weight="600" font-size="11.5">${lbl}</text>`;
+    g += `</g>`; });
   const xd = x(DATES[ddIdx]);
-  g += `<line x1="${xd}" x2="${xd}" y1="${top-4}" y2="${H}" stroke="#1baf7a" stroke-width="2"/><text x="${xd+4}" y="${H-4}" fill="#13865c" font-size="11" font-weight="600">Data date</text></svg>`;
+  g += `<line x1="${xd}" x2="${xd}" y1="${top-4}" y2="${H}" stroke="#1baf7a" stroke-width="2"/><text x="${xd+4}" y="${H-3}" fill="#13865c" font-size="${M?10:11}" font-weight="600">Data date</text></svg>`;
   $('#gantt').innerHTML = g;
   const tip = $('#tip');
   document.querySelectorAll('#gantt .grow').forEach(r => {
@@ -303,10 +356,14 @@ function renderDelay(){
   mk('cSlip', {type:'bar', data:{labels:order.map(i => names[i]), datasets:[{data:order.map(i => S[i].slip),
       backgroundColor:order.map(i => S[i].slip > 0 ? '#e34948' : '#1baf7a'), borderColor:'#fff', borderWidth:1}]},
     options:{indexAxis:'y', plugins:{tooltip:{callbacks:{label:c => ` ${c.raw>0?'+':''}${c.raw} calendar days`}}}, scales:{x:{grid:GRID, ticks:{callback:v => (v>0?'+':'')+v+' d'}}, y:{grid:NOGRID}}}});
-  const spis = S.map(spiOf);
+  const spis = S.map(spiOf), M = isM();
   mk('cSpi', {type:'bar', data:{labels:names, datasets:[{data:spis, backgroundColor:spis.map(v => v>=0.95?'#2a78d6':'#e34948'), borderColor:'#fff', borderWidth:1}]},
-    options:{plugins:{tooltip:{callbacks:{label:c => ` SPI ${c.raw.toFixed(2)}`}}}, scales:{y:{min:0.5, max:1.3, grid:GRID}, x:{grid:NOGRID, ticks:{maxRotation:40, minRotation:0}}}},
-    plugins:[{id:'ref', afterDraw(ch){ const y = ch.scales.y.getPixelForValue(1), a = ch.chartArea, c = ch.ctx; c.save(); c.strokeStyle = '#1f2933'; c.setLineDash([4,4]); c.beginPath(); c.moveTo(a.left,y); c.lineTo(a.right,y); c.stroke(); c.fillStyle='#1f2933'; c.fillText('SPI 1.0', a.right-44, y-5); c.restore(); }}]});
+    options:{indexAxis:M?'y':'x', plugins:{tooltip:{callbacks:{label:c => ` SPI ${c.raw.toFixed(2)}`}}},
+      scales:M?{x:{min:0.5, max:1.3, grid:GRID}, y:{grid:NOGRID}}:{y:{min:0.5, max:1.3, grid:GRID}, x:{grid:NOGRID, ticks:{maxRotation:40, minRotation:0}}}},
+    plugins:[{id:'ref', afterDraw(ch){ const a = ch.chartArea, c = ch.ctx; c.save(); c.strokeStyle = '#1f2933'; c.setLineDash([4,4]); c.beginPath();
+      if (M){ const x = ch.scales.x.getPixelForValue(1); c.moveTo(x,a.top); c.lineTo(x,a.bottom); c.stroke(); c.fillStyle='#1f2933'; c.fillText('SPI 1.0', x+4, a.top+10); }
+      else { const y = ch.scales.y.getPixelForValue(1); c.moveTo(a.left,y); c.lineTo(a.right,y); c.stroke(); c.fillStyle='#1f2933'; c.fillText('SPI 1.0', a.right-44, y-5); }
+      c.restore(); }}]});
   // slip trend: three worst projects only (keeps the line chart readable)
   const top3 = order.slice(0,3), cols = ['#2a78d6','#eb6834','#1baf7a'];
   $('#slipLegend').innerHTML = top3.map((i,k) => `<span><i style="background:${cols[k]}"></i>${names[i]}</span>`).join('');
@@ -316,9 +373,10 @@ function renderDelay(){
       scales:{y:{grid:GRID, ticks:{callback:v => v+' d'}}, x:{grid:NOGRID, ticks:{maxTicksLimit:9}}}}});
   const lv = ['High','Medium','Low'], lc = {High:'#c73636', Medium:'#eda100', Low:'#8a96a3'};
   mk('cRisk', {type:'bar', data:{labels:names, datasets:lv.map(l => ({label:l, data:P.map(p => p.risks.filter(r => r.level===l).length), backgroundColor:lc[l], borderColor:'#fff', borderWidth:2}))},
-    options:{plugins:{legend:{display:true, position:'top', align:'start', labels:{boxWidth:12, boxHeight:8}}}, scales:{x:{stacked:true, grid:NOGRID, ticks:{maxRotation:40, minRotation:0}}, y:{stacked:true, grid:GRID, ticks:{stepSize:1}}}}});
-  let h = `<tr><th>Project</th><th>Type</th><th>Risk</th><th>Owner</th><th>Time</th><th>Cost</th></tr>`;
-  hi.forEach(r => h += `<tr><td><b>${r.p.code}</b> ${shortName(r.p.name)}</td><td>${r.type}</td><td>${r.risk}</td><td>${r.owner}</td><td>${r.time?'✓':'–'}</td><td>${r.cost?'✓':'–'}</td></tr>`);
+    options:{indexAxis:M?'y':'x', plugins:{legend:{display:true, position:'top', align:'start', labels:{boxWidth:12, boxHeight:8}}},
+      scales:M?{y:{stacked:true, grid:NOGRID}, x:{stacked:true, grid:GRID, ticks:{stepSize:1}}}:{x:{stacked:true, grid:NOGRID, ticks:{maxRotation:40, minRotation:0}}, y:{stacked:true, grid:GRID, ticks:{stepSize:1}}}}});
+  let h = `<tr><th>Risk</th><th>Project</th><th>Type</th><th>Owner</th><th>Time</th><th>Cost</th></tr>`;
+  hi.forEach(r => h += `<tr><td class="lead">${r.risk}</td><td><b>${r.p.code}</b>&nbsp;${shortName(r.p.name)}</td><td>${r.type}</td><td>${r.owner}</td><td>${r.time?'✓':'–'}</td><td>${r.cost?'✓':'–'}</td></tr>`);
   $('#hiRisk').innerHTML = h;
 }
 
@@ -364,7 +422,7 @@ function renderProject(){
     options:{plugins:{tooltip:{callbacks:{label:c => ` ${c.dataset.label}: ${c.raw.toFixed(2)}%`}}}, scales:{y:{grid:GRID, ticks:{callback:v => v+'%'}}, x:{grid:NOGRID}}}});
   const sn = p.snaps.filter(x => x.dd <= ddT);
   mk('cDelay', {type:'line', data:{labels:sn.map(x => fmtD(x.dd)), datasets:[{label:'Variance', data:sn.map(x => x.slip), borderColor:'#e34948', backgroundColor:'#e34948', tension:.25, fill:false}]},
-    options:{plugins:{tooltip:{callbacks:{label:c => ` ${c.raw>0?'+':''}${c.raw} days vs baseline`}}}, scales:{y:{grid:GRID, ticks:{callback:v => (v>0?'+':'')+v+' d'}}, x:{grid:NOGRID, ticks:{maxTicksLimit:6}}}}});
+    options:{plugins:{tooltip:{callbacks:{label:c => ` ${c.raw>0?'+':''}${c.raw} days vs baseline`}}}, scales:{y:{grid:GRID, suggestedMin:Math.min(...sn.map(x=>x.slip))-5, suggestedMax:Math.max(...sn.map(x=>x.slip))+5, ticks:{precision:0, callback:v => (v>0?'+':'')+Math.round(v)+' d'}}, x:{grid:NOGRID, ticks:{maxTicksLimit:6}}}}});
   mk('cEP', {type:'bar', data:{labels:p.ep.map(e => e[0]), datasets:[
       {label:'Planned', data:p.ep.map(e => e[1]), backgroundColor:'#2a78d6', borderColor:'#fff', borderWidth:1},
       {label:'Actual', data:p.ep.map(e => e[2]), backgroundColor:'#eb6834', borderColor:'#fff', borderWidth:1}]},
@@ -377,17 +435,17 @@ function renderProject(){
       <div class="num">${pl.toFixed(0)}%</div><div class="num">${ac.toFixed(0)}%</div><div class="num ${sp!==null&&sp<0.95?'neg':''}">${sp===null?'–':sp.toFixed(2)}</div></div>`; });
   $('#discTable').innerHTML = d + `<div class="note">Bars: <span style="color:#6da7ec">■</span> planned (top), <span style="color:#eb6834">■</span> actual (bottom). Weight = share of budgeted man-days.</div>`;
   $('#lpTable').innerHTML = `<tr><th>Activity</th><th>Responsible</th><th class="num">Var (d)</th><th>Reason / action</th></tr>` +
-    p.lp.map(r => `<tr><td>${r.desc}</td><td>${r.party}</td><td class="num ${r.var<0?'neg':''}">${r.var}</td><td>${r.reason}</td></tr>`).join('');
+    p.lp.map(r => `<tr><td class="lead">${r.desc}</td><td>${r.party}</td><td class="num ${r.var<0?'neg':''}">${r.var}</td><td>${r.reason}</td></tr>`).join('');
   const lvc = {High:'crit', Medium:'warn', Low:'good'};
-  $('#riskTable').innerHTML = `<tr><th>Level</th><th>Type</th><th>Risk</th><th>Owner</th><th>Time</th><th>Cost</th></tr>` +
-    p.risks.map(r => `<tr><td><span class="pill ${lvc[r.level]}">${{High:'■',Medium:'▲',Low:'●'}[r.level]} ${r.level}</span></td><td>${r.type}</td><td>${r.risk}</td><td>${r.owner}</td><td>${r.time?'✓':'–'}</td><td>${r.cost?'✓':'–'}</td></tr>`).join('');
-  $('#laTable').innerHTML = `<tr><th>Major activity</th><th>Location / level</th><th>Status</th></tr>` + p.la.map(r => `<tr><td>${r.act}</td><td>${r.loc}</td><td>${r.status}</td></tr>`).join('');
+  $('#riskTable').innerHTML = `<tr><th>Risk</th><th>Level</th><th>Type</th><th>Owner</th><th>Time</th><th>Cost</th></tr>` +
+    p.risks.map(r => `<tr><td class="lead">${r.risk}</td><td><span class="pill ${lvc[r.level]}">${{High:'■',Medium:'▲',Low:'●'}[r.level]} ${r.level}</span></td><td>${r.type}</td><td>${r.owner}</td><td>${r.time?'✓':'–'}</td><td>${r.cost?'✓':'–'}</td></tr>`).join('');
+  $('#laTable').innerHTML = `<tr><th>Major activity</th><th>Location / level</th><th>Status</th></tr>` + p.la.map(r => `<tr><td class="lead">${r.act}</td><td>${r.loc}</td><td>${r.status}</td></tr>`).join('');
   mk('cComm', {type:'bar', data:{labels:['Revised contract','Submitted','Certified','Received'], datasets:[{data:[s.newv, s.sub, s.cert, s.rec].map(v => v/1e6),
       backgroundColor:['#1d3a5f','#2a78d6','#1baf7a','#86b6ef'], borderColor:'#fff', borderWidth:1}]},
     options:{indexAxis:'y', plugins:{tooltip:{callbacks:{label:c => ` AED ${Math.round(c.raw).toLocaleString()}m (${(c.raw*1e6/s.newv*100).toFixed(1)}%)`}}}, scales:{x:{grid:GRID, ticks:{callback:v => v.toLocaleString()}}, y:{grid:NOGRID}}}});
 }
 
-function render(){ if (view === 'overview') renderOverview(); else if (view === 'delay') renderDelay(); else renderProject(); }
+function render(){ $('#projSel').value = curProj; if (view === 'overview') renderOverview(); else if (view === 'delay') renderDelay(); else renderProject(); labelize(); }
 render();
 </script>
 </body>
