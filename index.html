@@ -74,6 +74,7 @@ section.alt{background:var(--bg)}
 .card li{font-size:14px;color:var(--ink);padding-left:16px;position:relative;margin-bottom:4px}
 .card li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:2px;background:var(--blue)}
 .card .act{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.card.wide{grid-column:1/-1;flex-direction:row}.card.wide .img{flex:0 0 55%;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--line)}.card.wide .img img{object-position:top left}
 .grid.three{grid-template-columns:repeat(4,1fr);gap:20px}
 .grid.three .card h3{font-size:16px}.grid.three .card p{font-size:13.5px}
 .note{font-size:13px;color:var(--muted);margin-top:22px}
@@ -105,8 +106,10 @@ section.alt{background:var(--bg)}
 .contact p{color:#c9d6e3;max-width:600px;margin:0 auto 28px}
 .contact .cta{justify-content:center}
 footer{background:#0b1e33;color:#7d93ab;font-size:13px;padding:22px 0;text-align:center}
-@media (max-width:980px){.hero,.two{grid-template-columns:1fr}.heroshot{display:none}.grid,.svc{grid-template-columns:1fr}.grid.three{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border-right:0}nav ul{display:none}h1{font-size:38px}}
-@media (max-width:560px){.grid.three{grid-template-columns:1fr}}
+@media (max-width:980px){.card.wide{flex-direction:column}.card.wide .img{aspect-ratio:16/10;border-right:0;border-bottom:1px solid var(--line)}.hero,.two{grid-template-columns:1fr}.heroshot{display:none}.grid,.svc{grid-template-columns:1fr}.card.wide{grid-column:1/-1;flex-direction:row}.card.wide .img{flex:0 0 55%;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--line)}.card.wide .img img{object-position:top left}
+.grid.three{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border-right:0}nav ul{display:none}h1{font-size:38px}}
+@media (max-width:560px){.card.wide{grid-column:1/-1;flex-direction:row}.card.wide .img{flex:0 0 55%;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--line)}.card.wide .img img{object-position:top left}
+.grid.three{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -140,12 +143,19 @@ footer{background:#0b1e33;color:#7d93ab;font-size:13px;padding:22px 0;text-align
 </div></div>
 
 <section id="work"><div class="wrap">
-  <div class="sh"><div><div class="kicker">Portfolio</div><h2>Selected work</h2></div><p>Real schedules from real projects, anonymized: client, owner and subcontractor names removed. Live demos open in your browser, no software needed.</p></div>
+  <div class="sh"><div><div class="kicker">Portfolio</div><h2>Selected work</h2></div><p>Real schedules from real projects, anonymized: client, owner and subcontractor names removed. Live demos (dashboards and 4D) use fictional data and open in your browser, no software needed.</p></div>
   <div class="filters" id="filters">
     <button class="on" data-f="all">All</button><button data-f="p6">Primavera P6</button><button data-f="msp">MS Project</button><button data-f="claims">Delay & claims</button><button data-f="4d">4D</button><button data-f="dash">Dashboards</button>
   </div>
 
   <div class="grid" id="cards">
+    <article class="card wide" data-tags="dash p6">
+      <a class="img" href="portfolio-dashboard/" target="_blank"><span class="badge live">Live demo</span><img src="assets/portfolio.jpg" alt="Portfolio controls dashboard for eight projects" loading="lazy"></a>
+      <div class="body"><h3>Portfolio Controls Dashboard: 8 Projects</h3><div class="meta">Multi-project reporting · weekly P6 updates · demo dataset</div>
+        <p>One dashboard for a contractor's whole portfolio: towers, villa communities, a hotel and a data center. See every project's plan vs actual, SPI and forecast finish at a glance, then drill into any project.</p>
+        <ul><li>Portfolio timeline: baseline vs longest-path forecast for all eight projects</li><li>Delay & risk view: slippage trends, SPI by project and every high risk in one list</li><li>Project pages: S-curve, discipline progress, engineering & procurement, longest path, risks, look-ahead and commercial status</li><li>Change the data date to replay any weekly update</li></ul>
+        <div class="act"><a class="btn primary" href="portfolio-dashboard/" target="_blank">Open live portfolio dashboard</a></div></div>
+    </article>
     <article class="card" data-tags="p6">
       <a class="img" href="work/Primavera_P6_Schedules_Portfolio.pdf" target="_blank"><span class="badge">Primavera P6</span><img src="assets/p6.jpg" alt="P6 schedule" loading="lazy"></a>
       <div class="body"><h3>Primavera P6 Schedules Portfolio</h3><div class="meta">5 projects · baselines & updates · native P6 prints</div>
