@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khaled Maddah | Planning & Scheduling Engineer</title>
+<meta name="description" content="Planning & scheduling engineer for data centers, mission-critical, aviation and infrastructure projects. Primavera P6, MS Project, SYNCHRO 4D, TIA / EOT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f2742;--navy2:#1d3a5f;--blue:#2a78d6;--blue2:#e8f1fc;--ink:#1f2933;--muted:#5f6b7a;--line:#e3e8ef;--bg:#f6f8fb;--red:#e34948;--green:#1baf7a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(15,39,66,.96);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700;letter-spacing:.2px}
+.brand .mark{width:34px;height:34px;border-radius:8px;background:var(--blue);display:grid;place-items:center;font-size:14px;font-weight:800}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{color:#c9d6e3;font-size:14.5px;font-weight:500}
+nav ul a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:8px;font-weight:600;font-size:14.5px;transition:.15s}
+.btn.primary{background:var(--blue);color:#fff}.btn.primary:hover{background:#1f66bd}
+.btn.ghost{border:1px solid #3b5a80;color:#fff}.btn.ghost:hover{background:#1d3a5f}
+.btn.light{border:1px solid var(--line);color:var(--navy);background:#fff}.btn.light:hover{border-color:var(--blue);color:var(--blue)}
+/* hero */
+header{background:var(--navy);color:#fff;padding:84px 0 72px;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;right:-120px;top:-60px;width:620px;height:620px;background:radial-gradient(circle,rgba(42,120,214,.28),transparent 65%)}
+.hero{display:grid;grid-template-columns:1.25fr .9fr;gap:56px;align-items:center;position:relative;z-index:1}
+.eyebrow{color:#7fb2ee;font-weight:600;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:50px;line-height:1.08;font-weight:800;letter-spacing:-1px;margin-bottom:22px}
+h1 span{color:#7fb2ee}
+.lead{color:#c9d6e3;font-size:18px;max-width:620px;margin-bottom:32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.tools{margin-top:34px;display:flex;gap:8px;flex-wrap:wrap}
+.tools span{font-size:12.5px;color:#c9d6e3;border:1px solid #2f4d72;border-radius:20px;padding:5px 12px}
+.heroshot{border-radius:12px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35);border:1px solid #2f4d72;background:#fff;transform:rotate(1deg)}
+.heroshot img{display:block;width:100%}
+.heroshot figcaption{background:#132f50;color:#9fb3c8;font-size:12px;padding:8px 12px}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#fff;border:1px solid var(--line);border-radius:12px;margin-top:-36px;position:relative;z-index:2;box-shadow:0 10px 30px rgba(15,39,66,.08)}
+.stats div{padding:24px 26px;border-right:1px solid var(--line)}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-size:30px;font-weight:800;color:var(--navy2);letter-spacing:-.5px}
+.stats small{color:var(--muted);font-size:13.5px}
+/* sections */
+section{padding:88px 0}
+section.alt{background:var(--bg)}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.sh h2{font-size:34px;font-weight:800;letter-spacing:-.6px;color:var(--navy)}
+.sh p{color:var(--muted);max-width:560px}
+.kicker{color:var(--blue);font-weight:700;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:8px}
+/* filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{font:inherit;font-size:14px;font-weight:600;padding:8px 16px;border-radius:20px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer}
+.filters button.on{background:var(--navy2);border-color:var(--navy2);color:#fff}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:.18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(15,39,66,.1);border-color:#c7d6ea}
+.card .img{aspect-ratio:16/10;overflow:hidden;background:#eef2f6;border-bottom:1px solid var(--line);position:relative}
+.card .img img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:.3s}
+.card:hover .img img{transform:scale(1.02)}
+.badge{position:absolute;top:12px;left:12px;background:var(--navy);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.6px;padding:5px 10px;border-radius:6px;text-transform:uppercase}
+.badge.live{background:var(--green)}
+.card .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:19px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.card .meta{font-size:13px;color:var(--blue);font-weight:600;margin-bottom:10px}
+.card p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
+.card ul{list-style:none;margin-bottom:18px}
+.card li{font-size:14px;color:var(--ink);padding-left:16px;position:relative;margin-bottom:4px}
+.card li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:2px;background:var(--blue)}
+.card .act{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.card.wide{grid-column:1/-1;flex-direction:row}.card.wide .img{flex:0 0 55%;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--line)}.card.wide .img img{object-position:top left}
+.grid.three{grid-template-columns:repeat(4,1fr);gap:20px}
+.grid.three .card h3{font-size:16px}.grid.three .card p{font-size:13.5px}
+.note{font-size:13px;color:var(--muted);margin-top:22px}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px;border-top:3px solid var(--blue)}
+.svc h4{font-size:17px;color:var(--navy);margin-bottom:8px}
+.svc p{font-size:14.5px;color:var(--muted)}
+/* experience */
+.tl{position:relative;padding-left:28px;border-left:2px solid var(--line)}
+.job{position:relative;margin-bottom:38px}
+.job:before{content:"";position:absolute;left:-36px;top:6px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--blue)}
+.job .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.job h4{font-size:18px;color:var(--navy)}
+.job .when{font-size:13.5px;color:var(--muted);font-weight:600}
+.job .org{font-size:14px;color:var(--blue);font-weight:600;margin-bottom:8px}
+.job ul{list-style:none}
+.job li{font-size:14.5px;color:var(--ink);padding-left:16px;position:relative;margin-bottom:5px}
+.job li:before{content:"›";position:absolute;left:0;color:var(--blue);font-weight:700}
+.two{display:grid;grid-template-columns:1.6fr 1fr;gap:48px}
+.side>div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:20px}
+.side h4{font-size:15px;color:var(--navy);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:13px;background:var(--blue2);color:var(--navy2);border-radius:6px;padding:5px 10px;font-weight:500}
+.side p{font-size:14px;color:var(--muted);margin-bottom:6px}
+/* contact */
+.contact{background:var(--navy);color:#fff;text-align:center}
+.contact h2{font-size:36px;font-weight:800;margin-bottom:12px}
+.contact p{color:#c9d6e3;max-width:600px;margin:0 auto 28px}
+.contact .cta{justify-content:center}
+footer{background:#0b1e33;color:#7d93ab;font-size:13px;padding:22px 0;text-align:center}
+@media (max-width:980px){.card.wide{flex-direction:column}.card.wide .img{flex:none;aspect-ratio:16/10;border-right:0;border-bottom:1px solid var(--line)}.hero,.two{grid-template-columns:1fr}.heroshot{display:none}.grid,.svc{grid-template-columns:1fr}.grid.three{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border-right:0}nav ul{display:none}h1{font-size:38px}}
+@media (max-width:640px){
+  section{padding:56px 0}.wrap{padding:0 18px}
+  header{padding:56px 0 64px}h1{font-size:32px}.lead{font-size:16px}
+  .stats div{padding:16px 14px}.stats b{font-size:22px}.stats small{font-size:12.5px;line-height:1.4;display:block}
+  .sh h2{font-size:27px}.card .body{padding:18px}
+  .card.wide .img{aspect-ratio:4/3}
+  .contact h2{font-size:27px}.contact .btn{font-size:13.5px}
+  nav .btn{padding:9px 14px}
+}
+@media (max-width:560px){.grid.three{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#"><span class="mark">KM</span>Khaled Maddah</a>
+  <ul><li><a href="#work">Work</a></li><li><a href="#services">Services</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul>
+  <a class="btn primary" href="#contact">Hire me</a>
+</div></nav>
+
+<header><div class="wrap hero">
+  <div>
+    <div class="eyebrow">Planning & Scheduling Engineer · Project Controls</div>
+    <h1>Schedules that hold up for <span>data centers</span>, live facilities and claims.</h1>
+    <p class="lead">I build and run Primavera P6 and MS Project schedules for US and Middle East contractors and owners: logic-driven baselines, monthly updates, resource-constrained crew scenarios, SYNCHRO 4D simulations and TIA / EOT delay analysis.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See my work</a>
+      <a class="btn ghost" href="https://www.upwork.com/freelancers/~01c7d096cf1e07abcf" target="_blank" rel="noopener">Hire on Upwork</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/khaledmaddah" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="tools"><span>Primavera P6</span><span>MS Project</span><span>SYNCHRO 4D</span><span>Primavera Risk Analysis</span><span>Power BI</span><span>Revit</span><span>Excel</span></div>
+  </div>
+  <figure class="heroshot"><img src="assets/p6.jpg" alt="Primavera P6 longest path layout for a colocation data center"><figcaption>Primavera P6 · Colocation data center, longest path (anonymized)</figcaption></figure>
+</div></header>
+
+<div class="wrap"><div class="stats">
+  <div><b>5</b><small>concurrent projects run as sole planner (~2.7B EGP)</small></div>
+  <div><b>7 months</b><small>EOT secured with prolongation costs through TIA / TSWA</small></div>
+  <div><b>6,300+</b><small>activity data center schedule maintained</small></div>
+  <div><b>US + GCC</b><small>remote scheduling: data centers, aviation, highways</small></div>
+</div></div>
+
+<section id="work"><div class="wrap">
+  <div class="sh"><div><div class="kicker">Portfolio</div><h2>Selected work</h2></div><p>Real schedules from real projects, anonymized: client, owner and subcontractor names removed. Live demos (dashboards and 4D) use fictional data and open in your browser, no software needed.</p></div>
+  <div class="filters" id="filters">
+    <button class="on" data-f="all">All</button><button data-f="p6">Primavera P6</button><button data-f="msp">MS Project</button><button data-f="claims">Delay & claims</button><button data-f="4d">4D</button><button data-f="dash">Dashboards</button>
+  </div>
+
+  <div class="grid" id="cards">
+    <article class="card wide" data-tags="dash p6">
+      <a class="img" href="portfolio-dashboard/" target="_blank"><span class="badge live">Live demo</span><img src="assets/portfolio.jpg" alt="Portfolio controls dashboard for eight projects" loading="lazy"></a>
+      <div class="body"><h3>Portfolio Controls Dashboard: 8 Projects</h3><div class="meta">Multi-project reporting · weekly P6 updates · demo dataset</div>
+        <p>One dashboard for a contractor's whole portfolio: towers, villa communities, a hotel and a data center. See every project's plan vs actual, SPI and forecast finish at a glance, then drill into any project.</p>
+        <ul><li>Portfolio timeline: baseline vs longest-path forecast for all eight projects</li><li>Delay & risk view: slippage trends, SPI by project and every high risk in one list</li><li>Project pages: S-curve, discipline progress, engineering & procurement, longest path, risks, look-ahead and commercial status</li><li>Change the data date to replay any weekly update</li></ul>
+        <div class="act"><a class="btn primary" href="portfolio-dashboard/" target="_blank">Open live portfolio dashboard</a></div></div>
+    </article>
+    <article class="card" data-tags="p6">
+      <a class="img" href="work/Primavera_P6_Schedules_Portfolio.pdf" target="_blank"><span class="badge">Primavera P6</span><img src="assets/p6.jpg" alt="P6 schedule" loading="lazy"></a>
+      <div class="body"><h3>Primavera P6 Schedules Portfolio</h3><div class="meta">5 projects · baselines & updates · native P6 prints</div>
+        <ul><li>Colocation data center, 2 buildings: 6,300+ activities, longest path</li><li>Data center power modules (14 units): repetitive build-out sequence</li><li>Occupied airport concourse refurbishment, hotel baseline, university renovation</li></ul>
+        <div class="act"><a class="btn light" href="work/Primavera_P6_Schedules_Portfolio.pdf" target="_blank">Open PDF (11 pages)</a></div></div>
+    </article>
+    <article class="card" data-tags="msp">
+      <a class="img" href="work/MS_Project_Schedules_Portfolio.pdf" target="_blank"><span class="badge">MS Project</span><img src="assets/msp.jpg" alt="MS Project schedule" loading="lazy"></a>
+      <div class="body"><h3>MS Project Schedules Portfolio</h3><div class="meta">2 projects · summary, detailed & critical path layouts</div>
+        <ul><li>Wastewater pumping station PLC upgrade: contract baseline, five live pump shutdowns</li><li>Occupied office campus renovation: Update #4 vs baseline, owner shutdown approvals</li></ul>
+        <div class="act"><a class="btn light" href="work/MS_Project_Schedules_Portfolio.pdf" target="_blank">Open PDF (9 pages)</a></div></div>
+    </article>
+    <article class="card" data-tags="4d">
+      <a class="img" href="4d/" target="_blank"><span class="badge live">Live demo</span><img src="assets/4d.jpg" alt="4D simulation" loading="lazy"></a>
+      <div class="body"><h3>4D Simulation: Arterial Resurfacing Program</h3><div class="meta">Interactive 4D · baseline vs forecast · six locations</div>
+        <p>Schedule-driven 4D of a roadway resurfacing program: play the work day by day, compare baseline and forecast, jump to any location and load a progress update.</p>
+        <div class="act"><a class="btn primary" href="4d/" target="_blank">Open live 4D</a></div></div>
+    </article>
+    <article class="card" data-tags="dash">
+      <a class="img" href="dashboard/" target="_blank"><span class="badge live">Live demo</span><img src="assets/dashboard.jpg" alt="Project controls dashboard" loading="lazy"></a>
+      <div class="body"><h3>Project Controls Dashboard</h3><div class="meta">Interactive · earned value · S-curve · manpower</div>
+        <p>Executive reporting from P6 exports: planned vs earned value, SPI, completion outlook, work packages and manpower histograms. Demo dataset.</p>
+        <div class="act"><a class="btn primary" href="dashboard/" target="_blank">Open live dashboard</a></div></div>
+    </article>
+  </div>
+
+  <h3 style="font-size:20px;color:var(--navy);margin:56px 0 6px">Sample deliverables</h3>
+  <p style="color:var(--muted);margin-bottom:22px;font-size:15px">A full set of documents for one sample data hall project, built in Primavera P6 with fictional data, so you can see the format of each deliverable.</p>
+  <div class="grid three" id="cards2">
+    <article class="card" data-tags="p6"><a class="img" href="work/Sample_Baseline_Schedule.pdf" target="_blank"><img src="assets/baseline.jpg" alt="" loading="lazy"></a><div class="body"><h3>Baseline schedule</h3><p>Logic-driven P6 baseline with longest path and narrative.</p><div class="act"><a class="btn light" href="work/Sample_Baseline_Schedule.pdf" target="_blank">Open PDF</a></div></div></article>
+    <article class="card" data-tags="p6 claims"><a class="img" href="work/Sample_DCMA14_Health_Check.pdf" target="_blank"><img src="assets/dcma.jpg" alt="" loading="lazy"></a><div class="body"><h3>DCMA 14-point health check</h3><p>Review of a contractor submittal with a fix list, Rev 0 vs Rev 1.</p><div class="act"><a class="btn light" href="work/Sample_DCMA14_Health_Check.pdf" target="_blank">Open PDF</a></div></div></article>
+    <article class="card" data-tags="claims"><a class="img" href="work/Sample_Time_Impact_Analysis.pdf" target="_blank"><img src="assets/tia.jpg" alt="" loading="lazy"></a><div class="body"><h3>Time impact analysis</h3><p>Fragnet-based TIA per AACE 29R-03 and the SCL Protocol.</p><div class="act"><a class="btn light" href="work/Sample_Time_Impact_Analysis.pdf" target="_blank">Open PDF</a></div></div></article>
+    <article class="card" data-tags="p6 dash"><a class="img" href="work/Sample_Monthly_Update_Narrative.pdf" target="_blank"><img src="assets/update.jpg" alt="" loading="lazy"></a><div class="body"><h3>Monthly update narrative</h3><p>SPI / CPI, forecast vs baseline, critical path and risks.</p><div class="act"><a class="btn light" href="work/Sample_Monthly_Update_Narrative.pdf" target="_blank">Open PDF</a></div></div></article>
+  </div>
+</div></section>
+
+<section id="services" class="alt"><div class="wrap">
+  <div class="sh"><div><div class="kicker">Services</div><h2>How I can help</h2></div><p>Fixed-price or hourly, remote, in your time zone's working day. Send your specification or current schedule and I'll reply with scope, price and delivery date.</p></div>
+  <div class="svc">
+    <div><h4>Baseline schedules</h4><p>Contract-compliant, logic-driven P6 or MS Project baselines with WBS, codes, calendars and narrative, built to owner specs (DOT, aviation, Division 01).</p></div>
+    <div><h4>Monthly updates</h4><p>Statusing, forecast and variance to baseline, critical path and float reporting, with a short narrative the owner can read.</p></div>
+    <div><h4>Delay analysis & EOT</h4><p>TIA / TSWA with fragnets, delay event logs, EOT and prolongation claims under FIDIC and US contracts.</p></div>
+    <div><h4>Crew & resource scenarios</h4><p>Resource-constrained schedules and what-if crew ramp-ups, e.g. how many crews a scope needs to hold its deadline.</p></div>
+    <div><h4>4D simulation</h4><p>SYNCHRO 4D linked to Revit models, showing sequence, critical path and look-ahead to the client.</p></div>
+    <div><h4>Health checks & dashboards</h4><p>DCMA 14-point reviews, EVM (SPI / CPI), S-curves and Power BI or web dashboards from P6 exports.</p></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="sh"><div><div class="kicker">Experience</div><h2>Where I've worked</h2></div></div>
+  <div class="two">
+    <div class="tl">
+      <div class="job"><div class="top"><h4>Planning Engineer / Scheduler</h4><span class="when">Aug 2026 – Present</span></div>
+        <div class="org">US scheduling consultancy · Remote from Cairo</div>
+        <ul><li>Schedule data center, live-airport and state DOT highway projects for US general contractors, subcontractors and owners.</li>
+        <li>Showed a 4-crew mechanical flushing plan on a mission-critical data center would slip 22 days, and modeled a ramp-up to 6 crews to hold the deadline.</li>
+        <li>Phase restroom renovations at an operating international airport so enough passenger capacity stays open before each closure.</li>
+        <li>Built the baseline for a 132/33 kV substation tie-in serving a 40 MW data center campus; produced SYNCHRO 4D simulations for clients.</li></ul></div>
+      <div class="job"><div class="top"><h4>Planning Engineer – Project Controls</h4><span class="when">Jan 2026 – Aug 2026</span></div>
+        <div class="org">Engineering & project controls firm · Cairo</div>
+        <ul><li>Sole planner across five concurrent infrastructure and hospitality projects (~2.7B EGP combined).</li>
+        <li>Led the TIA / TSWA analysis that secured a 7-month EOT with approved prolongation costs on a 431M EGP mall infrastructure programme.</li>
+        <li>Recovered a 2-month contractor delay on a mall project after securing an EOT for quantity variations; built its cost control system.</li>
+        <li>Created a 2,049-activity / 4,246-relationship P6 baseline across 9 road corridors and 6 civil networks.</li></ul></div>
+      <div class="job"><div class="top"><h4>Engineering & Design Coordinator</h4><span class="when">Jul 2025 – Jan 2026</span></div>
+        <div class="org">Design consultancy · Cairo</div>
+        <ul><li>Structural drawings in AutoCAD and Revit, the BIM base later used for 4D scheduling.</li></ul></div>
+      <div class="job" style="margin-bottom:0"><div class="top"><h4>Teaching Assistant, College of Engineering</h4><span class="when">2021 – 2025</span></div>
+        <div class="org">Kuwait University</div>
+        <ul><li>Supported undergraduate civil engineering courses through tutorials and assessment.</li></ul></div>
+    </div>
+    <div class="side">
+      <div><h4>Software</h4><div class="chips"><span>Primavera P6</span><span>MS Project</span><span>SYNCHRO 4D</span><span>Primavera Risk Analysis</span><span>Power BI</span><span>Revit</span><span>AutoCAD</span><span>Advanced Excel</span></div></div>
+      <div><h4>Methods</h4><div class="chips"><span>CPM</span><span>DCMA 14-point</span><span>TIA / TSWA</span><span>AACE 29R-03</span><span>SCL Protocol</span><span>FIDIC</span><span>EVM</span><span>Resource leveling</span></div></div>
+      <div><h4>Education & registration</h4><p><b>BSc Civil Engineering</b>, Kuwait University</p><p>Kuwait Society of Engineers · Egyptian Engineers Syndicate</p><p>Arabic (native) · English (professional)</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Have a schedule that needs to hold up?</h2>
+  <p>Baselines, updates, recovery schedules or a delay claim: send me the specification or your current schedule and I'll reply within one working day.</p>
+  <div class="cta">
+    <a class="btn primary" href="mailto:khaledmaddah240@gmail.com">khaledmaddah240@gmail.com</a>
+    <a class="btn ghost" href="https://www.upwork.com/freelancers/~01c7d096cf1e07abcf" target="_blank" rel="noopener">Upwork</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/khaledmaddah" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div></section>
+
+<footer>© 2026 Khaled Maddah · All samples anonymized; native files available to shortlisted clients on request.</footer>
+
+<script>
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
+  const f=b.dataset.f;
+  document.querySelectorAll('#cards .card, #cards2 .card').forEach(c=>{c.style.display=(f==='all'||c.dataset.tags.split(' ').includes(f))?'':'none'});
+});
+</script>
+</body>
+</html>
