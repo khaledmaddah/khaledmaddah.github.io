@@ -1,355 +1,788 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>4D model | Khaled Maddah</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>4D model</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>[hidden]{display:none!important}</style>
 <style>
-:root{--navy:#0f2742;--navy2:#1d3a5f;--ink:#1f2933;--muted:#5f6b7a;--line:#e3e8ef;--bg:#f3f6fa;--blue:#2a78d6;--red:#e34948;--green:#1baf7a;--purple:#8a5cd0;--amber:#eda100}
-*{box-sizing:border-box;margin:0;padding:0}
+/* Layout: full-height app — header strip / [schedule | 3D viewport | inspector] / timeline dock. Mech-drawing slate palette, system colours carry meaning. */
+:root{
+  --bg:#eef1f4; --panel:#ffffff; --panel-2:#f5f7f9; --line:#d5dbe2; --fg:#16202b; --muted:#5b6876;
+  --accent:#d9771c; --accent-2:#1f6fd1; --ok:#2f8f5b; --warn:#c98a12; --crit:#c8372d;
+  --vp:#dfe5eb; --bar:#9fb0c2; --bar-ip:#d9771c; --bar-cp:#6d8aa6; --sel:rgba(217,119,28,.14);
+  --f-ui:"Archivo","Segoe UI",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1620; --panel:#151e2a; --panel-2:#1a2533; --line:#283546; --fg:#e4eaf1; --muted:#8d9bab;
+  --accent:#f0912f; --accent-2:#5fa2ff; --ok:#4fbf82; --warn:#e2ac3c; --crit:#f0645a;
+  --vp:#0b1119; --bar:#43546a; --bar-ip:#f0912f; --bar-cp:#5d7896; --sel:rgba(240,145,47,.16); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1620; --panel:#151e2a; --panel-2:#1a2533; --line:#283546; --fg:#e4eaf1; --muted:#8d9bab;
+  --accent:#f0912f; --accent-2:#5fa2ff; --ok:#4fbf82; --warn:#e2ac3c; --crit:#f0645a;
+  --vp:#0b1119; --bar:#43546a; --bar-ip:#f0912f; --bar-cp:#5d7896; --sel:rgba(240,145,47,.16); color-scheme:dark}
 html,body{height:100%}
-body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);font-size:13px;-webkit-font-smoothing:antialiased}
-header{background:var(--navy);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;flex-wrap:wrap}
-header a.back{color:#9fc3ee;text-decoration:none;font-weight:600;font-size:13px;white-space:nowrap}
-header .t{flex:1;min-width:220px}
-header h1{font-size:16px;font-weight:700;line-height:1.25}
-header .s{font-size:11.5px;color:#9fb3c8;margin-top:2px}
-header select,header .btn{font:inherit;font-size:12.5px;border-radius:7px;padding:7px 10px}
-header select{border:1px solid #2f4d72;background:#16365c;color:#fff;font-weight:600;max-width:100%}
-.btn{border:1px solid #2f4d72;background:transparent;color:#fff;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
-.btn:hover{background:#1d3a5f}
-.wrap{display:grid;grid-template-columns:1fr 300px;grid-template-rows:minmax(0,1fr) auto;height:calc(100vh - 58px)}
-#stage{position:relative;min-height:0;background:linear-gradient(#eef3f8,#dfe6ee)}
-#c3d{width:100%;height:100%;display:block}
-.hud{position:absolute;left:12px;top:12px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:10px;padding:10px 12px;box-shadow:0 4px 14px rgba(15,39,66,.08)}
-.hud .d{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-.3px}
-.hud .l{font-size:10.5px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);font-weight:700}
-.hud .p{font-size:12px;color:var(--muted);margin-top:2px}
-.tog{position:absolute;right:12px;top:12px;display:flex;flex-direction:column;gap:6px}
-.tog label{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-weight:600;font-size:12px;cursor:pointer;user-select:none}
-.tog input{accent-color:var(--blue)}
-.thumb .hud,.thumb .tog,.thumb .hint{display:none!important}
-.hint{position:absolute;left:12px;bottom:10px;font-size:11px;color:var(--muted);background:rgba(255,255,255,.8);padding:4px 8px;border-radius:6px}
-aside{background:#fff;border-left:1px solid var(--line);overflow-y:auto;padding:14px;min-height:0}
-aside h3{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin:14px 0 8px;font-weight:700}
-aside h3:first-child{margin-top:0}
-.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.kv div{background:var(--bg);border-radius:8px;padding:8px 10px}
-.kv b{display:block;font-size:14.5px;color:var(--navy)}
-.kv span{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
-.note{font-size:12px;line-height:1.5;color:var(--ink);background:#f5f0ff;border-left:3px solid var(--purple);padding:8px 10px;border-radius:4px;margin-top:8px}
-.delta{font-weight:700}.delta.bad{color:var(--red)}.delta.good{color:#13865c}
-.sel{font-size:12.5px;line-height:1.55}
-.sel .code{font-weight:700;color:var(--blue)}
-.sel .empty{color:var(--muted)}
-.cnt{border:1px solid var(--line);border-radius:8px;padding:10px}
-.cnt .v{font-size:15px;font-weight:800;margin-top:2px}
-.cnt .v.bad{color:var(--red)}.cnt .v.ok{color:#13865c}
-.cnt canvas{width:100%;height:46px;display:block;margin-top:6px}
-.leg{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:11.5px;color:var(--muted)}
-.leg i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
-.bottom{grid-column:1 / span 2;background:#fff;border-top:1px solid var(--line)}
-.ctrl{display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.ctrl button{font:inherit;font-size:12.5px;font-weight:700;border:1px solid var(--line);background:#fff;border-radius:7px;padding:6px 12px;cursor:pointer;color:var(--navy2)}
-.ctrl button.play{background:var(--blue);color:#fff;border-color:var(--blue);min-width:74px}
-.ctrl select{font:inherit;font-size:12px;border:1px solid var(--line);border-radius:7px;padding:5px 8px}
-.ctrl input[type=range]{flex:1;min-width:160px;accent-color:var(--blue)}
-.ctrl .dd{font-weight:700;color:var(--navy);min-width:92px}
-#gwrap{height:220px;overflow-y:auto;position:relative}
-#gantt{display:block;width:100%}
-.gleg{display:flex;gap:14px;font-size:11px;color:var(--muted);padding:0 14px 6px;flex-wrap:wrap}
-.gleg i{display:inline-block;width:12px;height:7px;border-radius:2px;margin-right:5px;vertical-align:1px}
-@media (max-width:900px){
-  .wrap{display:block;height:auto}
-  #stage{height:58vh}
-  aside{border-left:0;border-top:1px solid var(--line)}
-  .tog{top:auto;bottom:34px;right:8px}
-  .tog label{padding:5px 8px;font-size:11px}
-  .hud{left:8px;top:8px;padding:8px 10px}.hud .d{font-size:16px}
-  #gwrap{height:300px}
-  header{padding:10px 12px}header .t{min-width:100%;order:2}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:13px;overflow:hidden}
+*{box-sizing:border-box}
+button,select,input{font:inherit;color:inherit}
+.app{height:100%;display:grid;grid-template-rows:auto 1fr auto;grid-template-columns:340px 1fr 310px;grid-template-areas:"hd hd hd" "lp vp rp" "tl tl tl";padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+header{grid-area:hd;display:flex;align-items:center;gap:18px;padding:8px max(16px,env(safe-area-inset-left,0px)) 8px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap;min-width:0}
+.brand{display:flex;flex-direction:column;min-width:0}
+.brand b{font-stretch:80%;font-weight:750;font-size:17px;letter-spacing:.01em;text-wrap:balance}
+.brand span{color:var(--muted);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase}
+.kpis{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.kpi{display:flex;flex-direction:column;padding:4px 12px;border-left:1px solid var(--line);min-width:92px}
+.kpi small{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.07em}
+.kpi strong{font-family:var(--f-mono);font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.kpi.date strong{color:var(--accent)}
+.iconbtn{border:1px solid var(--line);background:var(--panel-2);border-radius:6px;padding:5px 9px;cursor:pointer}
+.iconbtn:hover{border-color:var(--accent)}
+.iconbtn:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+aside{background:var(--panel);display:flex;flex-direction:column;min-height:0;min-width:0}
+#lp{grid-area:lp;border-right:1px solid var(--line)}
+#rp{grid-area:rp;border-left:1px solid var(--line)}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tabs button{flex:1;background:none;border:0;padding:9px 6px;cursor:pointer;color:var(--muted);font-weight:600;font-size:12px;letter-spacing:.05em;text-transform:uppercase;border-bottom:2px solid transparent}
+.tabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.pane{flex:1;overflow:auto;min-height:0}
+.toolbar{display:flex;gap:6px;padding:8px 10px;border-bottom:1px solid var(--line);flex-wrap:wrap;align-items:center}
+.toolbar input[type=search]{flex:1;min-width:120px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--panel-2)}
+.chip{border:1px solid var(--line);background:var(--panel-2);border-radius:999px;padding:3px 9px;font-size:11.5px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+/* gantt */
+.g-head{position:sticky;top:0;z-index:2;background:var(--panel);display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--line);font-size:10px;color:var(--muted)}
+.g-months{position:relative;height:20px}
+.g-months span{position:absolute;top:4px;font-family:var(--f-mono);transform:translateX(2px)}
+.g-grp{padding:6px 10px 3px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--panel-2);border-top:1px solid var(--line)}
+.g-row{display:grid;grid-template-columns:150px 1fr;align-items:center;min-height:24px;cursor:pointer;border-bottom:1px solid color-mix(in srgb,var(--line) 45%,transparent)}
+.g-row:hover{background:var(--panel-2)}
+.g-row.sel{background:var(--sel)}
+.g-name{padding:2px 6px 2px 10px;overflow:hidden;line-height:1.15}
+.g-name code{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);display:block}
+.g-name span{font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.g-track{position:relative;height:24px}
+.g-bar{position:absolute;top:8px;height:8px;border-radius:2px;background:var(--bar)}
+.g-bar.ip{background:var(--bar-ip)}
+.g-bar.cp{background:var(--bar-cp)}
+.g-bar.crit{box-shadow:inset 0 -2px 0 var(--crit)}
+.g-bar i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:2px;opacity:.9}
+.g-ms{position:absolute;top:6px;width:10px;height:10px;transform:translateX(-5px) rotate(45deg);background:var(--fg)}
+.g-now{position:absolute;top:0;bottom:0;width:0;border-left:1.5px solid var(--accent);pointer-events:none;z-index:3}
+.g-today{position:absolute;top:0;bottom:0;width:0;border-left:1px dashed var(--muted);pointer-events:none;z-index:1}
+.g-body{position:relative}
+/* viewport */
+#vp{grid-area:vp;position:relative;background:var(--vp);min-width:0;min-height:0;overflow:hidden}
+#vp canvas{display:block;width:100%;height:100%;touch-action:none}
+.views{position:absolute;top:10px;left:10px;display:flex;gap:4px;flex-wrap:wrap;max-width:calc(100% - 20px)}
+.views button{background:color-mix(in srgb,var(--panel) 88%,transparent);border:1px solid var(--line);border-radius:5px;padding:4px 8px;font-size:11.5px;cursor:pointer;backdrop-filter:blur(4px)}
+.views button:hover{border-color:var(--accent)}
+.colormode{position:absolute;top:10px;right:10px;display:flex;gap:6px;align-items:center;background:color-mix(in srgb,var(--panel) 88%,transparent);border:1px solid var(--line);border-radius:6px;padding:4px 8px;font-size:11.5px}
+.colormode select{background:var(--panel-2);border:1px solid var(--line);border-radius:4px;padding:2px 4px}
+.legend{position:absolute;left:10px;bottom:10px;background:color-mix(in srgb,var(--panel) 90%,transparent);border:1px solid var(--line);border-radius:6px;padding:7px 9px;font-size:11px;display:grid;grid-template-columns:auto auto;gap:3px 12px;max-width:calc(100% - 20px)}
+.legend div{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.sw{width:14px;height:6px;border-radius:2px;display:inline-block;flex:none}
+.banner{position:absolute;right:10px;bottom:10px;display:flex;flex-direction:column;gap:4px;align-items:flex-end;pointer-events:none}
+.banner div{background:color-mix(in srgb,var(--panel) 92%,transparent);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:5px;padding:4px 9px;font-size:11.5px}
+.banner div.test{border-left-color:#19b5c9}
+.banner div.flush{border-left-color:var(--ok)}
+#tip{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:4px 7px;font-size:11.5px;max-width:280px;display:none;z-index:5;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+#tip code{font-family:var(--f-mono);font-size:10.5px;color:var(--muted)}
+.loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-family:var(--f-mono)}
+/* inspector */
+.sec{padding:10px 12px;border-bottom:1px solid var(--line)}
+.sec h3{margin:0 0 6px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sec h2{margin:0 0 4px;font-size:15px;font-stretch:85%;font-weight:700;text-wrap:balance}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:12px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;font-family:var(--f-mono);font-size:11.5px;word-break:break-word;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600;color:#fff}
+.pill.ns{background:var(--muted)}.pill.ip{background:var(--accent)}.pill.cp{background:var(--ok)}.pill.crit{background:var(--crit)}
+.link{color:var(--accent-2);cursor:pointer;text-decoration:underline;text-underline-offset:2px;background:none;border:0;padding:0;font-family:var(--f-mono);font-size:11.5px}
+.layer{display:flex;align-items:center;gap:8px;padding:3px 0;font-size:12.5px}
+.layer input{accent-color:var(--accent)}
+.areacard{display:grid;grid-template-columns:auto 1fr auto;gap:4px 10px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line)}
+.areacard:last-child{border-bottom:0}
+.areacard b{font-size:20px;font-stretch:75%;font-weight:800;width:26px}
+.meter{height:6px;background:var(--panel-2);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--accent-2)}
+.small{font-size:11px;color:var(--muted)}
+.empty{color:var(--muted);font-size:12px;line-height:1.5}
+/* timeline */
+#tl{grid-area:tl;border-top:1px solid var(--line);background:var(--panel);padding:6px max(16px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}
+.ctrls{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+.ctrls button{border:1px solid var(--line);background:var(--panel-2);border-radius:5px;min-width:30px;height:28px;cursor:pointer;font-family:var(--f-mono);font-size:12px;padding:0 7px}
+.ctrls button.play{background:var(--accent);border-color:var(--accent);color:#fff;min-width:64px;font-weight:600}
+.tlkey{display:flex;gap:10px;flex-wrap:wrap;width:100%;font-size:10.5px;color:var(--muted);margin-top:2px}.tlkey span{display:flex;align-items:center;gap:4px}
+.ctrls{max-width:520px}
+.ctrls select{height:28px;border:1px solid var(--line);background:var(--panel-2);border-radius:5px}
+#tlc{width:100%;height:86px;display:block;cursor:ew-resize;touch-action:none}
+@media (max-width:1100px){.app{grid-template-columns:290px 1fr 270px}}
+@media (max-width:820px){
+  body{overflow:auto}
+  .app{height:auto;grid-template-columns:1fr;grid-template-rows:auto 58vh auto auto auto;grid-template-areas:"hd" "vp" "tl" "lp" "rp"}
+  #lp,#rp{border:0;border-top:1px solid var(--line);max-height:70vh}
+  #tl{grid-template-columns:1fr}
+  .kpis{margin-left:0}
+  .legend{display:none}
+  .colormode{top:auto;bottom:10px;left:10px;right:auto}
+  .banner{top:auto;bottom:48px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head><body>
+<style>
+.kpi{min-width:0;padding:4px 10px}
+.kpi strong{font-size:15px}
+header{flex-wrap:nowrap}
+@media (max-width:1300px){header{flex-wrap:wrap}}
+.brand{flex:0 1 auto}
+.brand a{color:var(--accent-2);font-size:11.5px;text-decoration:none;font-family:var(--f-mono)}
+.brand a:hover{text-decoration:underline}
+.scen{display:flex;flex-direction:column;gap:2px;min-width:0}
+.scen small{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.07em}
+.scen select{max-width:280px;background:var(--panel-2);border:1px solid var(--line);border-radius:6px;padding:4px 6px;font-weight:600}
+.kpi.warn strong{color:var(--crit)}
+.kpi.good strong{color:var(--ok)}
+.g-base{position:absolute;top:18px;height:3px;background:var(--muted);opacity:.55;border-radius:1px}
+.g-bar.frag{background:#8a5cd0}
+.g-bar.frag.cp,.g-bar.frag.ip{background:#6d3fc0}
+.scard{border:1px solid var(--line);border-radius:7px;padding:8px 10px;margin:0 0 8px;cursor:pointer;background:var(--panel)}
+.scard:hover{border-color:var(--accent)}
+.scard.on{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.scard b{display:block;font-size:13px;margin-bottom:3px}
+.scard .row{display:flex;gap:10px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.scard .late{color:var(--crit);font-weight:600}.scard .early{color:var(--ok);font-weight:600}
+.scard p{margin:5px 0 0;font-size:11.5px;color:var(--muted);line-height:1.45}
+#cntc{width:100%;height:110px;display:block}
+.banner div.bad{border-left-color:var(--crit)}
+.banner div.out{border-left-color:#59606b}
+.views button.xer{border-color:var(--accent-2);color:var(--accent-2)}
+body.thumb header,body.thumb #lp,body.thumb #rp,body.thumb #tl,body.thumb .views,body.thumb .colormode,body.thumb .legend,body.thumb .banner{display:none!important}
+body.thumb .app{grid-template-columns:1fr;grid-template-rows:1fr;grid-template-areas:"vp"}
+@media (max-width:820px){
+  .views{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .views button{flex:none}
+  .scen select{max-width:100%}
+  header{gap:10px}
+  .kpi{min-width:0;padding:3px 8px}
+  .colormode{flex-wrap:wrap;right:10px}
+  header{position:relative;padding:8px 12px!important}
+  #hSub{display:none}
+  .brand b{font-size:15px;padding-right:64px}
+  #themeBtn{position:absolute;top:8px;right:12px;padding:3px 8px;font-size:12px}
+  .kpis{display:grid!important;grid-template-columns:repeat(3,1fr);gap:4px 0;width:100%}
+  .kpi{border-left:0!important;padding:2px 4px!important}
+  .kpi small{font-size:9.5px;letter-spacing:.04em}
+  .kpi strong{font-size:13px!important}
+  #kCntBox{grid-column:span 2}
+  .banner{top:46px!important;bottom:auto!important}
+  .banner div:nth-child(n+2){display:none}
+  .colormode select{max-width:150px!important}
+  .kpi strong{font-size:14px}
 }
 </style>
-</head>
-<body>
+<div class="app">
 <header>
-  <a class="back" href="./">← 4D gallery</a>
-  <div class="t"><h1 id="ttl">Loading…</h1><div class="s" id="sub"></div></div>
-  <select id="scen" aria-label="Scenario"></select>
-  <a class="btn" id="xer" download>⬇ XER</a>
+  <div class="brand"><a href="./">← 4D gallery</a><b id="hTitle">Loading…</b><span id="hSub"></span></div>
+  <div class="kpis">
+    <div class="kpi date"><small>Model date</small><strong id="kDate">—</strong></div>
+    <div class="kpi"><small>Planned complete</small><strong id="kPct">—</strong></div>
+    <div class="kpi"><small>Elements installed</small><strong id="kEl">—</strong></div>
+    <div class="kpi"><small>Activities done / active</small><strong id="kAct">—</strong></div>
+    <div class="kpi" id="kCntBox" hidden><small id="kCntL">—</small><strong id="kCnt">—</strong></div>
+    <div class="kpi" id="kFinBox"><small>Finish</small><strong id="kFin">—</strong></div>
+  </div>
+  <button class="iconbtn" id="themeBtn" title="Switch light / dark">Theme</button>
 </header>
-<div class="wrap">
-  <div id="stage">
-    <canvas id="c3d"></canvas>
-    <div class="hud"><div class="l">Data date</div><div class="d" id="hudDate">–</div><div class="p" id="hudPct"></div></div>
-    <div class="tog">
-      <label><input type="checkbox" id="tCrit"> Critical path</label>
-      <label id="lBase"><input type="checkbox" id="tBase"> Behind baseline</label>
-      <label><input type="checkbox" id="tRem"> Show remaining work</label>
-      <label id="lRoof"><input type="checkbox" id="tRoof"> Roof off</label>
-    </div>
-    <div class="hint">Drag to orbit · scroll to zoom · click an element</div>
+
+<aside id="lp">
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="sched">Schedule</button>
+    <button role="tab" aria-selected="false" data-tab="look">Look-ahead</button>
   </div>
-  <aside>
-    <h3>Schedule summary</h3>
-    <div class="kv" id="sum"></div>
-    <div id="noteBox"></div>
-    <div id="cntBox"></div>
-    <h3>Selected activity</h3>
-    <div class="sel" id="sel"><span class="empty">Click an element in the model or a bar in the Gantt chart.</span></div>
-    <h3>Element status</h3>
-    <div class="leg" id="legS"></div>
-    <h3>Trades</h3>
-    <div class="leg" id="legC"></div>
-    <h3>About this model</h3>
-    <div class="sel" id="about"></div>
-  </aside>
-  <div class="bottom">
-    <div class="ctrl">
-      <button class="play" id="play">▶ Play</button>
-      <select id="speed" aria-label="Speed"><option value="1">1 day / frame</option><option value="3" selected>3 days / frame</option><option value="7">1 week / frame</option></select>
-      <button id="toDD" title="Jump to the update's data date">Data date</button>
-      <input type="range" id="slider" min="0" max="100" value="0" aria-label="Data date">
-      <span class="dd" id="ddLbl"></span>
-    </div>
-    <div class="gleg"><span><i style="background:var(--red)"></i>Critical (total float 0)</span><span><i style="background:var(--blue)"></i>Non-critical</span><span><i style="background:var(--purple)"></i>Fragnet / delay event</span><span><i style="background:#c5ced8;height:3px"></i>Baseline</span><span><i style="background:var(--green);width:2px;height:10px"></i>Data date</span></div>
-    <div id="gwrap"><canvas id="gantt"></canvas></div>
+  <div class="toolbar" id="schedTools">
+    <input type="search" id="q" placeholder="Filter activity name or ID">
+    <button class="chip" id="fCrit" aria-pressed="false">Float ≤ 0</button>
+    <button class="chip" id="fActive" aria-pressed="false">Active now</button>
   </div>
+  <div class="pane" id="sched"></div>
+  <div class="pane" id="look" hidden></div>
+</aside>
+
+<main id="vp">
+  <div class="loading" id="loading">Loading model…</div>
+  <div class="views" id="views"></div>
+  <div class="colormode"><label for="scenSel">Scenario</label><select id="scenSel" style="max-width:230px;font-weight:600"></select><label for="cmode">Colour by</label>
+    <select id="cmode"><option value="sys">System</option><option value="status">Status</option><option value="float">Total float</option><option value="wbs">WBS</option><option value="var">Variance vs baseline</option></select>
+  </div>
+  <div class="legend" id="legend"></div>
+  <div class="banner" id="banner"></div>
+  <div id="tip"></div>
+</main>
+
+<aside id="rp">
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="insp">Inspector</button>
+    <button role="tab" aria-selected="false" data-tab="scens">Scenarios</button>
+    <button role="tab" aria-selected="false" data-tab="layers">Layers</button>
+  </div>
+  <div class="pane" id="insp"></div>
+  <div class="pane" id="scens" hidden></div>
+  <div class="pane" id="layers" hidden></div>
+</aside>
+
+<section id="tl">
+  <div class="ctrls">
+    <button id="bStart" title="Project start">|◀</button>
+    <button id="bWkB" title="Back one week">−7d</button>
+    <button id="bDayB" title="Back one day">−1d</button>
+    <button id="bPlay" class="play">Play</button>
+    <button id="bDayF" title="Forward one day">+1d</button>
+    <button id="bWkF" title="Forward one week">+7d</button>
+    <button id="bEnd" title="Project finish">▶|</button>
+    <button id="bToday" title="Jump to the data date">Data date</button>
+    <select id="speed" title="Playback speed"><option value="3">3 days/s</option><option value="7" selected>1 wk/s</option><option value="14">2 wk/s</option><option value="30">1 mo/s</option></select>
+    <div class="tlkey"><span><i class="sw" style="background:var(--bar)"></i>Crew per day</span><span><i class="sw" style="background:var(--accent-2)"></i>Planned % complete</span><span id="tlBase"><i class="sw" style="background:var(--muted)"></i>Baseline curve</span><span>◆ Milestone</span><span id="tlCnt" hidden><i class="sw" style="background:var(--crit)"></i>Below minimum</span></div>
+  </div>
+  <canvas id="tlc" aria-label="Project timeline: drag to scrub the model date"></canvas>
+</section>
 </div>
 
-<script src="lib/three.min.js"></script>
-<script src="lib/OrbitControls.js"></script>
-<script>
-const Q = new URLSearchParams(location.search), MID = Q.get('m') || 'dc-12mw';
-if (Q.get('thumb')) document.body.classList.add('thumb');
-const $ = s => document.querySelector(s);
-const ST = {existing:'#d5dbe2', prog:'#f59e3a', closed:'#e34948', offline:'#4b5563', cx:'#8a5cd0', ok:'#1baf7a'};
-const STL = {existing:'Existing / in use', prog:'Work in progress', done:'Complete (trade colour)', closed:'Closed / out of service', offline:'Offline (shutdown)', cx:'Testing & commissioning', ok:'Commissioned / back in service'};
-let M, S, BASE, day = 0, maxDay = 1, playing = false, timer = null, selected = null, meshes = {}, ghosts = {}, elemActs = {};
-const fmt = d => { const t = new Date(M.start + 'T00:00'); t.setDate(t.getDate() + d); return t.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'}); };
-const fmtS = d => { const t = new Date(M.start + 'T00:00'); t.setDate(t.getDate() + d); return t.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'2-digit'}); };
-const mix = (a, b, k) => { const A = new THREE.Color(a), B = new THREE.Color(b); return A.lerp(B, k); };
+<script type="importmap">{"imports":{"three":"./lib/three.module.min.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from './lib/OrbitControls.js';
 
-// ---------- three ----------
-const canvas = $('#c3d'), renderer = new THREE.WebGLRenderer({canvas, antialias:true, preserveDrawingBuffer:true});
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); renderer.setClearColor(0xe6ecf2, 1);
-const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(38, 1, 0.5, 3000);
-scene.add(new THREE.HemisphereLight(0xffffff, 0x6f7c8a, 0.62));
-const sun = new THREE.DirectionalLight(0xffffff, 0.62); sun.position.set(80, 140, 60); scene.add(sun);
-const controls = new THREE.OrbitControls(camera, canvas); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.49;
-const geo = new THREE.BoxGeometry(1, 1, 1), edgeGeo = new THREE.EdgesGeometry(geo);
-function resize(){ const r = canvas.parentElement.getBoundingClientRect(); renderer.setSize(r.width, r.height, false); camera.aspect = r.width / r.height; camera.updateProjectionMatrix(); }
-window.addEventListener('resize', () => { resize(); drawGantt(); });
-(function loop(){ requestAnimationFrame(loop); controls.update(); renderer.render(scene, camera); })();
+const $=s=>document.querySelector(s);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const Q=new URLSearchParams(location.search);
+if(Q.get('thumb'))document.body.classList.add('thumb');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const MID=Q.get('m')||'dc-12mw';
+const M=await (await fetch('models/'+MID+'.json')).json();
+document.title=M.title+' · 4D model';
+$('#hTitle').textContent=M.title;
+$('#hSub').textContent=`${M.sector} · ${M.E.length.toLocaleString()} model elements · ${M.nacts} activities · ${M.wd}-day week`;
 
-// ---------- load ----------
-fetch('models/' + MID + '.json').then(r => r.json()).then(init).catch(e => { $('#ttl').textContent = 'Model not found'; console.error(e); });
+/* ---------------- calendar ---------------- */
+const H=3600e3, D=24*H;
+const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const fmt=t=>{const d=new Date(t);return `${MON[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`};
+const fmtS=t=>{const d=new Date(t);return `${String(d.getUTCDate()).padStart(2,'0')}-${MON[d.getUTCMonth()]}-${String(d.getUTCFullYear()).slice(2)}`};
+const [Y0,M0,D0]=M.start.split('-').map(Number);
+const P0=Date.UTC(Y0,M0-1,D0);
+const isWork=day=>{const w=new Date(day).getUTCDay();return M.wd===7?true:M.wd===6?w!==0:(w!==0&&w!==6)};
+const CAL0=P0-120*D, NCAL=3000; const WPRE=new Float64Array(NCAL+1);
+for(let i=0;i<NCAL;i++)WPRE[i+1]=WPRE[i]+(isWork(CAL0+i*D)?1:0);
+function hrsTo(t){let i=Math.floor((t-CAL0)/D);if(i<0)return 0;if(i>=NCAL)i=NCAL-1;const day=CAL0+i*D;let h=WPRE[i]*10;if(isWork(day))h+=Math.min(10,Math.max(0,(t-day-7*H)/H));return h}
+const workHrs=(a,b)=>b>a?hrsTo(b)-hrsTo(a):0;
+function prog(a,t){if(!a)return 0;if(a.mile)return t>=a.S?1:0;if(t<=a.S)return 0;if(t>=a.F)return 1;return Math.min(1,workHrs(a.S,t)/a.WH)}
+function status(a,t){const p=prog(a,t);return p>=1?'cp':p>0?'ip':'ns'}
+const CRIT=a=>a.tf<=0&&!a.mile;
+function mkActs(sc){const L=sc.acts.map((r,i)=>{const a={...r,i};a.mile=!!r.mi;a.S=P0+r.s*D+7*H;a.F=a.mile?a.S:P0+(r.f-1)*D+17*H;a.LS=P0+r.ls*D+7*H;a.LF=a.mile?a.LS:P0+(r.lf-1)*D+17*H;a.WH=Math.max(workHrs(a.S,a.F),1e-4);return a});const by={};L.forEach(a=>by[a.c]=a);return [L,by]}
 
-function init(data){
-  M = data; document.title = M.title + ' | 4D model';
-  $('#ttl').textContent = M.title; $('#sub').textContent = `${M.sector} · ${M.nacts} activities · CPM-linked · ${M.cal}`;
-  $('#about').innerHTML = M.scope + '<br><br><span style="color:var(--muted)">Fictional demonstration project. Every element is linked to an activity in its own logic-driven schedule; download the baseline as a Primavera P6 XER.</span>';
-  $('#xer').href = 'xer/' + M.id + '.xer';
-  Object.entries(M.scen).forEach(([k, v]) => $('#scen').insertAdjacentHTML('beforeend', `<option value="${k}">${v.label}</option>`));
-  maxDay = Math.max(...Object.values(M.scen).map(s => s.finish)) + 7;
-  $('#slider').max = maxDay;
-  // meshes
-  M.E.forEach(([id, x, y, z, w, h, d, cat]) => {
-    const mat = new THREE.MeshLambertMaterial({color: M.cats[cat] ? M.cats[cat][0] : '#999', transparent:true});
-    const me = new THREE.Mesh(geo, mat); me.position.set(x, y, z); me.scale.set(Math.max(w, .05), Math.max(h, .05), Math.max(d, .05));
-    me.userData = {id, cat}; scene.add(me); meshes[id] = me;
-    const g = new THREE.LineSegments(edgeGeo, new THREE.LineBasicMaterial({color:0xf08c00})); g.position.copy(me.position); g.scale.copy(me.scale); g.visible = false; scene.add(g); ghosts[id] = g;
-  });
-  const hasRoof = M.E.some(e => e[7] === 'roof'); if (!hasRoof) $('#lRoof').style.display = 'none';
-  camera.position.set(...M.cam); controls.target.set(...M.target); resize();
-  if (camera.aspect < 1){ const t = new THREE.Vector3(...M.target); camera.position.sub(t).multiplyScalar(1.15 / camera.aspect).add(t); }
-  // legends
-  $('#legC').innerHTML = Object.entries(M.cats).filter(([k]) => M.E.some(e => e[7] === k)).map(([k, v]) => `<span><i style="background:${v[0]}"></i>${v[1]}</span>`).join('');
-  const usedStates = new Set(['prog','done']); Object.values(M.scen).forEach(s => Object.values(s.trans).forEach(ts => ts.forEach(t => usedStates.add(t[1])))); Object.values(M.init).forEach(v => usedStates.add(v));
-  $('#legS').innerHTML = Object.keys(STL).filter(k => usedStates.has(k)).map(k => `<span><i style="background:${k === 'done' ? 'linear-gradient(90deg,#2a78d6,#e8a317)' : ST[k]}"></i>${STL[k]}</span>`).join('');
-  $('#scen').value = Q.get('s') && M.scen[Q.get('s')] ? Q.get('s') : M.default;
-  setScenario($('#scen').value, true);
-  if (Q.get('d')) setDay(+Q.get('d'));
-  if (M.opts && M.opts.roofOff) { $('#tRoof').checked = true; paint(); }
-  if (Q.get('crit')) { $('#tCrit').checked = true; paint(); }
+/* ---------------- colours ---------------- */
+const SYS=M.sys; const SYS_KEYS=Object.keys(SYS);
+const ST_TINT={cx:['#19b5c9',.55],ok:['#2fbf71',.3],offline:['#4a515b',.78],closed:['#d0453a',.55],demo:['#d0453a',.62]};
+const ST_LBL={cx:'Under test / commissioning',ok:'Tested & energized / accepted',offline:'Out of service (shutdown)',closed:'Closed to users',demo:'Being removed'};
+const WBS_PAL=['#1f6fd1','#d9771c','#2f8f5b','#8a5cd0','#c8372d','#1aa39a','#b8860b','#6d8aa6','#e05a8a','#5b8c2a','#7a5230','#3d4fb8'];
+function floatCol(tf){return tf<0?'#c8372d':tf===0?'#e0612c':tf<=5?'#d9a21c':'#3c9a63'}
+const LAYER_LBL={site:'Site, paving & landscape',struct:'Structure (by others / existing)',roof:'Roof & roof framing',wall:'Walls & cladding',ctx:'Existing / context equipment',grid:'Grid lines & labels'};
+
+/* ---------------- three.js scene ---------------- */
+const vp=$('#vp');
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:!!Q.get('thumb')});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
+vp.prepend(renderer.domElement);
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(40,1,0.3,8000);
+const controls=new OrbitControls(camera,renderer.domElement);
+controls.enableDamping=true;controls.dampingFactor=.09;controls.maxPolarAngle=Math.PI*0.495;controls.screenSpacePanning=true;
+scene.add(new THREE.HemisphereLight(0xeaf2ff,0x4b4033,1.05));
+const sun=new THREE.DirectionalLight(0xffffff,1.6);sun.position.set(-300,600,-200);scene.add(sun);
+const fill=new THREE.DirectionalLight(0xbcd2ff,.45);fill.position.set(400,200,500);scene.add(fill);
+
+class Buf{constructor(){this.p=[];this.n=[];this.c=[];this.q={};this.e=[];this.i=[];this.v=0;for(const k in M.scen)this.q[k]=[]}}
+const SCK=Object.keys(M.scen);
+const _c=new THREE.Color();let curQ={};
+function pushV(b,x,y,z,nx,ny,nz,col,e){b.p.push(x,y,z);b.n.push(nx,ny,nz);b.c.push(col.r,col.g,col.b);for(const k of SCK)b.q[k].push(curQ[k]);b.e.push(e);return b.v++}
+const tmpA=new THREE.Vector3(),tmpB=new THREE.Vector3(),U=new THREE.Vector3(),V=new THREE.Vector3(),Dv=new THREE.Vector3();
+function addTube(b,x0,y0,z0,x1,y1,z1,r0,r1,col,e,seg){
+  tmpA.set(x0,y0,z0);tmpB.set(x1,y1,z1);Dv.subVectors(tmpB,tmpA);const L=Dv.length();if(L<1e-4)return;Dv.divideScalar(L);
+  const ref=Math.abs(Dv.y)<.9?new THREE.Vector3(0,1,0):new THREE.Vector3(1,0,0);U.crossVectors(Dv,ref).normalize();V.crossVectors(Dv,U).normalize();
+  const base=b.v;
+  for(let k=0;k<=seg;k++){const a=k/seg*Math.PI*2,ca=Math.cos(a),sa=Math.sin(a);const nx=U.x*ca+V.x*sa,ny=U.y*ca+V.y*sa,nz=U.z*ca+V.z*sa;
+    pushV(b,x0+nx*r0,y0+ny*r0,z0+nz*r0,nx,ny,nz,col,e);pushV(b,x1+nx*r1,y1+ny*r1,z1+nz*r1,nx,ny,nz,col,e)}
+  for(let k=0;k<seg;k++){const a=base+k*2;b.i.push(a,a+2,a+1,a+1,a+2,a+3)}
+}
+function addCap(b,cx,y,cz,r,col,e,seg,up=1){const top=pushV(b,cx,y,cz,0,up,0,col,e);const st=b.v;
+  for(let k=0;k<=seg;k++){const a=k/seg*Math.PI*2;pushV(b,cx+Math.cos(a)*r,y,cz+Math.sin(a)*r,0,up,0,col,e)}
+  for(let k=0;k<seg;k++)up>0?b.i.push(top,st+k+1,st+k):b.i.push(top,st+k,st+k+1)}
+const BOXF=[[[1,0,0],[[1,-1,1],[1,-1,-1],[1,1,-1],[1,1,1]]],[[-1,0,0],[[-1,-1,-1],[-1,-1,1],[-1,1,1],[-1,1,-1]]],[[0,1,0],[[-1,1,1],[1,1,1],[1,1,-1],[-1,1,-1]]],[[0,-1,0],[[-1,-1,-1],[1,-1,-1],[1,-1,1],[-1,-1,1]]],[[0,0,1],[[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]]],[[0,0,-1],[[1,-1,-1],[-1,-1,-1],[-1,1,-1],[1,1,-1]]]];
+const _m4=new THREE.Matrix4(),_e=new THREE.Euler(),_v=new THREE.Vector3(),_n=new THREE.Vector3();
+function addBox(b,cx,cy,cz,sx,sy,sz,col,e,rot){
+  const hx=sx/2,hy=sy/2,hz=sz/2;if(rot){_e.set(rot[0],rot[1],rot[2]);_m4.makeRotationFromEuler(_e)}
+  for(const[n,cs]of BOXF){const base=b.v;
+    if(rot)_n.set(n[0],n[1],n[2]).applyMatrix4(_m4);else _n.set(n[0],n[1],n[2]);
+    for(const c of cs){_v.set(c[0]*hx,c[1]*hy,c[2]*hz);if(rot)_v.applyMatrix4(_m4);pushV(b,cx+_v.x,cy+_v.y,cz+_v.z,_n.x,_n.y,_n.z,col,e)}
+    b.i.push(base,base+1,base+2,base,base+2,base+3)}
+}
+function addPrims(b,el,eid,colOverride){
+  const sc=colOverride||(SYS[el.s]||['#999'])[0];
+  for(const pr of el.p){
+    const t=pr[0];const ci={B:7,C:6,K:7,P:8,O:10}[t];
+    const col=_c.set(colOverride||pr[ci]||sc).clone();
+    if(t==='P')addTube(b,pr[1],pr[2],pr[3],pr[4],pr[5],pr[6],pr[7]/2,pr[7]/2,col,eid,pr[7]>0.4?14:8);
+    else if(t==='B')addBox(b,pr[1],pr[2],pr[3],pr[4],pr[5],pr[6],col,eid);
+    else if(t==='O')addBox(b,pr[1],pr[2],pr[3],pr[4],pr[5],pr[6],col,eid,[pr[7],pr[8],pr[9]]);
+    else if(t==='C'){const sg=pr[4]>1?20:pr[4]>.2?14:8;addTube(b,pr[1],pr[2],pr[3],pr[1],pr[2]+pr[5],pr[3],pr[4],pr[4],col,eid,sg);addCap(b,pr[1],pr[2]+pr[5],pr[3],pr[4],col,eid,sg)}
+    else if(t==='K'){const sg=pr[4]>1?20:12;addTube(b,pr[1],pr[2],pr[3],pr[1],pr[2]+pr[6],pr[3],pr[4],pr[5],col,eid,sg);addCap(b,pr[1],pr[2],pr[3],pr[4],col,eid,sg,-1);if(pr[5]>.01)addCap(b,pr[1],pr[2]+pr[6],pr[3],pr[5],col,eid,sg)}
+  }
+}
+function toGeom(b,k){
+  const g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.Float32BufferAttribute(b.p,3));
+  g.setAttribute('normal',new THREE.Float32BufferAttribute(b.n,3));
+  g.setAttribute('color',new THREE.Float32BufferAttribute(b.c,3));
+  g.userData.seq={};for(const s of SCK)g.userData.seq[s]=new THREE.Float32BufferAttribute(b.q[s],1);
+  g.setAttribute('aSeq',g.userData.seq[k||SCK[0]]);
+  g.setAttribute('aEid',new THREE.Float32BufferAttribute(b.e,1));
+  g.setIndex(b.v>65535?new THREE.Uint32BufferAttribute(b.i,1):new THREE.Uint16BufferAttribute(b.i,1));
+  g.computeBoundingBox();g.computeBoundingSphere();return g;
+}
+function mat4D(ghost=false,opacity=1){
+  const m=ghost?new THREE.MeshBasicMaterial({vertexColors:true,transparent:true,opacity:.09,depthWrite:false,side:THREE.DoubleSide}):new THREE.MeshStandardMaterial({vertexColors:true,metalness:.3,roughness:.55,side:THREE.DoubleSide,transparent:opacity<1,opacity,depthWrite:opacity>=1});
+  m.userData.u={uProg:{value:2},uRev:{value:0},uTint:{value:new THREE.Color(1,1,1)},uTintMix:{value:0},uGlow:{value:new THREE.Color(0,0,0)}};
+  m.userData.baseOp=opacity;
+  m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,m.userData.u);
+    sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nattribute float aSeq;varying float vSeq;').replace('#include <begin_vertex>','#include <begin_vertex>\nvSeq=aSeq;');
+    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nuniform float uProg;uniform float uRev;uniform vec3 uTint;uniform float uTintMix;uniform vec3 uGlow;varying float vSeq;')
+      .replace('#include <color_fragment>',`#include <color_fragment>\n${ghost?'if(vSeq<=uProg) discard;':'if(uRev<0.5){if(vSeq>uProg) discard;}else{if(vSeq<=uProg) discard;}'}\ndiffuseColor.rgb=mix(diffuseColor.rgb,uTint,uTintMix);`);
+    if(!ghost)sh.fragmentShader=sh.fragmentShader.replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\ntotalEmissiveRadiance+=uGlow;');
+  };
+  m.customProgramCacheKey=()=>ghost?'g4d':'m4d';
+  return m;
 }
 
-function setScenario(k, first){
-  S = M.scen[k]; BASE = S.base ? M.scen[S.base] : null;
-  elemActs = {}; Object.entries(S.trans).forEach(([e, ts]) => elemActs[e] = ts);
-  S.byCode = {}; S.acts.forEach(a => S.byCode[a[0]] = a);
-  if (BASE){ BASE.byCode = {}; BASE.acts.forEach(a => BASE.byCode[a[0]] = a); }
-  $('#lBase').style.display = BASE ? '' : 'none'; if (!BASE) $('#tBase').checked = false;
-  $('#toDD').style.display = S.dd != null ? '' : 'none';
-  summary();
-  const d0 = S.dd != null ? S.dd : (first ? Math.round(S.finish * 0.45) : day);
-  selected = null; $('#sel').innerHTML = '<span class="empty">Click an element in the model or a bar in the Gantt chart.</span>';
-  setDay(Math.min(d0, maxDay)); drawGantt(true);
+/* ---------- elements -> meshes (one per signature x system x layer) ---------- */
+const ELS=M.E; ELS.forEach((el,i)=>{el.i=i;el.sig=M.G[el.g]??-1});
+const groups=new Map();
+ELS.forEach((el,i)=>{const key=el.sig+'|'+el.s+'|'+(el.L||'');if(!groups.has(key))groups.set(key,[]);groups.get(key).push(i)});
+const meshes=[];const modelGroup=new THREE.Group();scene.add(modelGroup);
+const BB=new THREE.Box3();
+for(const[key,ids]of groups){
+  const b=new Buf();
+  for(const i of ids){const el=ELS[i];curQ={};for(const k of SCK)curQ[k]=typeof el.q==='number'?el.q:(el.q&&el.q[k]!==undefined?el.q[k]:0);addPrims(b,el,i)}
+  const g=toGeom(b,M.default);const el0=ELS[ids[0]];const sig=M.sigs[el0.sig];const op=(SYS[el0.s]||[])[2]??1;
+  const mesh=new THREE.Mesh(g,mat4D(false,op));const ghost=new THREE.Mesh(g,mat4D(true));ghost.renderOrder=2;ghost.visible=false;
+  const qs={};for(const k of SCK)qs[k]=ids.map(i=>{const q=ELS[i].q;return typeof q==='number'?q:(q&&q[k]!==undefined?q[k]:0)}).sort((x,y)=>x-y);
+  mesh.userData={sig,s:el0.s,L:el0.L||'',ids,ghost,qs,stat:!sig||!Object.keys(sig.tr).length};
+  if(op<1)mesh.renderOrder=3;
+  modelGroup.add(mesh);modelGroup.add(ghost);meshes.push(mesh);
+  if(!el0.L||el0.L!=='site'){g.computeBoundingBox();BB.union(g.boundingBox)}
 }
-$('#scen').onchange = e => setScenario(e.target.value);
+const CEN=BB.getCenter(new THREE.Vector3()),SZ=BB.getSize(new THREE.Vector3());const SPAN=Math.max(SZ.x,SZ.z,SZ.y*1.4,20);
+let totalSched=0,PERM=[];
 
-function stateAt(id, d, sc){
-  let st = M.init[id]; const ts = sc.trans[id]; if (!ts) return st;
-  for (const t of ts){ if (t[0] <= d) st = t[1]; else break; }
-  return st;
+/* grid & labels */
+const gridGroup=new THREE.Group();scene.add(gridGroup);
+function label(text,x,y,z,size,kind,color){
+  const c=document.createElement('canvas');const ctx=c.getContext('2d');const fs=kind==='area'?72:56;
+  ctx.font=`700 ${fs}px Archivo, sans-serif`;const w=Math.ceil(ctx.measureText(text).width)+(kind==='grid'?40:36);c.width=Math.max(w,kind==='grid'?96:0);c.height=fs+30;
+  ctx.font=`700 ${fs}px Archivo, sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';
+  if(kind==='grid'){ctx.strokeStyle='#8a97a6';ctx.lineWidth=5;ctx.beginPath();ctx.arc(c.width/2,c.height/2,c.height/2-4,0,7);ctx.fillStyle='rgba(255,255,255,.85)';ctx.fill();ctx.stroke();ctx.fillStyle='#34414f'}
+  else{ctx.fillStyle=color||'#333'}
+  ctx.fillText(text,c.width/2,c.height/2+2);
+  const tex=new THREE.CanvasTexture(c);tex.colorSpace=THREE.SRGBColorSpace;tex.anisotropy=4;
+  const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true,depthWrite:false}));
+  sp.scale.set(size*c.width/c.height,size,1);sp.position.set(x,y+size/2,z);return sp;
 }
-function actAt(id, d){ const ts = elemActs[id]; if (!ts) return null; let cur = null, nxt = null;
-  for (const t of ts){ if (t[0] <= d) cur = t[2]; else { nxt = t[2]; break; } }
-  const a = S.byCode[cur || nxt]; return a || null; }
+if(M.grid){const G=M.grid;const [x0,x1,z0,z1]=G.ext;const pts=[];const y=G.y??0.06;
+  for(const[,gx]of G.x)pts.push(gx,y,z0,gx,y,z1);for(const[,gz]of G.z)pts.push(x0,y,gz,x1,y,gz);
+  const lg=new THREE.BufferGeometry();lg.setAttribute('position',new THREE.Float32BufferAttribute(pts,3));
+  gridGroup.add(new THREE.LineSegments(lg,new THREE.LineDashedMaterial({color:0x8a97a6,dashSize:2,gapSize:1,transparent:true,opacity:.6})).computeLineDistances());
+  const gs=G.size||3;for(const[l,gx]of G.x)gridGroup.add(label(l,gx,y,z0-gs*.8,gs,'grid'));for(const[l,gz]of G.z)gridGroup.add(label(l,x0-gs*.8,y,gz,gs,'grid'))}
+for(const[t,x,y,z,s,c]of(M.labels||[]))gridGroup.add(label(t,x,y,z,s,'area',c));
 
-function paint(){
-  const crit = $('#tCrit').checked, rem = $('#tRem').checked, roof = $('#tRoof').checked, beh = $('#tBase').checked && BASE;
-  for (const id in meshes){
-    const me = meshes[id], cat = me.userData.cat, st = stateAt(id, day, S), base = M.cats[cat] ? M.cats[cat][0] : '#999';
-    let col = base, op = 1, vis = true;
-    if (st === 'hidden'){ if (rem && elemActs[id]){ col = '#9aa5b1'; op = 0.13; } else vis = false; }
-    else if (st === 'existing') col = M.init[id] === 'existing' ? mix(base, '#ffffff', 0.2) : base;
-    else if (st === 'prog'){ col = mix(base, ST.prog, 0.65); op = 0.92; }
-    else if (st === 'done') col = base;
-    else col = ST[st] || base;
-    if (crit && vis && st !== 'existing'){
-      const a = actAt(id, day); const isC = a && a[5] <= 0;
-      if (st === 'done' || st === 'ok') col = mix(base, '#ffffff', 0.55);
-      else col = isC ? '#e34948' : '#7f8ea3';
+/* ---------------- scenario state ---------------- */
+let SC=Q.get('s')&&M.scen[Q.get('s')]?Q.get('s'):M.default;
+let ACTS,byCode,BASE=null,bByCode=null,T_START,T_END,T0,T1,TODAY=null,work,totDur,WBSL,EVS;
+let NOW;
+function setScenario(k,keepNow){
+  SC=k;const sc=M.scen[k];[ACTS,byCode]=mkActs(sc);
+  if(sc.base){[BASE,bByCode]=mkActs(M.scen[sc.base])}else{BASE=null;bByCode=null}
+  T_START=P0;T_END=ACTS.reduce((m,a)=>Math.max(m,a.F||0),0);
+  const bEnd=BASE?BASE.reduce((m,a)=>Math.max(m,a.F||0),0):T_END;
+  T0=T_START-5*D;T1=Math.max(T_END,bEnd)+8*D;
+  TODAY=sc.dd!=null?P0+sc.dd*D+12*H:null;
+  work=ACTS.filter(a=>!a.mile);totDur=work.reduce((s,a)=>s+a.WH,0);
+  WBSL=[...new Set(ACTS.map(a=>a.w))];
+  // per-signature events in this scenario
+  EVS=M.sigs.map(sg=>{const ev=(sg.tr[k]||[]).map(([c,w,st])=>{const a=byCode[c];if(!a)return null;return{t:w==='S'?a.S:a.F,st,a,w}}).filter(Boolean);
+    ev.sort((x,y)=>x.t-y.t||(x.w==='S'?0:1)-(y.w==='S'?0:1));const pe=ev.find(e=>e.st==='prog');const inst=pe||ev.find(e=>e.st==='done')||ev.find(e=>e.st==='demo')||ev[0];return{ev,i0:sg.i0,inst:inst?inst.a:null,real:pe?pe.a:null,codes:new Set(ev.map(e=>e.a.c))}});
+  PERM=EVS.map(E=>{if(E.i0!=='hidden'||!E.ev.length)return false;const l=E.ev[E.ev.length-1].st;return l!=='hidden'&&l!=='demo'});
+  totalSched=ELS.filter(e=>e.sig>=0&&PERM[e.sig]).length;
+  for(const m of meshes){const g=m.geometry;g.setAttribute('aSeq',g.userData.seq[k])}
+  if(!keepNow||NOW<T0||NOW>T1)NOW=Q.get('d')?T0+(+Q.get('d'))*(T1-T0):TODAY??(T0+(T1-T0)*.55);
+  $('#scenSel').value=k;$('#bToday').hidden=TODAY==null;$('#tlBase').hidden=!BASE;
+  $('#cmode').querySelector('option[value="var"]').hidden=!BASE;if(!BASE&&cmode==='var'){cmode='sys';$('#cmode').value='sys'}
+  focusAct=-1;selEl=-1;highlight(null);
+  buildTL();renderSchedule();renderLegend();renderScens();update();
+}
+function sigState(si,t){
+  if(si<0)return{st:'existing'};const E=EVS[si];let st=E.i0,act=null;
+  for(const e of E.ev){if(e.t<=t){st=e.st;act=e.a}else break}
+  let p=1;if(st==='prog'||st==='demo'){p=prog(act,t);if(st==='prog'&&p>=1)st='done';if(st==='demo'&&p>=1)st='hidden'}
+  const future=st==='hidden'||st==='prog'?E.ev.some(e=>e.t>t&&(e.st==='prog'||e.st==='done')):false;
+  return{st,act,p,future,inst:E.inst}
+}
+
+/* ---------------- selection / highlight ---------------- */
+let selEl=-1, focusAct=-1;
+const hlMat=new THREE.MeshBasicMaterial({color:0xffb14a,transparent:true,opacity:.65,depthTest:false});
+let hlMesh=null;
+function highlight(ids){
+  if(hlMesh){scene.remove(hlMesh);hlMesh.geometry.dispose();hlMesh=null}
+  if(!ids||!ids.length)return;
+  const b=new Buf();curQ={};for(const k of SCK)curQ[k]=0;ids.forEach(i=>addPrims(b,ELS[i],i,'#ffb14a'));
+  hlMesh=new THREE.Mesh(toGeom(b,SC),hlMat);hlMesh.renderOrder=10;scene.add(hlMesh);
+}
+
+/* ---------------- state update ---------------- */
+const Ls=[...new Set(ELS.map(e=>e.L).filter(Boolean))];
+const layers={sys:{},L:{},grid:true,ghost:true,glow:true};
+SYS_KEYS.forEach(k=>layers.sys[k]=true);Ls.forEach(l=>layers.L[l]=!(l==='roof'&&M.opts&&M.opts.roofOff));
+let cmode='sys';
+function tintFor(info){
+  const a=info.inst;if(!a)return cmode==='sys'?null:['#c9d0d8',.55];
+  switch(cmode){
+    case 'status':{const st=info.st==='prog'?'ip':'cp';return [st==='cp'?'#6c8fae':(CRIT(a)?'#e5483b':'#f0912f'),.85]}
+    case 'float':return [floatCol(a.tf),.85];
+    case 'wbs':return [WBS_PAL[WBSL.indexOf(a.w)%WBS_PAL.length],.85];
+    case 'var':{const b=bByCode&&bByCode[a.c];if(!b)return ['#8a5cd0',.85];const v=Math.round((a.F-b.F)/D);return [v<=0?'#3c9a63':v<=5?'#d9a21c':'#c8372d',.85]}
+  }return null;
+}
+let pulse=0;const memo=new Map();
+function applyState(){
+  const t=NOW;memo.clear();
+  for(const mesh of meshes){
+    const ud=mesh.userData;const si=ELS[ud.ids[0]].sig;
+    let info=memo.get(si);if(!info){info=sigState(si,t);memo.set(si,info)}
+    const visLayer=layers.sys[ud.s]!==false&&(!ud.L||layers.L[ud.L]!==false);
+    const u=mesh.material.userData.u;const st=info.st;
+    mesh.visible=visLayer&&st!=='hidden';
+    u.uProg.value=st==='prog'||st==='demo'?info.p:2;u.uRev.value=st==='demo'?1:0;
+    let tc=null;
+    if(cmode==='sys'){if(ST_TINT[st])tc=ST_TINT[st]}else if(!ud.stat)tc=tintFor(info);else tc=['#c9d0d8',.5];
+    if(st==='cx'&&cmode==='sys')tc=['#19b5c9',.35+.25*Math.sin(pulse*4)];
+    if(tc){u.uTint.value.set(tc[0]);u.uTintMix.value=tc[1]}else u.uTintMix.value=0;
+    const inFocus=focusAct>=0&&EVS[si]&&EVS[si].codes.has(ACTS[focusAct].c);
+    if(inFocus)u.uGlow.value.setRGB(.28,.14,.02);
+    else if((st==='prog'||st==='demo')&&layers.glow){const k=.18+.14*Math.sin(pulse*5);u.uGlow.value.setRGB(k,k*.55,k*.1)}
+    else u.uGlow.value.setRGB(0,0,0);
+    const dim=focusAct>=0&&!inFocus;const bo=mesh.material.userData.baseOp;const op=dim?Math.min(.14,bo):bo;
+    if(mesh.material.opacity!==op){const tr=op<1;mesh.material.opacity=op;if(mesh.material.transparent!==tr){mesh.material.transparent=tr;mesh.material.depthWrite=!tr;mesh.material.needsUpdate=true}}
+    const g=ud.ghost;const gu=g.material.userData.u;
+    g.visible=visLayer&&info.future&&(layers.ghost||inFocus);
+    gu.uProg.value=st==='hidden'?-1:info.p;
+    g.material.opacity=inFocus?.32:.085;
+  }
+  gridGroup.visible=layers.grid;
+}
+
+/* ---------------- KPIs ---------------- */
+function crewAt(t){if(!isWork(Math.floor(t/D)*D))return 0;let c=0;for(const a of work)if(t>=a.S&&t<a.F)c+=a.cr;return Math.round(c)}
+function installedAt(t){let n=0;memo.clear();for(const m of meshes){const ud=m.userData;const si=ELS[ud.ids[0]].sig;if(si<0||!PERM[si])continue;
+  let info=memo.get(si);if(!info){info=sigState(si,t);memo.set(si,info)}
+  if(info.st==='prog'){const q=ud.qs[SC];let lo=0,hi=q.length;while(lo<hi){const mid=(lo+hi)>>1;if(q[mid]<=info.p)lo=mid+1;else hi=mid}n+=lo}
+  else if(info.st!=='hidden')n+=ud.ids.length}return n}
+function counterAt(c,t){const av=new Set(c.avail);let n=0;for(const g of c.g){const si=M.G[g];const s=sigState(si??-1,t).st;if(av.has(s))n++}return n}
+const CNT=M.counters&&M.counters[0];
+function updateKPIs(){
+  const t=NOW;let w=0,done=0,act=0;
+  for(const a of ACTS){const p=prog(a,t);if(!a.mile)w+=p*a.WH;if(p>=1)done++;else if(p>0)act++}
+  const d=new Date(t);
+  $('#kDate').textContent=`${DOW[d.getUTCDay()]} ${fmtS(t)}`;
+  $('#kPct').textContent=(100*w/totDur).toFixed(1)+'%';
+  $('#kEl').textContent=`${installedAt(t).toLocaleString()} / ${totalSched.toLocaleString()}`;
+  $('#kAct').textContent=`${done} / ${act}`;
+  const bn=[];
+  if(CNT){const v=counterAt(CNT,t);$('#kCntBox').hidden=false;$('#kCntL').textContent=CNT.label;$('#kCnt').textContent=`${v} of ${CNT.of} (min ${CNT.min})`;$('#kCntBox').className='kpi '+(v<CNT.min?'warn':'good');
+    if(v<CNT.min)bn.push(`<div class="bad">Below minimum: ${v} of ${CNT.of} ${esc(CNT.label.toLowerCase())} (min ${CNT.min})</div>`)}
+  const bEnd=BASE?BASE.reduce((m,a)=>Math.max(m,a.F||0),0):null;const vd=BASE?Math.round((T_END-bEnd)/D):0;
+  $('#kFin').textContent=fmtS(T_END)+(BASE?` (${vd>0?'+':''}${vd}d)`:'');$('#kFinBox').className='kpi '+(BASE?(vd>0?'warn':'good'):'');
+  const ip=ACTS.filter(a=>status(a,t)==='ip'&&!a.mile);
+  for(const a of ip){if(a.nt)bn.push(`<div class="out">${esc(a.nt)}: ${esc(a.n)}</div>`);if(a.fr)bn.push(`<div class="bad">Fragnet in progress: ${esc(a.n)}</div>`)}
+  if(ip.length)bn.push(`<div>${ip.length} activit${ip.length===1?'y':'ies'} in progress</div>`);
+  $('#banner').innerHTML=bn.slice(0,4).join('');
+}
+
+/* ---------------- schedule panel ---------------- */
+const tl2x=(t,w)=>(t-T0)/(T1-T0)*w;
+const filt={q:'',crit:false,active:false};
+function renderSchedule(){
+  const el=$('#sched');
+  const months=[];{let d=new Date(T0);d=Date.UTC(d.getUTCFullYear(),d.getUTCMonth()+1,1);for(;d<T1;){months.push(d);const x=new Date(d);d=Date.UTC(x.getUTCFullYear(),x.getUTCMonth()+1,1)}}
+  const step=Math.max(1,Math.ceil(months.length/7));
+  let h=`<div class="g-head"><div style="padding:4px 10px">Activity</div><div class="g-months">${months.filter((m,i)=>i%step===0).map(m=>`<span style="left:${(m-T0)/(T1-T0)*100}%">${MON[new Date(m).getUTCMonth()]}</span>`).join('')}</div></div><div class="g-body" id="gb">`;
+  const grp={};for(const a of ACTS)(grp[a.w]=grp[a.w]||[]).push(a);
+  for(const g of WBSL){const list=(grp[g]||[]).filter(a=>{
+      if(filt.q){const q=filt.q.toLowerCase();if(!(a.c.toLowerCase().includes(q)||a.n.toLowerCase().includes(q)))return false}
+      if(filt.crit&&!(a.tf<=0))return false;if(filt.active&&status(a,NOW)!=='ip')return false;return true}).sort((x,y)=>x.S-y.S||x.c.localeCompare(y.c));
+    if(!list.length)continue;
+    h+=`<div class="g-grp">${esc(g)}</div>`;
+    for(const a of list){
+      const l=(a.S-T0)/(T1-T0)*100,w=Math.max((a.F-a.S)/(T1-T0)*100,.4);const b=bByCode&&bByCode[a.c];
+      const bb=b&&!b.mile?`<div class="g-base" style="left:${(b.S-T0)/(T1-T0)*100}%;width:${Math.max((b.F-b.S)/(T1-T0)*100,.4)}%"></div>`:'';
+      const bar=a.mile?`<div class="g-ms" style="left:${l}%"></div>`:`<div class="g-bar${CRIT(a)?' crit':''}${a.fr?' frag':''}" data-a="${a.i}" style="left:${l}%;width:${w}%"><i></i></div>`;
+      h+=`<div class="g-row${a.i===focusAct?' sel':''}" data-a="${a.i}" title="${esc(a.c)} — ${esc(a.n)}\n${fmt(a.S)} → ${fmt(a.F)}  ·  ${a.d} d  ·  TF ${a.tf} d"><div class="g-name"><code>${esc(a.c)}</code><span>${esc(a.n)}</span></div><div class="g-track">${bb}${bar}</div></div>`;
     }
-    if (roof && cat === 'roof') vis = false;
-    me.visible = vis; me.material.color.set(col); me.material.opacity = op; me.material.depthWrite = op > 0.5;
-    let g = false;
-    if (beh && BASE.trans[id]){ const bs = stateAt(id, day, BASE); g = (bs === 'done' || bs === 'ok' || bs === 'prog') && (st === 'hidden' || (st === 'prog' && bs !== 'prog')); }
-    ghosts[id].visible = g && !(roof && cat === 'roof');
-    if (selected && selected.elems && selected.elems.has(id)){ me.material.color.set('#ffd23f'); me.visible = true; me.material.opacity = Math.max(op, .7); }
+  }
+  h+=`</div>`;el.innerHTML=h;
+  const gb=$('#gb');const now=document.createElement('div');now.className='g-now';now.id='gnow';gb.appendChild(now);
+  const td=document.createElement('div');td.className='g-today';gb.appendChild(td);
+  positionGanttLines();updateGanttBars();
+}
+function positionGanttLines(){
+  const gb=$('#gb');if(!gb)return;const tr=gb.querySelector('.g-track');if(!tr)return;
+  const off=tr.offsetLeft,w=tr.offsetWidth;
+  const n=$('#gnow');if(n)n.style.left=(off+tl2x(NOW,w))+'px';
+  const td=gb.querySelector('.g-today');if(td){td.hidden=TODAY==null;if(TODAY)td.style.left=(off+tl2x(TODAY,w))+'px'}
+}
+function updateGanttBars(){
+  document.querySelectorAll('.g-bar').forEach(b=>{const a=ACTS[+b.dataset.a];const p=prog(a,NOW);b.className='g-bar'+(p>=1?' cp':p>0?' ip':'')+(CRIT(a)?' crit':'')+(a.fr?' frag':'');b.firstChild.style.width=(p>0&&p<1?p*100:0)+'%'});
+}
+$('#sched').addEventListener('click',e=>{const r=e.target.closest('.g-row');if(r)selectAct(+r.dataset.a,true)});
+$('#q').addEventListener('input',e=>{filt.q=e.target.value;renderSchedule()});
+$('#fCrit').onclick=e=>{filt.crit=!filt.crit;e.target.setAttribute('aria-pressed',filt.crit);renderSchedule()};
+$('#fActive').onclick=e=>{filt.active=!filt.active;e.target.setAttribute('aria-pressed',filt.active);renderSchedule()};
+function renderLook(){
+  const t=NOW,w=t+21*D;
+  const list=ACTS.filter(a=>!a.mile&&((a.S>=t&&a.S<w)||(a.S<t&&a.F>t))).sort((x,y)=>x.S-y.S);
+  const row=a=>{const st=status(a,t);return `<div class="g-row" data-a="${a.i}" style="grid-template-columns:1fr auto"><div class="g-name"><code>${esc(a.c)} · ${fmtS(a.S)} → ${fmtS(a.F)}</code><span>${esc(a.n)}</span></div><div style="padding-right:10px"><span class="pill ${CRIT(a)&&st!=='ip'?'crit':st}">${st==='ip'?Math.round(prog(a,t)*100)+'%':CRIT(a)?'TF '+a.tf+'d':'starts '+fmtS(a.S)}</span></div></div>`};
+  $('#look').innerHTML=`<div class="sec"><h3>3-week look-ahead from ${fmt(t)}</h3><div class="small">${list.length} activities in progress or starting before ${fmt(w)}.</div></div>`+(list.length?list.map(row).join(''):'<div class="sec empty">No activities in this window. Scrub the timeline to another date.</div>');
+}
+$('#look').addEventListener('click',e=>{const r=e.target.closest('.g-row');if(r)selectAct(+r.dataset.a,true)});
+
+/* ---------------- inspector ---------------- */
+function actBlock(a){
+  const st=status(a,NOW),p=prog(a,NOW);const b=bByCode&&bByCode[a.c];
+  const rel=(arr,lab)=>arr.length?`<dt>${lab}</dt><dd>${arr.map(([c,r,l])=>`<button class="link" data-act="${esc(c)}">${esc(c)}</button> ${r}${l?(l>0?'+':'')+l+'d':''}`).join('<br>')}</dd>`:'';
+  const nEl=ELS.filter(e=>e.sig>=0&&EVS[e.sig]&&EVS[e.sig].codes.has(a.c)).length;
+  const vr=b?Math.round((a.F-b.F)/D):null;
+  return `<div class="sec"><h3>Activity</h3><h2>${esc(a.n)}</h2>
+   <div style="margin:4px 0 8px"><span class="pill ${st}">${st==='cp'?'Complete':st==='ip'?'In progress '+Math.round(p*100)+'%':'Not started'}</span> ${CRIT(a)?'<span class="pill crit">Critical · TF '+a.tf+' d</span>':''} ${a.fr?'<span class="pill" style="background:#8a5cd0">Fragnet</span>':''}</div>
+   <dl class="kv"><dt>Activity ID</dt><dd>${esc(a.c)}</dd><dt>WBS</dt><dd>${esc(a.w)}</dd>
+   <dt>Early start</dt><dd>${fmt(a.S)}</dd><dt>Early finish</dt><dd>${fmt(a.F)}</dd>
+   <dt>Late start</dt><dd>${fmt(a.LS)}</dd><dt>Late finish</dt><dd>${fmt(a.LF)}</dd>
+   ${b?`<dt>Baseline finish</dt><dd>${fmt(b.F)}</dd><dt>Finish variance</dt><dd style="color:${vr>0?'var(--crit)':'var(--ok)'}">${vr>0?'+':''}${vr} d</dd>`:''}
+   <dt>Duration</dt><dd>${a.d} d (${M.wd}-day week)</dd><dt>Total float</dt><dd>${a.tf} d</dd>
+   <dt>Trade / crew</dt><dd>${esc(a.tr)}${a.cr?' · '+a.cr+' workers':''}</dd>
+   <dt>Model elements</dt><dd>${nEl.toLocaleString()}</dd>
+   ${rel(a.pr,'Predecessors')}${rel(a.su,'Successors')}</dl></div>`;
+}
+const ST_NAME={hidden:'Not installed',prog:'Being installed',done:'Installed',existing:'Existing',cx:'Under test / commissioning',ok:'Tested / accepted',offline:'Out of service',closed:'Closed to users',demo:'Being removed'};
+function elPlanned(el){const E=EVS[el.sig];if(!E||!E.real)return null;const a=E.real;const q=typeof el.q==='number'?el.q:(el.q&&el.q[SC])||0;
+  const target=a.WH*q;let lo=a.S,hi=a.F;for(let k=0;k<40;k++){const mid=(lo+hi)/2;if(workHrs(a.S,mid)<target)lo=mid;else hi=mid}return hi}
+function renderInspector(){
+  const pane=$('#insp');
+  if(selEl>=0){const el=ELS[selEl];const info=sigState(el.sig,NOW);
+    let st=info.st;if(st==='prog'){const q=typeof el.q==='number'?el.q:(el.q&&el.q[SC])||0;st=q<=info.p?'done':'hidden'}
+    const props=el.m?Object.entries(el.m).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join(''):'';
+    const pdt=elPlanned(el);
+    let h=`<div class="sec"><h3>Element · ${esc(el.t)}</h3><h2>${esc(el.n)}</h2><dl class="kv"><dt>Element ID</dt><dd>EL-${String(el.i).padStart(5,'0')}</dd><dt>Group</dt><dd>${esc(el.g==='_ctx'?'Context':el.g)}</dd><dt>System</dt><dd>${esc((SYS[el.s]||[,el.s])[1])}</dd>${props}
+      ${pdt?`<dt>Planned install</dt><dd>${fmt(pdt)}</dd>`:''}<dt>Status on ${fmtS(NOW)}</dt><dd>${ST_NAME[st]||st}</dd></dl></div>`;
+    const E=EVS[el.sig];if(E&&E.inst)h+=actBlock(E.inst);
+    if(E&&E.ev.length>1)h+=`<div class="sec"><h3>Status history (this scenario)</h3><dl class="kv">${E.ev.map(e=>`<dt>${fmtS(e.t)}</dt><dd>${ST_NAME[e.st]||e.st} · <button class="link" data-act="${esc(e.a.c)}">${esc(e.a.c)}</button></dd>`).join('')}</dl></div>`;
+    pane.innerHTML=h;
+  }else if(focusAct>=0){pane.innerHTML=actBlock(ACTS[focusAct])+`<div class="sec small">Model isolated to this activity. Elements not yet installed show as a ghost. Click empty space to clear.</div>`}
+  else{
+    const t=NOW;const ip=ACTS.filter(a=>status(a,t)==='ip'&&!a.mile);
+    pane.innerHTML=`<div class="sec"><h3>On ${fmt(t)}</h3>${ip.length?ip.map(a=>`<div class="layer" style="justify-content:space-between"><button class="link" data-act="${esc(a.c)}">${esc(a.c)}</button><span class="small" style="flex:1;margin-left:6px">${esc(a.n)}</span><span class="pill ip">${Math.round(prog(a,t)*100)}%</span></div>`).join(''):'<div class="empty">No work in progress on this date.</div>'}</div>
+    <div class="sec"><h3>How to use</h3><div class="empty">Drag the timeline or press Play. Click any element to read its properties and linked activity; click an activity to isolate its scope. Switch scenarios at the top to compare logic, crews or delays. Orbit with the left mouse button, pan with the right, zoom with the wheel.</div></div>
+    <div class="sec"><h3>Model basis</h3><div class="small" style="line-height:1.5;margin-bottom:8px">${esc(M.scope)}</div><dl class="kv"><dt>Scenario</dt><dd>${esc(M.scen[SC].label)}</dd>${TODAY?`<dt>Data date</dt><dd>${fmt(TODAY)}</dd>`:''}<dt>Start</dt><dd>${fmt(P0)}</dd><dt>Finish</dt><dd>${fmt(T_END)}</dd><dt>Elements</dt><dd>${ELS.length.toLocaleString()}</dd><dt>Linked</dt><dd>${totalSched.toLocaleString()} permanent elements installed by the schedule</dd><dt>Schedule</dt><dd><a class="link" href="xer/${MID}.xer" download>Download P6 XER</a></dd></dl>
+    ${(M.assume||[]).length?`<div class="small" style="margin-top:8px;line-height:1.5">${M.assume.map(esc).join('<br>')}</div>`:''}<div class="small" style="margin-top:8px">Fictional project for portfolio use. Geometry is a schematic LOD 300–350 representation.</div></div>`;
   }
 }
-['tCrit','tRem','tRoof','tBase'].forEach(i => $('#' + i).onchange = () => paint());
+$('#insp').addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(b&&byCode[b.dataset.act])selectAct(byCode[b.dataset.act].i,true)});
 
-function setDay(d){
-  day = Math.max(0, Math.min(maxDay, Math.round(d))); $('#slider').value = day;
-  $('#hudDate').textContent = fmt(day); $('#ddLbl').textContent = fmtS(day);
-  // % complete by duration
-  let tot = 0, done = 0; S.acts.forEach(a => { const dur = Math.max(0, a[4] - a[3]); tot += dur; done += Math.max(0, Math.min(dur, day - a[3])); });
-  const pct = tot ? done / tot * 100 : 0;
-  let txt = `Day ${day} · ${pct.toFixed(0)}% of activity duration complete`;
-  if (S.dd != null) txt += day === S.dd ? ' · update data date' : '';
-  $('#hudPct').textContent = txt;
-  paint(); drawGanttLine(); counters();
+/* ---------------- scenarios pane ---------------- */
+const cntc=document.createElement('canvas');cntc.id='cntc';
+function renderScens(){
+  const finOf=k=>{const [L]=mkActs(M.scen[k]);return L.reduce((m,a)=>Math.max(m,a.F||0),0)};
+  const ref=M.scen[M.default];const refF=finOf(M.default);
+  let h='<div class="sec"><h3>Compare scenarios</h3>';
+  for(const k of SCK){const s=M.scen[k];const f=finOf(k);const bk=s.base||null;const v=bk?Math.round((f-finOf(bk))/D):0;const nc=s.acts.filter(a=>a.tf<=0&&!a.mi).length;
+    h+=`<div class="scard${k===SC?' on':''}" data-s="${k}"><b>${esc(s.label)}</b><div class="row"><span>Finish ${fmtS(f)}</span>${bk?`<span class="${v>0?'late':'early'}">${v>0?'+':''}${v} d vs ${esc(M.scen[bk].label.split(':')[0])}</span>`:'<span>reference</span>'}<span>${nc} critical</span></div>${s.note?`<p>${esc(s.note)}</p>`:''}</div>`}
+  h+='</div>';
+  if(CNT)h+=`<div class="sec"><h3>${esc(CNT.label)}</h3><div class="small" style="margin-bottom:6px">Minimum ${CNT.min} of ${CNT.of}. Red line = minimum; the chart follows the selected scenario.</div><div id="cntWrap"></div></div>`;
+  $('#scens').innerHTML=h;if(CNT){$('#cntWrap').appendChild(cntc);drawCnt()}
 }
-$('#slider').oninput = e => setDay(+e.target.value);
-$('#toDD').onclick = () => setDay(S.dd);
-$('#play').onclick = () => { playing = !playing; $('#play').textContent = playing ? '❚❚ Pause' : '▶ Play';
-  if (playing){ if (day >= maxDay) setDay(0); timer = setInterval(() => { if (day >= maxDay){ $('#play').click(); return; } setDay(day + +$('#speed').value); }, 110); }
-  else clearInterval(timer); };
+$('#scens').addEventListener('click',e=>{const c=e.target.closest('[data-s]');if(c&&c.dataset.s!==SC)setScenario(c.dataset.s,true)});
+let CNTS=null;
+function drawCnt(){if(!CNT||!CNTS||$('#scens').hidden)return;const dpr=Math.min(devicePixelRatio,2);const w=cntc.clientWidth||260,h=110;cntc.width=w*dpr;cntc.height=h*dpr;const c=cntc.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);
+  const X=t=>(t-T0)/(T1-T0)*w,Y=v=>h-14-(v/CNT.of)*(h-24);c.clearRect(0,0,w,h);
+  c.strokeStyle=css('--line');c.beginPath();c.moveTo(0,Y(0));c.lineTo(w,Y(0));c.stroke();
+  c.strokeStyle=css('--crit');c.setLineDash([4,3]);c.beginPath();c.moveTo(0,Y(CNT.min));c.lineTo(w,Y(CNT.min));c.stroke();c.setLineDash([]);
+  c.strokeStyle=css('--accent-2');c.lineWidth=2;c.beginPath();CNTS.forEach(([t,v],i)=>{i?(c.lineTo(X(t),Y(CNTS[i-1][1])),c.lineTo(X(t),Y(v))):c.moveTo(X(t),Y(v))});c.lineTo(w,Y(CNTS[CNTS.length-1][1]));c.stroke();
+  c.fillStyle=css('--muted');c.font='10px "IBM Plex Mono",monospace';c.fillText(CNT.of,2,Y(CNT.of)+10);c.fillText('min '+CNT.min,w-46,Y(CNT.min)-3);
+  c.fillStyle=css('--accent');c.fillRect(X(NOW)-1,4,2,h-18)}
 
-function summary(){
-  const crit = S.acts.filter(a => a[5] <= 0 && !a[7]).length;
-  let h = `<div><span>Start</span><b>${fmtS(0)}</b></div><div><span>Finish</span><b>${fmtS(S.finish)}</b></div>
-    <div><span>Duration</span><b>${S.finish} cal. days</b></div><div><span>Critical activities</span><b>${crit} / ${S.acts.length}</b></div>`;
-  if (BASE){ const dl = S.finish - BASE.finish; h += `<div style="grid-column:1/-1"><span>Finish vs ${BASE.label.split(':')[0].toLowerCase()}</span><b class="delta ${dl > 0 ? 'bad' : 'good'}">${dl > 0 ? '+' : ''}${dl} calendar days</b></div>`; }
-  if (S.dd != null) h += `<div style="grid-column:1/-1"><span>Update data date</span><b>${fmtS(S.dd)}</b></div>`;
-  $('#sum').innerHTML = h;
-  $('#noteBox').innerHTML = S.note ? `<div class="note">${S.note}</div>` : '';
+function renderLayers(){
+  const chk=(id,lab,on,sw)=>`<label class="layer"><input type="checkbox" id="${id}" ${on?'checked':''}>${sw?`<span class="sw" style="background:${sw}"></span>`:''}${esc(lab)}</label>`;
+  const used=new Set(ELS.map(e=>e.s));
+  $('#layers').innerHTML=`<div class="sec"><h3>Systems</h3>${SYS_KEYS.filter(k=>used.has(k)).map(k=>chk('ly_s_'+k,SYS[k][1],layers.sys[k],SYS[k][0])).join('')}</div>
+  <div class="sec"><h3>Building & context</h3>${Ls.map(l=>chk('ly_L_'+l,LAYER_LBL[l]||l,layers.L[l])).join('')}${M.grid||(M.labels||[]).length?chk('ly_grid','Grid lines & labels',layers.grid):''}</div>
+  <div class="sec"><h3>4D display</h3>${chk('ly_ghost','Show planned scope as ghost',layers.ghost)}${chk('ly_glow','Glow on work in progress',layers.glow)}</div>`;
 }
+$('#layers').addEventListener('change',e=>{const id=e.target.id,v=e.target.checked;
+  if(id.startsWith('ly_s_'))layers.sys[id.slice(5)]=v;else if(id.startsWith('ly_L_'))layers.L[id.slice(5)]=v;
+  else if(id==='ly_grid')layers.grid=v;else if(id==='ly_ghost')layers.ghost=v;else if(id==='ly_glow')layers.glow=v;applyState()});
+function renderLegend(){
+  let items;const used=new Set(ELS.filter(e=>e.s!=='HGR').map(e=>e.s));
+  if(cmode==='sys'){items=SYS_KEYS.filter(k=>used.has(k)&&!SYS[k][3]).map(k=>[SYS[k][0],SYS[k][1]]);const sts=new Set();M.sigs.forEach(s=>Object.values(s.tr).forEach(l=>l.forEach(e=>sts.add(e[2]))));
+    for(const k of ['demo','cx','ok','offline','closed'])if(sts.has(k)||(k==='demo'&&sts.has('prog')&&M.sigs.some(s=>s.i0!=='hidden'&&Object.values(s.tr).some(l=>l.some(e=>e[2]==='demo')))))items.push([ST_TINT[k][0],ST_LBL[k]])}
+  else if(cmode==='status')items=[['#6c8fae','Complete'],['#f0912f','In progress'],['#e5483b','In progress, float ≤ 0'],['#9aa5b1','Ghost: not started']];
+  else if(cmode==='float')items=[['#c8372d','Negative float'],['#e0612c','Zero float (critical)'],['#d9a21c','≤ 5 days'],['#3c9a63','> 5 days']];
+  else if(cmode==='wbs')items=WBSL.filter(w=>ACTS.some(a=>a.w===w&&EVS.some(E=>E.inst===a))).map(w=>[WBS_PAL[WBSL.indexOf(w)%WBS_PAL.length],w]);
+  else items=[['#3c9a63','On or ahead of baseline'],['#d9a21c','1–5 days late'],['#c8372d','More than 5 days late'],['#8a5cd0','Not in baseline (fragnet)']];
+  $('#legend').innerHTML=items.slice(0,14).map(([c,l])=>`<div><span class="sw" style="background:${c}"></span>${esc(l)}</div>`).join('');
+}
+$('#cmode').onchange=e=>{cmode=e.target.value;renderLegend();applyState()};
+const sel=$('#scenSel');sel.innerHTML=SCK.map(k=>`<option value="${k}">${esc(M.scen[k].label)}</option>`).join('');sel.onchange=()=>setScenario(sel.value,true);
 
-function counters(){
-  if (!M.counters.length){ $('#cntBox').innerHTML = ''; return; }
-  const c = M.counters[0], av = new Set(c.avail);
-  const val = d => c.elems.filter(id => av.has(stateAt(id, d, S))).length;
-  const v = val(day), minAll = Math.min(...Array.from({length: Math.ceil(S.finish / 2) + 1}, (_, i) => val(i * 2)));
-  $('#cntBox').innerHTML = `<h3>Operational constraint</h3><div class="cnt"><div style="font-size:12px;color:var(--muted)">${c.label}</div>
-    <div class="v ${v < c.min ? 'bad' : 'ok'}">${v} of ${c.of} ${v < c.min ? '⚠ below minimum ' + c.min : '✓ minimum ' + c.min + ' kept'}</div>
-    <div style="font-size:11.5px;color:${minAll < c.min ? 'var(--red)' : 'var(--muted)'}">Lowest in this scenario: ${minAll} of ${c.of}</div><canvas id="spark"></canvas></div>`;
-  const cv = $('#spark'), w = cv.clientWidth || 260, h = 46, r = window.devicePixelRatio || 1; cv.width = w * r; cv.height = h * r;
-  const x = cv.getContext('2d'); x.scale(r, r); const N = 120;
-  const y = v => h - 4 - (v / c.of) * (h - 10);
-  x.strokeStyle = '#e34948'; x.setLineDash([3, 3]); x.beginPath(); x.moveTo(0, y(c.min)); x.lineTo(w, y(c.min)); x.stroke(); x.setLineDash([]);
-  x.strokeStyle = '#2a78d6'; x.lineWidth = 1.6; x.beginPath();
-  for (let i = 0; i <= N; i++){ const d = S.finish * i / N, px = w * i / N; const py = y(val(d)); i ? x.lineTo(px, py) : x.moveTo(px, py); }
-  x.stroke(); const px = w * Math.min(1, day / S.finish); x.strokeStyle = '#1baf7a'; x.beginPath(); x.moveTo(px, 0); x.lineTo(px, h); x.stroke();
-}
+document.querySelectorAll('.tabs').forEach(tb=>tb.addEventListener('click',e=>{const b=e.target.closest('button[data-tab]');if(!b)return;
+  tb.querySelectorAll('button').forEach(x=>{x.setAttribute('aria-selected',x===b);const p=document.getElementById(x.dataset.tab);if(p)p.hidden=x!==b});
+  if(b.dataset.tab==='sched'||b.dataset.tab==='look')$('#schedTools').hidden=b.dataset.tab!=='sched';
+  refreshPanels();if(b.dataset.tab==='scens')drawCnt()}));
 
-// ---------- gantt ----------
-let rows = [], G = {};
-function drawGantt(rebuild){
-  if (!S) return;
-  if (rebuild || !rows.length){
-    rows = []; const groups = {};
-    S.acts.forEach(a => { (groups[a[2]] = groups[a[2]] || []).push(a); });
-    const order = Object.keys(groups).sort((p, q) => Math.min(...groups[p].map(a => a[3])) - Math.min(...groups[q].map(a => a[3])));
-    order.forEach(g => { rows.push({hdr:g, s:Math.min(...groups[g].map(a => a[3])), f:Math.max(...groups[g].map(a => a[4]))});
-      groups[g].sort((p, q) => p[3] - q[3] || p[4] - q[4]).forEach(a => rows.push({a})); });
-  }
-  const cv = $('#gantt'), W = cv.parentElement.clientWidth, RH = 19, H = rows.length * RH + 24, r = window.devicePixelRatio || 1;
-  cv.width = W * r; cv.height = H * r; cv.style.height = H + 'px';
-  const x = cv.getContext('2d'); x.scale(r, r);
-  const LW = Math.min(360, Math.max(170, W * 0.32)), X0 = LW + 10, X1 = W - 14, sx = d => X0 + (d / maxDay) * (X1 - X0);
-  G = {LW, X0, X1, sx, RH, H, x, W};
-  x.fillStyle = '#fff'; x.fillRect(0, 0, W, H);
-  // month grid
-  x.font = '600 10px Inter, sans-serif'; x.fillStyle = '#5f6b7a';
-  const st = new Date(M.start + 'T00:00');
-  for (let d = 0; d <= maxDay; d++){ const t = new Date(st); t.setDate(t.getDate() + d);
-    if (t.getDate() === 1){ const px = sx(d); x.strokeStyle = t.getMonth() === 0 ? '#c5ced8' : '#eef1f5'; x.beginPath(); x.moveTo(px, 0); x.lineTo(px, H); x.stroke();
-      if ((X1 - X0) / maxDay * 30 > 26 || t.getMonth() % 3 === 0) x.fillText(t.toLocaleDateString('en-GB', {month:'short'}) + (t.getMonth() === 0 ? " '" + String(t.getFullYear()).slice(2) : ''), px + 3, 12); } }
-  rows.forEach((rw, i) => {
-    const y = 20 + i * RH;
-    if (rw.hdr){ x.fillStyle = '#f3f6fa'; x.fillRect(0, y, W, RH); x.fillStyle = '#0f2742'; x.font = '700 11px Inter, sans-serif'; x.fillText(rw.hdr, 8, y + 13);
-      x.fillStyle = '#1d3a5f'; x.fillRect(sx(rw.s), y + 7, Math.max(2, sx(rw.f) - sx(rw.s)), 4); return; }
-    const a = rw.a, isSel = selected && selected.code === a[0];
-    if (isSel){ x.fillStyle = '#fff6d6'; x.fillRect(0, y, W, RH); }
-    x.fillStyle = a[8] ? '#6b3fb8' : '#1f2933'; x.font = (isSel ? '700 ' : '') + '11px Inter, sans-serif';
-    let nm = a[0] + '  ' + a[1]; while (x.measureText(nm).width > LW - 14 && nm.length > 4) nm = nm.slice(0, -2);
-    if (nm.length < (a[0] + '  ' + a[1]).length) nm += '…';
-    x.fillText(nm, 14, y + 13);
-    if (BASE && BASE.byCode[a[0]]){ const b = BASE.byCode[a[0]]; x.fillStyle = '#c5ced8'; if (b[7]) {} else x.fillRect(sx(b[3]), y + 14, Math.max(2, sx(b[4]) - sx(b[3])), 3); }
-    const col = a[8] ? '#8a5cd0' : (a[5] <= 0 ? '#e34948' : '#2a78d6');
-    x.fillStyle = col;
-    if (a[7]){ const cx = sx(a[4]), cy = y + 9; x.beginPath(); x.moveTo(cx, cy - 6); x.lineTo(cx + 6, cy); x.lineTo(cx, cy + 6); x.lineTo(cx - 6, cy); x.closePath(); x.fill(); }
-    else { x.fillRect(sx(a[3]), y + 4, Math.max(3, sx(a[4]) - sx(a[3])), 9); }
-  });
-  G.img = x.getImageData(0, 0, W * r, H * r);
-  drawGanttLine();
+function actElIds(a){return ELS.filter(e=>e.sig>=0&&EVS[e.sig]&&EVS[e.sig].codes.has(a.c)).map(e=>e.i)}
+function selectAct(i,fly){
+  selEl=-1;focusAct=(focusAct===i&&!fly)?-1:i;
+  const ids=focusAct>=0?actElIds(ACTS[focusAct]):[];
+  highlight(null);
+  document.querySelectorAll('.g-row').forEach(r=>r.classList.toggle('sel',+r.dataset.a===focusAct));
+  if(fly&&ids.length)flyToIds(ids);
+  const a=ACTS[i];if(fly&&(NOW<a.S||NOW>a.F)&&!a.mile){NOW=a.S+(a.F-a.S)*0.5}else if(fly&&a.mile)NOW=a.S+H;
+  showTab('insp');update();
 }
-function drawGanttLine(){
-  if (!G.x || !G.img) return; const x = G.x, r = window.devicePixelRatio || 1;
-  x.save(); x.setTransform(1, 0, 0, 1, 0, 0); x.putImageData(G.img, 0, 0); x.restore();
-  const px = G.sx(day); x.strokeStyle = '#1baf7a'; x.lineWidth = 2; x.setLineDash([5, 4]); x.beginPath(); x.moveTo(px, 16); x.lineTo(px, G.H); x.stroke(); x.setLineDash([]);
-  if (S.dd != null && S.dd !== day){ const p2 = G.sx(S.dd); x.strokeStyle = 'rgba(27,175,122,.45)'; x.lineWidth = 1; x.beginPath(); x.moveTo(p2, 16); x.lineTo(p2, G.H); x.stroke(); }
-}
-$('#gantt').onclick = e => {
-  const r = e.target.getBoundingClientRect(), i = Math.floor((e.clientY - r.top - 20) / G.RH), rw = rows[i];
-  if (!rw || rw.hdr) return; select(rw.a[0], true);
-};
+function selectEl(i){selEl=i;if(i>=0){highlight([i]);focusAct=-1}else highlight(null);document.querySelectorAll('.g-row').forEach(r=>r.classList.remove('sel'));showTab('insp');applyState();renderInspector()}
+function showTab(id){const b=document.querySelector(`.tabs button[data-tab="${id}"]`);if(b&&b.getAttribute('aria-selected')!=='true')b.click()}
 
-// ---------- selection ----------
-function select(code, fromGantt){
-  const a = S.byCode[code]; if (!a){ selected = null; paint(); drawGantt(); return; }
-  const els = new Set(Object.entries(S.trans).filter(([e, ts]) => ts.some(t => t[2] === code)).map(([e]) => e));
-  selected = {code, elems: els};
-  const b = BASE && BASE.byCode[code];
-  const tf = a[5], durCal = a[4] - a[3];
-  let h = `<span class="code">${a[0]}</span> ${a[1]}<br>${a[7] ? 'Milestone: ' + fmtS(a[4]) : fmtS(a[3]) + ' → ' + fmtS(a[4]) + ` (${durCal} cal. days)`}<br>
-    Total float: <b style="color:${tf <= 0 ? 'var(--red)' : 'inherit'}">${tf} working days${tf <= 0 ? ' · critical' : ''}</b><br>Trade: ${a[6]} · WBS: ${a[2]}`;
-  if (b){ const df = a[4] - b[4]; h += `<br>Baseline finish: ${fmtS(b[4])} <span class="delta ${df > 0 ? 'bad' : 'good'}">(${df > 0 ? '+' : ''}${df} d)</span>`; }
-  if (a[8]) h += '<br><b style="color:var(--purple)">Fragnet activity (delay event)</b>';
-  if (els.size) h += `<br><span style="color:var(--muted)">${els.size} model element${els.size > 1 ? 's' : ''} highlighted in yellow</span>`;
-  $('#sel').innerHTML = h;
-  if (fromGantt && !a[7] && (day < a[3] || day > a[4])) setDay(Math.round((a[3] + a[4]) / 2)); else paint();
-  drawGantt();
-  if (!fromGantt){ const idx = rows.findIndex(r => r.a && r.a[0] === code); if (idx >= 0) $('#gwrap').scrollTop = Math.max(0, 20 + idx * G.RH - 80); }
+/* ---------------- camera views ---------------- */
+let fly=null;
+function flyTo(pos,tgt,ms=700){fly={p0:camera.position.clone(),t0:controls.target.clone(),p1:pos,t1:tgt,s:performance.now(),ms}}
+function bboxOfIds(ids){const bb=new THREE.Box3();const v=new THREE.Vector3();for(const i of ids)for(const pr of ELS[i].p){if(pr[0]==='P'){bb.expandByPoint(v.set(pr[1],pr[2],pr[3]));bb.expandByPoint(v.set(pr[4],pr[5],pr[6]))}else{bb.expandByPoint(v.set(pr[1],pr[2],pr[3]))}}return bb}
+function flyToIds(ids){const bb=bboxOfIds(ids);const c=bb.getCenter(new THREE.Vector3());const s=Math.max(bb.getSize(new THREE.Vector3()).length(),12);
+  flyTo(new THREE.Vector3(c.x-s*.55,c.y+s*.7,c.z+s*.95),c)}
+const asp=()=>{const w=vp.clientWidth,h=vp.clientHeight;return h?w/h:1.6};
+function isoPose(){const k=asp()<1?1.35:1;const tv=M.views&&M.views.find(v=>v[0]==='iso');
+  if(tv){const t=new THREE.Vector3(tv[5],tv[6],tv[7]);const p=new THREE.Vector3(tv[2],tv[3],tv[4]).sub(t).multiplyScalar(k).add(t);return[p,t]}
+  const t=new THREE.Vector3(CEN.x,Math.max(0,CEN.y*.5),CEN.z);return[new THREE.Vector3(CEN.x-SPAN*.52*k,SPAN*.5*k+SZ.y*.3,CEN.z+SPAN*.72*k),t]}
+function setView(v){
+  if(v==='iso'){const[p,t]=isoPose();flyTo(p,t)}
+  else if(v==='top')flyTo(new THREE.Vector3(CEN.x,SPAN*1.15*(asp()<1?1.6:1),CEN.z+1),new THREE.Vector3(CEN.x,0,CEN.z));
+  else if(v==='fit'){if(selEl>=0)flyToIds([selEl]);else if(focusAct>=0)flyToIds(actElIds(ACTS[focusAct]));else setView('iso')}
+  else{const vw=(M.views||[]).find(x=>x[0]===v);if(vw)flyTo(new THREE.Vector3(vw[2],vw[3],vw[4]),new THREE.Vector3(vw[5],vw[6],vw[7]))}
 }
-const ray = new THREE.Raycaster(), mouse = new THREE.Vector2(); let down = null;
-canvas.addEventListener('pointerdown', e => down = [e.clientX, e.clientY]);
-canvas.addEventListener('pointerup', e => {
-  if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 5) return;
-  const r = canvas.getBoundingClientRect(); mouse.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
-  ray.setFromCamera(mouse, camera);
-  const hit = ray.intersectObjects(Object.values(meshes).filter(m => m.visible && m.material.opacity > 0.2))[0];
-  if (!hit){ selected = null; $('#sel').innerHTML = '<span class="empty">Click an element in the model or a bar in the Gantt chart.</span>'; paint(); drawGantt(); return; }
-  const a = actAt(hit.object.userData.id, day);
-  if (a) select(a[0], false);
-  else { selected = null; $('#sel').innerHTML = `<b>${hit.object.userData.id}</b><br><span class="empty">Existing element, not part of the works.</span>`; paint(); drawGantt(); }
-});
+$('#views').innerHTML=`<button data-v="iso">Isometric</button><button data-v="top">Plan</button>${(M.views||[]).filter(v=>v[0]!=='iso').map(v=>`<button data-v="${esc(v[0])}">${esc(v[1])}</button>`).join('')}<button data-v="fit">Fit selection</button><a class="views-xer" href="xer/${MID}.xer" download style="display:none"></a>`;
+$('#views').addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(b)setView(b.dataset.v)});
+
+/* ---------------- picking ---------------- */
+const ray=new THREE.Raycaster();const mouse=new THREE.Vector2();
+function pick(ev){
+  const r=renderer.domElement.getBoundingClientRect();mouse.set((ev.clientX-r.left)/r.width*2-1,-(ev.clientY-r.top)/r.height*2+1);
+  ray.setFromCamera(mouse,camera);
+  const hits=ray.intersectObjects(meshes.filter(m=>m.visible&&m.material.opacity>.2),false);
+  for(const h of hits){const g=h.object.geometry;const eid=g.attributes.aEid.getX(h.face.a);if(eid<0)continue;
+    const u=h.object.material.userData.u;const q=g.attributes.aSeq.getX(h.face.a);if(u.uRev.value<.5?q>u.uProg.value:q<=u.uProg.value)continue;
+    if(focusAct>=0&&!(EVS[ELS[eid].sig]&&EVS[ELS[eid].sig].codes.has(ACTS[focusAct].c)))continue;
+    return eid}
+  return -1;
+}
+let down=null;
+renderer.domElement.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY}});
+renderer.domElement.addEventListener('pointerup',e=>{if(!down)return;const moved=Math.hypot(e.clientX-down.x,e.clientY-down.y);down=null;if(moved>5)return;
+  const i=pick(e);if(i>=0)selectEl(i);else{selEl=-1;focusAct=-1;highlight(null);document.querySelectorAll('.g-row').forEach(r=>r.classList.remove('sel'));applyState();renderInspector()}});
+let lastHover=0;const tip=$('#tip');
+renderer.domElement.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||e.buttons)return;const now=performance.now();if(now-lastHover<70)return;lastHover=now;
+  const i=pick(e);if(i<0){tip.style.display='none';renderer.domElement.style.cursor='';return}
+  const el=ELS[i];const E=EVS[el.sig];const a=E&&E.inst;const r=vp.getBoundingClientRect();
+  tip.innerHTML=`${esc(el.n)}<br><code>${a?esc(a.c)+' · '+fmtS(a.S)+' → '+fmtS(a.F):'Existing / context'}</code>`;
+  tip.style.display='block';tip.style.left=Math.min(e.clientX-r.left+14,r.width-290)+'px';tip.style.top=(e.clientY-r.top+14)+'px';renderer.domElement.style.cursor='pointer'});
+renderer.domElement.addEventListener('pointerleave',()=>tip.style.display='none');
+
+/* ---------------- timeline canvas ---------------- */
+const tlc=$('#tlc');const tctx=tlc.getContext('2d');
+let DAYS,crewDay,curve,bcurve,maxCrew,MILES,CNTBAD;
+function curveOf(L){const wk=L.filter(a=>!a.mile);const tot=wk.reduce((s,a)=>s+a.WH,0);return DAYS.map(d=>{let w=0;for(const a of wk)w+=prog(a,d+17*H)*a.WH;return w/tot})}
+function buildTL(){
+  DAYS=[];for(let d=Math.floor(T0/D)*D;d<=T1;d+=D)DAYS.push(d);
+  crewDay=DAYS.map(d=>crewAt(d+12*H));curve=curveOf(ACTS);bcurve=BASE?curveOf(BASE):null;
+  maxCrew=Math.max(...crewDay,1);MILES=ACTS.filter(a=>a.mile);
+  CNTBAD=null;$('#tlCnt').hidden=!CNT;
+  if(CNT){CNTS=[];let last=-1;for(const d of DAYS){const v=counterAt(CNT,d+12*H);if(v!==last){CNTS.push([d,v]);last=v}}CNTBAD=DAYS.map(d=>counterAt(CNT,d+12*H)<CNT.min)}
+}
+function drawTL(){
+  if(!DAYS)return;const dpr=Math.min(devicePixelRatio,2);const w=tlc.clientWidth,h=tlc.clientHeight;if(!w)return;if(tlc.width!==w*dpr||tlc.height!==h*dpr){tlc.width=w*dpr;tlc.height=h*dpr}
+  tctx.setTransform(dpr,0,0,dpr,0,0);tctx.clearRect(0,0,w,h);
+  const fg=css('--fg'),mu=css('--muted'),ln=css('--line'),ac=css('--accent'),a2=css('--accent-2'),bar=css('--bar');
+  const X=t=>(t-T0)/(T1-T0)*w;const top=14,bot=h-16,ch=bot-top;
+  if(DAYS.length<400){tctx.fillStyle=ln;DAYS.forEach(d=>{if(!isWork(d))tctx.fillRect(X(d),top,Math.max(1,X(d+D)-X(d)),ch)})}
+  if(CNTBAD){tctx.fillStyle='rgba(200,55,45,.22)';DAYS.forEach((d,i)=>{if(CNTBAD[i])tctx.fillRect(X(d),top,Math.max(1,X(d+D)-X(d)),ch)})}
+  tctx.fillStyle=bar;DAYS.forEach((d,i)=>{const v=crewDay[i]/maxCrew*ch*.92;tctx.fillRect(X(d)+.5,bot-v,Math.max(1,X(d+D)-X(d)-(DAYS.length<400?1:0)),v)});
+  if(bcurve){tctx.strokeStyle=mu;tctx.setLineDash([5,4]);tctx.lineWidth=1.5;tctx.beginPath();DAYS.forEach((d,i)=>{const x=X(d+17*H),y=bot-bcurve[i]*ch;i?tctx.lineTo(x,y):tctx.moveTo(x,y)});tctx.stroke();tctx.setLineDash([])}
+  tctx.strokeStyle=a2;tctx.lineWidth=2;tctx.beginPath();DAYS.forEach((d,i)=>{const x=X(d+17*H),y=bot-curve[i]*ch;i?tctx.lineTo(x,y):tctx.moveTo(x,y)});tctx.stroke();
+  tctx.font='10.5px "IBM Plex Mono", monospace';tctx.fillStyle=mu;tctx.textBaseline='top';
+  {const months=[];let d=new Date(T0);let m=Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),1);while(m<T1){if(m>=T0)months.push(m);const x=new Date(m);m=Date.UTC(x.getUTCFullYear(),x.getUTCMonth()+1,1)}
+   const step=Math.max(1,Math.ceil(months.length/(w/70)));months.forEach((m,i)=>{tctx.fillRect(X(m),0,1,i%step?6:h);if(i%step===0)tctx.fillText(MON[new Date(m).getUTCMonth()]+' ’'+String(new Date(m).getUTCFullYear()).slice(2),X(m)+4,1)})}
+  MILES.forEach(a=>{const x=X(a.S);tctx.fillStyle=a.fr?'#8a5cd0':fg;tctx.save();tctx.translate(x,bot+7);tctx.rotate(Math.PI/4);tctx.fillRect(-3.5,-3.5,7,7);tctx.restore()});
+  if(TODAY){tctx.strokeStyle=mu;tctx.setLineDash([3,3]);tctx.lineWidth=1;tctx.beginPath();tctx.moveTo(X(TODAY),top);tctx.lineTo(X(TODAY),bot);tctx.stroke();tctx.setLineDash([]);tctx.fillStyle=mu;tctx.fillText('data date',X(TODAY)+3,top+1)}
+  const xn=X(NOW);tctx.fillStyle=ac;tctx.fillRect(xn-1,top-4,2,ch+8);tctx.beginPath();tctx.moveTo(xn-6,top-6);tctx.lineTo(xn+6,top-6);tctx.lineTo(xn,top+2);tctx.fill();
+}
+function tlSet(ev){const r=tlc.getBoundingClientRect();const f=Math.min(1,Math.max(0,(ev.clientX-r.left)/r.width));NOW=T0+f*(T1-T0);update()}
+let scrub=false;
+tlc.addEventListener('pointerdown',e=>{scrub=true;tlc.setPointerCapture(e.pointerId);tlSet(e)});
+tlc.addEventListener('pointermove',e=>{if(scrub)tlSet(e)});
+tlc.addEventListener('pointerup',()=>scrub=false);
+
+/* ---------------- playback ---------------- */
+let playing=false,lastT=0;
+$('#bPlay').onclick=()=>{playing=!playing;$('#bPlay').textContent=playing?'Pause':'Play';if(playing&&NOW>=T1-D)NOW=T0;lastT=performance.now()};
+const step=d=>{NOW=Math.min(T1,Math.max(T0,NOW+d*D));update()};
+$('#bDayB').onclick=()=>step(-1);$('#bDayF').onclick=()=>step(1);$('#bWkB').onclick=()=>step(-7);$('#bWkF').onclick=()=>step(7);
+$('#bStart').onclick=()=>{NOW=T_START;update()};$('#bEnd').onclick=()=>{NOW=T_END+D;update()};$('#bToday').onclick=()=>{if(TODAY){NOW=TODAY;update()}};
+addEventListener('keydown',e=>{if(e.target.closest('input,select'))return;if(e.code==='Space'){e.preventDefault();$('#bPlay').click()}if(e.key==='ArrowRight')step(e.shiftKey?7:1);if(e.key==='ArrowLeft')step(e.shiftKey?-7:-1)});
+
+$('#themeBtn').onclick=()=>{const r=document.documentElement;const cur=r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');r.dataset.theme=cur==='dark'?'light':'dark';themeChanged()};
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',themeChanged);
+function themeChanged(){scene.background=new THREE.Color(css('--vp'));drawTL();drawCnt()}
+
+/* ---------------- main loop ---------------- */
+let lastPanel=0;
+function refreshPanels(){updateKPIs();updateGanttBars();positionGanttLines();renderInspector();if(!$('#look').hidden)renderLook();drawCnt()}
+function update(){applyState();drawTL();refreshPanels();if(filt.active)renderSchedule()}
+function resize(){const w=vp.clientWidth,h=vp.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/Math.max(h,1);camera.updateProjectionMatrix();drawTL();positionGanttLines()}
+new ResizeObserver(resize).observe(vp);new ResizeObserver(()=>{drawTL();positionGanttLines()}).observe(tlc);
+function loop(t){
+  requestAnimationFrame(loop);
+  if(playing){const dt=Math.min(.1,(t-lastT)/1000);lastT=t;NOW+=dt*(+$('#speed').value)*D;if(NOW>=T1){NOW=T1;playing=false;$('#bPlay').textContent='Play'}
+    applyState();drawTL();if(t-lastPanel>300){lastPanel=t;refreshPanels()}}
+  pulse=t/1000;
+  if(!playing)applyGlowOnly();
+  if(fly){const k=Math.min(1,(t-fly.s)/fly.ms);const e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;camera.position.lerpVectors(fly.p0,fly.p1,e);controls.target.lerpVectors(fly.t0,fly.t1,e);if(k>=1)fly=null}
+  controls.update();renderer.render(scene,camera);
+}
+function applyGlowOnly(){const k=.18+.14*Math.sin(pulse*5);for(const m of meshes){if(!m.visible)continue;const u=m.material.userData.u;const si=ELS[m.userData.ids[0]].sig;const inf=memo.get(si);if(!inf)continue;
+  if(layers.glow&&(inf.st==='prog'||inf.st==='demo')&&!(focusAct>=0))u.uGlow.value.setRGB(k,k*.55,k*.1);if(inf.st==='cx'&&cmode==='sys')u.uTintMix.value=.35+.25*Math.sin(pulse*4)}}
+
+renderLayers();themeChanged();
+setScenario(SC);
+if(Q.get('crit')){cmode='float';$('#cmode').value='float';renderLegend();applyState()}
+resize();{const[p,t]=isoPose();camera.position.copy(p);controls.target.copy(t)}
+$('#loading').remove();requestAnimationFrame(loop);
+window.__4d={renderer,scene,camera,M,get ACTS(){return ACTS},ELS,setNow:t=>{NOW=t;update()},setFrac:f=>{NOW=T0+f*(T1-T0);update()},setView,selectAct,setScenario,pickAt:(x,y)=>pick({clientX:x,clientY:y}),selectEl,get NOW(){return NOW}};
+window.__ready=true;
 </script>
-</body>
-</html>
+</body></html>

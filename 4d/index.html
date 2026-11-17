@@ -51,8 +51,8 @@ footer{background:#0b1e33;color:#7d93ab;font-size:13px;padding:20px 0;text-align
 <header><div class="wrap">
   <div class="kick">4D model gallery · CPM-linked</div>
   <h1>Watch the schedule build the project.</h1>
-  <p>Eleven fictional projects across data centers, energy, aviation, water, towers, roads and renovation. Every element is driven by an activity in its own logic-driven baseline, so the model shows planning decisions, not just animation: crew scenarios, live-facility phasing, shutdowns, slab cycles and a time impact analysis.</p>
-  <div class="feats"><div><b>CPM-linked</b>Each element builds on its activity's dates; click it to see dates and float.</div><div><b>Scenarios</b>Switch crews, phasing or cycle time and see the finish move.</div><div><b>Update vs baseline</b>Orange outlines show work behind the baseline at any date.</div><div><b>Download the XER</b>Every baseline opens in Primavera P6.</div></div>
+  <p>Eleven fictional projects across data centers, energy, aviation, water, towers, roads and renovation, modelled to an LOD 300–350 level: steel I-sections, pipe spools with hangers and valves, equipment, racks, facade units and wall panels. Every element is driven by an activity in its own logic-driven baseline, so the model shows planning decisions, not just animation: crew scenarios, live-facility phasing, shutdowns, slab cycles and a time impact analysis.</p>
+  <div class="feats"><div><b>CPM-linked, element by element</b>Pipes, panels and slabs install in sequence inside each activity; click any element for its properties, dates and float.</div><div><b>Scenarios</b>Switch crews, phasing or cycle time and see the finish move.</div><div><b>Update vs baseline</b>Colour the model by variance, float or WBS; baseline bars and S-curve sit under the update.</div><div><b>Download the XER</b>Every baseline opens in Primavera P6.</div></div>
 </div></header>
 <main><div class="wrap">
   <div class="filters" id="f"><button class="on" data-f="all">All (12)</button><button data-f="Data centers">Data centers</button><button data-f="Energy &amp; utilities">Energy &amp; utilities</button><button data-f="Aviation">Aviation</button><button data-f="Water &amp; wastewater">Water &amp; wastewater</button><button data-f="Residential &amp; hospitality">Residential &amp; hospitality</button><button data-f="Roads &amp; highways">Roads &amp; highways</button><button data-f="Commercial &amp; government">Commercial &amp; government</button><button data-f="Delay analysis (TIA)">Delay analysis (TIA)</button></div>
@@ -60,77 +60,77 @@ footer{background:#0b1e33;color:#7d93ab;font-size:13px;padding:20px 0;text-align
 <article class="card" data-s="Data centers">
   <a class="img" href="view.html?m=dc-12mw"><img src="thumbs/dc-12mw.jpg" alt="Colocation Data Center, 2 Data Halls (12 MW)" loading="lazy"><span class="badge">Data centers</span></a>
   <div class="body"><h3>Colocation Data Center, 2 Data Halls (12 MW)</h3>
-    <div class="meta">83 activities · 209 model elements · 3 scenarios</div>
+    <div class="meta">83 activities · 1,284 model elements · 3 scenarios</div>
     <p>Two 6 MW data halls, central electrical building, generator yard and roof chillers. Baseline with long-lead equipment and commissioning L1-L5.</p><ul><li>Crew scenario: 4 vs 6 flushing crews</li><li>Update vs baseline</li><li>Commissioning L3–L5</li></ul>
     <div class="act"><a class="btn primary" href="view.html?m=dc-12mw">Open 4D model</a><a class="btn light" href="xer/dc-12mw.xer" download>⬇ P6 XER</a></div></div>
 </article>
 <article class="card" data-s="Data centers">
   <a class="img" href="view.html?m=dc-power-yard"><img src="thumbs/dc-power-yard.jpg" alt="Data Center Power Yard: 14 Modular Power Units" loading="lazy"><span class="badge">Data centers</span></a>
   <div class="body"><h3>Data Center Power Yard: 14 Modular Power Units</h3>
-    <div class="meta">77 activities · 48 model elements · 3 scenarios</div>
+    <div class="meta">79 activities · 242 model elements · 3 scenarios</div>
     <p>Prefabricated power modules (e-houses) set on piled pads, with transformers and MV cable trench. Repetitive sequence driven by a module-setting rate.</p><ul><li>Crew scenario: 1 vs 2 rigging crews</li><li>Repetitive unit sequence</li><li>Update vs baseline</li></ul>
     <div class="act"><a class="btn primary" href="view.html?m=dc-power-yard">Open 4D model</a><a class="btn light" href="xer/dc-power-yard.xer" download>⬇ P6 XER</a></div></div>
 </article>
 <article class="card" data-s="Energy &amp; utilities">
   <a class="img" href="view.html?m=substation-132kv"><img src="thumbs/substation-132kv.jpg" alt="132/33 kV Substation Tie-in for a Data Center Campus" loading="lazy"><span class="badge">Energy &amp; utilities</span></a>
   <div class="body"><h3>132/33 kV Substation Tie-in for a Data Center Campus</h3>
-    <div class="meta">23 activities · 33 model elements · 2 scenarios</div>
+    <div class="meta">23 activities · 117 model elements · 2 scenarios</div>
     <p>Two 90 MVA transformers, 132 kV gantries, control building and 33 kV cable route to the campus. Includes a planned utility outage window to tie in.</p><ul><li>Planned utility outage window</li><li>Long-lead transformers</li><li>Update vs baseline</li></ul>
     <div class="act"><a class="btn primary" href="view.html?m=substation-132kv">Open 4D model</a><a class="btn light" href="xer/substation-132kv.xer" download>⬇ P6 XER</a></div></div>
 </article>
 <article class="card" data-s="Aviation">
   <a class="img" href="view.html?m=airport-concourse"><img src="thumbs/airport-concourse.jpg" alt="Live Airport Concourse: Restroom Refurbishment" loading="lazy"><span class="badge">Aviation</span></a>
   <div class="body"><h3>Live Airport Concourse: Restroom Refurbishment</h3>
-    <div class="meta">41 activities · 57 model elements · 3 scenarios</div>
+    <div class="meta">53 activities · 1,055 model elements · 3 scenarios</div>
     <p>Twelve restroom blocks refurbished in an operating concourse. Blocks close in phases so passenger capacity never drops below 10 of 12.</p><ul><li>Live-operations phasing</li><li>Capacity counter (min 10 of 12)</li><li>Scenario: 3 blocks per phase</li></ul>
     <div class="act"><a class="btn primary" href="view.html?m=airport-concourse">Open 4D model</a><a class="btn light" href="xer/airport-concourse.xer" download>⬇ P6 XER</a></div></div>
 </article>
 <article class="card" data-s="Aviation">
   <a class="img" href="view.html?m=airfield-apron"><img src="thumbs/airfield-apron.jpg" alt="Airfield Apron Reconstruction, Phased" loading="lazy"><span class="badge">Aviation</span></a>
   <div class="body"><h3>Airfield Apron Reconstruction, Phased</h3>
-    <div class="meta">46 activities · 128 model elements · 2 scenarios</div>
+    <div class="meta">58 activities · 676 model elements · 2 scenarios</div>
     <p>Concrete apron replaced in six phases while aircraft parking moves around the work. Each phase: close, demolish, subbase, pave, seal, mark, reopen.</p><ul><li>Aircraft parking moves with phases</li><li>Weather-day update</li><li>Capacity counter</li></ul>
     <div class="act"><a class="btn primary" href="view.html?m=airfield-apron">Open 4D model</a><a class="btn light" href="xer/airfield-apron.xer" download>⬇ P6 XER</a></div></div>
 </article>
 <article class="card" data-s="Water &amp; wastewater">
   <a class="img" href="view.html?m=pumping-station"><img src="thumbs/pumping-station.jpg" alt="Wastewater Pumping Station: PLC &amp; Controls Upgrade" loading="lazy"><span class="badge">Water &amp; wastewater</span></a>
   <div class="body"><h3>Wastewater Pumping Station: PLC &amp; Controls Upgrade</h3>
-    <div class="meta">30 activities · 26 model elements · 3 scenarios</div>
+    <div class="meta">30 activities · 132 model elements · 3 scenarios</div>
     <p>Five duty pumps cut over to a new PLC one at a time in a live plant. At least 4 of 5 pumps must stay online during every shutdown.</p><ul><li>Live plant shutdowns</li><li>Pumps-online counter (min 4 of 5)</li><li>Scenario: paired shutdowns</li></ul>
     <div class="act"><a class="btn primary" href="view.html?m=pumping-station">Open 4D model</a><a class="btn light" href="xer/pumping-station.xer" download>⬇ P6 XER</a></div></div>
 </article>
 <article class="card" data-s="Residential &amp; hospitality">
   <a class="img" href="view.html?m=residential-tower"><img src="thumbs/residential-tower.jpg" alt="Residential Tower, 2B + G + 35 (GCC)" loading="lazy"><span class="badge">Residential &amp; hospitality</span></a>
   <div class="body"><h3>Residential Tower, 2B + G + 35 (GCC)</h3>
-    <div class="meta">187 activities · 288 model elements · 3 scenarios</div>
+    <div class="meta">187 activities · 2,805 model elements · 3 scenarios</div>
     <p>Reinforced-concrete tower with a jump-formed core, 6-day slab cycle, unitised facade trailing the frame and MEP / finishes chasing floor by floor.</p><ul><li>Slab-cycle scenario: 5 / 6 / 7 days</li><li>Facade trailing the frame</li><li>Behind-baseline ghost floors</li></ul>
     <div class="act"><a class="btn primary" href="view.html?m=residential-tower">Open 4D model</a><a class="btn light" href="xer/residential-tower.xer" download>⬇ P6 XER</a></div></div>
 </article>
 <article class="card" data-s="Roads &amp; highways">
   <a class="img" href="view.html?m=road-resurfacing"><img src="thumbs/road-resurfacing.jpg" alt="Arterial Road Resurfacing Program" loading="lazy"><span class="badge">Roads &amp; highways</span></a>
   <div class="body"><h3>Arterial Road Resurfacing Program</h3>
-    <div class="meta">40 activities · 31 model elements · 2 scenarios</div>
+    <div class="meta">46 activities · 835 model elements · 2 scenarios</div>
     <p>Six urban road sections milled and repaved under lane closures by one paving crew moving location to location.</p><ul><li>Mill → base → pave → stripe</li><li>Utility conflict update</li><li>One crew moving section to section</li></ul>
     <div class="act"><a class="btn primary" href="view.html?m=road-resurfacing">Open 4D model</a><a class="btn light" href="xer/road-resurfacing.xer" download>⬇ P6 XER</a></div></div>
 </article>
 <article class="card" data-s="Residential &amp; hospitality">
   <a class="img" href="view.html?m=hotel-wood-frame"><img src="thumbs/hotel-wood-frame.jpg" alt="Hotel, 4-Storey Wood Frame" loading="lazy"><span class="badge">Residential &amp; hospitality</span></a>
   <div class="body"><h3>Hotel, 4-Storey Wood Frame</h3>
-    <div class="meta">43 activities · 39 model elements · 2 scenarios</div>
+    <div class="meta">43 activities · 1,510 model elements · 2 scenarios</div>
     <p>120-key hotel: concrete podium slab, light-gauge wood frame in two wings, trusses and roof, envelope following the frame, then MEP and finishes floor by floor.</p><ul><li>Two-wing wood frame</li><li>Dry-in milestone</li><li>Update vs baseline</li></ul>
     <div class="act"><a class="btn primary" href="view.html?m=hotel-wood-frame">Open 4D model</a><a class="btn light" href="xer/hotel-wood-frame.xer" download>⬇ P6 XER</a></div></div>
 </article>
 <article class="card" data-s="Commercial &amp; government">
   <a class="img" href="view.html?m=office-renovation"><img src="thumbs/office-renovation.jpg" alt="Occupied Office Campus Renovation" loading="lazy"><span class="badge">Commercial &amp; government</span></a>
   <div class="body"><h3>Occupied Office Campus Renovation</h3>
-    <div class="meta">54 activities · 23 model elements · 3 scenarios</div>
+    <div class="meta">54 activities · 1,056 model elements · 3 scenarios</div>
     <p>Two 5-storey occupied office buildings renovated floor by floor. Staff move to swing space; at least 8 of 10 floors stay in use at all times.</p><ul><li>Occupied building phasing</li><li>Floors-in-use counter (min 8 of 10)</li><li>Scenarios: 1 / 2 / 3 floors</li></ul>
     <div class="act"><a class="btn primary" href="view.html?m=office-renovation">Open 4D model</a><a class="btn light" href="xer/office-renovation.xer" download>⬇ P6 XER</a></div></div>
 </article>
 <article class="card" data-s="Delay analysis (TIA)">
   <a class="img" href="view.html?m=mall-infrastructure-tia"><img src="thumbs/mall-infrastructure-tia.jpg" alt="Mall Infrastructure Package: Time Impact Analysis" loading="lazy"><span class="badge">Delay analysis (TIA)</span></a>
   <div class="body"><h3>Mall Infrastructure Package: Time Impact Analysis</h3>
-    <div class="meta">22 activities · 27 model elements · 2 scenarios</div>
+    <div class="meta">28 activities · 484 model elements · 2 scenarios</div>
     <p>Internal roads and utility networks for a retail mall. A client-instructed sewer diversion (CD-07) is modelled as a fragnet to show its impact on completion.</p><ul><li>TIA mode: unimpacted vs impacted</li><li>Fragnet CD-07 in purple</li><li>Time impact on completion</li></ul>
     <div class="act"><a class="btn primary" href="view.html?m=mall-infrastructure-tia">Open 4D model</a><a class="btn light" href="xer/mall-infrastructure-tia.xer" download>⬇ P6 XER</a></div></div>
 </article>
@@ -146,9 +146,9 @@ footer{background:#0b1e33;color:#7d93ab;font-size:13px;padding:20px 0;text-align
   </div>
   <h2>How to use the models</h2>
   <div class="how">
-    <div><h4>1 · Play or scrub the data date</h4><p>Press Play or drag the slider. Elements appear in orange while work is in progress and take their trade colour when complete.</p></div>
+    <div><h4>1 · Play or scrub the data date</h4><p>Press Play or drag the timeline. Elements install in sequence and glow while their activity is in progress; the planned scope shows as a ghost. The timeline shows crew per day and the S-curve.</p></div>
     <div><h4>2 · Switch the scenario</h4><p>Use the scenario menu to compare crews, phasing or the latest update. The summary shows how the finish date moves.</p></div>
-    <div><h4>3 · Turn on the overlays</h4><p>Critical path colours driving work red. Behind baseline outlines late work in orange. Click any element or Gantt bar for its activity, dates and float.</p></div>
+    <div><h4>3 · Inspect and colour</h4><p>Click any element or Gantt bar for its activity, predecessors, dates and float. Colour by status, total float, WBS or variance against the baseline, and use the look-ahead tab for the next three weeks.</p></div>
   </div>
 </div></main>
 <footer>All projects are fictional demonstrations built by Khaled Maddah · Planning & Scheduling Engineer</footer>

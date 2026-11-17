@@ -29,7 +29,7 @@ ERMHDR	25.12	2026-08-29	Project	ADMIN	khale	dbxDatabaseNoName	Project Management
 %R	1470	540	Xa6CQnIfnU8CbFYoCoyj5Y	4	Manufacturing	<html>  <head>      </head>  <body>    Manufacturing  </body></html>
 %T	PROJECT
 %F	proj_id	fy_start_month_num	rsrc_self_add_flag	allow_complete_flag	rsrc_multi_assign_flag	checkout_flag	project_flag	step_complete_flag	cost_qty_recalc_flag	batch_sum_flag	name_sep_char	def_complete_pct_type	proj_short_name	acct_id	orig_proj_id	source_proj_id	base_type_id	clndr_id	sum_base_proj_id	task_code_base	task_code_step	priority_num	wbs_max_sum_level	strgy_priority_num	last_checksum	critical_drtn_hr_cnt	def_cost_per_qty	last_recalc_date	plan_start_date	plan_end_date	scd_end_date	add_date	last_tasksum_date	fcst_start_date	def_duration_type	task_code_prefix	guid	def_qty_type	add_by_name	web_local_root_path	proj_url	def_rate_type	add_act_remain_flag	act_this_per_link_flag	def_task_type	act_pct_link_flag	critical_path_type	task_code_prefix_flag	def_rollup_dates_flag	use_project_baseline_flag	rem_target_link_flag	reset_planned_flag	allow_neg_act_flag	sum_assign_level	last_fin_dates_id	fintmpl_id	last_baseline_update_date	cr_external_key	apply_actuals_date	location_id	last_schedule_date	loaded_scope_level	export_flag	new_fin_dates_id	baselines_to_export	baseline_names_to_export	next_data_date	base_proj_id	base_proj_id1	base_proj_id2	close_period_flag	sum_refresh_date	trsrcsum_loaded	sumtask_loaded
-%R	5101	1	Y	Y	Y	N	Y	N	N	Y	.	CP_Drtn	DC-POWER-YARD					7101		1000	10	10	2	500		0	0.0000	2027-03-01 08:00	2027-03-01 08:00		2027-09-08 16:00	2026-08-29 00:00			DT_FixedDUR2	A	BcLbYsmfz8QA524hMgbhGQ	QT_Hour	ADMIN			COST_PER_QTY	N	Y	TT_Task	Y	CT_TotFloat	Y	Y	Y	Y	N	N	SL_Taskrsrc		1						7	Y											
+%R	5101	1	Y	Y	Y	N	Y	N	N	Y	.	CP_Drtn	DC-POWER-YARD					7101		1000	10	10	2	500		0	0.0000	2027-03-01 08:00	2027-03-01 08:00		2027-09-08 16:00	2026-08-29 00:00			DT_FixedDUR2	A	nRJb1+Ztd6C9OY+62A3SGA	QT_Hour	ADMIN			COST_PER_QTY	N	Y	TT_Task	Y	CT_TotFloat	Y	Y	Y	Y	N	N	SL_Taskrsrc		1						7	Y											
 %T	SCHEDOPTIONS
 %F	schedoptions_id	proj_id	sched_outer_depend_type	sched_open_critical_flag	sched_lag_early_start_flag	sched_retained_logic	sched_setplantoforecast	sched_float_type	sched_calendar_on_relationship_lag	sched_use_expect_end_flag	sched_progress_override	sched_level_float_thrs_cnt	sched_level_outer_assign_flag	sched_level_outer_assign_priority	sched_level_over_alloc_pct	sched_level_within_float_flag	sched_level_keep_sched_date_flag	sched_level_all_rsrc_flag	sched_use_project_end_date_for_float	enable_multiple_longest_path_calc	limit_multiple_longest_path_calc	max_multiple_longest_path	use_total_float_multiple_longest_paths	key_activity_for_multiple_longest_paths	LevelPriorityList
 %R	9101	5101	SD_Both	N	N	Y	N	FT_FF	rcal_Predecessor	Y	N	0	N	1	25	N	Y	N	Y	N	N	10	N		priority_type,ASC
@@ -38,91 +38,93 @@ ERMHDR	25.12	2026-08-29	Project	ADMIN	khale	dbxDatabaseNoName	Project Management
 %R	7101	N	5-day x 8h	5101		2026-11-01 00:00	CA_Project	8	40	172	2080	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|16:00)())))    (0||3()(      (0||0(s|08:00|f|16:00)())))    (0||4()(      (0||0(s|08:00|f|16:00)())))    (0||5()(      (0||0(s|08:00|f|16:00)())))    (0||6()(      (0||0(s|08:00|f|16:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()())))
 %T	PROJWBS
 %F	wbs_id	proj_id	obs_id	seq_num	est_wt	proj_node_flag	sum_data_flag	status_code	wbs_short_name	wbs_name	phase_id	parent_wbs_id	ev_user_pct	ev_etc_user_value	orig_cost	indep_remain_total_cost	ann_dscnt_rate_pct	dscnt_period_type	indep_remain_work_qty	anticip_start_date	anticip_end_date	ev_compute_type	ev_etc_compute_type	guid	tmpl_guid	plan_open_state
-%R	40101	5101	1470	1	1	Y	N	WS_Open	DC-POWER-YARD	Data Center Power Yard: 14 Modular Power Units		18133	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	ARjdM02iYCQogoP88naOvQ		
-%R	40200	5101	1470	10	1	N	N	WS_Open	01	Milestones		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	x19uBAKB3nsy5AbCL8ykPw		
-%R	40201	5101	1470	20	1	N	N	WS_Open	02	Procurement		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	8vGL8bewvu8F3LgpwoXR3A		
-%R	40202	5101	1470	30	1	N	N	WS_Open	03	Civil		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	3X0i5SsPT7D9s9b2F9Bs/Q		
-%R	40203	5101	1470	40	1	N	N	WS_Open	04	Module setting		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	AYtUlMmn/gpMSQ38vmIlMA		
-%R	40204	5101	1470	50	1	N	N	WS_Open	05	Terminations & testing		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	Ip+fQ+Ij/6eE0bzYiDbdIA		
+%R	40101	5101	1470	1	1	Y	N	WS_Open	DC-POWER-YARD	Data Center Power Yard: 14 Modular Power Units		18133	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	j1EYNZFJ6VILxYUqVunF2Q		
+%R	40200	5101	1470	10	1	N	N	WS_Open	01	Milestones		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	QTL8dBrZR4RyINCaBbP9lw		
+%R	40201	5101	1470	20	1	N	N	WS_Open	02	Procurement		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	8JjPbyzgV11fPUE9bPnTKg		
+%R	40202	5101	1470	30	1	N	N	WS_Open	03	Civil		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	Z/Cs5UbwC7L394Ws06YA/Q		
+%R	40203	5101	1470	40	1	N	N	WS_Open	04	Module setting		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	RdXDddwKMA7u54yMg7BliA		
+%R	40204	5101	1470	50	1	N	N	WS_Open	05	Terminations & testing		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	g0jRKxWjQXlNJBoRf4y2JA		
 %T	TASK
 %F	task_id	proj_id	wbs_id	clndr_id	phys_complete_pct	rev_fdbk_flag	est_wt	lock_plan_flag	auto_compute_act_flag	complete_pct_type	task_type	duration_type	status_code	task_code	task_name	rsrc_id	total_float_hr_cnt	free_float_hr_cnt	remain_drtn_hr_cnt	act_work_qty	remain_work_qty	target_work_qty	target_drtn_hr_cnt	target_equip_qty	act_equip_qty	remain_equip_qty	cstr_date	act_start_date	act_end_date	late_start_date	late_end_date	expect_end_date	early_start_date	early_end_date	restart_date	reend_date	target_start_date	target_end_date	rem_late_start_date	rem_late_end_date	cstr_type	priority_type	suspend_date	resume_date	float_path	float_path_order	guid	tmpl_guid	cstr_date2	cstr_type2	driving_path_flag	act_this_per_work_qty	act_this_per_equip_qty	external_early_start_date	external_late_end_date	create_date	update_date	create_user	update_user	location_id
-%R	700000	5101	40200	7101	0	N	1	N	N	CP_Drtn	TT_Mile	DT_FixedDrtn	TK_NotStart	MS000	Notice to Proceed		0	0	0	0	0	0	0	0	0	0				2027-03-01 08:00	2027-03-01 08:00		2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00		PT_Normal					jGpUh0/hTE5aEiefL5CYQQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700001	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PR100	Power modules: factory build & FAT (first 7)		0	0	480	0	0	0	480	0	0	0				2027-03-01 08:00	2027-05-21 16:00		2027-03-01 08:00	2027-05-21 16:00	2027-03-01 08:00	2027-05-21 16:00	2027-03-01 08:00	2027-05-21 16:00	2027-03-01 08:00	2027-05-21 16:00		PT_Normal					Q/sva8FJUaN645QQ415cVg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700002	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PR110	Power modules: factory build & FAT (last 7)		40	0	240	0	0	0	240	0	0	0				2027-05-31 08:00	2027-07-09 16:00		2027-05-24 08:00	2027-07-02 16:00	2027-05-24 08:00	2027-07-02 16:00	2027-05-24 08:00	2027-07-02 16:00	2027-05-31 08:00	2027-07-09 16:00		PT_Normal					as9vQ89kimv5gCUaP+BhjQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700003	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PR120	Pad-mount transformers: fabricate & deliver		392	0	440	0	0	0	440	0	0	0				2027-05-07 08:00	2027-07-22 16:00		2027-03-01 08:00	2027-05-14 16:00	2027-03-01 08:00	2027-05-14 16:00	2027-03-01 08:00	2027-05-14 16:00	2027-05-07 08:00	2027-07-22 16:00		PT_Normal					qz1LCeFJ+xNjYcJdqKORMA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700004	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CV100	Site prep, fence & yard grading		336	0	120	0	0	0	120	0	0	0				2027-04-28 08:00	2027-05-18 16:00		2027-03-01 08:00	2027-03-19 16:00	2027-03-01 08:00	2027-03-19 16:00	2027-03-01 08:00	2027-03-19 16:00	2027-04-28 08:00	2027-05-18 16:00		PT_Normal					5OBy74SHjzJQMVQQQ7sfZA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700005	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CV110	MV cable trench & duct bank		528	0	200	0	0	0	200	0	0	0				2027-06-22 08:00	2027-07-26 16:00		2027-03-22 08:00	2027-04-23 16:00	2027-03-22 08:00	2027-04-23 16:00	2027-03-22 08:00	2027-04-23 16:00	2027-06-22 08:00	2027-07-26 16:00		PT_Normal					CCOdTtkuhLOgeJNlxJz0xA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700006	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD0	Unit 01: piles & pad		336	0	24	0	0	0	24	0	0	0				2027-05-19 08:00	2027-05-21 16:00		2027-03-22 08:00	2027-03-24 16:00	2027-03-22 08:00	2027-03-24 16:00	2027-03-22 08:00	2027-03-24 16:00	2027-05-19 08:00	2027-05-21 16:00		PT_Normal					Uie67WB+2dtvXgFjBQkIkw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700007	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD1	Unit 02: piles & pad		352	0	24	0	0	0	24	0	0	0				2027-05-26 08:00	2027-05-28 16:00		2027-03-25 08:00	2027-03-29 16:00	2027-03-25 08:00	2027-03-29 16:00	2027-03-25 08:00	2027-03-29 16:00	2027-05-26 08:00	2027-05-28 16:00		PT_Normal					LfaCA+9C4heGPHNNGZMchg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700008	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD2	Unit 03: piles & pad		368	0	24	0	0	0	24	0	0	0				2027-06-02 08:00	2027-06-04 16:00		2027-03-30 08:00	2027-04-01 16:00	2027-03-30 08:00	2027-04-01 16:00	2027-03-30 08:00	2027-04-01 16:00	2027-06-02 08:00	2027-06-04 16:00		PT_Normal					PWiuzzyaWRK4u1n6CanNxg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700009	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD3	Unit 04: piles & pad		384	0	24	0	0	0	24	0	0	0				2027-06-09 08:00	2027-06-11 16:00		2027-04-02 08:00	2027-04-06 16:00	2027-04-02 08:00	2027-04-06 16:00	2027-04-02 08:00	2027-04-06 16:00	2027-06-09 08:00	2027-06-11 16:00		PT_Normal					kKaOqzIHBgeBS0xQcog3Xw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700010	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD4	Unit 05: piles & pad		400	0	24	0	0	0	24	0	0	0				2027-06-16 08:00	2027-06-18 16:00		2027-04-07 08:00	2027-04-09 16:00	2027-04-07 08:00	2027-04-09 16:00	2027-04-07 08:00	2027-04-09 16:00	2027-06-16 08:00	2027-06-18 16:00		PT_Normal					rei7EZqp+wtOp397jyEygA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700011	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD5	Unit 06: piles & pad		416	0	24	0	0	0	24	0	0	0				2027-06-23 08:00	2027-06-25 16:00		2027-04-12 08:00	2027-04-14 16:00	2027-04-12 08:00	2027-04-14 16:00	2027-04-12 08:00	2027-04-14 16:00	2027-06-23 08:00	2027-06-25 16:00		PT_Normal					EiIIOk0COORBlciheBzyCQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700012	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD6	Unit 07: piles & pad		432	0	24	0	0	0	24	0	0	0				2027-06-30 08:00	2027-07-02 16:00		2027-04-15 08:00	2027-04-19 16:00	2027-04-15 08:00	2027-04-19 16:00	2027-04-15 08:00	2027-04-19 16:00	2027-06-30 08:00	2027-07-02 16:00		PT_Normal					GgEQbAxeq+nAhOo/FJtG4Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700013	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD7	Unit 08: piles & pad		448	0	24	0	0	0	24	0	0	0				2027-07-07 08:00	2027-07-09 16:00		2027-04-20 08:00	2027-04-22 16:00	2027-04-20 08:00	2027-04-22 16:00	2027-04-20 08:00	2027-04-22 16:00	2027-07-07 08:00	2027-07-09 16:00		PT_Normal					OuXtGY6OVbu9jsQDBd9erQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700014	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD8	Unit 09: piles & pad		464	0	24	0	0	0	24	0	0	0				2027-07-14 08:00	2027-07-16 16:00		2027-04-23 08:00	2027-04-27 16:00	2027-04-23 08:00	2027-04-27 16:00	2027-04-23 08:00	2027-04-27 16:00	2027-07-14 08:00	2027-07-16 16:00		PT_Normal					cj7lvMgYHVLlxovTCSh6wA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700015	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD9	Unit 10: piles & pad		480	0	24	0	0	0	24	0	0	0				2027-07-21 08:00	2027-07-23 16:00		2027-04-28 08:00	2027-04-30 16:00	2027-04-28 08:00	2027-04-30 16:00	2027-04-28 08:00	2027-04-30 16:00	2027-07-21 08:00	2027-07-23 16:00		PT_Normal					oFpgZCnY+mlvNe4d0pIEGQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700016	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD10	Unit 11: piles & pad		496	0	24	0	0	0	24	0	0	0				2027-07-28 08:00	2027-07-30 16:00		2027-05-03 08:00	2027-05-05 16:00	2027-05-03 08:00	2027-05-05 16:00	2027-05-03 08:00	2027-05-05 16:00	2027-07-28 08:00	2027-07-30 16:00		PT_Normal					q83X9Z1WcX0d4nwo1VLupg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700017	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD11	Unit 12: piles & pad		512	0	24	0	0	0	24	0	0	0				2027-08-04 08:00	2027-08-06 16:00		2027-05-06 08:00	2027-05-10 16:00	2027-05-06 08:00	2027-05-10 16:00	2027-05-06 08:00	2027-05-10 16:00	2027-08-04 08:00	2027-08-06 16:00		PT_Normal					6X5CnictJolKLzjZU2Lsqg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700018	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD12	Unit 13: piles & pad		528	0	24	0	0	0	24	0	0	0				2027-08-11 08:00	2027-08-13 16:00		2027-05-11 08:00	2027-05-13 16:00	2027-05-11 08:00	2027-05-13 16:00	2027-05-11 08:00	2027-05-13 16:00	2027-08-11 08:00	2027-08-13 16:00		PT_Normal					izhOo+4VFf/hkZeYZK1iHg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700019	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD13	Unit 14: piles & pad		544	0	24	0	0	0	24	0	0	0				2027-08-18 08:00	2027-08-20 16:00		2027-05-14 08:00	2027-05-18 16:00	2027-05-14 08:00	2027-05-18 16:00	2027-05-14 08:00	2027-05-18 16:00	2027-08-18 08:00	2027-08-20 16:00		PT_Normal					aDTSXQj+eySiKWMwFsaOkg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700020	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST0	Unit 01: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-05-24 08:00	2027-05-28 16:00		2027-05-24 08:00	2027-05-28 16:00	2027-05-24 08:00	2027-05-28 16:00	2027-05-24 08:00	2027-05-28 16:00	2027-05-24 08:00	2027-05-28 16:00		PT_Normal					x1IoDjUuOGsConBOtorj1A				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700021	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX0	Unit 01: set transformer		312	0	16	0	0	0	16	0	0	0				2027-07-23 08:00	2027-07-26 16:00		2027-05-31 08:00	2027-06-01 16:00	2027-05-31 08:00	2027-06-01 16:00	2027-05-31 08:00	2027-06-01 16:00	2027-07-23 08:00	2027-07-26 16:00		PT_Normal					B4HHaDhay8F/IAEOC1kLwg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700022	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM0	Unit 01: terminate MV & LV cables		312	0	32	0	0	0	32	0	0	0				2027-07-27 08:00	2027-07-30 16:00		2027-06-02 08:00	2027-06-07 16:00	2027-06-02 08:00	2027-06-07 16:00	2027-06-02 08:00	2027-06-07 16:00	2027-07-27 08:00	2027-07-30 16:00		PT_Normal					3DbcFT7pUHP1FNfBRgHPYQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700023	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS0	Unit 01: test & energize		312	0	16	0	0	0	16	0	0	0				2027-08-02 08:00	2027-08-03 16:00		2027-06-08 08:00	2027-06-09 16:00	2027-06-08 08:00	2027-06-09 16:00	2027-06-08 08:00	2027-06-09 16:00	2027-08-02 08:00	2027-08-03 16:00		PT_Normal					gEEi8+0OaqWE58l85NK1kw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700024	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST1	Unit 02: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-05-31 08:00	2027-06-04 16:00		2027-05-31 08:00	2027-06-04 16:00	2027-05-31 08:00	2027-06-04 16:00	2027-05-31 08:00	2027-06-04 16:00	2027-05-31 08:00	2027-06-04 16:00		PT_Normal					kf0hvc/Z8OSEYj+jn7ZMjA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700025	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX1	Unit 02: set transformer		288	0	16	0	0	0	16	0	0	0				2027-07-27 08:00	2027-07-28 16:00		2027-06-07 08:00	2027-06-08 16:00	2027-06-07 08:00	2027-06-08 16:00	2027-06-07 08:00	2027-06-08 16:00	2027-07-27 08:00	2027-07-28 16:00		PT_Normal					+JmN91O0A9cRXZTnI9W5Fg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700026	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM1	Unit 02: terminate MV & LV cables		288	0	32	0	0	0	32	0	0	0				2027-07-29 08:00	2027-08-03 16:00		2027-06-09 08:00	2027-06-14 16:00	2027-06-09 08:00	2027-06-14 16:00	2027-06-09 08:00	2027-06-14 16:00	2027-07-29 08:00	2027-08-03 16:00		PT_Normal					diyfC+CavWDr5C00uGyC/Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700027	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS1	Unit 02: test & energize		288	0	16	0	0	0	16	0	0	0				2027-08-04 08:00	2027-08-05 16:00		2027-06-15 08:00	2027-06-16 16:00	2027-06-15 08:00	2027-06-16 16:00	2027-06-15 08:00	2027-06-16 16:00	2027-08-04 08:00	2027-08-05 16:00		PT_Normal					5nE1kp5Kt379NNJeBAip/w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700028	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST2	Unit 03: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-06-07 08:00	2027-06-11 16:00		2027-06-07 08:00	2027-06-11 16:00	2027-06-07 08:00	2027-06-11 16:00	2027-06-07 08:00	2027-06-11 16:00	2027-06-07 08:00	2027-06-11 16:00		PT_Normal					BmESrdwWpmZneUfelk8nCQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700029	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX2	Unit 03: set transformer		264	0	16	0	0	0	16	0	0	0				2027-07-29 08:00	2027-07-30 16:00		2027-06-14 08:00	2027-06-15 16:00	2027-06-14 08:00	2027-06-15 16:00	2027-06-14 08:00	2027-06-15 16:00	2027-07-29 08:00	2027-07-30 16:00		PT_Normal					e8ipQxxaGe4MGTmEFTvagQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700030	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM2	Unit 03: terminate MV & LV cables		264	0	32	0	0	0	32	0	0	0				2027-08-02 08:00	2027-08-05 16:00		2027-06-16 08:00	2027-06-21 16:00	2027-06-16 08:00	2027-06-21 16:00	2027-06-16 08:00	2027-06-21 16:00	2027-08-02 08:00	2027-08-05 16:00		PT_Normal					J8X0ghQj5osSd9PdPvYaxQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700031	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS2	Unit 03: test & energize		264	0	16	0	0	0	16	0	0	0				2027-08-06 08:00	2027-08-09 16:00		2027-06-22 08:00	2027-06-23 16:00	2027-06-22 08:00	2027-06-23 16:00	2027-06-22 08:00	2027-06-23 16:00	2027-08-06 08:00	2027-08-09 16:00		PT_Normal					aD0cwUSg7SbjEvOp3cnNQw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700032	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST3	Unit 04: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-06-14 08:00	2027-06-18 16:00		2027-06-14 08:00	2027-06-18 16:00	2027-06-14 08:00	2027-06-18 16:00	2027-06-14 08:00	2027-06-18 16:00	2027-06-14 08:00	2027-06-18 16:00		PT_Normal					uWwy1PdueexntabImwVJ4w				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700033	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX3	Unit 04: set transformer		240	0	16	0	0	0	16	0	0	0				2027-08-02 08:00	2027-08-03 16:00		2027-06-21 08:00	2027-06-22 16:00	2027-06-21 08:00	2027-06-22 16:00	2027-06-21 08:00	2027-06-22 16:00	2027-08-02 08:00	2027-08-03 16:00		PT_Normal					08d8pDia8shA/Lq+6y6EzA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700034	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM3	Unit 04: terminate MV & LV cables		240	0	32	0	0	0	32	0	0	0				2027-08-04 08:00	2027-08-09 16:00		2027-06-23 08:00	2027-06-28 16:00	2027-06-23 08:00	2027-06-28 16:00	2027-06-23 08:00	2027-06-28 16:00	2027-08-04 08:00	2027-08-09 16:00		PT_Normal					Vvg13+PrR65D+roL3mLmnw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700035	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS3	Unit 04: test & energize		240	0	16	0	0	0	16	0	0	0				2027-08-10 08:00	2027-08-11 16:00		2027-06-29 08:00	2027-06-30 16:00	2027-06-29 08:00	2027-06-30 16:00	2027-06-29 08:00	2027-06-30 16:00	2027-08-10 08:00	2027-08-11 16:00		PT_Normal					yUhWvfTsOdM/CeJw033XDA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700036	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST4	Unit 05: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-06-21 08:00	2027-06-25 16:00		2027-06-21 08:00	2027-06-25 16:00	2027-06-21 08:00	2027-06-25 16:00	2027-06-21 08:00	2027-06-25 16:00	2027-06-21 08:00	2027-06-25 16:00		PT_Normal					eXv2c904+3kcVD5dp53ZCw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700037	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX4	Unit 05: set transformer		216	0	16	0	0	0	16	0	0	0				2027-08-04 08:00	2027-08-05 16:00		2027-06-28 08:00	2027-06-29 16:00	2027-06-28 08:00	2027-06-29 16:00	2027-06-28 08:00	2027-06-29 16:00	2027-08-04 08:00	2027-08-05 16:00		PT_Normal					Oyhs9c8L7+rgbzDLO47bFQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700038	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM4	Unit 05: terminate MV & LV cables		216	0	32	0	0	0	32	0	0	0				2027-08-06 08:00	2027-08-11 16:00		2027-06-30 08:00	2027-07-05 16:00	2027-06-30 08:00	2027-07-05 16:00	2027-06-30 08:00	2027-07-05 16:00	2027-08-06 08:00	2027-08-11 16:00		PT_Normal					1YW69V3YuEOdwTvfA8CFWA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700039	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS4	Unit 05: test & energize		216	0	16	0	0	0	16	0	0	0				2027-08-12 08:00	2027-08-13 16:00		2027-07-06 08:00	2027-07-07 16:00	2027-07-06 08:00	2027-07-07 16:00	2027-07-06 08:00	2027-07-07 16:00	2027-08-12 08:00	2027-08-13 16:00		PT_Normal					l2tfoQP9cf1mTrFNsPvavA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700040	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST5	Unit 06: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-06-28 08:00	2027-07-02 16:00		2027-06-28 08:00	2027-07-02 16:00	2027-06-28 08:00	2027-07-02 16:00	2027-06-28 08:00	2027-07-02 16:00	2027-06-28 08:00	2027-07-02 16:00		PT_Normal					KBFNpc73ZdxeQJCuISaHnw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700041	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX5	Unit 06: set transformer		192	0	16	0	0	0	16	0	0	0				2027-08-06 08:00	2027-08-09 16:00		2027-07-05 08:00	2027-07-06 16:00	2027-07-05 08:00	2027-07-06 16:00	2027-07-05 08:00	2027-07-06 16:00	2027-08-06 08:00	2027-08-09 16:00		PT_Normal					Pt0yBdOa6h8speh643oZgg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700042	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM5	Unit 06: terminate MV & LV cables		192	0	32	0	0	0	32	0	0	0				2027-08-10 08:00	2027-08-13 16:00		2027-07-07 08:00	2027-07-12 16:00	2027-07-07 08:00	2027-07-12 16:00	2027-07-07 08:00	2027-07-12 16:00	2027-08-10 08:00	2027-08-13 16:00		PT_Normal					I9xzwL2MAnIiAfmGg/oVHA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700043	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS5	Unit 06: test & energize		192	0	16	0	0	0	16	0	0	0				2027-08-16 08:00	2027-08-17 16:00		2027-07-13 08:00	2027-07-14 16:00	2027-07-13 08:00	2027-07-14 16:00	2027-07-13 08:00	2027-07-14 16:00	2027-08-16 08:00	2027-08-17 16:00		PT_Normal					xLHLZE9uzRTAWPAlpMXqXw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700044	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST6	Unit 07: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-07-05 08:00	2027-07-09 16:00		2027-07-05 08:00	2027-07-09 16:00	2027-07-05 08:00	2027-07-09 16:00	2027-07-05 08:00	2027-07-09 16:00	2027-07-05 08:00	2027-07-09 16:00		PT_Normal					hT7tIY3zjuvWjlfa6P+8+A				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700045	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX6	Unit 07: set transformer		168	0	16	0	0	0	16	0	0	0				2027-08-10 08:00	2027-08-11 16:00		2027-07-12 08:00	2027-07-13 16:00	2027-07-12 08:00	2027-07-13 16:00	2027-07-12 08:00	2027-07-13 16:00	2027-08-10 08:00	2027-08-11 16:00		PT_Normal					DXZ3t7/0qz2xl9aWMHDxBw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700046	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM6	Unit 07: terminate MV & LV cables		168	0	32	0	0	0	32	0	0	0				2027-08-12 08:00	2027-08-17 16:00		2027-07-14 08:00	2027-07-19 16:00	2027-07-14 08:00	2027-07-19 16:00	2027-07-14 08:00	2027-07-19 16:00	2027-08-12 08:00	2027-08-17 16:00		PT_Normal					7C/AqsAKALO9WqIQyc7bYQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700047	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS6	Unit 07: test & energize		168	0	16	0	0	0	16	0	0	0				2027-08-18 08:00	2027-08-19 16:00		2027-07-20 08:00	2027-07-21 16:00	2027-07-20 08:00	2027-07-21 16:00	2027-07-20 08:00	2027-07-21 16:00	2027-08-18 08:00	2027-08-19 16:00		PT_Normal					G8KANHZ2/DtkXYIk/WHDLQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700048	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST7	Unit 08: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-07-12 08:00	2027-07-16 16:00		2027-07-12 08:00	2027-07-16 16:00	2027-07-12 08:00	2027-07-16 16:00	2027-07-12 08:00	2027-07-16 16:00	2027-07-12 08:00	2027-07-16 16:00		PT_Normal					4m2ItMGoHvqWyhRJi+zaag				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700049	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX7	Unit 08: set transformer		144	0	16	0	0	0	16	0	0	0				2027-08-12 08:00	2027-08-13 16:00		2027-07-19 08:00	2027-07-20 16:00	2027-07-19 08:00	2027-07-20 16:00	2027-07-19 08:00	2027-07-20 16:00	2027-08-12 08:00	2027-08-13 16:00		PT_Normal					5f0c766YzvFe0E7H+ww93w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700050	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM7	Unit 08: terminate MV & LV cables		144	0	32	0	0	0	32	0	0	0				2027-08-16 08:00	2027-08-19 16:00		2027-07-21 08:00	2027-07-26 16:00	2027-07-21 08:00	2027-07-26 16:00	2027-07-21 08:00	2027-07-26 16:00	2027-08-16 08:00	2027-08-19 16:00		PT_Normal					XEmturkfy0KqrVBgzAWBnA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700051	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS7	Unit 08: test & energize		144	0	16	0	0	0	16	0	0	0				2027-08-20 08:00	2027-08-23 16:00		2027-07-27 08:00	2027-07-28 16:00	2027-07-27 08:00	2027-07-28 16:00	2027-07-27 08:00	2027-07-28 16:00	2027-08-20 08:00	2027-08-23 16:00		PT_Normal					jXQ6RubQR58yURSzwbBIbQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700052	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST8	Unit 09: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-07-19 08:00	2027-07-23 16:00		2027-07-19 08:00	2027-07-23 16:00	2027-07-19 08:00	2027-07-23 16:00	2027-07-19 08:00	2027-07-23 16:00	2027-07-19 08:00	2027-07-23 16:00		PT_Normal					9Vhj/u8PJudLZvAkNW7V6w				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700053	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX8	Unit 09: set transformer		120	0	16	0	0	0	16	0	0	0				2027-08-16 08:00	2027-08-17 16:00		2027-07-26 08:00	2027-07-27 16:00	2027-07-26 08:00	2027-07-27 16:00	2027-07-26 08:00	2027-07-27 16:00	2027-08-16 08:00	2027-08-17 16:00		PT_Normal					hL2DS2CDMMc3xSGoh5GNGw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700054	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM8	Unit 09: terminate MV & LV cables		120	0	32	0	0	0	32	0	0	0				2027-08-18 08:00	2027-08-23 16:00		2027-07-28 08:00	2027-08-02 16:00	2027-07-28 08:00	2027-08-02 16:00	2027-07-28 08:00	2027-08-02 16:00	2027-08-18 08:00	2027-08-23 16:00		PT_Normal					/UgHTajEoudGTXStCet5dw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700055	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS8	Unit 09: test & energize		120	0	16	0	0	0	16	0	0	0				2027-08-24 08:00	2027-08-25 16:00		2027-08-03 08:00	2027-08-04 16:00	2027-08-03 08:00	2027-08-04 16:00	2027-08-03 08:00	2027-08-04 16:00	2027-08-24 08:00	2027-08-25 16:00		PT_Normal					FRnY/p+91bc/lsBIJvvMow				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700056	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST9	Unit 10: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-07-26 08:00	2027-07-30 16:00		2027-07-26 08:00	2027-07-30 16:00	2027-07-26 08:00	2027-07-30 16:00	2027-07-26 08:00	2027-07-30 16:00	2027-07-26 08:00	2027-07-30 16:00		PT_Normal					NXzbwmvPp5IZFSwr2EHrfw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700057	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX9	Unit 10: set transformer		96	0	16	0	0	0	16	0	0	0				2027-08-18 08:00	2027-08-19 16:00		2027-08-02 08:00	2027-08-03 16:00	2027-08-02 08:00	2027-08-03 16:00	2027-08-02 08:00	2027-08-03 16:00	2027-08-18 08:00	2027-08-19 16:00		PT_Normal					PNwgXwobt3f1nOr2KE6GoQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700058	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM9	Unit 10: terminate MV & LV cables		96	0	32	0	0	0	32	0	0	0				2027-08-20 08:00	2027-08-25 16:00		2027-08-04 08:00	2027-08-09 16:00	2027-08-04 08:00	2027-08-09 16:00	2027-08-04 08:00	2027-08-09 16:00	2027-08-20 08:00	2027-08-25 16:00		PT_Normal					xdNk1GeCrUDKqOOXFSmH7g				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700059	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS9	Unit 10: test & energize		96	0	16	0	0	0	16	0	0	0				2027-08-26 08:00	2027-08-27 16:00		2027-08-10 08:00	2027-08-11 16:00	2027-08-10 08:00	2027-08-11 16:00	2027-08-10 08:00	2027-08-11 16:00	2027-08-26 08:00	2027-08-27 16:00		PT_Normal					gq1AMGkR+83+ZgD9xUmv1A				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700060	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST10	Unit 11: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-08-02 08:00	2027-08-06 16:00		2027-08-02 08:00	2027-08-06 16:00	2027-08-02 08:00	2027-08-06 16:00	2027-08-02 08:00	2027-08-06 16:00	2027-08-02 08:00	2027-08-06 16:00		PT_Normal					AanHwKZMc8Cla8WbqMvS1w				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700061	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX10	Unit 11: set transformer		72	0	16	0	0	0	16	0	0	0				2027-08-20 08:00	2027-08-23 16:00		2027-08-09 08:00	2027-08-10 16:00	2027-08-09 08:00	2027-08-10 16:00	2027-08-09 08:00	2027-08-10 16:00	2027-08-20 08:00	2027-08-23 16:00		PT_Normal					cZ0KY6++pzxCiox8V+58Sw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700062	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM10	Unit 11: terminate MV & LV cables		72	0	32	0	0	0	32	0	0	0				2027-08-24 08:00	2027-08-27 16:00		2027-08-11 08:00	2027-08-16 16:00	2027-08-11 08:00	2027-08-16 16:00	2027-08-11 08:00	2027-08-16 16:00	2027-08-24 08:00	2027-08-27 16:00		PT_Normal					4/4w+LnV8wYkvxqevpXrlg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700063	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS10	Unit 11: test & energize		72	0	16	0	0	0	16	0	0	0				2027-08-30 08:00	2027-08-31 16:00		2027-08-17 08:00	2027-08-18 16:00	2027-08-17 08:00	2027-08-18 16:00	2027-08-17 08:00	2027-08-18 16:00	2027-08-30 08:00	2027-08-31 16:00		PT_Normal					SD9LLJM+DP1rico7yVY/5g				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700064	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST11	Unit 12: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-08-09 08:00	2027-08-13 16:00		2027-08-09 08:00	2027-08-13 16:00	2027-08-09 08:00	2027-08-13 16:00	2027-08-09 08:00	2027-08-13 16:00	2027-08-09 08:00	2027-08-13 16:00		PT_Normal					Kk78m3AJZMEBNUGSREzeTQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700065	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX11	Unit 12: set transformer		48	0	16	0	0	0	16	0	0	0				2027-08-24 08:00	2027-08-25 16:00		2027-08-16 08:00	2027-08-17 16:00	2027-08-16 08:00	2027-08-17 16:00	2027-08-16 08:00	2027-08-17 16:00	2027-08-24 08:00	2027-08-25 16:00		PT_Normal					nraQ5SHwJe6kOYXzzuIn8w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700066	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM11	Unit 12: terminate MV & LV cables		48	0	32	0	0	0	32	0	0	0				2027-08-26 08:00	2027-08-31 16:00		2027-08-18 08:00	2027-08-23 16:00	2027-08-18 08:00	2027-08-23 16:00	2027-08-18 08:00	2027-08-23 16:00	2027-08-26 08:00	2027-08-31 16:00		PT_Normal					8NnM2SidhIX2DURXB1PtkQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700067	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS11	Unit 12: test & energize		48	0	16	0	0	0	16	0	0	0				2027-09-01 08:00	2027-09-02 16:00		2027-08-24 08:00	2027-08-25 16:00	2027-08-24 08:00	2027-08-25 16:00	2027-08-24 08:00	2027-08-25 16:00	2027-09-01 08:00	2027-09-02 16:00		PT_Normal					I+KJlCUzYZHGpHOb4TH0bA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700068	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST12	Unit 13: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-08-16 08:00	2027-08-20 16:00		2027-08-16 08:00	2027-08-20 16:00	2027-08-16 08:00	2027-08-20 16:00	2027-08-16 08:00	2027-08-20 16:00	2027-08-16 08:00	2027-08-20 16:00		PT_Normal					l1ZCJYl5l3ixSeguq3oSWA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700069	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX12	Unit 13: set transformer		24	0	16	0	0	0	16	0	0	0				2027-08-26 08:00	2027-08-27 16:00		2027-08-23 08:00	2027-08-24 16:00	2027-08-23 08:00	2027-08-24 16:00	2027-08-23 08:00	2027-08-24 16:00	2027-08-26 08:00	2027-08-27 16:00		PT_Normal					lyYJXhydVN5tRzFaB6nTDA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700070	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM12	Unit 13: terminate MV & LV cables		24	0	32	0	0	0	32	0	0	0				2027-08-30 08:00	2027-09-02 16:00		2027-08-25 08:00	2027-08-30 16:00	2027-08-25 08:00	2027-08-30 16:00	2027-08-25 08:00	2027-08-30 16:00	2027-08-30 08:00	2027-09-02 16:00		PT_Normal					8IVKArEoWiJhxe9pZBO8zA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700071	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS12	Unit 13: test & energize		24	0	16	0	0	0	16	0	0	0				2027-09-03 08:00	2027-09-06 16:00		2027-08-31 08:00	2027-09-01 16:00	2027-08-31 08:00	2027-09-01 16:00	2027-08-31 08:00	2027-09-01 16:00	2027-09-03 08:00	2027-09-06 16:00		PT_Normal					YXmKiQGA1q5NlCzGnPKvnA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700072	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST13	Unit 14: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-08-23 08:00	2027-08-27 16:00		2027-08-23 08:00	2027-08-27 16:00	2027-08-23 08:00	2027-08-27 16:00	2027-08-23 08:00	2027-08-27 16:00	2027-08-23 08:00	2027-08-27 16:00		PT_Normal					RPZV6XKrmzJIKeMDvPTMfQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700073	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX13	Unit 14: set transformer		0	0	16	0	0	0	16	0	0	0				2027-08-30 08:00	2027-08-31 16:00		2027-08-30 08:00	2027-08-31 16:00	2027-08-30 08:00	2027-08-31 16:00	2027-08-30 08:00	2027-08-31 16:00	2027-08-30 08:00	2027-08-31 16:00		PT_Normal					rF9tPf8BUh4kjIpwtr+EBw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700074	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM13	Unit 14: terminate MV & LV cables		0	0	32	0	0	0	32	0	0	0				2027-09-01 08:00	2027-09-06 16:00		2027-09-01 08:00	2027-09-06 16:00	2027-09-01 08:00	2027-09-06 16:00	2027-09-01 08:00	2027-09-06 16:00	2027-09-01 08:00	2027-09-06 16:00		PT_Normal					6Rqy2Z1citv1FdqXBXeM9A				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700075	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS13	Unit 14: test & energize		0	0	16	0	0	0	16	0	0	0				2027-09-07 08:00	2027-09-08 16:00		2027-09-07 08:00	2027-09-08 16:00	2027-09-07 08:00	2027-09-08 16:00	2027-09-07 08:00	2027-09-08 16:00	2027-09-07 08:00	2027-09-08 16:00		PT_Normal					dHM+EoNcXKvncXO0OW+JUA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
-%R	700076	5101	40200	7101	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	MS999	All 14 units energized		0	0	0	0	0	0	0	0	0	0				2027-09-08 16:00	2027-09-08 16:00		2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00		PT_Normal					E+zYDjCEYVEkRWEoFxV2RA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700000	5101	40200	7101	0	N	1	N	N	CP_Drtn	TT_Mile	DT_FixedDrtn	TK_NotStart	MS000	Notice to Proceed		0	0	0	0	0	0	0	0	0	0				2027-03-01 08:00	2027-03-01 08:00		2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00		PT_Normal					haTQ3mQWR19uuhKHzKjCVA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700001	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PR100	Power modules: factory build & FAT (first 7)		0	0	480	0	0	0	480	0	0	0				2027-03-01 08:00	2027-05-21 16:00		2027-03-01 08:00	2027-05-21 16:00	2027-03-01 08:00	2027-05-21 16:00	2027-03-01 08:00	2027-05-21 16:00	2027-03-01 08:00	2027-05-21 16:00		PT_Normal					KHs+CSzX0Kt6eBDkDBdzTQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700002	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PR110	Power modules: factory build & FAT (last 7)		40	0	240	0	0	0	240	0	0	0				2027-05-31 08:00	2027-07-09 16:00		2027-05-24 08:00	2027-07-02 16:00	2027-05-24 08:00	2027-07-02 16:00	2027-05-24 08:00	2027-07-02 16:00	2027-05-31 08:00	2027-07-09 16:00		PT_Normal					SLUzrkkp9MFDz1JTE+GDqg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700003	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PR120	Pad-mount transformers: fabricate & deliver		392	0	440	0	0	0	440	0	0	0				2027-05-07 08:00	2027-07-22 16:00		2027-03-01 08:00	2027-05-14 16:00	2027-03-01 08:00	2027-05-14 16:00	2027-03-01 08:00	2027-05-14 16:00	2027-05-07 08:00	2027-07-22 16:00		PT_Normal					FR6AQ7shBiwvS0Z2XChqEw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700004	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CV100	Site prep, fence & yard grading		320	0	120	0	0	0	120	0	0	0				2027-04-26 08:00	2027-05-14 16:00		2027-03-01 08:00	2027-03-19 16:00	2027-03-01 08:00	2027-03-19 16:00	2027-03-01 08:00	2027-03-19 16:00	2027-04-26 08:00	2027-05-14 16:00		PT_Normal					jY6h2tsOBqKP/qD2QpflEg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700005	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CV110	MV cable trench & duct bank		528	0	200	0	0	0	200	0	0	0				2027-06-22 08:00	2027-07-26 16:00		2027-03-22 08:00	2027-04-23 16:00	2027-03-22 08:00	2027-04-23 16:00	2027-03-22 08:00	2027-04-23 16:00	2027-06-22 08:00	2027-07-26 16:00		PT_Normal					rVxf68gqOPjAAqj0GxVsCA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700006	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD0	Unit 01: piles & pad		320	0	24	0	0	0	24	0	0	0				2027-05-17 08:00	2027-05-19 16:00		2027-03-22 08:00	2027-03-24 16:00	2027-03-22 08:00	2027-03-24 16:00	2027-03-22 08:00	2027-03-24 16:00	2027-05-17 08:00	2027-05-19 16:00		PT_Normal					IDUrdYgm0zyIf/bNYHi/vQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700007	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD1	Unit 02: piles & pad		352	0	24	0	0	0	24	0	0	0				2027-05-26 08:00	2027-05-28 16:00		2027-03-25 08:00	2027-03-29 16:00	2027-03-25 08:00	2027-03-29 16:00	2027-03-25 08:00	2027-03-29 16:00	2027-05-26 08:00	2027-05-28 16:00		PT_Normal					lj8pBBVFVsa6XzhwAlmEPQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700008	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD2	Unit 03: piles & pad		368	0	24	0	0	0	24	0	0	0				2027-06-02 08:00	2027-06-04 16:00		2027-03-30 08:00	2027-04-01 16:00	2027-03-30 08:00	2027-04-01 16:00	2027-03-30 08:00	2027-04-01 16:00	2027-06-02 08:00	2027-06-04 16:00		PT_Normal					K4TO8w6wuC20OdlQGu1hJg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700009	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD3	Unit 04: piles & pad		384	0	24	0	0	0	24	0	0	0				2027-06-09 08:00	2027-06-11 16:00		2027-04-02 08:00	2027-04-06 16:00	2027-04-02 08:00	2027-04-06 16:00	2027-04-02 08:00	2027-04-06 16:00	2027-06-09 08:00	2027-06-11 16:00		PT_Normal					GSQS2pI4NduKmZrmmL0/Qg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700010	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD4	Unit 05: piles & pad		400	0	24	0	0	0	24	0	0	0				2027-06-16 08:00	2027-06-18 16:00		2027-04-07 08:00	2027-04-09 16:00	2027-04-07 08:00	2027-04-09 16:00	2027-04-07 08:00	2027-04-09 16:00	2027-06-16 08:00	2027-06-18 16:00		PT_Normal					L6Ym28t4tN9/0b578T61fA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700011	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD5	Unit 06: piles & pad		416	0	24	0	0	0	24	0	0	0				2027-06-23 08:00	2027-06-25 16:00		2027-04-12 08:00	2027-04-14 16:00	2027-04-12 08:00	2027-04-14 16:00	2027-04-12 08:00	2027-04-14 16:00	2027-06-23 08:00	2027-06-25 16:00		PT_Normal					NwcbytYjbhU5kfv4xzERig				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700012	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD6	Unit 07: piles & pad		432	0	24	0	0	0	24	0	0	0				2027-06-30 08:00	2027-07-02 16:00		2027-04-15 08:00	2027-04-19 16:00	2027-04-15 08:00	2027-04-19 16:00	2027-04-15 08:00	2027-04-19 16:00	2027-06-30 08:00	2027-07-02 16:00		PT_Normal					hDgenq/m2E8Gb8Hqr99+9w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700013	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD7	Unit 08: piles & pad		448	0	24	0	0	0	24	0	0	0				2027-07-07 08:00	2027-07-09 16:00		2027-04-20 08:00	2027-04-22 16:00	2027-04-20 08:00	2027-04-22 16:00	2027-04-20 08:00	2027-04-22 16:00	2027-07-07 08:00	2027-07-09 16:00		PT_Normal					U7aMelYiRLfnfcBrCyh9CA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700014	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD8	Unit 09: piles & pad		464	0	24	0	0	0	24	0	0	0				2027-07-14 08:00	2027-07-16 16:00		2027-04-23 08:00	2027-04-27 16:00	2027-04-23 08:00	2027-04-27 16:00	2027-04-23 08:00	2027-04-27 16:00	2027-07-14 08:00	2027-07-16 16:00		PT_Normal					CvF8Oz4gDc27C0/EGy/lbw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700015	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD9	Unit 10: piles & pad		480	0	24	0	0	0	24	0	0	0				2027-07-21 08:00	2027-07-23 16:00		2027-04-28 08:00	2027-04-30 16:00	2027-04-28 08:00	2027-04-30 16:00	2027-04-28 08:00	2027-04-30 16:00	2027-07-21 08:00	2027-07-23 16:00		PT_Normal					KPJZBnhVHewcCQJuTP0DUg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700016	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD10	Unit 11: piles & pad		496	0	24	0	0	0	24	0	0	0				2027-07-28 08:00	2027-07-30 16:00		2027-05-03 08:00	2027-05-05 16:00	2027-05-03 08:00	2027-05-05 16:00	2027-05-03 08:00	2027-05-05 16:00	2027-07-28 08:00	2027-07-30 16:00		PT_Normal					mZtpcpB43+04ubHwrXAKOg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700017	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD11	Unit 12: piles & pad		512	0	24	0	0	0	24	0	0	0				2027-08-04 08:00	2027-08-06 16:00		2027-05-06 08:00	2027-05-10 16:00	2027-05-06 08:00	2027-05-10 16:00	2027-05-06 08:00	2027-05-10 16:00	2027-08-04 08:00	2027-08-06 16:00		PT_Normal					/wb95oRDHT8Y5oY61DJSbQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700018	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD12	Unit 13: piles & pad		528	0	24	0	0	0	24	0	0	0				2027-08-11 08:00	2027-08-13 16:00		2027-05-11 08:00	2027-05-13 16:00	2027-05-11 08:00	2027-05-13 16:00	2027-05-11 08:00	2027-05-13 16:00	2027-08-11 08:00	2027-08-13 16:00		PT_Normal					SCSvo5p2zvkaQfC2Mo2o2w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700019	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PD13	Unit 14: piles & pad		544	0	24	0	0	0	24	0	0	0				2027-08-18 08:00	2027-08-20 16:00		2027-05-14 08:00	2027-05-18 16:00	2027-05-14 08:00	2027-05-18 16:00	2027-05-14 08:00	2027-05-18 16:00	2027-08-18 08:00	2027-08-20 16:00		PT_Normal					heui94RIt0AI3e6eKZMHLA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700020	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CRN	Mobilise crane		320	0	16	0	0	0	16	0	0	0				2027-05-20 08:00	2027-05-21 16:00		2027-03-25 08:00	2027-03-26 16:00	2027-03-25 08:00	2027-03-26 16:00	2027-03-25 08:00	2027-03-26 16:00	2027-05-20 08:00	2027-05-21 16:00		PT_Normal					3TVDWGwy6LHetmw74Ce1GA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700021	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST0	Unit 01: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-05-24 08:00	2027-05-28 16:00		2027-05-24 08:00	2027-05-28 16:00	2027-05-24 08:00	2027-05-28 16:00	2027-05-24 08:00	2027-05-28 16:00	2027-05-24 08:00	2027-05-28 16:00		PT_Normal					GfpBmFvVQylu1Yq/uaC1kg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700022	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX0	Unit 01: set transformer		312	0	16	0	0	0	16	0	0	0				2027-07-23 08:00	2027-07-26 16:00		2027-05-31 08:00	2027-06-01 16:00	2027-05-31 08:00	2027-06-01 16:00	2027-05-31 08:00	2027-06-01 16:00	2027-07-23 08:00	2027-07-26 16:00		PT_Normal					4uATg/g0cl00yc2TPAWSFg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700023	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM0	Unit 01: pull & terminate MV & LV cables		312	0	32	0	0	0	32	0	0	0				2027-07-27 08:00	2027-07-30 16:00		2027-06-02 08:00	2027-06-07 16:00	2027-06-02 08:00	2027-06-07 16:00	2027-06-02 08:00	2027-06-07 16:00	2027-07-27 08:00	2027-07-30 16:00		PT_Normal					AQRnbseV9nyqVt7R2E5sRQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700024	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS0	Unit 01: test & energize		312	0	16	0	0	0	16	0	0	0				2027-08-02 08:00	2027-08-03 16:00		2027-06-08 08:00	2027-06-09 16:00	2027-06-08 08:00	2027-06-09 16:00	2027-06-08 08:00	2027-06-09 16:00	2027-08-02 08:00	2027-08-03 16:00		PT_Normal					4bPQBPKPs1uTxpasdrtskg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700025	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST1	Unit 02: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-05-31 08:00	2027-06-04 16:00		2027-05-31 08:00	2027-06-04 16:00	2027-05-31 08:00	2027-06-04 16:00	2027-05-31 08:00	2027-06-04 16:00	2027-05-31 08:00	2027-06-04 16:00		PT_Normal					rs8pj5a+eUeQ7UzJBO5bwQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700026	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX1	Unit 02: set transformer		288	0	16	0	0	0	16	0	0	0				2027-07-27 08:00	2027-07-28 16:00		2027-06-07 08:00	2027-06-08 16:00	2027-06-07 08:00	2027-06-08 16:00	2027-06-07 08:00	2027-06-08 16:00	2027-07-27 08:00	2027-07-28 16:00		PT_Normal					KiFn2Tp9gR2xEUvjUt55Gg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700027	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM1	Unit 02: pull & terminate MV & LV cables		288	0	32	0	0	0	32	0	0	0				2027-07-29 08:00	2027-08-03 16:00		2027-06-09 08:00	2027-06-14 16:00	2027-06-09 08:00	2027-06-14 16:00	2027-06-09 08:00	2027-06-14 16:00	2027-07-29 08:00	2027-08-03 16:00		PT_Normal					TSIadzI9OqGYCXcyPbr6BQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700028	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS1	Unit 02: test & energize		288	0	16	0	0	0	16	0	0	0				2027-08-04 08:00	2027-08-05 16:00		2027-06-15 08:00	2027-06-16 16:00	2027-06-15 08:00	2027-06-16 16:00	2027-06-15 08:00	2027-06-16 16:00	2027-08-04 08:00	2027-08-05 16:00		PT_Normal					TJ/a0vk+GwtfAydv8rvfvA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700029	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST2	Unit 03: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-06-07 08:00	2027-06-11 16:00		2027-06-07 08:00	2027-06-11 16:00	2027-06-07 08:00	2027-06-11 16:00	2027-06-07 08:00	2027-06-11 16:00	2027-06-07 08:00	2027-06-11 16:00		PT_Normal					+WXij0xjIF/ceFEMBC4s6w				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700030	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX2	Unit 03: set transformer		264	0	16	0	0	0	16	0	0	0				2027-07-29 08:00	2027-07-30 16:00		2027-06-14 08:00	2027-06-15 16:00	2027-06-14 08:00	2027-06-15 16:00	2027-06-14 08:00	2027-06-15 16:00	2027-07-29 08:00	2027-07-30 16:00		PT_Normal					mhQbfNG0nz/DA1b3/NzERA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700031	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM2	Unit 03: pull & terminate MV & LV cables		264	0	32	0	0	0	32	0	0	0				2027-08-02 08:00	2027-08-05 16:00		2027-06-16 08:00	2027-06-21 16:00	2027-06-16 08:00	2027-06-21 16:00	2027-06-16 08:00	2027-06-21 16:00	2027-08-02 08:00	2027-08-05 16:00		PT_Normal					VZPHRjeob9aROFjo0mKCKg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700032	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS2	Unit 03: test & energize		264	0	16	0	0	0	16	0	0	0				2027-08-06 08:00	2027-08-09 16:00		2027-06-22 08:00	2027-06-23 16:00	2027-06-22 08:00	2027-06-23 16:00	2027-06-22 08:00	2027-06-23 16:00	2027-08-06 08:00	2027-08-09 16:00		PT_Normal					cQGmy8n8S+ySBxdMkLL3cQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700033	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST3	Unit 04: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-06-14 08:00	2027-06-18 16:00		2027-06-14 08:00	2027-06-18 16:00	2027-06-14 08:00	2027-06-18 16:00	2027-06-14 08:00	2027-06-18 16:00	2027-06-14 08:00	2027-06-18 16:00		PT_Normal					FFccaq7Tx5QlCQXYaWZXQw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700034	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX3	Unit 04: set transformer		240	0	16	0	0	0	16	0	0	0				2027-08-02 08:00	2027-08-03 16:00		2027-06-21 08:00	2027-06-22 16:00	2027-06-21 08:00	2027-06-22 16:00	2027-06-21 08:00	2027-06-22 16:00	2027-08-02 08:00	2027-08-03 16:00		PT_Normal					CxDqzOTzQhjGg/idwD9KWw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700035	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM3	Unit 04: pull & terminate MV & LV cables		240	0	32	0	0	0	32	0	0	0				2027-08-04 08:00	2027-08-09 16:00		2027-06-23 08:00	2027-06-28 16:00	2027-06-23 08:00	2027-06-28 16:00	2027-06-23 08:00	2027-06-28 16:00	2027-08-04 08:00	2027-08-09 16:00		PT_Normal					/qKZslHHrglcIrPnE2MXMA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700036	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS3	Unit 04: test & energize		240	0	16	0	0	0	16	0	0	0				2027-08-10 08:00	2027-08-11 16:00		2027-06-29 08:00	2027-06-30 16:00	2027-06-29 08:00	2027-06-30 16:00	2027-06-29 08:00	2027-06-30 16:00	2027-08-10 08:00	2027-08-11 16:00		PT_Normal					DzFP2canktWlJoG0Q3PYIQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700037	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST4	Unit 05: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-06-21 08:00	2027-06-25 16:00		2027-06-21 08:00	2027-06-25 16:00	2027-06-21 08:00	2027-06-25 16:00	2027-06-21 08:00	2027-06-25 16:00	2027-06-21 08:00	2027-06-25 16:00		PT_Normal					vFV5mfywrIqvTt3Fe0y5Sw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700038	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX4	Unit 05: set transformer		216	0	16	0	0	0	16	0	0	0				2027-08-04 08:00	2027-08-05 16:00		2027-06-28 08:00	2027-06-29 16:00	2027-06-28 08:00	2027-06-29 16:00	2027-06-28 08:00	2027-06-29 16:00	2027-08-04 08:00	2027-08-05 16:00		PT_Normal					rrIOjtcIHUczjoHybqL+MQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700039	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM4	Unit 05: pull & terminate MV & LV cables		216	0	32	0	0	0	32	0	0	0				2027-08-06 08:00	2027-08-11 16:00		2027-06-30 08:00	2027-07-05 16:00	2027-06-30 08:00	2027-07-05 16:00	2027-06-30 08:00	2027-07-05 16:00	2027-08-06 08:00	2027-08-11 16:00		PT_Normal					/+I5FhhacQ0cuCoYjMBSPg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700040	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS4	Unit 05: test & energize		216	0	16	0	0	0	16	0	0	0				2027-08-12 08:00	2027-08-13 16:00		2027-07-06 08:00	2027-07-07 16:00	2027-07-06 08:00	2027-07-07 16:00	2027-07-06 08:00	2027-07-07 16:00	2027-08-12 08:00	2027-08-13 16:00		PT_Normal					w7wimG6oYJmfW41oqjuVog				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700041	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST5	Unit 06: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-06-28 08:00	2027-07-02 16:00		2027-06-28 08:00	2027-07-02 16:00	2027-06-28 08:00	2027-07-02 16:00	2027-06-28 08:00	2027-07-02 16:00	2027-06-28 08:00	2027-07-02 16:00		PT_Normal					XeXH6SGmVozYoOcIF15sMQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700042	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX5	Unit 06: set transformer		192	0	16	0	0	0	16	0	0	0				2027-08-06 08:00	2027-08-09 16:00		2027-07-05 08:00	2027-07-06 16:00	2027-07-05 08:00	2027-07-06 16:00	2027-07-05 08:00	2027-07-06 16:00	2027-08-06 08:00	2027-08-09 16:00		PT_Normal					9D34ZJMxayRl/G5Rl1APrQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700043	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM5	Unit 06: pull & terminate MV & LV cables		192	0	32	0	0	0	32	0	0	0				2027-08-10 08:00	2027-08-13 16:00		2027-07-07 08:00	2027-07-12 16:00	2027-07-07 08:00	2027-07-12 16:00	2027-07-07 08:00	2027-07-12 16:00	2027-08-10 08:00	2027-08-13 16:00		PT_Normal					VqrRdSQRZVzGfm2wFMirmw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700044	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS5	Unit 06: test & energize		192	0	16	0	0	0	16	0	0	0				2027-08-16 08:00	2027-08-17 16:00		2027-07-13 08:00	2027-07-14 16:00	2027-07-13 08:00	2027-07-14 16:00	2027-07-13 08:00	2027-07-14 16:00	2027-08-16 08:00	2027-08-17 16:00		PT_Normal					lFjdjJ8nrTZ9KxFS3RCtkw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700045	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST6	Unit 07: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-07-05 08:00	2027-07-09 16:00		2027-07-05 08:00	2027-07-09 16:00	2027-07-05 08:00	2027-07-09 16:00	2027-07-05 08:00	2027-07-09 16:00	2027-07-05 08:00	2027-07-09 16:00		PT_Normal					aDAmTj/qejcjdZpocEPAcw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700046	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX6	Unit 07: set transformer		168	0	16	0	0	0	16	0	0	0				2027-08-10 08:00	2027-08-11 16:00		2027-07-12 08:00	2027-07-13 16:00	2027-07-12 08:00	2027-07-13 16:00	2027-07-12 08:00	2027-07-13 16:00	2027-08-10 08:00	2027-08-11 16:00		PT_Normal					Eqkrv17YaSw5VDigHkD9nA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700047	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM6	Unit 07: pull & terminate MV & LV cables		168	0	32	0	0	0	32	0	0	0				2027-08-12 08:00	2027-08-17 16:00		2027-07-14 08:00	2027-07-19 16:00	2027-07-14 08:00	2027-07-19 16:00	2027-07-14 08:00	2027-07-19 16:00	2027-08-12 08:00	2027-08-17 16:00		PT_Normal					vsM+tuCiCM0e7WDwK0wafg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700048	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS6	Unit 07: test & energize		168	0	16	0	0	0	16	0	0	0				2027-08-18 08:00	2027-08-19 16:00		2027-07-20 08:00	2027-07-21 16:00	2027-07-20 08:00	2027-07-21 16:00	2027-07-20 08:00	2027-07-21 16:00	2027-08-18 08:00	2027-08-19 16:00		PT_Normal					ZNjzczTHfKpD5ES1nNMdhw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700049	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST7	Unit 08: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-07-12 08:00	2027-07-16 16:00		2027-07-12 08:00	2027-07-16 16:00	2027-07-12 08:00	2027-07-16 16:00	2027-07-12 08:00	2027-07-16 16:00	2027-07-12 08:00	2027-07-16 16:00		PT_Normal					d20D1xXhdb7xiQIgkdHtZg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700050	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX7	Unit 08: set transformer		144	0	16	0	0	0	16	0	0	0				2027-08-12 08:00	2027-08-13 16:00		2027-07-19 08:00	2027-07-20 16:00	2027-07-19 08:00	2027-07-20 16:00	2027-07-19 08:00	2027-07-20 16:00	2027-08-12 08:00	2027-08-13 16:00		PT_Normal					xKraa0hXzx7Ycgd4fnu09Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700051	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM7	Unit 08: pull & terminate MV & LV cables		144	0	32	0	0	0	32	0	0	0				2027-08-16 08:00	2027-08-19 16:00		2027-07-21 08:00	2027-07-26 16:00	2027-07-21 08:00	2027-07-26 16:00	2027-07-21 08:00	2027-07-26 16:00	2027-08-16 08:00	2027-08-19 16:00		PT_Normal					xx5XRtpTjGR+ZPE+IIQ9VA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700052	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS7	Unit 08: test & energize		144	0	16	0	0	0	16	0	0	0				2027-08-20 08:00	2027-08-23 16:00		2027-07-27 08:00	2027-07-28 16:00	2027-07-27 08:00	2027-07-28 16:00	2027-07-27 08:00	2027-07-28 16:00	2027-08-20 08:00	2027-08-23 16:00		PT_Normal					TT6pGDXm4D3X/gmbbKmTsQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700053	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST8	Unit 09: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-07-19 08:00	2027-07-23 16:00		2027-07-19 08:00	2027-07-23 16:00	2027-07-19 08:00	2027-07-23 16:00	2027-07-19 08:00	2027-07-23 16:00	2027-07-19 08:00	2027-07-23 16:00		PT_Normal					Q6ntn8+wi+wT2mmRkRPiSA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700054	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX8	Unit 09: set transformer		120	0	16	0	0	0	16	0	0	0				2027-08-16 08:00	2027-08-17 16:00		2027-07-26 08:00	2027-07-27 16:00	2027-07-26 08:00	2027-07-27 16:00	2027-07-26 08:00	2027-07-27 16:00	2027-08-16 08:00	2027-08-17 16:00		PT_Normal					PMBNtzn7L6S/6fvdorddzg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700055	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM8	Unit 09: pull & terminate MV & LV cables		120	0	32	0	0	0	32	0	0	0				2027-08-18 08:00	2027-08-23 16:00		2027-07-28 08:00	2027-08-02 16:00	2027-07-28 08:00	2027-08-02 16:00	2027-07-28 08:00	2027-08-02 16:00	2027-08-18 08:00	2027-08-23 16:00		PT_Normal					FuKMMsThRTB8T0e/p3drww				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700056	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS8	Unit 09: test & energize		120	0	16	0	0	0	16	0	0	0				2027-08-24 08:00	2027-08-25 16:00		2027-08-03 08:00	2027-08-04 16:00	2027-08-03 08:00	2027-08-04 16:00	2027-08-03 08:00	2027-08-04 16:00	2027-08-24 08:00	2027-08-25 16:00		PT_Normal					qSwqqln+3Fbc8lChTxXk4A				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700057	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST9	Unit 10: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-07-26 08:00	2027-07-30 16:00		2027-07-26 08:00	2027-07-30 16:00	2027-07-26 08:00	2027-07-30 16:00	2027-07-26 08:00	2027-07-30 16:00	2027-07-26 08:00	2027-07-30 16:00		PT_Normal					pDIhtVOaYmPU2/6/U80RlA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700058	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX9	Unit 10: set transformer		96	0	16	0	0	0	16	0	0	0				2027-08-18 08:00	2027-08-19 16:00		2027-08-02 08:00	2027-08-03 16:00	2027-08-02 08:00	2027-08-03 16:00	2027-08-02 08:00	2027-08-03 16:00	2027-08-18 08:00	2027-08-19 16:00		PT_Normal					8ZJacqk74XubFUYMufrzqQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700059	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM9	Unit 10: pull & terminate MV & LV cables		96	0	32	0	0	0	32	0	0	0				2027-08-20 08:00	2027-08-25 16:00		2027-08-04 08:00	2027-08-09 16:00	2027-08-04 08:00	2027-08-09 16:00	2027-08-04 08:00	2027-08-09 16:00	2027-08-20 08:00	2027-08-25 16:00		PT_Normal					WH0qZ3etWYkvub0axFS29w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700060	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS9	Unit 10: test & energize		96	0	16	0	0	0	16	0	0	0				2027-08-26 08:00	2027-08-27 16:00		2027-08-10 08:00	2027-08-11 16:00	2027-08-10 08:00	2027-08-11 16:00	2027-08-10 08:00	2027-08-11 16:00	2027-08-26 08:00	2027-08-27 16:00		PT_Normal					JV+2JnFWvlFPnoPRW2frhQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700061	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST10	Unit 11: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-08-02 08:00	2027-08-06 16:00		2027-08-02 08:00	2027-08-06 16:00	2027-08-02 08:00	2027-08-06 16:00	2027-08-02 08:00	2027-08-06 16:00	2027-08-02 08:00	2027-08-06 16:00		PT_Normal					f5NjaJl19I9wtnUzmDq9/g				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700062	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX10	Unit 11: set transformer		72	0	16	0	0	0	16	0	0	0				2027-08-20 08:00	2027-08-23 16:00		2027-08-09 08:00	2027-08-10 16:00	2027-08-09 08:00	2027-08-10 16:00	2027-08-09 08:00	2027-08-10 16:00	2027-08-20 08:00	2027-08-23 16:00		PT_Normal					QHPiGB48vu4hH51PuJL33g				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700063	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM10	Unit 11: pull & terminate MV & LV cables		72	0	32	0	0	0	32	0	0	0				2027-08-24 08:00	2027-08-27 16:00		2027-08-11 08:00	2027-08-16 16:00	2027-08-11 08:00	2027-08-16 16:00	2027-08-11 08:00	2027-08-16 16:00	2027-08-24 08:00	2027-08-27 16:00		PT_Normal					WGl6TfizHKMOSjnCNRfk0w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700064	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS10	Unit 11: test & energize		72	0	16	0	0	0	16	0	0	0				2027-08-30 08:00	2027-08-31 16:00		2027-08-17 08:00	2027-08-18 16:00	2027-08-17 08:00	2027-08-18 16:00	2027-08-17 08:00	2027-08-18 16:00	2027-08-30 08:00	2027-08-31 16:00		PT_Normal					QYJq7y9QduXYtwhwrGwhtQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700065	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST11	Unit 12: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-08-09 08:00	2027-08-13 16:00		2027-08-09 08:00	2027-08-13 16:00	2027-08-09 08:00	2027-08-13 16:00	2027-08-09 08:00	2027-08-13 16:00	2027-08-09 08:00	2027-08-13 16:00		PT_Normal					iKwtJ4mgAHF92GC+lkAPcQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700066	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX11	Unit 12: set transformer		48	0	16	0	0	0	16	0	0	0				2027-08-24 08:00	2027-08-25 16:00		2027-08-16 08:00	2027-08-17 16:00	2027-08-16 08:00	2027-08-17 16:00	2027-08-16 08:00	2027-08-17 16:00	2027-08-24 08:00	2027-08-25 16:00		PT_Normal					+lbBuA6lzgZ3pIzd60plxQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700067	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM11	Unit 12: pull & terminate MV & LV cables		48	0	32	0	0	0	32	0	0	0				2027-08-26 08:00	2027-08-31 16:00		2027-08-18 08:00	2027-08-23 16:00	2027-08-18 08:00	2027-08-23 16:00	2027-08-18 08:00	2027-08-23 16:00	2027-08-26 08:00	2027-08-31 16:00		PT_Normal					QS7Xv/wpl/7fQK3Z9E/WEw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700068	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS11	Unit 12: test & energize		48	0	16	0	0	0	16	0	0	0				2027-09-01 08:00	2027-09-02 16:00		2027-08-24 08:00	2027-08-25 16:00	2027-08-24 08:00	2027-08-25 16:00	2027-08-24 08:00	2027-08-25 16:00	2027-09-01 08:00	2027-09-02 16:00		PT_Normal					yVZZsRKWXKqNJTGZMeSw2Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700069	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST12	Unit 13: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-08-16 08:00	2027-08-20 16:00		2027-08-16 08:00	2027-08-20 16:00	2027-08-16 08:00	2027-08-20 16:00	2027-08-16 08:00	2027-08-20 16:00	2027-08-16 08:00	2027-08-20 16:00		PT_Normal					11EfsANUpQpCFp1xyzfbYw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700070	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX12	Unit 13: set transformer		24	0	16	0	0	0	16	0	0	0				2027-08-26 08:00	2027-08-27 16:00		2027-08-23 08:00	2027-08-24 16:00	2027-08-23 08:00	2027-08-24 16:00	2027-08-23 08:00	2027-08-24 16:00	2027-08-26 08:00	2027-08-27 16:00		PT_Normal					9sAHfbAUDcFBizTx9889hA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700071	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM12	Unit 13: pull & terminate MV & LV cables		24	0	32	0	0	0	32	0	0	0				2027-08-30 08:00	2027-09-02 16:00		2027-08-25 08:00	2027-08-30 16:00	2027-08-25 08:00	2027-08-30 16:00	2027-08-25 08:00	2027-08-30 16:00	2027-08-30 08:00	2027-09-02 16:00		PT_Normal					8A3VUyv0r7+0iXejc1c+pA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700072	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS12	Unit 13: test & energize		24	0	16	0	0	0	16	0	0	0				2027-09-03 08:00	2027-09-06 16:00		2027-08-31 08:00	2027-09-01 16:00	2027-08-31 08:00	2027-09-01 16:00	2027-08-31 08:00	2027-09-01 16:00	2027-09-03 08:00	2027-09-06 16:00		PT_Normal					T0NEavzabUT+IEF2UmAM9w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700073	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ST13	Unit 14: set module (crew 1)		0	0	40	0	0	0	40	0	0	0				2027-08-23 08:00	2027-08-27 16:00		2027-08-23 08:00	2027-08-27 16:00	2027-08-23 08:00	2027-08-27 16:00	2027-08-23 08:00	2027-08-27 16:00	2027-08-23 08:00	2027-08-27 16:00		PT_Normal					tU22S0w7+f0fnS7Yf1/xtw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700074	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TX13	Unit 14: set transformer		0	0	16	0	0	0	16	0	0	0				2027-08-30 08:00	2027-08-31 16:00		2027-08-30 08:00	2027-08-31 16:00	2027-08-30 08:00	2027-08-31 16:00	2027-08-30 08:00	2027-08-31 16:00	2027-08-30 08:00	2027-08-31 16:00		PT_Normal					F8+syBHCmCGzZvmj0znQ0Q				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700075	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TM13	Unit 14: pull & terminate MV & LV cables		0	0	32	0	0	0	32	0	0	0				2027-09-01 08:00	2027-09-06 16:00		2027-09-01 08:00	2027-09-06 16:00	2027-09-01 08:00	2027-09-06 16:00	2027-09-01 08:00	2027-09-06 16:00	2027-09-01 08:00	2027-09-06 16:00		PT_Normal					9No86gaMciZJekhWs6viuA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700076	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TS13	Unit 14: test & energize		0	0	16	0	0	0	16	0	0	0				2027-09-07 08:00	2027-09-08 16:00		2027-09-07 08:00	2027-09-08 16:00	2027-09-07 08:00	2027-09-08 16:00	2027-09-07 08:00	2027-09-08 16:00	2027-09-07 08:00	2027-09-08 16:00		PT_Normal					H/ugGvToOT+k4JqVQqmJEQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700077	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CRD	Demobilise crane		56	0	8	0	0	0	8	0	0	0				2027-09-08 08:00	2027-09-08 16:00		2027-08-30 08:00	2027-08-30 16:00	2027-08-30 08:00	2027-08-30 16:00	2027-08-30 08:00	2027-08-30 16:00	2027-09-08 08:00	2027-09-08 16:00		PT_Normal					JjYinLFdd+9WhFhqRr38ug				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700078	5101	40200	7101	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	MS999	All 14 units energized		0	0	0	0	0	0	0	0	0	0				2027-09-08 16:00	2027-09-08 16:00		2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00	2027-09-08 16:00		PT_Normal					FBPvQEuKqlNmSqLq2/+y5g				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
 %T	TASKPRED
 %F	task_pred_id	task_id	pred_task_id	proj_id	pred_proj_id	pred_type	lag_hr_cnt	comments	float_path	aref	arls
 %R	800001	700001	700000	5101	5101	PR_FS	0				
@@ -158,128 +160,144 @@ ERMHDR	25.12	2026-08-29	Project	ADMIN	khale	dbxDatabaseNoName	Project Management
 %R	800031	700019	700004	5101	5101	PR_FS	0				
 %R	800032	700019	700018	5101	5101	PR_FS	0				
 %R	800033	700020	700006	5101	5101	PR_FS	0				
-%R	800034	700020	700001	5101	5101	PR_FS	0				
-%R	800035	700021	700020	5101	5101	PR_FS	0				
-%R	800036	700021	700003	5101	5101	PR_FS	0				
+%R	800034	700021	700006	5101	5101	PR_FS	0				
+%R	800035	700021	700001	5101	5101	PR_FS	0				
+%R	800036	700021	700020	5101	5101	PR_FS	0				
 %R	800037	700022	700021	5101	5101	PR_FS	0				
-%R	800038	700022	700005	5101	5101	PR_FS	0				
+%R	800038	700022	700003	5101	5101	PR_FS	0				
 %R	800039	700023	700022	5101	5101	PR_FS	0				
-%R	800040	700024	700007	5101	5101	PR_FS	0				
-%R	800041	700024	700001	5101	5101	PR_FS	0				
-%R	800042	700024	700020	5101	5101	PR_FS	0				
-%R	800043	700025	700024	5101	5101	PR_FS	0				
-%R	800044	700025	700003	5101	5101	PR_FS	0				
-%R	800045	700026	700025	5101	5101	PR_FS	0				
-%R	800046	700026	700005	5101	5101	PR_FS	0				
-%R	800047	700027	700026	5101	5101	PR_FS	0				
-%R	800048	700027	700023	5101	5101	PR_FS	0				
-%R	800049	700028	700008	5101	5101	PR_FS	0				
-%R	800050	700028	700001	5101	5101	PR_FS	0				
+%R	800040	700023	700005	5101	5101	PR_FS	0				
+%R	800041	700024	700023	5101	5101	PR_FS	0				
+%R	800042	700025	700007	5101	5101	PR_FS	0				
+%R	800043	700025	700001	5101	5101	PR_FS	0				
+%R	800044	700025	700020	5101	5101	PR_FS	0				
+%R	800045	700025	700021	5101	5101	PR_FS	0				
+%R	800046	700026	700025	5101	5101	PR_FS	0				
+%R	800047	700026	700003	5101	5101	PR_FS	0				
+%R	800048	700027	700026	5101	5101	PR_FS	0				
+%R	800049	700027	700005	5101	5101	PR_FS	0				
+%R	800050	700028	700027	5101	5101	PR_FS	0				
 %R	800051	700028	700024	5101	5101	PR_FS	0				
-%R	800052	700029	700028	5101	5101	PR_FS	0				
-%R	800053	700029	700003	5101	5101	PR_FS	0				
-%R	800054	700030	700029	5101	5101	PR_FS	0				
-%R	800055	700030	700005	5101	5101	PR_FS	0				
-%R	800056	700031	700030	5101	5101	PR_FS	0				
-%R	800057	700031	700027	5101	5101	PR_FS	0				
-%R	800058	700032	700009	5101	5101	PR_FS	0				
-%R	800059	700032	700001	5101	5101	PR_FS	0				
-%R	800060	700032	700028	5101	5101	PR_FS	0				
-%R	800061	700033	700032	5101	5101	PR_FS	0				
-%R	800062	700033	700003	5101	5101	PR_FS	0				
-%R	800063	700034	700033	5101	5101	PR_FS	0				
-%R	800064	700034	700005	5101	5101	PR_FS	0				
-%R	800065	700035	700034	5101	5101	PR_FS	0				
-%R	800066	700035	700031	5101	5101	PR_FS	0				
-%R	800067	700036	700010	5101	5101	PR_FS	0				
-%R	800068	700036	700001	5101	5101	PR_FS	0				
-%R	800069	700036	700032	5101	5101	PR_FS	0				
-%R	800070	700037	700036	5101	5101	PR_FS	0				
-%R	800071	700037	700003	5101	5101	PR_FS	0				
-%R	800072	700038	700037	5101	5101	PR_FS	0				
-%R	800073	700038	700005	5101	5101	PR_FS	0				
-%R	800074	700039	700038	5101	5101	PR_FS	0				
-%R	800075	700039	700035	5101	5101	PR_FS	0				
-%R	800076	700040	700011	5101	5101	PR_FS	0				
-%R	800077	700040	700001	5101	5101	PR_FS	0				
-%R	800078	700040	700036	5101	5101	PR_FS	0				
-%R	800079	700041	700040	5101	5101	PR_FS	0				
-%R	800080	700041	700003	5101	5101	PR_FS	0				
-%R	800081	700042	700041	5101	5101	PR_FS	0				
-%R	800082	700042	700005	5101	5101	PR_FS	0				
-%R	800083	700043	700042	5101	5101	PR_FS	0				
-%R	800084	700043	700039	5101	5101	PR_FS	0				
-%R	800085	700044	700012	5101	5101	PR_FS	0				
-%R	800086	700044	700001	5101	5101	PR_FS	0				
-%R	800087	700044	700040	5101	5101	PR_FS	0				
-%R	800088	700045	700044	5101	5101	PR_FS	0				
-%R	800089	700045	700003	5101	5101	PR_FS	0				
-%R	800090	700046	700045	5101	5101	PR_FS	0				
-%R	800091	700046	700005	5101	5101	PR_FS	0				
-%R	800092	700047	700046	5101	5101	PR_FS	0				
-%R	800093	700047	700043	5101	5101	PR_FS	0				
-%R	800094	700048	700013	5101	5101	PR_FS	0				
-%R	800095	700048	700002	5101	5101	PR_FS	0				
-%R	800096	700048	700044	5101	5101	PR_FS	0				
-%R	800097	700049	700048	5101	5101	PR_FS	0				
-%R	800098	700049	700003	5101	5101	PR_FS	0				
-%R	800099	700050	700049	5101	5101	PR_FS	0				
-%R	800100	700050	700005	5101	5101	PR_FS	0				
-%R	800101	700051	700050	5101	5101	PR_FS	0				
-%R	800102	700051	700047	5101	5101	PR_FS	0				
-%R	800103	700052	700014	5101	5101	PR_FS	0				
-%R	800104	700052	700002	5101	5101	PR_FS	0				
-%R	800105	700052	700048	5101	5101	PR_FS	0				
-%R	800106	700053	700052	5101	5101	PR_FS	0				
-%R	800107	700053	700003	5101	5101	PR_FS	0				
-%R	800108	700054	700053	5101	5101	PR_FS	0				
-%R	800109	700054	700005	5101	5101	PR_FS	0				
-%R	800110	700055	700054	5101	5101	PR_FS	0				
-%R	800111	700055	700051	5101	5101	PR_FS	0				
-%R	800112	700056	700015	5101	5101	PR_FS	0				
-%R	800113	700056	700002	5101	5101	PR_FS	0				
-%R	800114	700056	700052	5101	5101	PR_FS	0				
-%R	800115	700057	700056	5101	5101	PR_FS	0				
-%R	800116	700057	700003	5101	5101	PR_FS	0				
-%R	800117	700058	700057	5101	5101	PR_FS	0				
-%R	800118	700058	700005	5101	5101	PR_FS	0				
-%R	800119	700059	700058	5101	5101	PR_FS	0				
-%R	800120	700059	700055	5101	5101	PR_FS	0				
-%R	800121	700060	700016	5101	5101	PR_FS	0				
-%R	800122	700060	700002	5101	5101	PR_FS	0				
-%R	800123	700060	700056	5101	5101	PR_FS	0				
-%R	800124	700061	700060	5101	5101	PR_FS	0				
-%R	800125	700061	700003	5101	5101	PR_FS	0				
-%R	800126	700062	700061	5101	5101	PR_FS	0				
-%R	800127	700062	700005	5101	5101	PR_FS	0				
-%R	800128	700063	700062	5101	5101	PR_FS	0				
-%R	800129	700063	700059	5101	5101	PR_FS	0				
-%R	800130	700064	700017	5101	5101	PR_FS	0				
-%R	800131	700064	700002	5101	5101	PR_FS	0				
-%R	800132	700064	700060	5101	5101	PR_FS	0				
-%R	800133	700065	700064	5101	5101	PR_FS	0				
-%R	800134	700065	700003	5101	5101	PR_FS	0				
-%R	800135	700066	700065	5101	5101	PR_FS	0				
-%R	800136	700066	700005	5101	5101	PR_FS	0				
-%R	800137	700067	700066	5101	5101	PR_FS	0				
-%R	800138	700067	700063	5101	5101	PR_FS	0				
-%R	800139	700068	700018	5101	5101	PR_FS	0				
-%R	800140	700068	700002	5101	5101	PR_FS	0				
-%R	800141	700068	700064	5101	5101	PR_FS	0				
-%R	800142	700069	700068	5101	5101	PR_FS	0				
-%R	800143	700069	700003	5101	5101	PR_FS	0				
-%R	800144	700070	700069	5101	5101	PR_FS	0				
-%R	800145	700070	700005	5101	5101	PR_FS	0				
-%R	800146	700071	700070	5101	5101	PR_FS	0				
-%R	800147	700071	700067	5101	5101	PR_FS	0				
-%R	800148	700072	700019	5101	5101	PR_FS	0				
-%R	800149	700072	700002	5101	5101	PR_FS	0				
-%R	800150	700072	700068	5101	5101	PR_FS	0				
-%R	800151	700073	700072	5101	5101	PR_FS	0				
-%R	800152	700073	700003	5101	5101	PR_FS	0				
-%R	800153	700074	700073	5101	5101	PR_FS	0				
-%R	800154	700074	700005	5101	5101	PR_FS	0				
-%R	800155	700075	700074	5101	5101	PR_FS	0				
-%R	800156	700075	700071	5101	5101	PR_FS	0				
-%R	800157	700076	700075	5101	5101	PR_FS	0				
+%R	800052	700029	700008	5101	5101	PR_FS	0				
+%R	800053	700029	700001	5101	5101	PR_FS	0				
+%R	800054	700029	700020	5101	5101	PR_FS	0				
+%R	800055	700029	700025	5101	5101	PR_FS	0				
+%R	800056	700030	700029	5101	5101	PR_FS	0				
+%R	800057	700030	700003	5101	5101	PR_FS	0				
+%R	800058	700031	700030	5101	5101	PR_FS	0				
+%R	800059	700031	700005	5101	5101	PR_FS	0				
+%R	800060	700032	700031	5101	5101	PR_FS	0				
+%R	800061	700032	700028	5101	5101	PR_FS	0				
+%R	800062	700033	700009	5101	5101	PR_FS	0				
+%R	800063	700033	700001	5101	5101	PR_FS	0				
+%R	800064	700033	700020	5101	5101	PR_FS	0				
+%R	800065	700033	700029	5101	5101	PR_FS	0				
+%R	800066	700034	700033	5101	5101	PR_FS	0				
+%R	800067	700034	700003	5101	5101	PR_FS	0				
+%R	800068	700035	700034	5101	5101	PR_FS	0				
+%R	800069	700035	700005	5101	5101	PR_FS	0				
+%R	800070	700036	700035	5101	5101	PR_FS	0				
+%R	800071	700036	700032	5101	5101	PR_FS	0				
+%R	800072	700037	700010	5101	5101	PR_FS	0				
+%R	800073	700037	700001	5101	5101	PR_FS	0				
+%R	800074	700037	700020	5101	5101	PR_FS	0				
+%R	800075	700037	700033	5101	5101	PR_FS	0				
+%R	800076	700038	700037	5101	5101	PR_FS	0				
+%R	800077	700038	700003	5101	5101	PR_FS	0				
+%R	800078	700039	700038	5101	5101	PR_FS	0				
+%R	800079	700039	700005	5101	5101	PR_FS	0				
+%R	800080	700040	700039	5101	5101	PR_FS	0				
+%R	800081	700040	700036	5101	5101	PR_FS	0				
+%R	800082	700041	700011	5101	5101	PR_FS	0				
+%R	800083	700041	700001	5101	5101	PR_FS	0				
+%R	800084	700041	700020	5101	5101	PR_FS	0				
+%R	800085	700041	700037	5101	5101	PR_FS	0				
+%R	800086	700042	700041	5101	5101	PR_FS	0				
+%R	800087	700042	700003	5101	5101	PR_FS	0				
+%R	800088	700043	700042	5101	5101	PR_FS	0				
+%R	800089	700043	700005	5101	5101	PR_FS	0				
+%R	800090	700044	700043	5101	5101	PR_FS	0				
+%R	800091	700044	700040	5101	5101	PR_FS	0				
+%R	800092	700045	700012	5101	5101	PR_FS	0				
+%R	800093	700045	700001	5101	5101	PR_FS	0				
+%R	800094	700045	700020	5101	5101	PR_FS	0				
+%R	800095	700045	700041	5101	5101	PR_FS	0				
+%R	800096	700046	700045	5101	5101	PR_FS	0				
+%R	800097	700046	700003	5101	5101	PR_FS	0				
+%R	800098	700047	700046	5101	5101	PR_FS	0				
+%R	800099	700047	700005	5101	5101	PR_FS	0				
+%R	800100	700048	700047	5101	5101	PR_FS	0				
+%R	800101	700048	700044	5101	5101	PR_FS	0				
+%R	800102	700049	700013	5101	5101	PR_FS	0				
+%R	800103	700049	700002	5101	5101	PR_FS	0				
+%R	800104	700049	700020	5101	5101	PR_FS	0				
+%R	800105	700049	700045	5101	5101	PR_FS	0				
+%R	800106	700050	700049	5101	5101	PR_FS	0				
+%R	800107	700050	700003	5101	5101	PR_FS	0				
+%R	800108	700051	700050	5101	5101	PR_FS	0				
+%R	800109	700051	700005	5101	5101	PR_FS	0				
+%R	800110	700052	700051	5101	5101	PR_FS	0				
+%R	800111	700052	700048	5101	5101	PR_FS	0				
+%R	800112	700053	700014	5101	5101	PR_FS	0				
+%R	800113	700053	700002	5101	5101	PR_FS	0				
+%R	800114	700053	700020	5101	5101	PR_FS	0				
+%R	800115	700053	700049	5101	5101	PR_FS	0				
+%R	800116	700054	700053	5101	5101	PR_FS	0				
+%R	800117	700054	700003	5101	5101	PR_FS	0				
+%R	800118	700055	700054	5101	5101	PR_FS	0				
+%R	800119	700055	700005	5101	5101	PR_FS	0				
+%R	800120	700056	700055	5101	5101	PR_FS	0				
+%R	800121	700056	700052	5101	5101	PR_FS	0				
+%R	800122	700057	700015	5101	5101	PR_FS	0				
+%R	800123	700057	700002	5101	5101	PR_FS	0				
+%R	800124	700057	700020	5101	5101	PR_FS	0				
+%R	800125	700057	700053	5101	5101	PR_FS	0				
+%R	800126	700058	700057	5101	5101	PR_FS	0				
+%R	800127	700058	700003	5101	5101	PR_FS	0				
+%R	800128	700059	700058	5101	5101	PR_FS	0				
+%R	800129	700059	700005	5101	5101	PR_FS	0				
+%R	800130	700060	700059	5101	5101	PR_FS	0				
+%R	800131	700060	700056	5101	5101	PR_FS	0				
+%R	800132	700061	700016	5101	5101	PR_FS	0				
+%R	800133	700061	700002	5101	5101	PR_FS	0				
+%R	800134	700061	700020	5101	5101	PR_FS	0				
+%R	800135	700061	700057	5101	5101	PR_FS	0				
+%R	800136	700062	700061	5101	5101	PR_FS	0				
+%R	800137	700062	700003	5101	5101	PR_FS	0				
+%R	800138	700063	700062	5101	5101	PR_FS	0				
+%R	800139	700063	700005	5101	5101	PR_FS	0				
+%R	800140	700064	700063	5101	5101	PR_FS	0				
+%R	800141	700064	700060	5101	5101	PR_FS	0				
+%R	800142	700065	700017	5101	5101	PR_FS	0				
+%R	800143	700065	700002	5101	5101	PR_FS	0				
+%R	800144	700065	700020	5101	5101	PR_FS	0				
+%R	800145	700065	700061	5101	5101	PR_FS	0				
+%R	800146	700066	700065	5101	5101	PR_FS	0				
+%R	800147	700066	700003	5101	5101	PR_FS	0				
+%R	800148	700067	700066	5101	5101	PR_FS	0				
+%R	800149	700067	700005	5101	5101	PR_FS	0				
+%R	800150	700068	700067	5101	5101	PR_FS	0				
+%R	800151	700068	700064	5101	5101	PR_FS	0				
+%R	800152	700069	700018	5101	5101	PR_FS	0				
+%R	800153	700069	700002	5101	5101	PR_FS	0				
+%R	800154	700069	700020	5101	5101	PR_FS	0				
+%R	800155	700069	700065	5101	5101	PR_FS	0				
+%R	800156	700070	700069	5101	5101	PR_FS	0				
+%R	800157	700070	700003	5101	5101	PR_FS	0				
+%R	800158	700071	700070	5101	5101	PR_FS	0				
+%R	800159	700071	700005	5101	5101	PR_FS	0				
+%R	800160	700072	700071	5101	5101	PR_FS	0				
+%R	800161	700072	700068	5101	5101	PR_FS	0				
+%R	800162	700073	700019	5101	5101	PR_FS	0				
+%R	800163	700073	700002	5101	5101	PR_FS	0				
+%R	800164	700073	700020	5101	5101	PR_FS	0				
+%R	800165	700073	700069	5101	5101	PR_FS	0				
+%R	800166	700074	700073	5101	5101	PR_FS	0				
+%R	800167	700074	700003	5101	5101	PR_FS	0				
+%R	800168	700075	700074	5101	5101	PR_FS	0				
+%R	800169	700075	700005	5101	5101	PR_FS	0				
+%R	800170	700076	700075	5101	5101	PR_FS	0				
+%R	800171	700076	700072	5101	5101	PR_FS	0				
+%R	800172	700077	700073	5101	5101	PR_FS	0				
+%R	800173	700078	700076	5101	5101	PR_FS	0				
 %E
