@@ -1,0 +1,603 @@
+ERMHDR	25.12	2026-08-29	Project	ADMIN	khale	dbxDatabaseNoName	Project Management	KD
+%T	CURRTYPE
+%F	curr_id	decimal_digit_cnt	curr_symbol	decimal_symbol	digit_group_symbol	pos_curr_fmt_type	neg_curr_fmt_type	curr_type	curr_short_name	group_digit_cnt	base_exch_rate
+%R	1	2	KD	.	,	#1.1	(#1.1)	Kuwait Dinar	KD	3	1
+%R	13	2	�	.	,	#1.1	(#1.1)	Pound Sterling	GBP	3	0.618603
+%R	14	2	�	.	,	#1.1	(#1.1)	Japanese Yen	JPY	3	91.2708
+%R	15	2	�	.	,	#1.1	(#1.1)	Euro	EUR	3	0.689711
+%R	16	2	�	.	,	#1.1	(#1.1)	Chinese Yuan Renminbi	CNY	3	6.82502
+%R	17	2	$	.	,	#1.1	(#1.1)	Canadian Dollar	CAD	3	1.03757
+%R	18	2	RUB	.	,	#1.1	(#1.1)	Russian Ruble	RUB	3	0.033948
+%R	19	2	$	.	,	#1.1	(#1.1)	Argentine Peso	ARS	3	3.79109
+%R	20	2	$b	.	,	#1.1	(#1.1)	Bolivian Boliviano	BOB	3	7.5708
+%R	21	2	R$	.	,	#1.1	(#1.1)	Brazilian Real	BRL	3	1.7665
+%R	22	2	$	.	,	#1.1	(#1.1)	Chilean Peso	CLP	3	507.58
+%R	23	2	$	.	,	#1.1	(#1.1)	Columbian Peso	COP	3	1957.74
+%R	24	2	$	.	,	#1.1	(#1.1)	Guyanese Dollar	GYD	3	202.95
+%R	25	2	Gs	.	,	#1.1	(#1.1)	Paraguayan Guarani	PYG	3	4640
+%R	26	2	S/.	.	,	#1.1	(#1.1)	Peruvian Nuevo Sol	PEN	3	2.7244
+%R	27	2	$	.	,	#1.1	(#1.1)	Surinamese Dollar	SRD	3	2.8
+%R	28	2	Bs	.	,	#1.1	(#1.1)	Venezuelan Bolivar Fuerto	VEF	3	2.1446
+%R	29	2	$U	.	,	#1.1	(#1.1)	Uruguayan Peso	UYU	3	21.247
+%R	30	2	I.E	.	,	#1.1	(#1.1)	Egyptian Pound	EGP	3	1
+%T	FINTMPL
+%F	fintmpl_id	fintmpl_name	default_flag
+%R	1	Calendar	Y
+%T	OBS
+%F	obs_id	parent_obs_id	guid	seq_num	obs_name	obs_descr
+%R	540			0	Enterprise	<html>  <head>      </head>  <body bgcolor=""#ffffff"">    Enterprise  </body></html>
+%R	1470	540	Xa6CQnIfnU8CbFYoCoyj5Y	4	Manufacturing	<html>  <head>      </head>  <body>    Manufacturing  </body></html>
+%T	PROJECT
+%F	proj_id	fy_start_month_num	rsrc_self_add_flag	allow_complete_flag	rsrc_multi_assign_flag	checkout_flag	project_flag	step_complete_flag	cost_qty_recalc_flag	batch_sum_flag	name_sep_char	def_complete_pct_type	proj_short_name	acct_id	orig_proj_id	source_proj_id	base_type_id	clndr_id	sum_base_proj_id	task_code_base	task_code_step	priority_num	wbs_max_sum_level	strgy_priority_num	last_checksum	critical_drtn_hr_cnt	def_cost_per_qty	last_recalc_date	plan_start_date	plan_end_date	scd_end_date	add_date	last_tasksum_date	fcst_start_date	def_duration_type	task_code_prefix	guid	def_qty_type	add_by_name	web_local_root_path	proj_url	def_rate_type	add_act_remain_flag	act_this_per_link_flag	def_task_type	act_pct_link_flag	critical_path_type	task_code_prefix_flag	def_rollup_dates_flag	use_project_baseline_flag	rem_target_link_flag	reset_planned_flag	allow_neg_act_flag	sum_assign_level	last_fin_dates_id	fintmpl_id	last_baseline_update_date	cr_external_key	apply_actuals_date	location_id	last_schedule_date	loaded_scope_level	export_flag	new_fin_dates_id	baselines_to_export	baseline_names_to_export	next_data_date	base_proj_id	base_proj_id1	base_proj_id2	close_period_flag	sum_refresh_date	trsrcsum_loaded	sumtask_loaded
+%R	5101	1	Y	Y	Y	N	Y	N	N	Y	.	CP_Drtn	RESIDENTIAL-TOWER					7101		1000	10	10	2	500		0	0.0000	2027-01-04 08:00	2027-01-04 08:00		2028-04-01 16:00	2026-08-29 00:00			DT_FixedDUR2	A	q6Ibj0CO0tw1vbcmuFpCGw	QT_Hour	ADMIN			COST_PER_QTY	N	Y	TT_Task	Y	CT_TotFloat	Y	Y	Y	Y	N	N	SL_Taskrsrc		1						7	Y											
+%T	SCHEDOPTIONS
+%F	schedoptions_id	proj_id	sched_outer_depend_type	sched_open_critical_flag	sched_lag_early_start_flag	sched_retained_logic	sched_setplantoforecast	sched_float_type	sched_calendar_on_relationship_lag	sched_use_expect_end_flag	sched_progress_override	sched_level_float_thrs_cnt	sched_level_outer_assign_flag	sched_level_outer_assign_priority	sched_level_over_alloc_pct	sched_level_within_float_flag	sched_level_keep_sched_date_flag	sched_level_all_rsrc_flag	sched_use_project_end_date_for_float	enable_multiple_longest_path_calc	limit_multiple_longest_path_calc	max_multiple_longest_path	use_total_float_multiple_longest_paths	key_activity_for_multiple_longest_paths	LevelPriorityList
+%R	9101	5101	SD_Both	N	N	Y	N	FT_FF	rcal_Predecessor	Y	N	0	N	1	25	N	Y	N	Y	N	N	10	N		priority_type,ASC
+%T	CALENDAR
+%F	clndr_id	default_flag	clndr_name	proj_id	base_clndr_id	last_chng_date	clndr_type	day_hr_cnt	week_hr_cnt	month_hr_cnt	year_hr_cnt	rsrc_private	clndr_data
+%R	7101	N	6-day x 8h	5101		2026-11-01 00:00	CA_Project	8	48	206	2496	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|16:00)())))    (0||3()(      (0||0(s|08:00|f|16:00)())))    (0||4()(      (0||0(s|08:00|f|16:00)())))    (0||5()(      (0||0(s|08:00|f|16:00)())))    (0||6()(      (0||0(s|08:00|f|16:00)())))    (0||7()(      (0||0(s|08:00|f|16:00)())))))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()())))
+%T	PROJWBS
+%F	wbs_id	proj_id	obs_id	seq_num	est_wt	proj_node_flag	sum_data_flag	status_code	wbs_short_name	wbs_name	phase_id	parent_wbs_id	ev_user_pct	ev_etc_user_value	orig_cost	indep_remain_total_cost	ann_dscnt_rate_pct	dscnt_period_type	indep_remain_work_qty	anticip_start_date	anticip_end_date	ev_compute_type	ev_etc_compute_type	guid	tmpl_guid	plan_open_state
+%R	40101	5101	1470	1	1	Y	N	WS_Open	RESIDENTIAL-TOWER	Residential Tower, 2B + G + 35 (GCC)		18133	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	aV6wSSNChb6+ZiPftPkuKA		
+%R	40200	5101	1470	10	1	N	N	WS_Open	01	Milestones		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	JKQRC9DR1CgnGy8Aikl6Mw		
+%R	40201	5101	1470	20	1	N	N	WS_Open	02	Substructure		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	5XiLIluS12ldgFb6CfithA		
+%R	40202	5101	1470	30	1	N	N	WS_Open	03	Superstructure		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	CH9n0E1mYd07gqmi1iJExA		
+%R	40203	5101	1470	40	1	N	N	WS_Open	04	Procurement		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	d3jt503bDsxkh/lgh4qR9A		
+%R	40204	5101	1470	50	1	N	N	WS_Open	05	Facade		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	wFrkAeum6W/G/tmXFRO8Pw		
+%R	40205	5101	1470	60	1	N	N	WS_Open	06	MEP & finishes		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	kLV86aQwVhSjER4xPe/g4Q		
+%R	40206	5101	1470	70	1	N	N	WS_Open	07	Close-out		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	ladZWxlBeLZalTVYxD0keQ		
+%T	TASK
+%F	task_id	proj_id	wbs_id	clndr_id	phys_complete_pct	rev_fdbk_flag	est_wt	lock_plan_flag	auto_compute_act_flag	complete_pct_type	task_type	duration_type	status_code	task_code	task_name	rsrc_id	total_float_hr_cnt	free_float_hr_cnt	remain_drtn_hr_cnt	act_work_qty	remain_work_qty	target_work_qty	target_drtn_hr_cnt	target_equip_qty	act_equip_qty	remain_equip_qty	cstr_date	act_start_date	act_end_date	late_start_date	late_end_date	expect_end_date	early_start_date	early_end_date	restart_date	reend_date	target_start_date	target_end_date	rem_late_start_date	rem_late_end_date	cstr_type	priority_type	suspend_date	resume_date	float_path	float_path_order	guid	tmpl_guid	cstr_date2	cstr_type2	driving_path_flag	act_this_per_work_qty	act_this_per_equip_qty	external_early_start_date	external_late_end_date	create_date	update_date	create_user	update_user	location_id
+%R	700000	5101	40200	7101	0	N	1	N	N	CP_Drtn	TT_Mile	DT_FixedDrtn	TK_NotStart	MS000	Notice to Proceed		0	0	0	0	0	0	0	0	0	0				2027-01-04 08:00	2027-01-04 08:00		2027-01-04 08:00	2027-01-04 08:00	2027-01-04 08:00	2027-01-04 08:00	2027-01-04 08:00	2027-01-04 08:00	2027-01-04 08:00	2027-01-04 08:00		PT_Normal					Rzv6snig0eu+krJewneaUA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700001	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SB100	Shoring, excavation & dewatering		0	0	360	0	0	0	360	0	0	0				2027-01-04 08:00	2027-02-24 16:00		2027-01-04 08:00	2027-02-24 16:00	2027-01-04 08:00	2027-02-24 16:00	2027-01-04 08:00	2027-02-24 16:00	2027-01-04 08:00	2027-02-24 16:00		PT_Normal					sP+aJZ0/t9xFF6o3LW9gag				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700002	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SB110	Raft foundation pour		0	0	144	0	0	0	144	0	0	0				2027-02-25 08:00	2027-03-17 16:00		2027-02-25 08:00	2027-03-17 16:00	2027-02-25 08:00	2027-03-17 16:00	2027-02-25 08:00	2027-03-17 16:00	2027-02-25 08:00	2027-03-17 16:00		PT_Normal					e6oGAwOiIaAIawnKNLkiZg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700003	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW-2	B2: core walls (jump form)		0	0	24	0	0	0	24	0	0	0				2027-03-18 08:00	2027-03-20 16:00		2027-03-18 08:00	2027-03-20 16:00	2027-03-18 08:00	2027-03-20 16:00	2027-03-18 08:00	2027-03-20 16:00	2027-03-18 08:00	2027-03-20 16:00		PT_Normal					1qWGkVk79HU2TfYJZSZq+g				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700004	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL-2	B2: columns & slab cycle		0	0	80	0	0	0	80	0	0	0				2027-03-22 08:00	2027-04-01 16:00		2027-03-22 08:00	2027-04-01 16:00	2027-03-22 08:00	2027-04-01 16:00	2027-03-22 08:00	2027-04-01 16:00	2027-03-22 08:00	2027-04-01 16:00		PT_Normal					rASUT5nCsgwdjdqK293VRg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700005	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW-1	B1: core walls (jump form)		56	0	24	0	0	0	24	0	0	0				2027-03-30 08:00	2027-04-01 16:00		2027-03-22 08:00	2027-03-24 16:00	2027-03-22 08:00	2027-03-24 16:00	2027-03-22 08:00	2027-03-24 16:00	2027-03-30 08:00	2027-04-01 16:00		PT_Normal					SQn/RdguddNe5Lczn85Nvw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700006	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL-1	B1: columns & slab cycle		0	0	80	0	0	0	80	0	0	0				2027-04-02 08:00	2027-04-13 16:00		2027-04-02 08:00	2027-04-13 16:00	2027-04-02 08:00	2027-04-13 16:00	2027-04-02 08:00	2027-04-13 16:00	2027-04-02 08:00	2027-04-13 16:00		PT_Normal					IyUAzqV/E2MFqQfr7B8UTw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700007	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW0	Ground: core walls (jump form)		56	0	24	0	0	0	24	0	0	0				2027-04-10 08:00	2027-04-13 16:00		2027-04-02 08:00	2027-04-05 16:00	2027-04-02 08:00	2027-04-05 16:00	2027-04-02 08:00	2027-04-05 16:00	2027-04-10 08:00	2027-04-13 16:00		PT_Normal					S4/fyfrpOBGIsNoNsMQA/Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700008	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL0	Ground: columns & slab cycle		0	0	80	0	0	0	80	0	0	0				2027-04-14 08:00	2027-04-24 16:00		2027-04-14 08:00	2027-04-24 16:00	2027-04-14 08:00	2027-04-24 16:00	2027-04-14 08:00	2027-04-24 16:00	2027-04-14 08:00	2027-04-24 16:00		PT_Normal					XnQ9dps5rSytfp9XpSbs0Q				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700009	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PR100	Facade unitised panels: design, mock-up & production		208	0	1120	0	0	0	1120	0	0	0				2027-02-03 08:00	2027-07-15 16:00		2027-01-04 08:00	2027-06-15 16:00	2027-01-04 08:00	2027-06-15 16:00	2027-01-04 08:00	2027-06-15 16:00	2027-02-03 08:00	2027-07-15 16:00		PT_Normal					JHKGjcIjYMKKdNtHU10WUA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700010	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW1	Level 1: core walls (jump form)		56	0	24	0	0	0	24	0	0	0				2027-04-22 08:00	2027-04-24 16:00		2027-04-14 08:00	2027-04-16 16:00	2027-04-14 08:00	2027-04-16 16:00	2027-04-14 08:00	2027-04-16 16:00	2027-04-22 08:00	2027-04-24 16:00		PT_Normal					EBWjtalBRE138wyWHxPgVg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700011	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL1	Level 1: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-04-26 08:00	2027-05-01 16:00		2027-04-26 08:00	2027-05-01 16:00	2027-04-26 08:00	2027-05-01 16:00	2027-04-26 08:00	2027-05-01 16:00	2027-04-26 08:00	2027-05-01 16:00		PT_Normal					DitC180DyZrYM8WNE+kJzA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700012	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC1	Level 1: unitised facade panels		208	0	32	0	0	0	32	0	0	0				2027-07-16 08:00	2027-07-20 16:00		2027-06-16 08:00	2027-06-19 16:00	2027-06-16 08:00	2027-06-19 16:00	2027-06-16 08:00	2027-06-19 16:00	2027-07-16 08:00	2027-07-20 16:00		PT_Normal					9QBjL5EM2nGl+91wriSu1g				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700013	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME1	Level 1: MEP first & second fix		208	0	40	0	0	0	40	0	0	0				2027-07-21 08:00	2027-07-26 16:00		2027-06-21 08:00	2027-06-25 16:00	2027-06-21 08:00	2027-06-25 16:00	2027-06-21 08:00	2027-06-25 16:00	2027-07-21 08:00	2027-07-26 16:00		PT_Normal					g2y30xQQyeWf2Edg209P7g				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700014	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI1	Level 1: finishes & joinery		208	0	40	0	0	0	40	0	0	0				2027-07-27 08:00	2027-07-31 16:00		2027-06-26 08:00	2027-07-01 16:00	2027-06-26 08:00	2027-07-01 16:00	2027-06-26 08:00	2027-07-01 16:00	2027-07-27 08:00	2027-07-31 16:00		PT_Normal					4FdmrNmc3Ko3k8Y2AxmFVQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700015	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW2	Level 2: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-04-29 08:00	2027-05-01 16:00		2027-04-26 08:00	2027-04-28 16:00	2027-04-26 08:00	2027-04-28 16:00	2027-04-26 08:00	2027-04-28 16:00	2027-04-29 08:00	2027-05-01 16:00		PT_Normal					H2+VxO27d6+wQAbH7QqXwQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700016	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL2	Level 2: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-05-03 08:00	2027-05-08 16:00		2027-05-03 08:00	2027-05-08 16:00	2027-05-03 08:00	2027-05-08 16:00	2027-05-03 08:00	2027-05-08 16:00	2027-05-03 08:00	2027-05-08 16:00		PT_Normal					AZkWyy/+fGDmNL1hz/IEwA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700017	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC2	Level 2: unitised facade panels		216	0	32	0	0	0	32	0	0	0				2027-07-22 08:00	2027-07-26 16:00		2027-06-21 08:00	2027-06-24 16:00	2027-06-21 08:00	2027-06-24 16:00	2027-06-21 08:00	2027-06-24 16:00	2027-07-22 08:00	2027-07-26 16:00		PT_Normal					PzBri+dKRHHzCH2tsYUYUA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700018	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME2	Level 2: MEP first & second fix		208	0	40	0	0	0	40	0	0	0				2027-07-27 08:00	2027-07-31 16:00		2027-06-26 08:00	2027-07-01 16:00	2027-06-26 08:00	2027-07-01 16:00	2027-06-26 08:00	2027-07-01 16:00	2027-07-27 08:00	2027-07-31 16:00		PT_Normal					XLODj0o8dcYBCTuyBsW6Kw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700019	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI2	Level 2: finishes & joinery		208	0	40	0	0	0	40	0	0	0				2027-08-02 08:00	2027-08-06 16:00		2027-07-02 08:00	2027-07-07 16:00	2027-07-02 08:00	2027-07-07 16:00	2027-07-02 08:00	2027-07-07 16:00	2027-08-02 08:00	2027-08-06 16:00		PT_Normal					mjJcTsoTjaGSUb6uAfLMtQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700020	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW3	Level 3: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-05-06 08:00	2027-05-08 16:00		2027-05-03 08:00	2027-05-05 16:00	2027-05-03 08:00	2027-05-05 16:00	2027-05-03 08:00	2027-05-05 16:00	2027-05-06 08:00	2027-05-08 16:00		PT_Normal					4la20Vh/3ioiUAmexnwhrA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700021	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL3	Level 3: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-05-10 08:00	2027-05-15 16:00		2027-05-10 08:00	2027-05-15 16:00	2027-05-10 08:00	2027-05-15 16:00	2027-05-10 08:00	2027-05-15 16:00	2027-05-10 08:00	2027-05-15 16:00		PT_Normal					/SrzSAPVKiamtj4rnixGsA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700022	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC3	Level 3: unitised facade panels		208	0	32	0	0	0	32	0	0	0				2027-07-28 08:00	2027-07-31 16:00		2027-06-28 08:00	2027-07-01 16:00	2027-06-28 08:00	2027-07-01 16:00	2027-06-28 08:00	2027-07-01 16:00	2027-07-28 08:00	2027-07-31 16:00		PT_Normal					wpJIZ+nzqFp0/11cAzsosA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700023	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME3	Level 3: MEP first & second fix		208	0	40	0	0	0	40	0	0	0				2027-08-02 08:00	2027-08-06 16:00		2027-07-02 08:00	2027-07-07 16:00	2027-07-02 08:00	2027-07-07 16:00	2027-07-02 08:00	2027-07-07 16:00	2027-08-02 08:00	2027-08-06 16:00		PT_Normal					LWsu4HrDrh/VWDL77iPK2w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700024	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI3	Level 3: finishes & joinery		208	0	40	0	0	0	40	0	0	0				2027-08-07 08:00	2027-08-12 16:00		2027-07-08 08:00	2027-07-13 16:00	2027-07-08 08:00	2027-07-13 16:00	2027-07-08 08:00	2027-07-13 16:00	2027-08-07 08:00	2027-08-12 16:00		PT_Normal					6WlAgn4GMZQ8CWMm+7pCvw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700025	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW4	Level 4: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-05-13 08:00	2027-05-15 16:00		2027-05-10 08:00	2027-05-12 16:00	2027-05-10 08:00	2027-05-12 16:00	2027-05-10 08:00	2027-05-12 16:00	2027-05-13 08:00	2027-05-15 16:00		PT_Normal					M2u/ZdRIz2AtpEXOqkzmFw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700026	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL4	Level 4: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-05-17 08:00	2027-05-22 16:00		2027-05-17 08:00	2027-05-22 16:00	2027-05-17 08:00	2027-05-22 16:00	2027-05-17 08:00	2027-05-22 16:00	2027-05-17 08:00	2027-05-22 16:00		PT_Normal					HrV3YDDIt3n9SzyUDvCIng				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700027	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC4	Level 4: unitised facade panels		200	0	32	0	0	0	32	0	0	0				2027-08-03 08:00	2027-08-06 16:00		2027-07-05 08:00	2027-07-08 16:00	2027-07-05 08:00	2027-07-08 16:00	2027-07-05 08:00	2027-07-08 16:00	2027-08-03 08:00	2027-08-06 16:00		PT_Normal					mNNNUiEAUf22VZ8FWt7h4g				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700028	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME4	Level 4: MEP first & second fix		200	0	40	0	0	0	40	0	0	0				2027-08-07 08:00	2027-08-12 16:00		2027-07-09 08:00	2027-07-14 16:00	2027-07-09 08:00	2027-07-14 16:00	2027-07-09 08:00	2027-07-14 16:00	2027-08-07 08:00	2027-08-12 16:00		PT_Normal					GqQsRI8FXVGfjWAGECplfQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700029	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI4	Level 4: finishes & joinery		200	0	40	0	0	0	40	0	0	0				2027-08-13 08:00	2027-08-18 16:00		2027-07-15 08:00	2027-07-20 16:00	2027-07-15 08:00	2027-07-20 16:00	2027-07-15 08:00	2027-07-20 16:00	2027-08-13 08:00	2027-08-18 16:00		PT_Normal					k3HDXPeaigUn59/6y0wnGQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700030	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW5	Level 5: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-05-20 08:00	2027-05-22 16:00		2027-05-17 08:00	2027-05-19 16:00	2027-05-17 08:00	2027-05-19 16:00	2027-05-17 08:00	2027-05-19 16:00	2027-05-20 08:00	2027-05-22 16:00		PT_Normal					YVKc2mn7STHkmpFri/oMSA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700031	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL5	Level 5: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-05-24 08:00	2027-05-29 16:00		2027-05-24 08:00	2027-05-29 16:00	2027-05-24 08:00	2027-05-29 16:00	2027-05-24 08:00	2027-05-29 16:00	2027-05-24 08:00	2027-05-29 16:00		PT_Normal					lANxV91c7BQjx97tNoxhXA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700032	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC5	Level 5: unitised facade panels		192	0	32	0	0	0	32	0	0	0				2027-08-09 08:00	2027-08-12 16:00		2027-07-12 08:00	2027-07-15 16:00	2027-07-12 08:00	2027-07-15 16:00	2027-07-12 08:00	2027-07-15 16:00	2027-08-09 08:00	2027-08-12 16:00		PT_Normal					yeU1lhdAs/ztt9Aiw/w0UQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700033	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME5	Level 5: MEP first & second fix		192	0	40	0	0	0	40	0	0	0				2027-08-13 08:00	2027-08-18 16:00		2027-07-16 08:00	2027-07-21 16:00	2027-07-16 08:00	2027-07-21 16:00	2027-07-16 08:00	2027-07-21 16:00	2027-08-13 08:00	2027-08-18 16:00		PT_Normal					a11JGdzHeIS6gEYRk1Mgdw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700034	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI5	Level 5: finishes & joinery		192	0	40	0	0	0	40	0	0	0				2027-08-19 08:00	2027-08-24 16:00		2027-07-22 08:00	2027-07-27 16:00	2027-07-22 08:00	2027-07-27 16:00	2027-07-22 08:00	2027-07-27 16:00	2027-08-19 08:00	2027-08-24 16:00		PT_Normal					Fphs0juiLEnvjsaPYeWZlw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700035	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW6	Level 6: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-05-27 08:00	2027-05-29 16:00		2027-05-24 08:00	2027-05-26 16:00	2027-05-24 08:00	2027-05-26 16:00	2027-05-24 08:00	2027-05-26 16:00	2027-05-27 08:00	2027-05-29 16:00		PT_Normal					RNJvb/mMJq2qSmdEUzC81Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700036	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL6	Level 6: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-05-31 08:00	2027-06-05 16:00		2027-05-31 08:00	2027-06-05 16:00	2027-05-31 08:00	2027-06-05 16:00	2027-05-31 08:00	2027-06-05 16:00	2027-05-31 08:00	2027-06-05 16:00		PT_Normal					JGUlW9azZq/WUHPorZBiZA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700037	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC6	Level 6: unitised facade panels		184	0	32	0	0	0	32	0	0	0				2027-08-14 08:00	2027-08-18 16:00		2027-07-19 08:00	2027-07-22 16:00	2027-07-19 08:00	2027-07-22 16:00	2027-07-19 08:00	2027-07-22 16:00	2027-08-14 08:00	2027-08-18 16:00		PT_Normal					I69jlw63ugk8e5KjgSIkGg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700038	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME6	Level 6: MEP first & second fix		184	0	40	0	0	0	40	0	0	0				2027-08-19 08:00	2027-08-24 16:00		2027-07-23 08:00	2027-07-28 16:00	2027-07-23 08:00	2027-07-28 16:00	2027-07-23 08:00	2027-07-28 16:00	2027-08-19 08:00	2027-08-24 16:00		PT_Normal					E/Ca04LmpsL3MSZNAaXADA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700039	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI6	Level 6: finishes & joinery		184	0	40	0	0	0	40	0	0	0				2027-08-25 08:00	2027-08-30 16:00		2027-07-29 08:00	2027-08-03 16:00	2027-07-29 08:00	2027-08-03 16:00	2027-07-29 08:00	2027-08-03 16:00	2027-08-25 08:00	2027-08-30 16:00		PT_Normal					k94lBT8SzrmrgNFMo3njhw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700040	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW7	Level 7: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-06-03 08:00	2027-06-05 16:00		2027-05-31 08:00	2027-06-02 16:00	2027-05-31 08:00	2027-06-02 16:00	2027-05-31 08:00	2027-06-02 16:00	2027-06-03 08:00	2027-06-05 16:00		PT_Normal					bnH6grypyyBEPgZ66Fi+lA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700041	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL7	Level 7: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-06-07 08:00	2027-06-12 16:00		2027-06-07 08:00	2027-06-12 16:00	2027-06-07 08:00	2027-06-12 16:00	2027-06-07 08:00	2027-06-12 16:00	2027-06-07 08:00	2027-06-12 16:00		PT_Normal					d6wZFjc+A0ImZ5ECeUTAIw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700042	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC7	Level 7: unitised facade panels		176	0	32	0	0	0	32	0	0	0				2027-08-20 08:00	2027-08-24 16:00		2027-07-26 08:00	2027-07-29 16:00	2027-07-26 08:00	2027-07-29 16:00	2027-07-26 08:00	2027-07-29 16:00	2027-08-20 08:00	2027-08-24 16:00		PT_Normal					2ZbHYxLx3pQfwLbA9KCeew				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700043	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME7	Level 7: MEP first & second fix		176	0	40	0	0	0	40	0	0	0				2027-08-25 08:00	2027-08-30 16:00		2027-07-30 08:00	2027-08-04 16:00	2027-07-30 08:00	2027-08-04 16:00	2027-07-30 08:00	2027-08-04 16:00	2027-08-25 08:00	2027-08-30 16:00		PT_Normal					ov40r1FfHSlZ5HAvNxpnsA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700044	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI7	Level 7: finishes & joinery		176	0	40	0	0	0	40	0	0	0				2027-08-31 08:00	2027-09-04 16:00		2027-08-05 08:00	2027-08-10 16:00	2027-08-05 08:00	2027-08-10 16:00	2027-08-05 08:00	2027-08-10 16:00	2027-08-31 08:00	2027-09-04 16:00		PT_Normal					QMxOrbLyl6G0Hj+wirq+WA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700045	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW8	Level 8: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-06-10 08:00	2027-06-12 16:00		2027-06-07 08:00	2027-06-09 16:00	2027-06-07 08:00	2027-06-09 16:00	2027-06-07 08:00	2027-06-09 16:00	2027-06-10 08:00	2027-06-12 16:00		PT_Normal					aoVGrZIShbXMDQiW7r9uQA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700046	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL8	Level 8: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-06-14 08:00	2027-06-19 16:00		2027-06-14 08:00	2027-06-19 16:00	2027-06-14 08:00	2027-06-19 16:00	2027-06-14 08:00	2027-06-19 16:00	2027-06-14 08:00	2027-06-19 16:00		PT_Normal					wP0I0db4cwUutJxrR1xH5w				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700047	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC8	Level 8: unitised facade panels		168	0	32	0	0	0	32	0	0	0				2027-08-26 08:00	2027-08-30 16:00		2027-08-02 08:00	2027-08-05 16:00	2027-08-02 08:00	2027-08-05 16:00	2027-08-02 08:00	2027-08-05 16:00	2027-08-26 08:00	2027-08-30 16:00		PT_Normal					d9Y+T0iRaE5WdKFWwLCUVQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700048	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME8	Level 8: MEP first & second fix		168	0	40	0	0	0	40	0	0	0				2027-08-31 08:00	2027-09-04 16:00		2027-08-06 08:00	2027-08-11 16:00	2027-08-06 08:00	2027-08-11 16:00	2027-08-06 08:00	2027-08-11 16:00	2027-08-31 08:00	2027-09-04 16:00		PT_Normal					uvGULf9rmEwvawnNMFiGng				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700049	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI8	Level 8: finishes & joinery		168	0	40	0	0	0	40	0	0	0				2027-09-06 08:00	2027-09-10 16:00		2027-08-12 08:00	2027-08-17 16:00	2027-08-12 08:00	2027-08-17 16:00	2027-08-12 08:00	2027-08-17 16:00	2027-09-06 08:00	2027-09-10 16:00		PT_Normal					SPs3h9nAPK0+6ZqCR4LumQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700050	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW9	Level 9: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-06-17 08:00	2027-06-19 16:00		2027-06-14 08:00	2027-06-16 16:00	2027-06-14 08:00	2027-06-16 16:00	2027-06-14 08:00	2027-06-16 16:00	2027-06-17 08:00	2027-06-19 16:00		PT_Normal					HOyiK+FH7LqRkYLMBpSn/Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700051	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL9	Level 9: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-06-21 08:00	2027-06-26 16:00		2027-06-21 08:00	2027-06-26 16:00	2027-06-21 08:00	2027-06-26 16:00	2027-06-21 08:00	2027-06-26 16:00	2027-06-21 08:00	2027-06-26 16:00		PT_Normal					c2UY6sLdlysL7F9XO5x9bw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700052	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC9	Level 9: unitised facade panels		160	0	32	0	0	0	32	0	0	0				2027-09-01 08:00	2027-09-04 16:00		2027-08-09 08:00	2027-08-12 16:00	2027-08-09 08:00	2027-08-12 16:00	2027-08-09 08:00	2027-08-12 16:00	2027-09-01 08:00	2027-09-04 16:00		PT_Normal					ck2R83vGc6pt8acLypjIJw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700053	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME9	Level 9: MEP first & second fix		160	0	40	0	0	0	40	0	0	0				2027-09-06 08:00	2027-09-10 16:00		2027-08-13 08:00	2027-08-18 16:00	2027-08-13 08:00	2027-08-18 16:00	2027-08-13 08:00	2027-08-18 16:00	2027-09-06 08:00	2027-09-10 16:00		PT_Normal					k9Fh2557PZYV4W9+8LYBag				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700054	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI9	Level 9: finishes & joinery		160	0	40	0	0	0	40	0	0	0				2027-09-11 08:00	2027-09-16 16:00		2027-08-19 08:00	2027-08-24 16:00	2027-08-19 08:00	2027-08-24 16:00	2027-08-19 08:00	2027-08-24 16:00	2027-09-11 08:00	2027-09-16 16:00		PT_Normal					u+w+Icvx4NlEMeab4KDzAA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700055	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW10	Level 10: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-06-24 08:00	2027-06-26 16:00		2027-06-21 08:00	2027-06-23 16:00	2027-06-21 08:00	2027-06-23 16:00	2027-06-21 08:00	2027-06-23 16:00	2027-06-24 08:00	2027-06-26 16:00		PT_Normal					jmySYzKWsrcQJvWa+vO5gg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700056	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL10	Level 10: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-06-28 08:00	2027-07-03 16:00		2027-06-28 08:00	2027-07-03 16:00	2027-06-28 08:00	2027-07-03 16:00	2027-06-28 08:00	2027-07-03 16:00	2027-06-28 08:00	2027-07-03 16:00		PT_Normal					xu3uHIlEHwXpUCeQBLe1Fw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700057	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC10	Level 10: unitised facade panels		152	0	32	0	0	0	32	0	0	0				2027-09-07 08:00	2027-09-10 16:00		2027-08-16 08:00	2027-08-19 16:00	2027-08-16 08:00	2027-08-19 16:00	2027-08-16 08:00	2027-08-19 16:00	2027-09-07 08:00	2027-09-10 16:00		PT_Normal					C4YWGtRXQT0WdGg4yRB2zw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700058	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME10	Level 10: MEP first & second fix		152	0	40	0	0	0	40	0	0	0				2027-09-11 08:00	2027-09-16 16:00		2027-08-20 08:00	2027-08-25 16:00	2027-08-20 08:00	2027-08-25 16:00	2027-08-20 08:00	2027-08-25 16:00	2027-09-11 08:00	2027-09-16 16:00		PT_Normal					Km4FM0q44BEYhO6Fo178XA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700059	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI10	Level 10: finishes & joinery		152	0	40	0	0	0	40	0	0	0				2027-09-17 08:00	2027-09-22 16:00		2027-08-26 08:00	2027-08-31 16:00	2027-08-26 08:00	2027-08-31 16:00	2027-08-26 08:00	2027-08-31 16:00	2027-09-17 08:00	2027-09-22 16:00		PT_Normal					frzXt6190D147tUF+TSzFA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700060	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW11	Level 11: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-07-01 08:00	2027-07-03 16:00		2027-06-28 08:00	2027-06-30 16:00	2027-06-28 08:00	2027-06-30 16:00	2027-06-28 08:00	2027-06-30 16:00	2027-07-01 08:00	2027-07-03 16:00		PT_Normal					+rhAGk4fvAKqb34h0RgKeQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700061	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL11	Level 11: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-07-05 08:00	2027-07-10 16:00		2027-07-05 08:00	2027-07-10 16:00	2027-07-05 08:00	2027-07-10 16:00	2027-07-05 08:00	2027-07-10 16:00	2027-07-05 08:00	2027-07-10 16:00		PT_Normal					q0szhqumaeHoAvkTLKGZLA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700062	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC11	Level 11: unitised facade panels		144	0	32	0	0	0	32	0	0	0				2027-09-13 08:00	2027-09-16 16:00		2027-08-23 08:00	2027-08-26 16:00	2027-08-23 08:00	2027-08-26 16:00	2027-08-23 08:00	2027-08-26 16:00	2027-09-13 08:00	2027-09-16 16:00		PT_Normal					fqPfThaR6O2JbYLK0Sv2lA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700063	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME11	Level 11: MEP first & second fix		144	0	40	0	0	0	40	0	0	0				2027-09-17 08:00	2027-09-22 16:00		2027-08-27 08:00	2027-09-01 16:00	2027-08-27 08:00	2027-09-01 16:00	2027-08-27 08:00	2027-09-01 16:00	2027-09-17 08:00	2027-09-22 16:00		PT_Normal					5JVGF3vXwvzmIVOJzBvg+Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700064	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI11	Level 11: finishes & joinery		144	0	40	0	0	0	40	0	0	0				2027-09-23 08:00	2027-09-28 16:00		2027-09-02 08:00	2027-09-07 16:00	2027-09-02 08:00	2027-09-07 16:00	2027-09-02 08:00	2027-09-07 16:00	2027-09-23 08:00	2027-09-28 16:00		PT_Normal					Gk6T4e+RONGc64yICGtuNQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700065	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW12	Level 12: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-07-08 08:00	2027-07-10 16:00		2027-07-05 08:00	2027-07-07 16:00	2027-07-05 08:00	2027-07-07 16:00	2027-07-05 08:00	2027-07-07 16:00	2027-07-08 08:00	2027-07-10 16:00		PT_Normal					kzgT9KcWMpzJHdnyF6biaw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700066	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL12	Level 12: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-07-12 08:00	2027-07-17 16:00		2027-07-12 08:00	2027-07-17 16:00	2027-07-12 08:00	2027-07-17 16:00	2027-07-12 08:00	2027-07-17 16:00	2027-07-12 08:00	2027-07-17 16:00		PT_Normal					OSgFXkcMfLFD0OFWBGZ4dQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700067	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC12	Level 12: unitised facade panels		136	0	32	0	0	0	32	0	0	0				2027-09-18 08:00	2027-09-22 16:00		2027-08-30 08:00	2027-09-02 16:00	2027-08-30 08:00	2027-09-02 16:00	2027-08-30 08:00	2027-09-02 16:00	2027-09-18 08:00	2027-09-22 16:00		PT_Normal					HU+JZ3/qS9OjUQagyoyrmA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700068	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME12	Level 12: MEP first & second fix		136	0	40	0	0	0	40	0	0	0				2027-09-23 08:00	2027-09-28 16:00		2027-09-03 08:00	2027-09-08 16:00	2027-09-03 08:00	2027-09-08 16:00	2027-09-03 08:00	2027-09-08 16:00	2027-09-23 08:00	2027-09-28 16:00		PT_Normal					iOxNk8oAPzKwlzmuahRRuw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700069	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI12	Level 12: finishes & joinery		136	0	40	0	0	0	40	0	0	0				2027-09-29 08:00	2027-10-04 16:00		2027-09-09 08:00	2027-09-14 16:00	2027-09-09 08:00	2027-09-14 16:00	2027-09-09 08:00	2027-09-14 16:00	2027-09-29 08:00	2027-10-04 16:00		PT_Normal					/kCeIhGZ99M/LAJB+DFcwA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700070	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW13	Level 13: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-07-15 08:00	2027-07-17 16:00		2027-07-12 08:00	2027-07-14 16:00	2027-07-12 08:00	2027-07-14 16:00	2027-07-12 08:00	2027-07-14 16:00	2027-07-15 08:00	2027-07-17 16:00		PT_Normal					6xrybROWeaJSa+EO9T03wQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700071	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL13	Level 13: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-07-19 08:00	2027-07-24 16:00		2027-07-19 08:00	2027-07-24 16:00	2027-07-19 08:00	2027-07-24 16:00	2027-07-19 08:00	2027-07-24 16:00	2027-07-19 08:00	2027-07-24 16:00		PT_Normal					ZfPXewanhu0bYZFncjo5dg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700072	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC13	Level 13: unitised facade panels		128	0	32	0	0	0	32	0	0	0				2027-09-24 08:00	2027-09-28 16:00		2027-09-06 08:00	2027-09-09 16:00	2027-09-06 08:00	2027-09-09 16:00	2027-09-06 08:00	2027-09-09 16:00	2027-09-24 08:00	2027-09-28 16:00		PT_Normal					S7wGFcszc0LYnEuMapbGQA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700073	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME13	Level 13: MEP first & second fix		128	0	40	0	0	0	40	0	0	0				2027-09-29 08:00	2027-10-04 16:00		2027-09-10 08:00	2027-09-15 16:00	2027-09-10 08:00	2027-09-15 16:00	2027-09-10 08:00	2027-09-15 16:00	2027-09-29 08:00	2027-10-04 16:00		PT_Normal					zYQhRqP9qvjk26Tx4+h1ug				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700074	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI13	Level 13: finishes & joinery		128	0	40	0	0	0	40	0	0	0				2027-10-05 08:00	2027-10-09 16:00		2027-09-16 08:00	2027-09-21 16:00	2027-09-16 08:00	2027-09-21 16:00	2027-09-16 08:00	2027-09-21 16:00	2027-10-05 08:00	2027-10-09 16:00		PT_Normal					40dl8YpGZU/o5HeSS//kRg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700075	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW14	Level 14: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-07-22 08:00	2027-07-24 16:00		2027-07-19 08:00	2027-07-21 16:00	2027-07-19 08:00	2027-07-21 16:00	2027-07-19 08:00	2027-07-21 16:00	2027-07-22 08:00	2027-07-24 16:00		PT_Normal					SQXun2uztQzt2tUCKPfxJA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700076	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL14	Level 14: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-07-26 08:00	2027-07-31 16:00		2027-07-26 08:00	2027-07-31 16:00	2027-07-26 08:00	2027-07-31 16:00	2027-07-26 08:00	2027-07-31 16:00	2027-07-26 08:00	2027-07-31 16:00		PT_Normal					qeq7H8VmH1CVor3fqBWGHg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700077	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC14	Level 14: unitised facade panels		120	0	32	0	0	0	32	0	0	0				2027-09-30 08:00	2027-10-04 16:00		2027-09-13 08:00	2027-09-16 16:00	2027-09-13 08:00	2027-09-16 16:00	2027-09-13 08:00	2027-09-16 16:00	2027-09-30 08:00	2027-10-04 16:00		PT_Normal					yfXV/4iTUQIQISs77rCu7w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700078	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME14	Level 14: MEP first & second fix		120	0	40	0	0	0	40	0	0	0				2027-10-05 08:00	2027-10-09 16:00		2027-09-17 08:00	2027-09-22 16:00	2027-09-17 08:00	2027-09-22 16:00	2027-09-17 08:00	2027-09-22 16:00	2027-10-05 08:00	2027-10-09 16:00		PT_Normal					FFgf2vRA9wrjP0ttE2oTfg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700079	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI14	Level 14: finishes & joinery		120	0	40	0	0	0	40	0	0	0				2027-10-11 08:00	2027-10-15 16:00		2027-09-23 08:00	2027-09-28 16:00	2027-09-23 08:00	2027-09-28 16:00	2027-09-23 08:00	2027-09-28 16:00	2027-10-11 08:00	2027-10-15 16:00		PT_Normal					OvWYBhdI1UtxwGHhAoJisw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700080	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW15	Level 15: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-07-29 08:00	2027-07-31 16:00		2027-07-26 08:00	2027-07-28 16:00	2027-07-26 08:00	2027-07-28 16:00	2027-07-26 08:00	2027-07-28 16:00	2027-07-29 08:00	2027-07-31 16:00		PT_Normal					+k/W30hPVRWFdT5O3Ajy4A				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700081	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL15	Level 15: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-08-02 08:00	2027-08-07 16:00		2027-08-02 08:00	2027-08-07 16:00	2027-08-02 08:00	2027-08-07 16:00	2027-08-02 08:00	2027-08-07 16:00	2027-08-02 08:00	2027-08-07 16:00		PT_Normal					XtK5xbXtakL4aIWc6iNAMg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700082	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC15	Level 15: unitised facade panels		112	0	32	0	0	0	32	0	0	0				2027-10-06 08:00	2027-10-09 16:00		2027-09-20 08:00	2027-09-23 16:00	2027-09-20 08:00	2027-09-23 16:00	2027-09-20 08:00	2027-09-23 16:00	2027-10-06 08:00	2027-10-09 16:00		PT_Normal					HnfWi1nWxGRShsE85Y5ZXg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700083	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME15	Level 15: MEP first & second fix		112	0	40	0	0	0	40	0	0	0				2027-10-11 08:00	2027-10-15 16:00		2027-09-24 08:00	2027-09-29 16:00	2027-09-24 08:00	2027-09-29 16:00	2027-09-24 08:00	2027-09-29 16:00	2027-10-11 08:00	2027-10-15 16:00		PT_Normal					sVUF1blKfRQjuWP7tC/0pA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700084	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI15	Level 15: finishes & joinery		112	0	40	0	0	0	40	0	0	0				2027-10-16 08:00	2027-10-21 16:00		2027-09-30 08:00	2027-10-05 16:00	2027-09-30 08:00	2027-10-05 16:00	2027-09-30 08:00	2027-10-05 16:00	2027-10-16 08:00	2027-10-21 16:00		PT_Normal					qzzkusIrfjEg6PWSEtLtoQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700085	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW16	Level 16: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-08-05 08:00	2027-08-07 16:00		2027-08-02 08:00	2027-08-04 16:00	2027-08-02 08:00	2027-08-04 16:00	2027-08-02 08:00	2027-08-04 16:00	2027-08-05 08:00	2027-08-07 16:00		PT_Normal					7ZAK+8JEMTis6ZoxZh6enw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700086	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL16	Level 16: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-08-09 08:00	2027-08-14 16:00		2027-08-09 08:00	2027-08-14 16:00	2027-08-09 08:00	2027-08-14 16:00	2027-08-09 08:00	2027-08-14 16:00	2027-08-09 08:00	2027-08-14 16:00		PT_Normal					QIk9ODpdCGAFk8Oqdk12kA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700087	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC16	Level 16: unitised facade panels		104	0	32	0	0	0	32	0	0	0				2027-10-12 08:00	2027-10-15 16:00		2027-09-27 08:00	2027-09-30 16:00	2027-09-27 08:00	2027-09-30 16:00	2027-09-27 08:00	2027-09-30 16:00	2027-10-12 08:00	2027-10-15 16:00		PT_Normal					o/X5BnRZIyhlXhBRmxku1Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700088	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME16	Level 16: MEP first & second fix		104	0	40	0	0	0	40	0	0	0				2027-10-16 08:00	2027-10-21 16:00		2027-10-01 08:00	2027-10-06 16:00	2027-10-01 08:00	2027-10-06 16:00	2027-10-01 08:00	2027-10-06 16:00	2027-10-16 08:00	2027-10-21 16:00		PT_Normal					Dscapkcg3CQ/su3yM3Z8gg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700089	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI16	Level 16: finishes & joinery		104	0	40	0	0	0	40	0	0	0				2027-10-22 08:00	2027-10-27 16:00		2027-10-07 08:00	2027-10-12 16:00	2027-10-07 08:00	2027-10-12 16:00	2027-10-07 08:00	2027-10-12 16:00	2027-10-22 08:00	2027-10-27 16:00		PT_Normal					Fwbkcp3XcWGn8FDkFs1Q7A				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700090	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW17	Level 17: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-08-12 08:00	2027-08-14 16:00		2027-08-09 08:00	2027-08-11 16:00	2027-08-09 08:00	2027-08-11 16:00	2027-08-09 08:00	2027-08-11 16:00	2027-08-12 08:00	2027-08-14 16:00		PT_Normal					PJiBMqgtnr1IlOOwc54BuQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700091	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL17	Level 17: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-08-16 08:00	2027-08-21 16:00		2027-08-16 08:00	2027-08-21 16:00	2027-08-16 08:00	2027-08-21 16:00	2027-08-16 08:00	2027-08-21 16:00	2027-08-16 08:00	2027-08-21 16:00		PT_Normal					GntHE+uXUh5f+sCcJA14pA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700092	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC17	Level 17: unitised facade panels		96	0	32	0	0	0	32	0	0	0				2027-10-18 08:00	2027-10-21 16:00		2027-10-04 08:00	2027-10-07 16:00	2027-10-04 08:00	2027-10-07 16:00	2027-10-04 08:00	2027-10-07 16:00	2027-10-18 08:00	2027-10-21 16:00		PT_Normal					NfN7g906+9ULbMgrP1AYmg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700093	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME17	Level 17: MEP first & second fix		96	0	40	0	0	0	40	0	0	0				2027-10-22 08:00	2027-10-27 16:00		2027-10-08 08:00	2027-10-13 16:00	2027-10-08 08:00	2027-10-13 16:00	2027-10-08 08:00	2027-10-13 16:00	2027-10-22 08:00	2027-10-27 16:00		PT_Normal					IXKVXowN24oxeT8NRRokvg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700094	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI17	Level 17: finishes & joinery		96	0	40	0	0	0	40	0	0	0				2027-10-28 08:00	2027-11-02 16:00		2027-10-14 08:00	2027-10-19 16:00	2027-10-14 08:00	2027-10-19 16:00	2027-10-14 08:00	2027-10-19 16:00	2027-10-28 08:00	2027-11-02 16:00		PT_Normal					FjcwaQegKC7sXamrILdYUw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700095	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW18	Level 18: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-08-19 08:00	2027-08-21 16:00		2027-08-16 08:00	2027-08-18 16:00	2027-08-16 08:00	2027-08-18 16:00	2027-08-16 08:00	2027-08-18 16:00	2027-08-19 08:00	2027-08-21 16:00		PT_Normal					IIWJg+LhDMjPxc1gws+Sew				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700096	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL18	Level 18: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-08-23 08:00	2027-08-28 16:00		2027-08-23 08:00	2027-08-28 16:00	2027-08-23 08:00	2027-08-28 16:00	2027-08-23 08:00	2027-08-28 16:00	2027-08-23 08:00	2027-08-28 16:00		PT_Normal					zv5TgpbNsomYylC1FSOXSQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700097	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC18	Level 18: unitised facade panels		88	0	32	0	0	0	32	0	0	0				2027-10-23 08:00	2027-10-27 16:00		2027-10-11 08:00	2027-10-14 16:00	2027-10-11 08:00	2027-10-14 16:00	2027-10-11 08:00	2027-10-14 16:00	2027-10-23 08:00	2027-10-27 16:00		PT_Normal					NIrXC0994bPK7NQsGV29KA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700098	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME18	Level 18: MEP first & second fix		88	0	40	0	0	0	40	0	0	0				2027-10-28 08:00	2027-11-02 16:00		2027-10-15 08:00	2027-10-20 16:00	2027-10-15 08:00	2027-10-20 16:00	2027-10-15 08:00	2027-10-20 16:00	2027-10-28 08:00	2027-11-02 16:00		PT_Normal					3vCOfoH/7wIBu4/EljBvcQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700099	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI18	Level 18: finishes & joinery		88	0	40	0	0	0	40	0	0	0				2027-11-03 08:00	2027-11-08 16:00		2027-10-21 08:00	2027-10-26 16:00	2027-10-21 08:00	2027-10-26 16:00	2027-10-21 08:00	2027-10-26 16:00	2027-11-03 08:00	2027-11-08 16:00		PT_Normal					iF9VObqvoP3VI4pjpkpasA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700100	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW19	Level 19: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-08-26 08:00	2027-08-28 16:00		2027-08-23 08:00	2027-08-25 16:00	2027-08-23 08:00	2027-08-25 16:00	2027-08-23 08:00	2027-08-25 16:00	2027-08-26 08:00	2027-08-28 16:00		PT_Normal					OBg2eeArhK5zRUT9Ruj6xA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700101	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL19	Level 19: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-08-30 08:00	2027-09-04 16:00		2027-08-30 08:00	2027-09-04 16:00	2027-08-30 08:00	2027-09-04 16:00	2027-08-30 08:00	2027-09-04 16:00	2027-08-30 08:00	2027-09-04 16:00		PT_Normal					DvPT9DrV+GtK8LgpHg2jFA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700102	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC19	Level 19: unitised facade panels		80	0	32	0	0	0	32	0	0	0				2027-10-29 08:00	2027-11-02 16:00		2027-10-18 08:00	2027-10-21 16:00	2027-10-18 08:00	2027-10-21 16:00	2027-10-18 08:00	2027-10-21 16:00	2027-10-29 08:00	2027-11-02 16:00		PT_Normal					wbtoyyGyxj8hT7X/gADOxQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700103	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME19	Level 19: MEP first & second fix		80	0	40	0	0	0	40	0	0	0				2027-11-03 08:00	2027-11-08 16:00		2027-10-22 08:00	2027-10-27 16:00	2027-10-22 08:00	2027-10-27 16:00	2027-10-22 08:00	2027-10-27 16:00	2027-11-03 08:00	2027-11-08 16:00		PT_Normal					rZhMLaP6Gt4GmRFgd4U7Uw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700104	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI19	Level 19: finishes & joinery		80	0	40	0	0	0	40	0	0	0				2027-11-09 08:00	2027-11-13 16:00		2027-10-28 08:00	2027-11-02 16:00	2027-10-28 08:00	2027-11-02 16:00	2027-10-28 08:00	2027-11-02 16:00	2027-11-09 08:00	2027-11-13 16:00		PT_Normal					a6g9neZDIU7Jze/DmJrNvA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700105	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW20	Level 20: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-09-02 08:00	2027-09-04 16:00		2027-08-30 08:00	2027-09-01 16:00	2027-08-30 08:00	2027-09-01 16:00	2027-08-30 08:00	2027-09-01 16:00	2027-09-02 08:00	2027-09-04 16:00		PT_Normal					+jtxLjmdWJBUq/YRaLRgVg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700106	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL20	Level 20: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-09-06 08:00	2027-09-11 16:00		2027-09-06 08:00	2027-09-11 16:00	2027-09-06 08:00	2027-09-11 16:00	2027-09-06 08:00	2027-09-11 16:00	2027-09-06 08:00	2027-09-11 16:00		PT_Normal					RZYsGkCxwgDXLpBNq6CemQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700107	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC20	Level 20: unitised facade panels		72	0	32	0	0	0	32	0	0	0				2027-11-04 08:00	2027-11-08 16:00		2027-10-25 08:00	2027-10-28 16:00	2027-10-25 08:00	2027-10-28 16:00	2027-10-25 08:00	2027-10-28 16:00	2027-11-04 08:00	2027-11-08 16:00		PT_Normal					nFMy02AdgywF2E7qlsv7xg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700108	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME20	Level 20: MEP first & second fix		72	0	40	0	0	0	40	0	0	0				2027-11-09 08:00	2027-11-13 16:00		2027-10-29 08:00	2027-11-03 16:00	2027-10-29 08:00	2027-11-03 16:00	2027-10-29 08:00	2027-11-03 16:00	2027-11-09 08:00	2027-11-13 16:00		PT_Normal					oZCAXe8gVmI+ZaJ9s+UWvQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700109	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI20	Level 20: finishes & joinery		72	0	40	0	0	0	40	0	0	0				2027-11-15 08:00	2027-11-19 16:00		2027-11-04 08:00	2027-11-09 16:00	2027-11-04 08:00	2027-11-09 16:00	2027-11-04 08:00	2027-11-09 16:00	2027-11-15 08:00	2027-11-19 16:00		PT_Normal					sf5C2cjHO8QDjm95BLCeqQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700110	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW21	Level 21: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-09-09 08:00	2027-09-11 16:00		2027-09-06 08:00	2027-09-08 16:00	2027-09-06 08:00	2027-09-08 16:00	2027-09-06 08:00	2027-09-08 16:00	2027-09-09 08:00	2027-09-11 16:00		PT_Normal					dEFs8qW9NmIBCAcUiNzsMQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700111	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL21	Level 21: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-09-13 08:00	2027-09-18 16:00		2027-09-13 08:00	2027-09-18 16:00	2027-09-13 08:00	2027-09-18 16:00	2027-09-13 08:00	2027-09-18 16:00	2027-09-13 08:00	2027-09-18 16:00		PT_Normal					toXYkh8q/09JkRc2ikSHZA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700112	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC21	Level 21: unitised facade panels		64	0	32	0	0	0	32	0	0	0				2027-11-10 08:00	2027-11-13 16:00		2027-11-01 08:00	2027-11-04 16:00	2027-11-01 08:00	2027-11-04 16:00	2027-11-01 08:00	2027-11-04 16:00	2027-11-10 08:00	2027-11-13 16:00		PT_Normal					loLYPlx+V4TkivCBPxovfA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700113	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME21	Level 21: MEP first & second fix		64	0	40	0	0	0	40	0	0	0				2027-11-15 08:00	2027-11-19 16:00		2027-11-05 08:00	2027-11-10 16:00	2027-11-05 08:00	2027-11-10 16:00	2027-11-05 08:00	2027-11-10 16:00	2027-11-15 08:00	2027-11-19 16:00		PT_Normal					NcFiHXchgWBx7UZgBs0hzA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700114	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI21	Level 21: finishes & joinery		64	0	40	0	0	0	40	0	0	0				2027-11-20 08:00	2027-11-25 16:00		2027-11-11 08:00	2027-11-16 16:00	2027-11-11 08:00	2027-11-16 16:00	2027-11-11 08:00	2027-11-16 16:00	2027-11-20 08:00	2027-11-25 16:00		PT_Normal					L8Pr2e+sIPZ0AXDNHBWhVw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700115	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW22	Level 22: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-09-16 08:00	2027-09-18 16:00		2027-09-13 08:00	2027-09-15 16:00	2027-09-13 08:00	2027-09-15 16:00	2027-09-13 08:00	2027-09-15 16:00	2027-09-16 08:00	2027-09-18 16:00		PT_Normal					5xDDSYw1Jde0cKuq+GLN4w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700116	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL22	Level 22: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-09-20 08:00	2027-09-25 16:00		2027-09-20 08:00	2027-09-25 16:00	2027-09-20 08:00	2027-09-25 16:00	2027-09-20 08:00	2027-09-25 16:00	2027-09-20 08:00	2027-09-25 16:00		PT_Normal					p/Rva1akkj6eVjZXxbIKCQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700117	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC22	Level 22: unitised facade panels		56	0	32	0	0	0	32	0	0	0				2027-11-16 08:00	2027-11-19 16:00		2027-11-08 08:00	2027-11-11 16:00	2027-11-08 08:00	2027-11-11 16:00	2027-11-08 08:00	2027-11-11 16:00	2027-11-16 08:00	2027-11-19 16:00		PT_Normal					KHjqJkUZhg8u5OhB0p1hQw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700118	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME22	Level 22: MEP first & second fix		56	0	40	0	0	0	40	0	0	0				2027-11-20 08:00	2027-11-25 16:00		2027-11-12 08:00	2027-11-17 16:00	2027-11-12 08:00	2027-11-17 16:00	2027-11-12 08:00	2027-11-17 16:00	2027-11-20 08:00	2027-11-25 16:00		PT_Normal					zmQn9ZHI+TaFQK7PWihnSg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700119	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI22	Level 22: finishes & joinery		56	0	40	0	0	0	40	0	0	0				2027-11-26 08:00	2027-12-01 16:00		2027-11-18 08:00	2027-11-23 16:00	2027-11-18 08:00	2027-11-23 16:00	2027-11-18 08:00	2027-11-23 16:00	2027-11-26 08:00	2027-12-01 16:00		PT_Normal					weBYRl0C3k6ZFM+lKlIipA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700120	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW23	Level 23: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-09-23 08:00	2027-09-25 16:00		2027-09-20 08:00	2027-09-22 16:00	2027-09-20 08:00	2027-09-22 16:00	2027-09-20 08:00	2027-09-22 16:00	2027-09-23 08:00	2027-09-25 16:00		PT_Normal					RyPQUK55ae1mGlR1sPfFXA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700121	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL23	Level 23: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-09-27 08:00	2027-10-02 16:00		2027-09-27 08:00	2027-10-02 16:00	2027-09-27 08:00	2027-10-02 16:00	2027-09-27 08:00	2027-10-02 16:00	2027-09-27 08:00	2027-10-02 16:00		PT_Normal					TUJpJaNX65DTrW364Ur9HA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700122	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC23	Level 23: unitised facade panels		48	0	32	0	0	0	32	0	0	0				2027-11-22 08:00	2027-11-25 16:00		2027-11-15 08:00	2027-11-18 16:00	2027-11-15 08:00	2027-11-18 16:00	2027-11-15 08:00	2027-11-18 16:00	2027-11-22 08:00	2027-11-25 16:00		PT_Normal					WLnycoRFxvAFw4MXcPrhlw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700123	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME23	Level 23: MEP first & second fix		48	0	40	0	0	0	40	0	0	0				2027-11-26 08:00	2027-12-01 16:00		2027-11-19 08:00	2027-11-24 16:00	2027-11-19 08:00	2027-11-24 16:00	2027-11-19 08:00	2027-11-24 16:00	2027-11-26 08:00	2027-12-01 16:00		PT_Normal					K+d6oAzxEktgPl7d7YPhLw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700124	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI23	Level 23: finishes & joinery		48	0	40	0	0	0	40	0	0	0				2027-12-02 08:00	2027-12-07 16:00		2027-11-25 08:00	2027-11-30 16:00	2027-11-25 08:00	2027-11-30 16:00	2027-11-25 08:00	2027-11-30 16:00	2027-12-02 08:00	2027-12-07 16:00		PT_Normal					I0oryLDipndUNd+sdaFm4A				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700125	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW24	Level 24: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-09-30 08:00	2027-10-02 16:00		2027-09-27 08:00	2027-09-29 16:00	2027-09-27 08:00	2027-09-29 16:00	2027-09-27 08:00	2027-09-29 16:00	2027-09-30 08:00	2027-10-02 16:00		PT_Normal					xWE2ZaA+3wT8Xdzi+AFagQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700126	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL24	Level 24: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-10-04 08:00	2027-10-09 16:00		2027-10-04 08:00	2027-10-09 16:00	2027-10-04 08:00	2027-10-09 16:00	2027-10-04 08:00	2027-10-09 16:00	2027-10-04 08:00	2027-10-09 16:00		PT_Normal					xB0Zqq2iD1WmEOPE2bPpXw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700127	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC24	Level 24: unitised facade panels		40	0	32	0	0	0	32	0	0	0				2027-11-27 08:00	2027-12-01 16:00		2027-11-22 08:00	2027-11-25 16:00	2027-11-22 08:00	2027-11-25 16:00	2027-11-22 08:00	2027-11-25 16:00	2027-11-27 08:00	2027-12-01 16:00		PT_Normal					ixJ+obuawc0hUaaH4wX3jQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700128	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME24	Level 24: MEP first & second fix		40	0	40	0	0	0	40	0	0	0				2027-12-02 08:00	2027-12-07 16:00		2027-11-26 08:00	2027-12-01 16:00	2027-11-26 08:00	2027-12-01 16:00	2027-11-26 08:00	2027-12-01 16:00	2027-12-02 08:00	2027-12-07 16:00		PT_Normal					2MG3To+Ux4O+z3azWnOGLQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700129	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI24	Level 24: finishes & joinery		40	0	40	0	0	0	40	0	0	0				2027-12-08 08:00	2027-12-13 16:00		2027-12-02 08:00	2027-12-07 16:00	2027-12-02 08:00	2027-12-07 16:00	2027-12-02 08:00	2027-12-07 16:00	2027-12-08 08:00	2027-12-13 16:00		PT_Normal					GVC0r4s7p+SxElCF65V6FA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700130	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW25	Level 25: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-10-07 08:00	2027-10-09 16:00		2027-10-04 08:00	2027-10-06 16:00	2027-10-04 08:00	2027-10-06 16:00	2027-10-04 08:00	2027-10-06 16:00	2027-10-07 08:00	2027-10-09 16:00		PT_Normal					Y3Bt+L8BmleFYOtIJG++kg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700131	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL25	Level 25: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-10-11 08:00	2027-10-16 16:00		2027-10-11 08:00	2027-10-16 16:00	2027-10-11 08:00	2027-10-16 16:00	2027-10-11 08:00	2027-10-16 16:00	2027-10-11 08:00	2027-10-16 16:00		PT_Normal					LNeS2nEr/NV82a38FkYl8Q				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700132	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC25	Level 25: unitised facade panels		32	0	32	0	0	0	32	0	0	0				2027-12-03 08:00	2027-12-07 16:00		2027-11-29 08:00	2027-12-02 16:00	2027-11-29 08:00	2027-12-02 16:00	2027-11-29 08:00	2027-12-02 16:00	2027-12-03 08:00	2027-12-07 16:00		PT_Normal					qtWacCpG67TV2a38aPc0Jw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700133	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME25	Level 25: MEP first & second fix		32	0	40	0	0	0	40	0	0	0				2027-12-08 08:00	2027-12-13 16:00		2027-12-03 08:00	2027-12-08 16:00	2027-12-03 08:00	2027-12-08 16:00	2027-12-03 08:00	2027-12-08 16:00	2027-12-08 08:00	2027-12-13 16:00		PT_Normal					UVpNW5xeDz7vRCjmB0ptCA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700134	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI25	Level 25: finishes & joinery		32	0	40	0	0	0	40	0	0	0				2027-12-14 08:00	2027-12-18 16:00		2027-12-09 08:00	2027-12-14 16:00	2027-12-09 08:00	2027-12-14 16:00	2027-12-09 08:00	2027-12-14 16:00	2027-12-14 08:00	2027-12-18 16:00		PT_Normal					tx2te5t56q2sxmiWFj8h1Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700135	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW26	Level 26: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-10-14 08:00	2027-10-16 16:00		2027-10-11 08:00	2027-10-13 16:00	2027-10-11 08:00	2027-10-13 16:00	2027-10-11 08:00	2027-10-13 16:00	2027-10-14 08:00	2027-10-16 16:00		PT_Normal					QOyJPPKUIBITyYOd0IoU6Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700136	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL26	Level 26: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-10-18 08:00	2027-10-23 16:00		2027-10-18 08:00	2027-10-23 16:00	2027-10-18 08:00	2027-10-23 16:00	2027-10-18 08:00	2027-10-23 16:00	2027-10-18 08:00	2027-10-23 16:00		PT_Normal					X7MEdVcX10ZrBw8jET5/Vw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700137	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC26	Level 26: unitised facade panels		24	0	32	0	0	0	32	0	0	0				2027-12-09 08:00	2027-12-13 16:00		2027-12-06 08:00	2027-12-09 16:00	2027-12-06 08:00	2027-12-09 16:00	2027-12-06 08:00	2027-12-09 16:00	2027-12-09 08:00	2027-12-13 16:00		PT_Normal					uY1zbWRny0K3Qdinc8UMbg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700138	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME26	Level 26: MEP first & second fix		24	0	40	0	0	0	40	0	0	0				2027-12-14 08:00	2027-12-18 16:00		2027-12-10 08:00	2027-12-15 16:00	2027-12-10 08:00	2027-12-15 16:00	2027-12-10 08:00	2027-12-15 16:00	2027-12-14 08:00	2027-12-18 16:00		PT_Normal					arlweA5tCJ6Ha6ZOXpbJ8g				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700139	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI26	Level 26: finishes & joinery		24	0	40	0	0	0	40	0	0	0				2027-12-20 08:00	2027-12-24 16:00		2027-12-16 08:00	2027-12-21 16:00	2027-12-16 08:00	2027-12-21 16:00	2027-12-16 08:00	2027-12-21 16:00	2027-12-20 08:00	2027-12-24 16:00		PT_Normal					7QZY+eqkRvgBC2Rg5Ver4w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700140	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW27	Level 27: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-10-21 08:00	2027-10-23 16:00		2027-10-18 08:00	2027-10-20 16:00	2027-10-18 08:00	2027-10-20 16:00	2027-10-18 08:00	2027-10-20 16:00	2027-10-21 08:00	2027-10-23 16:00		PT_Normal					4xkTLQJ8GiOeK8fhjO2UVg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700141	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL27	Level 27: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-10-25 08:00	2027-10-30 16:00		2027-10-25 08:00	2027-10-30 16:00	2027-10-25 08:00	2027-10-30 16:00	2027-10-25 08:00	2027-10-30 16:00	2027-10-25 08:00	2027-10-30 16:00		PT_Normal					BU4tc1soKMgOgXZ8pLeKQw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700142	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC27	Level 27: unitised facade panels		16	0	32	0	0	0	32	0	0	0				2027-12-15 08:00	2027-12-18 16:00		2027-12-13 08:00	2027-12-16 16:00	2027-12-13 08:00	2027-12-16 16:00	2027-12-13 08:00	2027-12-16 16:00	2027-12-15 08:00	2027-12-18 16:00		PT_Normal					vXHtbyAtvyhWKhPzstqd3A				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700143	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME27	Level 27: MEP first & second fix		16	0	40	0	0	0	40	0	0	0				2027-12-20 08:00	2027-12-24 16:00		2027-12-17 08:00	2027-12-22 16:00	2027-12-17 08:00	2027-12-22 16:00	2027-12-17 08:00	2027-12-22 16:00	2027-12-20 08:00	2027-12-24 16:00		PT_Normal					c3D8e3g64x686zPSkOqGUQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700144	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI27	Level 27: finishes & joinery		16	0	40	0	0	0	40	0	0	0				2027-12-25 08:00	2027-12-30 16:00		2027-12-23 08:00	2027-12-28 16:00	2027-12-23 08:00	2027-12-28 16:00	2027-12-23 08:00	2027-12-28 16:00	2027-12-25 08:00	2027-12-30 16:00		PT_Normal					p7a91bCjWeo+n7gYMZw2jg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700145	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW28	Level 28: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-10-28 08:00	2027-10-30 16:00		2027-10-25 08:00	2027-10-27 16:00	2027-10-25 08:00	2027-10-27 16:00	2027-10-25 08:00	2027-10-27 16:00	2027-10-28 08:00	2027-10-30 16:00		PT_Normal					nh6S1HhgFi+TyBsQ/p5VMw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700146	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL28	Level 28: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-11-01 08:00	2027-11-06 16:00		2027-11-01 08:00	2027-11-06 16:00	2027-11-01 08:00	2027-11-06 16:00	2027-11-01 08:00	2027-11-06 16:00	2027-11-01 08:00	2027-11-06 16:00		PT_Normal					aYb8PoIyxlljejZYyJwvPA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700147	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC28	Level 28: unitised facade panels		8	0	32	0	0	0	32	0	0	0				2027-12-21 08:00	2027-12-24 16:00		2027-12-20 08:00	2027-12-23 16:00	2027-12-20 08:00	2027-12-23 16:00	2027-12-20 08:00	2027-12-23 16:00	2027-12-21 08:00	2027-12-24 16:00		PT_Normal					mrLT8TbLaQkdhRTVcyOUUA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700148	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME28	Level 28: MEP first & second fix		8	0	40	0	0	0	40	0	0	0				2027-12-25 08:00	2027-12-30 16:00		2027-12-24 08:00	2027-12-29 16:00	2027-12-24 08:00	2027-12-29 16:00	2027-12-24 08:00	2027-12-29 16:00	2027-12-25 08:00	2027-12-30 16:00		PT_Normal					JdzklO1XSWHnG/qh3F5RnA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700149	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI28	Level 28: finishes & joinery		8	0	40	0	0	0	40	0	0	0				2027-12-31 08:00	2028-01-05 16:00		2027-12-30 08:00	2028-01-04 16:00	2027-12-30 08:00	2028-01-04 16:00	2027-12-30 08:00	2028-01-04 16:00	2027-12-31 08:00	2028-01-05 16:00		PT_Normal					NZhR+utbpq7q1e2IcvCQAQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700150	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW29	Level 29: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-11-04 08:00	2027-11-06 16:00		2027-11-01 08:00	2027-11-03 16:00	2027-11-01 08:00	2027-11-03 16:00	2027-11-01 08:00	2027-11-03 16:00	2027-11-04 08:00	2027-11-06 16:00		PT_Normal					mrgleYDfLNLrwxpm9z8jXQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700151	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL29	Level 29: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-11-08 08:00	2027-11-13 16:00		2027-11-08 08:00	2027-11-13 16:00	2027-11-08 08:00	2027-11-13 16:00	2027-11-08 08:00	2027-11-13 16:00	2027-11-08 08:00	2027-11-13 16:00		PT_Normal					hyOSc1E/VGBG3mqbbyt7MQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700152	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC29	Level 29: unitised facade panels		0	0	32	0	0	0	32	0	0	0				2027-12-27 08:00	2027-12-30 16:00		2027-12-27 08:00	2027-12-30 16:00	2027-12-27 08:00	2027-12-30 16:00	2027-12-27 08:00	2027-12-30 16:00	2027-12-27 08:00	2027-12-30 16:00		PT_Normal					+89Bqv4nLmPQ8qwFnMmwHA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700153	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME29	Level 29: MEP first & second fix		0	0	40	0	0	0	40	0	0	0				2027-12-31 08:00	2028-01-05 16:00		2027-12-31 08:00	2028-01-05 16:00	2027-12-31 08:00	2028-01-05 16:00	2027-12-31 08:00	2028-01-05 16:00	2027-12-31 08:00	2028-01-05 16:00		PT_Normal					4hhB0LtysVQZFE+dszjS2A				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700154	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI29	Level 29: finishes & joinery		0	0	40	0	0	0	40	0	0	0				2028-01-06 08:00	2028-01-11 16:00		2028-01-06 08:00	2028-01-11 16:00	2028-01-06 08:00	2028-01-11 16:00	2028-01-06 08:00	2028-01-11 16:00	2028-01-06 08:00	2028-01-11 16:00		PT_Normal					uCg+a2ibwL/FM1LADCBkpw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700155	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW30	Level 30: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-11-11 08:00	2027-11-13 16:00		2027-11-08 08:00	2027-11-10 16:00	2027-11-08 08:00	2027-11-10 16:00	2027-11-08 08:00	2027-11-10 16:00	2027-11-11 08:00	2027-11-13 16:00		PT_Normal					zAuj8FDQAU7L8M5+byLf2A				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700156	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL30	Level 30: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-11-15 08:00	2027-11-20 16:00		2027-11-15 08:00	2027-11-20 16:00	2027-11-15 08:00	2027-11-20 16:00	2027-11-15 08:00	2027-11-20 16:00	2027-11-15 08:00	2027-11-20 16:00		PT_Normal					cpMQ1L2oJyvF9vt+gKMHdg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700157	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC30	Level 30: unitised facade panels		8	0	32	0	0	0	32	0	0	0				2028-01-01 08:00	2028-01-05 16:00		2027-12-31 08:00	2028-01-04 16:00	2027-12-31 08:00	2028-01-04 16:00	2027-12-31 08:00	2028-01-04 16:00	2028-01-01 08:00	2028-01-05 16:00		PT_Normal					DNLpaE24FoE9JF+bkys73g				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700158	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME30	Level 30: MEP first & second fix		0	0	40	0	0	0	40	0	0	0				2028-01-06 08:00	2028-01-11 16:00		2028-01-06 08:00	2028-01-11 16:00	2028-01-06 08:00	2028-01-11 16:00	2028-01-06 08:00	2028-01-11 16:00	2028-01-06 08:00	2028-01-11 16:00		PT_Normal					Qgm3pv6z0rb7MV6bcIgUvw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700159	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI30	Level 30: finishes & joinery		0	0	40	0	0	0	40	0	0	0				2028-01-12 08:00	2028-01-17 16:00		2028-01-12 08:00	2028-01-17 16:00	2028-01-12 08:00	2028-01-17 16:00	2028-01-12 08:00	2028-01-17 16:00	2028-01-12 08:00	2028-01-17 16:00		PT_Normal					/442SCk4RqyOIZRCkGKv5Q				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700160	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW31	Level 31: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-11-18 08:00	2027-11-20 16:00		2027-11-15 08:00	2027-11-17 16:00	2027-11-15 08:00	2027-11-17 16:00	2027-11-15 08:00	2027-11-17 16:00	2027-11-18 08:00	2027-11-20 16:00		PT_Normal					R1ayk28Fsbbk0cWrzDbpbw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700161	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL31	Level 31: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-11-22 08:00	2027-11-27 16:00		2027-11-22 08:00	2027-11-27 16:00	2027-11-22 08:00	2027-11-27 16:00	2027-11-22 08:00	2027-11-27 16:00	2027-11-22 08:00	2027-11-27 16:00		PT_Normal					B4CMzVedxAlbUbd6gACzZw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700162	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC31	Level 31: unitised facade panels		16	0	32	0	0	0	32	0	0	0				2028-01-07 08:00	2028-01-11 16:00		2028-01-05 08:00	2028-01-08 16:00	2028-01-05 08:00	2028-01-08 16:00	2028-01-05 08:00	2028-01-08 16:00	2028-01-07 08:00	2028-01-11 16:00		PT_Normal					bfQezpV8u/qc1cGe91DVMw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700163	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME31	Level 31: MEP first & second fix		0	0	40	0	0	0	40	0	0	0				2028-01-12 08:00	2028-01-17 16:00		2028-01-12 08:00	2028-01-17 16:00	2028-01-12 08:00	2028-01-17 16:00	2028-01-12 08:00	2028-01-17 16:00	2028-01-12 08:00	2028-01-17 16:00		PT_Normal					Sxo9rAsZOwlPVHGwK/zO0Q				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700164	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI31	Level 31: finishes & joinery		0	0	40	0	0	0	40	0	0	0				2028-01-18 08:00	2028-01-22 16:00		2028-01-18 08:00	2028-01-22 16:00	2028-01-18 08:00	2028-01-22 16:00	2028-01-18 08:00	2028-01-22 16:00	2028-01-18 08:00	2028-01-22 16:00		PT_Normal					GZQZnOKM6g8qmXOMCD2mPQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700165	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW32	Level 32: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-11-25 08:00	2027-11-27 16:00		2027-11-22 08:00	2027-11-24 16:00	2027-11-22 08:00	2027-11-24 16:00	2027-11-22 08:00	2027-11-24 16:00	2027-11-25 08:00	2027-11-27 16:00		PT_Normal					DpfKHPegAyon8eRJ5sLBtg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700166	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL32	Level 32: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-11-29 08:00	2027-12-04 16:00		2027-11-29 08:00	2027-12-04 16:00	2027-11-29 08:00	2027-12-04 16:00	2027-11-29 08:00	2027-12-04 16:00	2027-11-29 08:00	2027-12-04 16:00		PT_Normal					Dg1DBwRsMZE5+RDmSpDFdQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700167	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC32	Level 32: unitised facade panels		24	0	32	0	0	0	32	0	0	0				2028-01-13 08:00	2028-01-17 16:00		2028-01-10 08:00	2028-01-13 16:00	2028-01-10 08:00	2028-01-13 16:00	2028-01-10 08:00	2028-01-13 16:00	2028-01-13 08:00	2028-01-17 16:00		PT_Normal					CxHDRxPBe0cOhmF81epi2Q				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700168	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME32	Level 32: MEP first & second fix		0	0	40	0	0	0	40	0	0	0				2028-01-18 08:00	2028-01-22 16:00		2028-01-18 08:00	2028-01-22 16:00	2028-01-18 08:00	2028-01-22 16:00	2028-01-18 08:00	2028-01-22 16:00	2028-01-18 08:00	2028-01-22 16:00		PT_Normal					WfNWLmbSrP0OB+FDCwSJpg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700169	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI32	Level 32: finishes & joinery		0	0	40	0	0	0	40	0	0	0				2028-01-24 08:00	2028-01-28 16:00		2028-01-24 08:00	2028-01-28 16:00	2028-01-24 08:00	2028-01-28 16:00	2028-01-24 08:00	2028-01-28 16:00	2028-01-24 08:00	2028-01-28 16:00		PT_Normal					WceXUvx8vOqnhfAUpNiyDQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700170	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW33	Level 33: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-12-02 08:00	2027-12-04 16:00		2027-11-29 08:00	2027-12-01 16:00	2027-11-29 08:00	2027-12-01 16:00	2027-11-29 08:00	2027-12-01 16:00	2027-12-02 08:00	2027-12-04 16:00		PT_Normal					BVNeqaIH3eicbr0MFZL+ag				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700171	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL33	Level 33: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-12-06 08:00	2027-12-11 16:00		2027-12-06 08:00	2027-12-11 16:00	2027-12-06 08:00	2027-12-11 16:00	2027-12-06 08:00	2027-12-11 16:00	2027-12-06 08:00	2027-12-11 16:00		PT_Normal					LocjPd6ZyXNFm6twv6rqZg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700172	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC33	Level 33: unitised facade panels		32	0	32	0	0	0	32	0	0	0				2028-01-19 08:00	2028-01-22 16:00		2028-01-14 08:00	2028-01-18 16:00	2028-01-14 08:00	2028-01-18 16:00	2028-01-14 08:00	2028-01-18 16:00	2028-01-19 08:00	2028-01-22 16:00		PT_Normal					RAiuL5jF0nMVI5AXmy0WOA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700173	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME33	Level 33: MEP first & second fix		0	0	40	0	0	0	40	0	0	0				2028-01-24 08:00	2028-01-28 16:00		2028-01-24 08:00	2028-01-28 16:00	2028-01-24 08:00	2028-01-28 16:00	2028-01-24 08:00	2028-01-28 16:00	2028-01-24 08:00	2028-01-28 16:00		PT_Normal					CZQG4Gp+bxX6PYmREyDzgg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700174	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI33	Level 33: finishes & joinery		0	0	40	0	0	0	40	0	0	0				2028-01-29 08:00	2028-02-03 16:00		2028-01-29 08:00	2028-02-03 16:00	2028-01-29 08:00	2028-02-03 16:00	2028-01-29 08:00	2028-02-03 16:00	2028-01-29 08:00	2028-02-03 16:00		PT_Normal					HYmQxNXDfLwEj2szEZ9EGg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700175	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW34	Level 34: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-12-09 08:00	2027-12-11 16:00		2027-12-06 08:00	2027-12-08 16:00	2027-12-06 08:00	2027-12-08 16:00	2027-12-06 08:00	2027-12-08 16:00	2027-12-09 08:00	2027-12-11 16:00		PT_Normal					GWW4a16p/B6K9WyJ3HI4yQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700176	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL34	Level 34: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-12-13 08:00	2027-12-18 16:00		2027-12-13 08:00	2027-12-18 16:00	2027-12-13 08:00	2027-12-18 16:00	2027-12-13 08:00	2027-12-18 16:00	2027-12-13 08:00	2027-12-18 16:00		PT_Normal					6/+w4PCoJ+qZv+ZKAMU0FQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700177	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC34	Level 34: unitised facade panels		40	0	32	0	0	0	32	0	0	0				2028-01-25 08:00	2028-01-28 16:00		2028-01-19 08:00	2028-01-22 16:00	2028-01-19 08:00	2028-01-22 16:00	2028-01-19 08:00	2028-01-22 16:00	2028-01-25 08:00	2028-01-28 16:00		PT_Normal					6uAslJ9coDztwcrE+amMcw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700178	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME34	Level 34: MEP first & second fix		0	0	40	0	0	0	40	0	0	0				2028-01-29 08:00	2028-02-03 16:00		2028-01-29 08:00	2028-02-03 16:00	2028-01-29 08:00	2028-02-03 16:00	2028-01-29 08:00	2028-02-03 16:00	2028-01-29 08:00	2028-02-03 16:00		PT_Normal					vdDe6ng/FdYkzODjURPebw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700179	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI34	Level 34: finishes & joinery		0	0	40	0	0	0	40	0	0	0				2028-02-04 08:00	2028-02-09 16:00		2028-02-04 08:00	2028-02-09 16:00	2028-02-04 08:00	2028-02-09 16:00	2028-02-04 08:00	2028-02-09 16:00	2028-02-04 08:00	2028-02-09 16:00		PT_Normal					o9vjuXpFhmlUFTu1rTvNWg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700180	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CW35	Level 35: core walls (jump form)		24	0	24	0	0	0	24	0	0	0				2027-12-16 08:00	2027-12-18 16:00		2027-12-13 08:00	2027-12-15 16:00	2027-12-13 08:00	2027-12-15 16:00	2027-12-13 08:00	2027-12-15 16:00	2027-12-16 08:00	2027-12-18 16:00		PT_Normal					uvpWnF2407Srw6DgGI6Jag				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700181	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	SL35	Level 35: columns & slab cycle		0	0	48	0	0	0	48	0	0	0				2027-12-20 08:00	2027-12-25 16:00		2027-12-20 08:00	2027-12-25 16:00	2027-12-20 08:00	2027-12-25 16:00	2027-12-20 08:00	2027-12-25 16:00	2027-12-20 08:00	2027-12-25 16:00		PT_Normal					IkYfy+V5k5KETTFE+6/cQQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700182	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FC35	Level 35: unitised facade panels		48	0	32	0	0	0	32	0	0	0				2028-01-31 08:00	2028-02-03 16:00		2028-01-24 08:00	2028-01-27 16:00	2028-01-24 08:00	2028-01-27 16:00	2028-01-24 08:00	2028-01-27 16:00	2028-01-31 08:00	2028-02-03 16:00		PT_Normal					UpG8YSWwJq6Ehl9w4M5vTg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700183	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	ME35	Level 35: MEP first & second fix		0	0	40	0	0	0	40	0	0	0				2028-02-04 08:00	2028-02-09 16:00		2028-02-04 08:00	2028-02-09 16:00	2028-02-04 08:00	2028-02-09 16:00	2028-02-04 08:00	2028-02-09 16:00	2028-02-04 08:00	2028-02-09 16:00		PT_Normal					LvrmCPaKt7ajjnXVWk1Y0w				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700184	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FI35	Level 35: finishes & joinery		0	0	40	0	0	0	40	0	0	0				2028-02-10 08:00	2028-02-15 16:00		2028-02-10 08:00	2028-02-15 16:00	2028-02-10 08:00	2028-02-15 16:00	2028-02-10 08:00	2028-02-15 16:00	2028-02-10 08:00	2028-02-15 16:00		PT_Normal					P9dVls4PSTkQ/zBStJWp1Q				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700185	5101	40206	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TC100	Testing, commissioning & authority inspections		0	0	320	0	0	0	320	0	0	0				2028-02-16 08:00	2028-04-01 16:00		2028-02-16 08:00	2028-04-01 16:00	2028-02-16 08:00	2028-04-01 16:00	2028-02-16 08:00	2028-04-01 16:00	2028-02-16 08:00	2028-04-01 16:00		PT_Normal					z31PYCeanLCyijdBjOZBhw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700186	5101	40200	7101	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	MS999	Building completion certificate		0	0	0	0	0	0	0	0	0	0				2028-04-01 16:00	2028-04-01 16:00		2028-04-01 16:00	2028-04-01 16:00	2028-04-01 16:00	2028-04-01 16:00	2028-04-01 16:00	2028-04-01 16:00	2028-04-01 16:00	2028-04-01 16:00		PT_Normal					dAWLK1xe4UsyuS/z9VGtBw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%T	TASKPRED
+%F	task_pred_id	task_id	pred_task_id	proj_id	pred_proj_id	pred_type	lag_hr_cnt	comments	float_path	aref	arls
+%R	800001	700001	700000	5101	5101	PR_FS	0				
+%R	800002	700002	700001	5101	5101	PR_FS	0				
+%R	800003	700003	700002	5101	5101	PR_FS	0				
+%R	800004	700004	700003	5101	5101	PR_FS	0				
+%R	800005	700005	700003	5101	5101	PR_FS	0				
+%R	800006	700006	700005	5101	5101	PR_FS	0				
+%R	800007	700006	700004	5101	5101	PR_FS	0				
+%R	800008	700007	700005	5101	5101	PR_FS	0				
+%R	800009	700007	700004	5101	5101	PR_FS	0				
+%R	800010	700008	700007	5101	5101	PR_FS	0				
+%R	800011	700008	700006	5101	5101	PR_FS	0				
+%R	800012	700009	700000	5101	5101	PR_FS	0				
+%R	800013	700010	700007	5101	5101	PR_FS	0				
+%R	800014	700010	700006	5101	5101	PR_FS	0				
+%R	800015	700011	700010	5101	5101	PR_FS	0				
+%R	800016	700011	700008	5101	5101	PR_FS	0				
+%R	800017	700012	700041	5101	5101	PR_FS	0				
+%R	800018	700012	700009	5101	5101	PR_FS	0				
+%R	800019	700013	700012	5101	5101	PR_FS	0				
+%R	800020	700014	700013	5101	5101	PR_FS	0				
+%R	800021	700015	700010	5101	5101	PR_FS	0				
+%R	800022	700015	700008	5101	5101	PR_FS	0				
+%R	800023	700016	700015	5101	5101	PR_FS	0				
+%R	800024	700016	700011	5101	5101	PR_FS	0				
+%R	800025	700017	700046	5101	5101	PR_FS	0				
+%R	800026	700017	700012	5101	5101	PR_FS	0				
+%R	800027	700018	700017	5101	5101	PR_FS	0				
+%R	800028	700018	700013	5101	5101	PR_FS	0				
+%R	800029	700019	700018	5101	5101	PR_FS	0				
+%R	800030	700019	700014	5101	5101	PR_FS	0				
+%R	800031	700020	700015	5101	5101	PR_FS	0				
+%R	800032	700020	700011	5101	5101	PR_FS	0				
+%R	800033	700021	700020	5101	5101	PR_FS	0				
+%R	800034	700021	700016	5101	5101	PR_FS	0				
+%R	800035	700022	700051	5101	5101	PR_FS	0				
+%R	800036	700022	700017	5101	5101	PR_FS	0				
+%R	800037	700023	700022	5101	5101	PR_FS	0				
+%R	800038	700023	700018	5101	5101	PR_FS	0				
+%R	800039	700024	700023	5101	5101	PR_FS	0				
+%R	800040	700024	700019	5101	5101	PR_FS	0				
+%R	800041	700025	700020	5101	5101	PR_FS	0				
+%R	800042	700025	700016	5101	5101	PR_FS	0				
+%R	800043	700026	700025	5101	5101	PR_FS	0				
+%R	800044	700026	700021	5101	5101	PR_FS	0				
+%R	800045	700027	700056	5101	5101	PR_FS	0				
+%R	800046	700027	700022	5101	5101	PR_FS	0				
+%R	800047	700028	700027	5101	5101	PR_FS	0				
+%R	800048	700028	700023	5101	5101	PR_FS	0				
+%R	800049	700029	700028	5101	5101	PR_FS	0				
+%R	800050	700029	700024	5101	5101	PR_FS	0				
+%R	800051	700030	700025	5101	5101	PR_FS	0				
+%R	800052	700030	700021	5101	5101	PR_FS	0				
+%R	800053	700031	700030	5101	5101	PR_FS	0				
+%R	800054	700031	700026	5101	5101	PR_FS	0				
+%R	800055	700032	700061	5101	5101	PR_FS	0				
+%R	800056	700032	700027	5101	5101	PR_FS	0				
+%R	800057	700033	700032	5101	5101	PR_FS	0				
+%R	800058	700033	700028	5101	5101	PR_FS	0				
+%R	800059	700034	700033	5101	5101	PR_FS	0				
+%R	800060	700034	700029	5101	5101	PR_FS	0				
+%R	800061	700035	700030	5101	5101	PR_FS	0				
+%R	800062	700035	700026	5101	5101	PR_FS	0				
+%R	800063	700036	700035	5101	5101	PR_FS	0				
+%R	800064	700036	700031	5101	5101	PR_FS	0				
+%R	800065	700037	700066	5101	5101	PR_FS	0				
+%R	800066	700037	700032	5101	5101	PR_FS	0				
+%R	800067	700038	700037	5101	5101	PR_FS	0				
+%R	800068	700038	700033	5101	5101	PR_FS	0				
+%R	800069	700039	700038	5101	5101	PR_FS	0				
+%R	800070	700039	700034	5101	5101	PR_FS	0				
+%R	800071	700040	700035	5101	5101	PR_FS	0				
+%R	800072	700040	700031	5101	5101	PR_FS	0				
+%R	800073	700041	700040	5101	5101	PR_FS	0				
+%R	800074	700041	700036	5101	5101	PR_FS	0				
+%R	800075	700042	700071	5101	5101	PR_FS	0				
+%R	800076	700042	700037	5101	5101	PR_FS	0				
+%R	800077	700043	700042	5101	5101	PR_FS	0				
+%R	800078	700043	700038	5101	5101	PR_FS	0				
+%R	800079	700044	700043	5101	5101	PR_FS	0				
+%R	800080	700044	700039	5101	5101	PR_FS	0				
+%R	800081	700045	700040	5101	5101	PR_FS	0				
+%R	800082	700045	700036	5101	5101	PR_FS	0				
+%R	800083	700046	700045	5101	5101	PR_FS	0				
+%R	800084	700046	700041	5101	5101	PR_FS	0				
+%R	800085	700047	700076	5101	5101	PR_FS	0				
+%R	800086	700047	700042	5101	5101	PR_FS	0				
+%R	800087	700048	700047	5101	5101	PR_FS	0				
+%R	800088	700048	700043	5101	5101	PR_FS	0				
+%R	800089	700049	700048	5101	5101	PR_FS	0				
+%R	800090	700049	700044	5101	5101	PR_FS	0				
+%R	800091	700050	700045	5101	5101	PR_FS	0				
+%R	800092	700050	700041	5101	5101	PR_FS	0				
+%R	800093	700051	700050	5101	5101	PR_FS	0				
+%R	800094	700051	700046	5101	5101	PR_FS	0				
+%R	800095	700052	700081	5101	5101	PR_FS	0				
+%R	800096	700052	700047	5101	5101	PR_FS	0				
+%R	800097	700053	700052	5101	5101	PR_FS	0				
+%R	800098	700053	700048	5101	5101	PR_FS	0				
+%R	800099	700054	700053	5101	5101	PR_FS	0				
+%R	800100	700054	700049	5101	5101	PR_FS	0				
+%R	800101	700055	700050	5101	5101	PR_FS	0				
+%R	800102	700055	700046	5101	5101	PR_FS	0				
+%R	800103	700056	700055	5101	5101	PR_FS	0				
+%R	800104	700056	700051	5101	5101	PR_FS	0				
+%R	800105	700057	700086	5101	5101	PR_FS	0				
+%R	800106	700057	700052	5101	5101	PR_FS	0				
+%R	800107	700058	700057	5101	5101	PR_FS	0				
+%R	800108	700058	700053	5101	5101	PR_FS	0				
+%R	800109	700059	700058	5101	5101	PR_FS	0				
+%R	800110	700059	700054	5101	5101	PR_FS	0				
+%R	800111	700060	700055	5101	5101	PR_FS	0				
+%R	800112	700060	700051	5101	5101	PR_FS	0				
+%R	800113	700061	700060	5101	5101	PR_FS	0				
+%R	800114	700061	700056	5101	5101	PR_FS	0				
+%R	800115	700062	700091	5101	5101	PR_FS	0				
+%R	800116	700062	700057	5101	5101	PR_FS	0				
+%R	800117	700063	700062	5101	5101	PR_FS	0				
+%R	800118	700063	700058	5101	5101	PR_FS	0				
+%R	800119	700064	700063	5101	5101	PR_FS	0				
+%R	800120	700064	700059	5101	5101	PR_FS	0				
+%R	800121	700065	700060	5101	5101	PR_FS	0				
+%R	800122	700065	700056	5101	5101	PR_FS	0				
+%R	800123	700066	700065	5101	5101	PR_FS	0				
+%R	800124	700066	700061	5101	5101	PR_FS	0				
+%R	800125	700067	700096	5101	5101	PR_FS	0				
+%R	800126	700067	700062	5101	5101	PR_FS	0				
+%R	800127	700068	700067	5101	5101	PR_FS	0				
+%R	800128	700068	700063	5101	5101	PR_FS	0				
+%R	800129	700069	700068	5101	5101	PR_FS	0				
+%R	800130	700069	700064	5101	5101	PR_FS	0				
+%R	800131	700070	700065	5101	5101	PR_FS	0				
+%R	800132	700070	700061	5101	5101	PR_FS	0				
+%R	800133	700071	700070	5101	5101	PR_FS	0				
+%R	800134	700071	700066	5101	5101	PR_FS	0				
+%R	800135	700072	700101	5101	5101	PR_FS	0				
+%R	800136	700072	700067	5101	5101	PR_FS	0				
+%R	800137	700073	700072	5101	5101	PR_FS	0				
+%R	800138	700073	700068	5101	5101	PR_FS	0				
+%R	800139	700074	700073	5101	5101	PR_FS	0				
+%R	800140	700074	700069	5101	5101	PR_FS	0				
+%R	800141	700075	700070	5101	5101	PR_FS	0				
+%R	800142	700075	700066	5101	5101	PR_FS	0				
+%R	800143	700076	700075	5101	5101	PR_FS	0				
+%R	800144	700076	700071	5101	5101	PR_FS	0				
+%R	800145	700077	700106	5101	5101	PR_FS	0				
+%R	800146	700077	700072	5101	5101	PR_FS	0				
+%R	800147	700078	700077	5101	5101	PR_FS	0				
+%R	800148	700078	700073	5101	5101	PR_FS	0				
+%R	800149	700079	700078	5101	5101	PR_FS	0				
+%R	800150	700079	700074	5101	5101	PR_FS	0				
+%R	800151	700080	700075	5101	5101	PR_FS	0				
+%R	800152	700080	700071	5101	5101	PR_FS	0				
+%R	800153	700081	700080	5101	5101	PR_FS	0				
+%R	800154	700081	700076	5101	5101	PR_FS	0				
+%R	800155	700082	700111	5101	5101	PR_FS	0				
+%R	800156	700082	700077	5101	5101	PR_FS	0				
+%R	800157	700083	700082	5101	5101	PR_FS	0				
+%R	800158	700083	700078	5101	5101	PR_FS	0				
+%R	800159	700084	700083	5101	5101	PR_FS	0				
+%R	800160	700084	700079	5101	5101	PR_FS	0				
+%R	800161	700085	700080	5101	5101	PR_FS	0				
+%R	800162	700085	700076	5101	5101	PR_FS	0				
+%R	800163	700086	700085	5101	5101	PR_FS	0				
+%R	800164	700086	700081	5101	5101	PR_FS	0				
+%R	800165	700087	700116	5101	5101	PR_FS	0				
+%R	800166	700087	700082	5101	5101	PR_FS	0				
+%R	800167	700088	700087	5101	5101	PR_FS	0				
+%R	800168	700088	700083	5101	5101	PR_FS	0				
+%R	800169	700089	700088	5101	5101	PR_FS	0				
+%R	800170	700089	700084	5101	5101	PR_FS	0				
+%R	800171	700090	700085	5101	5101	PR_FS	0				
+%R	800172	700090	700081	5101	5101	PR_FS	0				
+%R	800173	700091	700090	5101	5101	PR_FS	0				
+%R	800174	700091	700086	5101	5101	PR_FS	0				
+%R	800175	700092	700121	5101	5101	PR_FS	0				
+%R	800176	700092	700087	5101	5101	PR_FS	0				
+%R	800177	700093	700092	5101	5101	PR_FS	0				
+%R	800178	700093	700088	5101	5101	PR_FS	0				
+%R	800179	700094	700093	5101	5101	PR_FS	0				
+%R	800180	700094	700089	5101	5101	PR_FS	0				
+%R	800181	700095	700090	5101	5101	PR_FS	0				
+%R	800182	700095	700086	5101	5101	PR_FS	0				
+%R	800183	700096	700095	5101	5101	PR_FS	0				
+%R	800184	700096	700091	5101	5101	PR_FS	0				
+%R	800185	700097	700126	5101	5101	PR_FS	0				
+%R	800186	700097	700092	5101	5101	PR_FS	0				
+%R	800187	700098	700097	5101	5101	PR_FS	0				
+%R	800188	700098	700093	5101	5101	PR_FS	0				
+%R	800189	700099	700098	5101	5101	PR_FS	0				
+%R	800190	700099	700094	5101	5101	PR_FS	0				
+%R	800191	700100	700095	5101	5101	PR_FS	0				
+%R	800192	700100	700091	5101	5101	PR_FS	0				
+%R	800193	700101	700100	5101	5101	PR_FS	0				
+%R	800194	700101	700096	5101	5101	PR_FS	0				
+%R	800195	700102	700131	5101	5101	PR_FS	0				
+%R	800196	700102	700097	5101	5101	PR_FS	0				
+%R	800197	700103	700102	5101	5101	PR_FS	0				
+%R	800198	700103	700098	5101	5101	PR_FS	0				
+%R	800199	700104	700103	5101	5101	PR_FS	0				
+%R	800200	700104	700099	5101	5101	PR_FS	0				
+%R	800201	700105	700100	5101	5101	PR_FS	0				
+%R	800202	700105	700096	5101	5101	PR_FS	0				
+%R	800203	700106	700105	5101	5101	PR_FS	0				
+%R	800204	700106	700101	5101	5101	PR_FS	0				
+%R	800205	700107	700136	5101	5101	PR_FS	0				
+%R	800206	700107	700102	5101	5101	PR_FS	0				
+%R	800207	700108	700107	5101	5101	PR_FS	0				
+%R	800208	700108	700103	5101	5101	PR_FS	0				
+%R	800209	700109	700108	5101	5101	PR_FS	0				
+%R	800210	700109	700104	5101	5101	PR_FS	0				
+%R	800211	700110	700105	5101	5101	PR_FS	0				
+%R	800212	700110	700101	5101	5101	PR_FS	0				
+%R	800213	700111	700110	5101	5101	PR_FS	0				
+%R	800214	700111	700106	5101	5101	PR_FS	0				
+%R	800215	700112	700141	5101	5101	PR_FS	0				
+%R	800216	700112	700107	5101	5101	PR_FS	0				
+%R	800217	700113	700112	5101	5101	PR_FS	0				
+%R	800218	700113	700108	5101	5101	PR_FS	0				
+%R	800219	700114	700113	5101	5101	PR_FS	0				
+%R	800220	700114	700109	5101	5101	PR_FS	0				
+%R	800221	700115	700110	5101	5101	PR_FS	0				
+%R	800222	700115	700106	5101	5101	PR_FS	0				
+%R	800223	700116	700115	5101	5101	PR_FS	0				
+%R	800224	700116	700111	5101	5101	PR_FS	0				
+%R	800225	700117	700146	5101	5101	PR_FS	0				
+%R	800226	700117	700112	5101	5101	PR_FS	0				
+%R	800227	700118	700117	5101	5101	PR_FS	0				
+%R	800228	700118	700113	5101	5101	PR_FS	0				
+%R	800229	700119	700118	5101	5101	PR_FS	0				
+%R	800230	700119	700114	5101	5101	PR_FS	0				
+%R	800231	700120	700115	5101	5101	PR_FS	0				
+%R	800232	700120	700111	5101	5101	PR_FS	0				
+%R	800233	700121	700120	5101	5101	PR_FS	0				
+%R	800234	700121	700116	5101	5101	PR_FS	0				
+%R	800235	700122	700151	5101	5101	PR_FS	0				
+%R	800236	700122	700117	5101	5101	PR_FS	0				
+%R	800237	700123	700122	5101	5101	PR_FS	0				
+%R	800238	700123	700118	5101	5101	PR_FS	0				
+%R	800239	700124	700123	5101	5101	PR_FS	0				
+%R	800240	700124	700119	5101	5101	PR_FS	0				
+%R	800241	700125	700120	5101	5101	PR_FS	0				
+%R	800242	700125	700116	5101	5101	PR_FS	0				
+%R	800243	700126	700125	5101	5101	PR_FS	0				
+%R	800244	700126	700121	5101	5101	PR_FS	0				
+%R	800245	700127	700156	5101	5101	PR_FS	0				
+%R	800246	700127	700122	5101	5101	PR_FS	0				
+%R	800247	700128	700127	5101	5101	PR_FS	0				
+%R	800248	700128	700123	5101	5101	PR_FS	0				
+%R	800249	700129	700128	5101	5101	PR_FS	0				
+%R	800250	700129	700124	5101	5101	PR_FS	0				
+%R	800251	700130	700125	5101	5101	PR_FS	0				
+%R	800252	700130	700121	5101	5101	PR_FS	0				
+%R	800253	700131	700130	5101	5101	PR_FS	0				
+%R	800254	700131	700126	5101	5101	PR_FS	0				
+%R	800255	700132	700161	5101	5101	PR_FS	0				
+%R	800256	700132	700127	5101	5101	PR_FS	0				
+%R	800257	700133	700132	5101	5101	PR_FS	0				
+%R	800258	700133	700128	5101	5101	PR_FS	0				
+%R	800259	700134	700133	5101	5101	PR_FS	0				
+%R	800260	700134	700129	5101	5101	PR_FS	0				
+%R	800261	700135	700130	5101	5101	PR_FS	0				
+%R	800262	700135	700126	5101	5101	PR_FS	0				
+%R	800263	700136	700135	5101	5101	PR_FS	0				
+%R	800264	700136	700131	5101	5101	PR_FS	0				
+%R	800265	700137	700166	5101	5101	PR_FS	0				
+%R	800266	700137	700132	5101	5101	PR_FS	0				
+%R	800267	700138	700137	5101	5101	PR_FS	0				
+%R	800268	700138	700133	5101	5101	PR_FS	0				
+%R	800269	700139	700138	5101	5101	PR_FS	0				
+%R	800270	700139	700134	5101	5101	PR_FS	0				
+%R	800271	700140	700135	5101	5101	PR_FS	0				
+%R	800272	700140	700131	5101	5101	PR_FS	0				
+%R	800273	700141	700140	5101	5101	PR_FS	0				
+%R	800274	700141	700136	5101	5101	PR_FS	0				
+%R	800275	700142	700171	5101	5101	PR_FS	0				
+%R	800276	700142	700137	5101	5101	PR_FS	0				
+%R	800277	700143	700142	5101	5101	PR_FS	0				
+%R	800278	700143	700138	5101	5101	PR_FS	0				
+%R	800279	700144	700143	5101	5101	PR_FS	0				
+%R	800280	700144	700139	5101	5101	PR_FS	0				
+%R	800281	700145	700140	5101	5101	PR_FS	0				
+%R	800282	700145	700136	5101	5101	PR_FS	0				
+%R	800283	700146	700145	5101	5101	PR_FS	0				
+%R	800284	700146	700141	5101	5101	PR_FS	0				
+%R	800285	700147	700176	5101	5101	PR_FS	0				
+%R	800286	700147	700142	5101	5101	PR_FS	0				
+%R	800287	700148	700147	5101	5101	PR_FS	0				
+%R	800288	700148	700143	5101	5101	PR_FS	0				
+%R	800289	700149	700148	5101	5101	PR_FS	0				
+%R	800290	700149	700144	5101	5101	PR_FS	0				
+%R	800291	700150	700145	5101	5101	PR_FS	0				
+%R	800292	700150	700141	5101	5101	PR_FS	0				
+%R	800293	700151	700150	5101	5101	PR_FS	0				
+%R	800294	700151	700146	5101	5101	PR_FS	0				
+%R	800295	700152	700181	5101	5101	PR_FS	0				
+%R	800296	700152	700147	5101	5101	PR_FS	0				
+%R	800297	700153	700152	5101	5101	PR_FS	0				
+%R	800298	700153	700148	5101	5101	PR_FS	0				
+%R	800299	700154	700153	5101	5101	PR_FS	0				
+%R	800300	700154	700149	5101	5101	PR_FS	0				
+%R	800301	700155	700150	5101	5101	PR_FS	0				
+%R	800302	700155	700146	5101	5101	PR_FS	0				
+%R	800303	700156	700155	5101	5101	PR_FS	0				
+%R	800304	700156	700151	5101	5101	PR_FS	0				
+%R	800305	700157	700181	5101	5101	PR_FS	0				
+%R	800306	700157	700152	5101	5101	PR_FS	0				
+%R	800307	700158	700157	5101	5101	PR_FS	0				
+%R	800308	700158	700153	5101	5101	PR_FS	0				
+%R	800309	700159	700158	5101	5101	PR_FS	0				
+%R	800310	700159	700154	5101	5101	PR_FS	0				
+%R	800311	700160	700155	5101	5101	PR_FS	0				
+%R	800312	700160	700151	5101	5101	PR_FS	0				
+%R	800313	700161	700160	5101	5101	PR_FS	0				
+%R	800314	700161	700156	5101	5101	PR_FS	0				
+%R	800315	700162	700181	5101	5101	PR_FS	0				
+%R	800316	700162	700157	5101	5101	PR_FS	0				
+%R	800317	700163	700162	5101	5101	PR_FS	0				
+%R	800318	700163	700158	5101	5101	PR_FS	0				
+%R	800319	700164	700163	5101	5101	PR_FS	0				
+%R	800320	700164	700159	5101	5101	PR_FS	0				
+%R	800321	700165	700160	5101	5101	PR_FS	0				
+%R	800322	700165	700156	5101	5101	PR_FS	0				
+%R	800323	700166	700165	5101	5101	PR_FS	0				
+%R	800324	700166	700161	5101	5101	PR_FS	0				
+%R	800325	700167	700181	5101	5101	PR_FS	0				
+%R	800326	700167	700162	5101	5101	PR_FS	0				
+%R	800327	700168	700167	5101	5101	PR_FS	0				
+%R	800328	700168	700163	5101	5101	PR_FS	0				
+%R	800329	700169	700168	5101	5101	PR_FS	0				
+%R	800330	700169	700164	5101	5101	PR_FS	0				
+%R	800331	700170	700165	5101	5101	PR_FS	0				
+%R	800332	700170	700161	5101	5101	PR_FS	0				
+%R	800333	700171	700170	5101	5101	PR_FS	0				
+%R	800334	700171	700166	5101	5101	PR_FS	0				
+%R	800335	700172	700181	5101	5101	PR_FS	0				
+%R	800336	700172	700167	5101	5101	PR_FS	0				
+%R	800337	700173	700172	5101	5101	PR_FS	0				
+%R	800338	700173	700168	5101	5101	PR_FS	0				
+%R	800339	700174	700173	5101	5101	PR_FS	0				
+%R	800340	700174	700169	5101	5101	PR_FS	0				
+%R	800341	700175	700170	5101	5101	PR_FS	0				
+%R	800342	700175	700166	5101	5101	PR_FS	0				
+%R	800343	700176	700175	5101	5101	PR_FS	0				
+%R	800344	700176	700171	5101	5101	PR_FS	0				
+%R	800345	700177	700181	5101	5101	PR_FS	0				
+%R	800346	700177	700172	5101	5101	PR_FS	0				
+%R	800347	700178	700177	5101	5101	PR_FS	0				
+%R	800348	700178	700173	5101	5101	PR_FS	0				
+%R	800349	700179	700178	5101	5101	PR_FS	0				
+%R	800350	700179	700174	5101	5101	PR_FS	0				
+%R	800351	700180	700175	5101	5101	PR_FS	0				
+%R	800352	700180	700171	5101	5101	PR_FS	0				
+%R	800353	700181	700180	5101	5101	PR_FS	0				
+%R	800354	700181	700176	5101	5101	PR_FS	0				
+%R	800355	700182	700181	5101	5101	PR_FS	0				
+%R	800356	700182	700177	5101	5101	PR_FS	0				
+%R	800357	700183	700182	5101	5101	PR_FS	0				
+%R	800358	700183	700178	5101	5101	PR_FS	0				
+%R	800359	700184	700183	5101	5101	PR_FS	0				
+%R	800360	700184	700179	5101	5101	PR_FS	0				
+%R	800361	700185	700184	5101	5101	PR_FS	0				
+%R	800362	700185	700181	5101	5101	PR_FS	0				
+%R	800363	700186	700185	5101	5101	PR_FS	0				
+%E

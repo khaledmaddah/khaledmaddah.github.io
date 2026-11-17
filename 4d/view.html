@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4D model | Khaled Maddah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f2742;--navy2:#1d3a5f;--ink:#1f2933;--muted:#5f6b7a;--line:#e3e8ef;--bg:#f3f6fa;--blue:#2a78d6;--red:#e34948;--green:#1baf7a;--purple:#8a5cd0;--amber:#eda100}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);font-size:13px;-webkit-font-smoothing:antialiased}
+header{background:var(--navy);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;flex-wrap:wrap}
+header a.back{color:#9fc3ee;text-decoration:none;font-weight:600;font-size:13px;white-space:nowrap}
+header .t{flex:1;min-width:220px}
+header h1{font-size:16px;font-weight:700;line-height:1.25}
+header .s{font-size:11.5px;color:#9fb3c8;margin-top:2px}
+header select,header .btn{font:inherit;font-size:12.5px;border-radius:7px;padding:7px 10px}
+header select{border:1px solid #2f4d72;background:#16365c;color:#fff;font-weight:600;max-width:100%}
+.btn{border:1px solid #2f4d72;background:transparent;color:#fff;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{background:#1d3a5f}
+.wrap{display:grid;grid-template-columns:1fr 300px;grid-template-rows:minmax(0,1fr) auto;height:calc(100vh - 58px)}
+#stage{position:relative;min-height:0;background:linear-gradient(#eef3f8,#dfe6ee)}
+#c3d{width:100%;height:100%;display:block}
+.hud{position:absolute;left:12px;top:12px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:10px;padding:10px 12px;box-shadow:0 4px 14px rgba(15,39,66,.08)}
+.hud .d{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-.3px}
+.hud .l{font-size:10.5px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);font-weight:700}
+.hud .p{font-size:12px;color:var(--muted);margin-top:2px}
+.tog{position:absolute;right:12px;top:12px;display:flex;flex-direction:column;gap:6px}
+.tog label{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-weight:600;font-size:12px;cursor:pointer;user-select:none}
+.tog input{accent-color:var(--blue)}
+.thumb .hud,.thumb .tog,.thumb .hint{display:none!important}
+.hint{position:absolute;left:12px;bottom:10px;font-size:11px;color:var(--muted);background:rgba(255,255,255,.8);padding:4px 8px;border-radius:6px}
+aside{background:#fff;border-left:1px solid var(--line);overflow-y:auto;padding:14px;min-height:0}
+aside h3{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin:14px 0 8px;font-weight:700}
+aside h3:first-child{margin-top:0}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kv div{background:var(--bg);border-radius:8px;padding:8px 10px}
+.kv b{display:block;font-size:14.5px;color:var(--navy)}
+.kv span{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.note{font-size:12px;line-height:1.5;color:var(--ink);background:#f5f0ff;border-left:3px solid var(--purple);padding:8px 10px;border-radius:4px;margin-top:8px}
+.delta{font-weight:700}.delta.bad{color:var(--red)}.delta.good{color:#13865c}
+.sel{font-size:12.5px;line-height:1.55}
+.sel .code{font-weight:700;color:var(--blue)}
+.sel .empty{color:var(--muted)}
+.cnt{border:1px solid var(--line);border-radius:8px;padding:10px}
+.cnt .v{font-size:15px;font-weight:800;margin-top:2px}
+.cnt .v.bad{color:var(--red)}.cnt .v.ok{color:#13865c}
+.cnt canvas{width:100%;height:46px;display:block;margin-top:6px}
+.leg{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:11.5px;color:var(--muted)}
+.leg i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.bottom{grid-column:1 / span 2;background:#fff;border-top:1px solid var(--line)}
+.ctrl{display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.ctrl button{font:inherit;font-size:12.5px;font-weight:700;border:1px solid var(--line);background:#fff;border-radius:7px;padding:6px 12px;cursor:pointer;color:var(--navy2)}
+.ctrl button.play{background:var(--blue);color:#fff;border-color:var(--blue);min-width:74px}
+.ctrl select{font:inherit;font-size:12px;border:1px solid var(--line);border-radius:7px;padding:5px 8px}
+.ctrl input[type=range]{flex:1;min-width:160px;accent-color:var(--blue)}
+.ctrl .dd{font-weight:700;color:var(--navy);min-width:92px}
+#gwrap{height:220px;overflow-y:auto;position:relative}
+#gantt{display:block;width:100%}
+.gleg{display:flex;gap:14px;font-size:11px;color:var(--muted);padding:0 14px 6px;flex-wrap:wrap}
+.gleg i{display:inline-block;width:12px;height:7px;border-radius:2px;margin-right:5px;vertical-align:1px}
+@media (max-width:900px){
+  .wrap{display:block;height:auto}
+  #stage{height:58vh}
+  aside{border-left:0;border-top:1px solid var(--line)}
+  .tog{top:auto;bottom:34px;right:8px}
+  .tog label{padding:5px 8px;font-size:11px}
+  .hud{left:8px;top:8px;padding:8px 10px}.hud .d{font-size:16px}
+  #gwrap{height:300px}
+  header{padding:10px 12px}header .t{min-width:100%;order:2}
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="./">← 4D gallery</a>
+  <div class="t"><h1 id="ttl">Loading…</h1><div class="s" id="sub"></div></div>
+  <select id="scen" aria-label="Scenario"></select>
+  <a class="btn" id="xer" download>⬇ XER</a>
+</header>
+<div class="wrap">
+  <div id="stage">
+    <canvas id="c3d"></canvas>
+    <div class="hud"><div class="l">Data date</div><div class="d" id="hudDate">–</div><div class="p" id="hudPct"></div></div>
+    <div class="tog">
+      <label><input type="checkbox" id="tCrit"> Critical path</label>
+      <label id="lBase"><input type="checkbox" id="tBase"> Behind baseline</label>
+      <label><input type="checkbox" id="tRem"> Show remaining work</label>
+      <label id="lRoof"><input type="checkbox" id="tRoof"> Roof off</label>
+    </div>
+    <div class="hint">Drag to orbit · scroll to zoom · click an element</div>
+  </div>
+  <aside>
+    <h3>Schedule summary</h3>
+    <div class="kv" id="sum"></div>
+    <div id="noteBox"></div>
+    <div id="cntBox"></div>
+    <h3>Selected activity</h3>
+    <div class="sel" id="sel"><span class="empty">Click an element in the model or a bar in the Gantt chart.</span></div>
+    <h3>Element status</h3>
+    <div class="leg" id="legS"></div>
+    <h3>Trades</h3>
+    <div class="leg" id="legC"></div>
+    <h3>About this model</h3>
+    <div class="sel" id="about"></div>
+  </aside>
+  <div class="bottom">
+    <div class="ctrl">
+      <button class="play" id="play">▶ Play</button>
+      <select id="speed" aria-label="Speed"><option value="1">1 day / frame</option><option value="3" selected>3 days / frame</option><option value="7">1 week / frame</option></select>
+      <button id="toDD" title="Jump to the update's data date">Data date</button>
+      <input type="range" id="slider" min="0" max="100" value="0" aria-label="Data date">
+      <span class="dd" id="ddLbl"></span>
+    </div>
+    <div class="gleg"><span><i style="background:var(--red)"></i>Critical (total float 0)</span><span><i style="background:var(--blue)"></i>Non-critical</span><span><i style="background:var(--purple)"></i>Fragnet / delay event</span><span><i style="background:#c5ced8;height:3px"></i>Baseline</span><span><i style="background:var(--green);width:2px;height:10px"></i>Data date</span></div>
+    <div id="gwrap"><canvas id="gantt"></canvas></div>
+  </div>
+</div>
+
+<script src="lib/three.min.js"></script>
+<script src="lib/OrbitControls.js"></script>
+<script>
+const Q = new URLSearchParams(location.search), MID = Q.get('m') || 'dc-12mw';
+if (Q.get('thumb')) document.body.classList.add('thumb');
+const $ = s => document.querySelector(s);
+const ST = {existing:'#d5dbe2', prog:'#f59e3a', closed:'#e34948', offline:'#4b5563', cx:'#8a5cd0', ok:'#1baf7a'};
+const STL = {existing:'Existing / in use', prog:'Work in progress', done:'Complete (trade colour)', closed:'Closed / out of service', offline:'Offline (shutdown)', cx:'Testing & commissioning', ok:'Commissioned / back in service'};
+let M, S, BASE, day = 0, maxDay = 1, playing = false, timer = null, selected = null, meshes = {}, ghosts = {}, elemActs = {};
+const fmt = d => { const t = new Date(M.start + 'T00:00'); t.setDate(t.getDate() + d); return t.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'}); };
+const fmtS = d => { const t = new Date(M.start + 'T00:00'); t.setDate(t.getDate() + d); return t.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'2-digit'}); };
+const mix = (a, b, k) => { const A = new THREE.Color(a), B = new THREE.Color(b); return A.lerp(B, k); };
+
+// ---------- three ----------
+const canvas = $('#c3d'), renderer = new THREE.WebGLRenderer({canvas, antialias:true, preserveDrawingBuffer:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); renderer.setClearColor(0xe6ecf2, 1);
+const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(38, 1, 0.5, 3000);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x6f7c8a, 0.62));
+const sun = new THREE.DirectionalLight(0xffffff, 0.62); sun.position.set(80, 140, 60); scene.add(sun);
+const controls = new THREE.OrbitControls(camera, canvas); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.49;
+const geo = new THREE.BoxGeometry(1, 1, 1), edgeGeo = new THREE.EdgesGeometry(geo);
+function resize(){ const r = canvas.parentElement.getBoundingClientRect(); renderer.setSize(r.width, r.height, false); camera.aspect = r.width / r.height; camera.updateProjectionMatrix(); }
+window.addEventListener('resize', () => { resize(); drawGantt(); });
+(function loop(){ requestAnimationFrame(loop); controls.update(); renderer.render(scene, camera); })();
+
+// ---------- load ----------
+fetch('models/' + MID + '.json').then(r => r.json()).then(init).catch(e => { $('#ttl').textContent = 'Model not found'; console.error(e); });
+
+function init(data){
+  M = data; document.title = M.title + ' | 4D model';
+  $('#ttl').textContent = M.title; $('#sub').textContent = `${M.sector} · ${M.nacts} activities · CPM-linked · ${M.cal}`;
+  $('#about').innerHTML = M.scope + '<br><br><span style="color:var(--muted)">Fictional demonstration project. Every element is linked to an activity in its own logic-driven schedule; download the baseline as a Primavera P6 XER.</span>';
+  $('#xer').href = 'xer/' + M.id + '.xer';
+  Object.entries(M.scen).forEach(([k, v]) => $('#scen').insertAdjacentHTML('beforeend', `<option value="${k}">${v.label}</option>`));
+  maxDay = Math.max(...Object.values(M.scen).map(s => s.finish)) + 7;
+  $('#slider').max = maxDay;
+  // meshes
+  M.E.forEach(([id, x, y, z, w, h, d, cat]) => {
+    const mat = new THREE.MeshLambertMaterial({color: M.cats[cat] ? M.cats[cat][0] : '#999', transparent:true});
+    const me = new THREE.Mesh(geo, mat); me.position.set(x, y, z); me.scale.set(Math.max(w, .05), Math.max(h, .05), Math.max(d, .05));
+    me.userData = {id, cat}; scene.add(me); meshes[id] = me;
+    const g = new THREE.LineSegments(edgeGeo, new THREE.LineBasicMaterial({color:0xf08c00})); g.position.copy(me.position); g.scale.copy(me.scale); g.visible = false; scene.add(g); ghosts[id] = g;
+  });
+  const hasRoof = M.E.some(e => e[7] === 'roof'); if (!hasRoof) $('#lRoof').style.display = 'none';
+  camera.position.set(...M.cam); controls.target.set(...M.target); resize();
+  if (camera.aspect < 1){ const t = new THREE.Vector3(...M.target); camera.position.sub(t).multiplyScalar(1.15 / camera.aspect).add(t); }
+  // legends
+  $('#legC').innerHTML = Object.entries(M.cats).filter(([k]) => M.E.some(e => e[7] === k)).map(([k, v]) => `<span><i style="background:${v[0]}"></i>${v[1]}</span>`).join('');
+  const usedStates = new Set(['prog','done']); Object.values(M.scen).forEach(s => Object.values(s.trans).forEach(ts => ts.forEach(t => usedStates.add(t[1])))); Object.values(M.init).forEach(v => usedStates.add(v));
+  $('#legS').innerHTML = Object.keys(STL).filter(k => usedStates.has(k)).map(k => `<span><i style="background:${k === 'done' ? 'linear-gradient(90deg,#2a78d6,#e8a317)' : ST[k]}"></i>${STL[k]}</span>`).join('');
+  $('#scen').value = Q.get('s') && M.scen[Q.get('s')] ? Q.get('s') : M.default;
+  setScenario($('#scen').value, true);
+  if (Q.get('d')) setDay(+Q.get('d'));
+  if (M.opts && M.opts.roofOff) { $('#tRoof').checked = true; paint(); }
+  if (Q.get('crit')) { $('#tCrit').checked = true; paint(); }
+}
+
+function setScenario(k, first){
+  S = M.scen[k]; BASE = S.base ? M.scen[S.base] : null;
+  elemActs = {}; Object.entries(S.trans).forEach(([e, ts]) => elemActs[e] = ts);
+  S.byCode = {}; S.acts.forEach(a => S.byCode[a[0]] = a);
+  if (BASE){ BASE.byCode = {}; BASE.acts.forEach(a => BASE.byCode[a[0]] = a); }
+  $('#lBase').style.display = BASE ? '' : 'none'; if (!BASE) $('#tBase').checked = false;
+  $('#toDD').style.display = S.dd != null ? '' : 'none';
+  summary();
+  const d0 = S.dd != null ? S.dd : (first ? Math.round(S.finish * 0.45) : day);
+  selected = null; $('#sel').innerHTML = '<span class="empty">Click an element in the model or a bar in the Gantt chart.</span>';
+  setDay(Math.min(d0, maxDay)); drawGantt(true);
+}
+$('#scen').onchange = e => setScenario(e.target.value);
+
+function stateAt(id, d, sc){
+  let st = M.init[id]; const ts = sc.trans[id]; if (!ts) return st;
+  for (const t of ts){ if (t[0] <= d) st = t[1]; else break; }
+  return st;
+}
+function actAt(id, d){ const ts = elemActs[id]; if (!ts) return null; let cur = null, nxt = null;
+  for (const t of ts){ if (t[0] <= d) cur = t[2]; else { nxt = t[2]; break; } }
+  const a = S.byCode[cur || nxt]; return a || null; }
+
+function paint(){
+  const crit = $('#tCrit').checked, rem = $('#tRem').checked, roof = $('#tRoof').checked, beh = $('#tBase').checked && BASE;
+  for (const id in meshes){
+    const me = meshes[id], cat = me.userData.cat, st = stateAt(id, day, S), base = M.cats[cat] ? M.cats[cat][0] : '#999';
+    let col = base, op = 1, vis = true;
+    if (st === 'hidden'){ if (rem && elemActs[id]){ col = '#9aa5b1'; op = 0.13; } else vis = false; }
+    else if (st === 'existing') col = M.init[id] === 'existing' ? mix(base, '#ffffff', 0.2) : base;
+    else if (st === 'prog'){ col = mix(base, ST.prog, 0.65); op = 0.92; }
+    else if (st === 'done') col = base;
+    else col = ST[st] || base;
+    if (crit && vis && st !== 'existing'){
+      const a = actAt(id, day); const isC = a && a[5] <= 0;
+      if (st === 'done' || st === 'ok') col = mix(base, '#ffffff', 0.55);
+      else col = isC ? '#e34948' : '#7f8ea3';
+    }
+    if (roof && cat === 'roof') vis = false;
+    me.visible = vis; me.material.color.set(col); me.material.opacity = op; me.material.depthWrite = op > 0.5;
+    let g = false;
+    if (beh && BASE.trans[id]){ const bs = stateAt(id, day, BASE); g = (bs === 'done' || bs === 'ok' || bs === 'prog') && (st === 'hidden' || (st === 'prog' && bs !== 'prog')); }
+    ghosts[id].visible = g && !(roof && cat === 'roof');
+    if (selected && selected.elems && selected.elems.has(id)){ me.material.color.set('#ffd23f'); me.visible = true; me.material.opacity = Math.max(op, .7); }
+  }
+}
+['tCrit','tRem','tRoof','tBase'].forEach(i => $('#' + i).onchange = () => paint());
+
+function setDay(d){
+  day = Math.max(0, Math.min(maxDay, Math.round(d))); $('#slider').value = day;
+  $('#hudDate').textContent = fmt(day); $('#ddLbl').textContent = fmtS(day);
+  // % complete by duration
+  let tot = 0, done = 0; S.acts.forEach(a => { const dur = Math.max(0, a[4] - a[3]); tot += dur; done += Math.max(0, Math.min(dur, day - a[3])); });
+  const pct = tot ? done / tot * 100 : 0;
+  let txt = `Day ${day} · ${pct.toFixed(0)}% of activity duration complete`;
+  if (S.dd != null) txt += day === S.dd ? ' · update data date' : '';
+  $('#hudPct').textContent = txt;
+  paint(); drawGanttLine(); counters();
+}
+$('#slider').oninput = e => setDay(+e.target.value);
+$('#toDD').onclick = () => setDay(S.dd);
+$('#play').onclick = () => { playing = !playing; $('#play').textContent = playing ? '❚❚ Pause' : '▶ Play';
+  if (playing){ if (day >= maxDay) setDay(0); timer = setInterval(() => { if (day >= maxDay){ $('#play').click(); return; } setDay(day + +$('#speed').value); }, 110); }
+  else clearInterval(timer); };
+
+function summary(){
+  const crit = S.acts.filter(a => a[5] <= 0 && !a[7]).length;
+  let h = `<div><span>Start</span><b>${fmtS(0)}</b></div><div><span>Finish</span><b>${fmtS(S.finish)}</b></div>
+    <div><span>Duration</span><b>${S.finish} cal. days</b></div><div><span>Critical activities</span><b>${crit} / ${S.acts.length}</b></div>`;
+  if (BASE){ const dl = S.finish - BASE.finish; h += `<div style="grid-column:1/-1"><span>Finish vs ${BASE.label.split(':')[0].toLowerCase()}</span><b class="delta ${dl > 0 ? 'bad' : 'good'}">${dl > 0 ? '+' : ''}${dl} calendar days</b></div>`; }
+  if (S.dd != null) h += `<div style="grid-column:1/-1"><span>Update data date</span><b>${fmtS(S.dd)}</b></div>`;
+  $('#sum').innerHTML = h;
+  $('#noteBox').innerHTML = S.note ? `<div class="note">${S.note}</div>` : '';
+}
+
+function counters(){
+  if (!M.counters.length){ $('#cntBox').innerHTML = ''; return; }
+  const c = M.counters[0], av = new Set(c.avail);
+  const val = d => c.elems.filter(id => av.has(stateAt(id, d, S))).length;
+  const v = val(day), minAll = Math.min(...Array.from({length: Math.ceil(S.finish / 2) + 1}, (_, i) => val(i * 2)));
+  $('#cntBox').innerHTML = `<h3>Operational constraint</h3><div class="cnt"><div style="font-size:12px;color:var(--muted)">${c.label}</div>
+    <div class="v ${v < c.min ? 'bad' : 'ok'}">${v} of ${c.of} ${v < c.min ? '⚠ below minimum ' + c.min : '✓ minimum ' + c.min + ' kept'}</div>
+    <div style="font-size:11.5px;color:${minAll < c.min ? 'var(--red)' : 'var(--muted)'}">Lowest in this scenario: ${minAll} of ${c.of}</div><canvas id="spark"></canvas></div>`;
+  const cv = $('#spark'), w = cv.clientWidth || 260, h = 46, r = window.devicePixelRatio || 1; cv.width = w * r; cv.height = h * r;
+  const x = cv.getContext('2d'); x.scale(r, r); const N = 120;
+  const y = v => h - 4 - (v / c.of) * (h - 10);
+  x.strokeStyle = '#e34948'; x.setLineDash([3, 3]); x.beginPath(); x.moveTo(0, y(c.min)); x.lineTo(w, y(c.min)); x.stroke(); x.setLineDash([]);
+  x.strokeStyle = '#2a78d6'; x.lineWidth = 1.6; x.beginPath();
+  for (let i = 0; i <= N; i++){ const d = S.finish * i / N, px = w * i / N; const py = y(val(d)); i ? x.lineTo(px, py) : x.moveTo(px, py); }
+  x.stroke(); const px = w * Math.min(1, day / S.finish); x.strokeStyle = '#1baf7a'; x.beginPath(); x.moveTo(px, 0); x.lineTo(px, h); x.stroke();
+}
+
+// ---------- gantt ----------
+let rows = [], G = {};
+function drawGantt(rebuild){
+  if (!S) return;
+  if (rebuild || !rows.length){
+    rows = []; const groups = {};
+    S.acts.forEach(a => { (groups[a[2]] = groups[a[2]] || []).push(a); });
+    const order = Object.keys(groups).sort((p, q) => Math.min(...groups[p].map(a => a[3])) - Math.min(...groups[q].map(a => a[3])));
+    order.forEach(g => { rows.push({hdr:g, s:Math.min(...groups[g].map(a => a[3])), f:Math.max(...groups[g].map(a => a[4]))});
+      groups[g].sort((p, q) => p[3] - q[3] || p[4] - q[4]).forEach(a => rows.push({a})); });
+  }
+  const cv = $('#gantt'), W = cv.parentElement.clientWidth, RH = 19, H = rows.length * RH + 24, r = window.devicePixelRatio || 1;
+  cv.width = W * r; cv.height = H * r; cv.style.height = H + 'px';
+  const x = cv.getContext('2d'); x.scale(r, r);
+  const LW = Math.min(360, Math.max(170, W * 0.32)), X0 = LW + 10, X1 = W - 14, sx = d => X0 + (d / maxDay) * (X1 - X0);
+  G = {LW, X0, X1, sx, RH, H, x, W};
+  x.fillStyle = '#fff'; x.fillRect(0, 0, W, H);
+  // month grid
+  x.font = '600 10px Inter, sans-serif'; x.fillStyle = '#5f6b7a';
+  const st = new Date(M.start + 'T00:00');
+  for (let d = 0; d <= maxDay; d++){ const t = new Date(st); t.setDate(t.getDate() + d);
+    if (t.getDate() === 1){ const px = sx(d); x.strokeStyle = t.getMonth() === 0 ? '#c5ced8' : '#eef1f5'; x.beginPath(); x.moveTo(px, 0); x.lineTo(px, H); x.stroke();
+      if ((X1 - X0) / maxDay * 30 > 26 || t.getMonth() % 3 === 0) x.fillText(t.toLocaleDateString('en-GB', {month:'short'}) + (t.getMonth() === 0 ? " '" + String(t.getFullYear()).slice(2) : ''), px + 3, 12); } }
+  rows.forEach((rw, i) => {
+    const y = 20 + i * RH;
+    if (rw.hdr){ x.fillStyle = '#f3f6fa'; x.fillRect(0, y, W, RH); x.fillStyle = '#0f2742'; x.font = '700 11px Inter, sans-serif'; x.fillText(rw.hdr, 8, y + 13);
+      x.fillStyle = '#1d3a5f'; x.fillRect(sx(rw.s), y + 7, Math.max(2, sx(rw.f) - sx(rw.s)), 4); return; }
+    const a = rw.a, isSel = selected && selected.code === a[0];
+    if (isSel){ x.fillStyle = '#fff6d6'; x.fillRect(0, y, W, RH); }
+    x.fillStyle = a[8] ? '#6b3fb8' : '#1f2933'; x.font = (isSel ? '700 ' : '') + '11px Inter, sans-serif';
+    let nm = a[0] + '  ' + a[1]; while (x.measureText(nm).width > LW - 14 && nm.length > 4) nm = nm.slice(0, -2);
+    if (nm.length < (a[0] + '  ' + a[1]).length) nm += '…';
+    x.fillText(nm, 14, y + 13);
+    if (BASE && BASE.byCode[a[0]]){ const b = BASE.byCode[a[0]]; x.fillStyle = '#c5ced8'; if (b[7]) {} else x.fillRect(sx(b[3]), y + 14, Math.max(2, sx(b[4]) - sx(b[3])), 3); }
+    const col = a[8] ? '#8a5cd0' : (a[5] <= 0 ? '#e34948' : '#2a78d6');
+    x.fillStyle = col;
+    if (a[7]){ const cx = sx(a[4]), cy = y + 9; x.beginPath(); x.moveTo(cx, cy - 6); x.lineTo(cx + 6, cy); x.lineTo(cx, cy + 6); x.lineTo(cx - 6, cy); x.closePath(); x.fill(); }
+    else { x.fillRect(sx(a[3]), y + 4, Math.max(3, sx(a[4]) - sx(a[3])), 9); }
+  });
+  G.img = x.getImageData(0, 0, W * r, H * r);
+  drawGanttLine();
+}
+function drawGanttLine(){
+  if (!G.x || !G.img) return; const x = G.x, r = window.devicePixelRatio || 1;
+  x.save(); x.setTransform(1, 0, 0, 1, 0, 0); x.putImageData(G.img, 0, 0); x.restore();
+  const px = G.sx(day); x.strokeStyle = '#1baf7a'; x.lineWidth = 2; x.setLineDash([5, 4]); x.beginPath(); x.moveTo(px, 16); x.lineTo(px, G.H); x.stroke(); x.setLineDash([]);
+  if (S.dd != null && S.dd !== day){ const p2 = G.sx(S.dd); x.strokeStyle = 'rgba(27,175,122,.45)'; x.lineWidth = 1; x.beginPath(); x.moveTo(p2, 16); x.lineTo(p2, G.H); x.stroke(); }
+}
+$('#gantt').onclick = e => {
+  const r = e.target.getBoundingClientRect(), i = Math.floor((e.clientY - r.top - 20) / G.RH), rw = rows[i];
+  if (!rw || rw.hdr) return; select(rw.a[0], true);
+};
+
+// ---------- selection ----------
+function select(code, fromGantt){
+  const a = S.byCode[code]; if (!a){ selected = null; paint(); drawGantt(); return; }
+  const els = new Set(Object.entries(S.trans).filter(([e, ts]) => ts.some(t => t[2] === code)).map(([e]) => e));
+  selected = {code, elems: els};
+  const b = BASE && BASE.byCode[code];
+  const tf = a[5], durCal = a[4] - a[3];
+  let h = `<span class="code">${a[0]}</span> ${a[1]}<br>${a[7] ? 'Milestone: ' + fmtS(a[4]) : fmtS(a[3]) + ' → ' + fmtS(a[4]) + ` (${durCal} cal. days)`}<br>
+    Total float: <b style="color:${tf <= 0 ? 'var(--red)' : 'inherit'}">${tf} working days${tf <= 0 ? ' · critical' : ''}</b><br>Trade: ${a[6]} · WBS: ${a[2]}`;
+  if (b){ const df = a[4] - b[4]; h += `<br>Baseline finish: ${fmtS(b[4])} <span class="delta ${df > 0 ? 'bad' : 'good'}">(${df > 0 ? '+' : ''}${df} d)</span>`; }
+  if (a[8]) h += '<br><b style="color:var(--purple)">Fragnet activity (delay event)</b>';
+  if (els.size) h += `<br><span style="color:var(--muted)">${els.size} model element${els.size > 1 ? 's' : ''} highlighted in yellow</span>`;
+  $('#sel').innerHTML = h;
+  if (fromGantt && !a[7] && (day < a[3] || day > a[4])) setDay(Math.round((a[3] + a[4]) / 2)); else paint();
+  drawGantt();
+  if (!fromGantt){ const idx = rows.findIndex(r => r.a && r.a[0] === code); if (idx >= 0) $('#gwrap').scrollTop = Math.max(0, 20 + idx * G.RH - 80); }
+}
+const ray = new THREE.Raycaster(), mouse = new THREE.Vector2(); let down = null;
+canvas.addEventListener('pointerdown', e => down = [e.clientX, e.clientY]);
+canvas.addEventListener('pointerup', e => {
+  if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 5) return;
+  const r = canvas.getBoundingClientRect(); mouse.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
+  ray.setFromCamera(mouse, camera);
+  const hit = ray.intersectObjects(Object.values(meshes).filter(m => m.visible && m.material.opacity > 0.2))[0];
+  if (!hit){ selected = null; $('#sel').innerHTML = '<span class="empty">Click an element in the model or a bar in the Gantt chart.</span>'; paint(); drawGantt(); return; }
+  const a = actAt(hit.object.userData.id, day);
+  if (a) select(a[0], false);
+  else { selected = null; $('#sel').innerHTML = `<b>${hit.object.userData.id}</b><br><span class="empty">Existing element, not part of the works.</span>`; paint(); drawGantt(); }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+ERMHDR	25.12	2026-08-29	Project	ADMIN	khale	dbxDatabaseNoName	Project Management	KD
+%T	CURRTYPE
+%F	curr_id	decimal_digit_cnt	curr_symbol	decimal_symbol	digit_group_symbol	pos_curr_fmt_type	neg_curr_fmt_type	curr_type	curr_short_name	group_digit_cnt	base_exch_rate
+%R	1	2	KD	.	,	#1.1	(#1.1)	Kuwait Dinar	KD	3	1
+%R	13	2	�	.	,	#1.1	(#1.1)	Pound Sterling	GBP	3	0.618603
+%R	14	2	�	.	,	#1.1	(#1.1)	Japanese Yen	JPY	3	91.2708
+%R	15	2	�	.	,	#1.1	(#1.1)	Euro	EUR	3	0.689711
+%R	16	2	�	.	,	#1.1	(#1.1)	Chinese Yuan Renminbi	CNY	3	6.82502
+%R	17	2	$	.	,	#1.1	(#1.1)	Canadian Dollar	CAD	3	1.03757
+%R	18	2	RUB	.	,	#1.1	(#1.1)	Russian Ruble	RUB	3	0.033948
+%R	19	2	$	.	,	#1.1	(#1.1)	Argentine Peso	ARS	3	3.79109
+%R	20	2	$b	.	,	#1.1	(#1.1)	Bolivian Boliviano	BOB	3	7.5708
+%R	21	2	R$	.	,	#1.1	(#1.1)	Brazilian Real	BRL	3	1.7665
+%R	22	2	$	.	,	#1.1	(#1.1)	Chilean Peso	CLP	3	507.58
+%R	23	2	$	.	,	#1.1	(#1.1)	Columbian Peso	COP	3	1957.74
+%R	24	2	$	.	,	#1.1	(#1.1)	Guyanese Dollar	GYD	3	202.95
+%R	25	2	Gs	.	,	#1.1	(#1.1)	Paraguayan Guarani	PYG	3	4640
+%R	26	2	S/.	.	,	#1.1	(#1.1)	Peruvian Nuevo Sol	PEN	3	2.7244
+%R	27	2	$	.	,	#1.1	(#1.1)	Surinamese Dollar	SRD	3	2.8
+%R	28	2	Bs	.	,	#1.1	(#1.1)	Venezuelan Bolivar Fuerto	VEF	3	2.1446
+%R	29	2	$U	.	,	#1.1	(#1.1)	Uruguayan Peso	UYU	3	21.247
+%R	30	2	I.E	.	,	#1.1	(#1.1)	Egyptian Pound	EGP	3	1
+%T	FINTMPL
+%F	fintmpl_id	fintmpl_name	default_flag
+%R	1	Calendar	Y
+%T	OBS
+%F	obs_id	parent_obs_id	guid	seq_num	obs_name	obs_descr
+%R	540			0	Enterprise	<html>  <head>      </head>  <body bgcolor=""#ffffff"">    Enterprise  </body></html>
+%R	1470	540	Xa6CQnIfnU8CbFYoCoyj5Y	4	Manufacturing	<html>  <head>      </head>  <body>    Manufacturing  </body></html>
+%T	PROJECT
+%F	proj_id	fy_start_month_num	rsrc_self_add_flag	allow_complete_flag	rsrc_multi_assign_flag	checkout_flag	project_flag	step_complete_flag	cost_qty_recalc_flag	batch_sum_flag	name_sep_char	def_complete_pct_type	proj_short_name	acct_id	orig_proj_id	source_proj_id	base_type_id	clndr_id	sum_base_proj_id	task_code_base	task_code_step	priority_num	wbs_max_sum_level	strgy_priority_num	last_checksum	critical_drtn_hr_cnt	def_cost_per_qty	last_recalc_date	plan_start_date	plan_end_date	scd_end_date	add_date	last_tasksum_date	fcst_start_date	def_duration_type	task_code_prefix	guid	def_qty_type	add_by_name	web_local_root_path	proj_url	def_rate_type	add_act_remain_flag	act_this_per_link_flag	def_task_type	act_pct_link_flag	critical_path_type	task_code_prefix_flag	def_rollup_dates_flag	use_project_baseline_flag	rem_target_link_flag	reset_planned_flag	allow_neg_act_flag	sum_assign_level	last_fin_dates_id	fintmpl_id	last_baseline_update_date	cr_external_key	apply_actuals_date	location_id	last_schedule_date	loaded_scope_level	export_flag	new_fin_dates_id	baselines_to_export	baseline_names_to_export	next_data_date	base_proj_id	base_proj_id1	base_proj_id2	close_period_flag	sum_refresh_date	trsrcsum_loaded	sumtask_loaded
+%R	5101	1	Y	Y	Y	N	Y	N	N	Y	.	CP_Drtn	PUMPING-STATION					7101		1000	10	10	2	500		0	0.0000	2027-02-01 08:00	2027-02-01 08:00		2027-10-29 16:00	2026-08-29 00:00			DT_FixedDUR2	A	s7ta6A6W32VNf6u9ETHu3A	QT_Hour	ADMIN			COST_PER_QTY	N	Y	TT_Task	Y	CT_TotFloat	Y	Y	Y	Y	N	N	SL_Taskrsrc		1						7	Y											
+%T	SCHEDOPTIONS
+%F	schedoptions_id	proj_id	sched_outer_depend_type	sched_open_critical_flag	sched_lag_early_start_flag	sched_retained_logic	sched_setplantoforecast	sched_float_type	sched_calendar_on_relationship_lag	sched_use_expect_end_flag	sched_progress_override	sched_level_float_thrs_cnt	sched_level_outer_assign_flag	sched_level_outer_assign_priority	sched_level_over_alloc_pct	sched_level_within_float_flag	sched_level_keep_sched_date_flag	sched_level_all_rsrc_flag	sched_use_project_end_date_for_float	enable_multiple_longest_path_calc	limit_multiple_longest_path_calc	max_multiple_longest_path	use_total_float_multiple_longest_paths	key_activity_for_multiple_longest_paths	LevelPriorityList
+%R	9101	5101	SD_Both	N	N	Y	N	FT_FF	rcal_Predecessor	Y	N	0	N	1	25	N	Y	N	Y	N	N	10	N		priority_type,ASC
+%T	CALENDAR
+%F	clndr_id	default_flag	clndr_name	proj_id	base_clndr_id	last_chng_date	clndr_type	day_hr_cnt	week_hr_cnt	month_hr_cnt	year_hr_cnt	rsrc_private	clndr_data
+%R	7101	N	5-day x 8h	5101		2026-11-01 00:00	CA_Project	8	40	172	2080	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|16:00)())))    (0||3()(      (0||0(s|08:00|f|16:00)())))    (0||4()(      (0||0(s|08:00|f|16:00)())))    (0||5()(      (0||0(s|08:00|f|16:00)())))    (0||6()(      (0||0(s|08:00|f|16:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()())))
+%T	PROJWBS
+%F	wbs_id	proj_id	obs_id	seq_num	est_wt	proj_node_flag	sum_data_flag	status_code	wbs_short_name	wbs_name	phase_id	parent_wbs_id	ev_user_pct	ev_etc_user_value	orig_cost	indep_remain_total_cost	ann_dscnt_rate_pct	dscnt_period_type	indep_remain_work_qty	anticip_start_date	anticip_end_date	ev_compute_type	ev_etc_compute_type	guid	tmpl_guid	plan_open_state
+%R	40101	5101	1470	1	1	Y	N	WS_Open	PUMPING-STATION	Wastewater Pumping Station: PLC & Controls Upgrade		18133	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	OzPvPLQhy2HqZC7kqkcQ3A		
+%R	40200	5101	1470	10	1	N	N	WS_Open	01	Milestones		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	P41EACFZiyiquavyWnJI7g		
+%R	40201	5101	1470	20	1	N	N	WS_Open	02	Engineering & procurement		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	jtz85j79xDKtyFKg63fZhw		
+%R	40202	5101	1470	30	1	N	N	WS_Open	03	Installation		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	qMagtXaf8Y2djJl/2NpBeQ		
+%R	40203	5101	1470	40	1	N	N	WS_Open	04	Shutdown 1		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	dEkqEbq3j3WaXlMPHWFGDg		
+%R	40204	5101	1470	50	1	N	N	WS_Open	05	Shutdown 2		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	i2I7Z+8XoRTiRUU9L7R0aA		
+%R	40205	5101	1470	60	1	N	N	WS_Open	06	Shutdown 3		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	/KHRQC0fAbBbxRzaFYORdw		
+%R	40206	5101	1470	70	1	N	N	WS_Open	07	Shutdown 4		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	8I3d60dIXkuSIBVBl3jx7Q		
+%R	40207	5101	1470	80	1	N	N	WS_Open	08	Shutdown 5		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	YkkWNSbfGZQ3UXkYd4sNog		
+%R	40208	5101	1470	90	1	N	N	WS_Open	09	Close-out		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	V+nfHqWkrEPeJHtBiM6jnA		
+%T	TASK
+%F	task_id	proj_id	wbs_id	clndr_id	phys_complete_pct	rev_fdbk_flag	est_wt	lock_plan_flag	auto_compute_act_flag	complete_pct_type	task_type	duration_type	status_code	task_code	task_name	rsrc_id	total_float_hr_cnt	free_float_hr_cnt	remain_drtn_hr_cnt	act_work_qty	remain_work_qty	target_work_qty	target_drtn_hr_cnt	target_equip_qty	act_equip_qty	remain_equip_qty	cstr_date	act_start_date	act_end_date	late_start_date	late_end_date	expect_end_date	early_start_date	early_end_date	restart_date	reend_date	target_start_date	target_end_date	rem_late_start_date	rem_late_end_date	cstr_type	priority_type	suspend_date	resume_date	float_path	float_path_order	guid	tmpl_guid	cstr_date2	cstr_type2	driving_path_flag	act_this_per_work_qty	act_this_per_equip_qty	external_early_start_date	external_late_end_date	create_date	update_date	create_user	update_user	location_id
+%R	700000	5101	40200	7101	0	N	1	N	N	CP_Drtn	TT_Mile	DT_FixedDrtn	TK_NotStart	MS000	Notice to Proceed		0	0	0	0	0	0	0	0	0	0				2027-02-01 08:00	2027-02-01 08:00		2027-02-01 08:00	2027-02-01 08:00	2027-02-01 08:00	2027-02-01 08:00	2027-02-01 08:00	2027-02-01 08:00	2027-02-01 08:00	2027-02-01 08:00		PT_Normal					NxoTjrc7dO32n3MXjRY8Wg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700001	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	EN100	Control narrative, I/O list & shutdown plan submittals		0	0	280	0	0	0	280	0	0	0				2027-02-01 08:00	2027-03-19 16:00		2027-02-01 08:00	2027-03-19 16:00	2027-02-01 08:00	2027-03-19 16:00	2027-02-01 08:00	2027-03-19 16:00	2027-02-01 08:00	2027-03-19 16:00		PT_Normal					T44X609dYuuLwiqY+jFxxA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700002	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PR100	PLC panels: fabricate & factory test		0	0	560	0	0	0	560	0	0	0				2027-03-22 08:00	2027-06-25 16:00		2027-03-22 08:00	2027-06-25 16:00	2027-03-22 08:00	2027-06-25 16:00	2027-03-22 08:00	2027-06-25 16:00	2027-03-22 08:00	2027-06-25 16:00		PT_Normal					A8s+1zWdfJwtafe8v1DjUQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700003	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PR110	Owner review of shutdown plan		704	0	160	0	0	0	160	0	0	0				2027-07-22 08:00	2027-08-18 16:00		2027-03-22 08:00	2027-04-16 16:00	2027-03-22 08:00	2027-04-16 16:00	2027-03-22 08:00	2027-04-16 16:00	2027-07-22 08:00	2027-08-18 16:00		PT_Normal					Zes9Dklw+Hezl3i3bpDjRA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700004	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	IN100	Install new PLC panels & SCADA workstation		0	0	120	0	0	0	120	0	0	0				2027-06-28 08:00	2027-07-16 16:00		2027-06-28 08:00	2027-07-16 16:00	2027-06-28 08:00	2027-07-16 16:00	2027-06-28 08:00	2027-07-16 16:00	2027-06-28 08:00	2027-07-16 16:00		PT_Normal					enyARVNSvE2q9Y2Nb8JlYQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700005	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	IN110	Pull new I/O cabling to each pump		0	0	120	0	0	0	120	0	0	0				2027-07-19 08:00	2027-08-06 16:00		2027-07-19 08:00	2027-08-06 16:00	2027-07-19 08:00	2027-08-06 16:00	2027-07-19 08:00	2027-08-06 16:00	2027-07-19 08:00	2027-08-06 16:00		PT_Normal					B4FTiT44tImg+PHCLBavpQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700006	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CX100	Open-loop tests & SCADA graphics		0	0	64	0	0	0	64	0	0	0				2027-08-09 08:00	2027-08-18 16:00		2027-08-09 08:00	2027-08-18 16:00	2027-08-09 08:00	2027-08-18 16:00	2027-08-09 08:00	2027-08-18 16:00	2027-08-09 08:00	2027-08-18 16:00		PT_Normal					u+6nF+RzDIz8qSJ9u/bp/g				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700007	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	S1N	Shutdown 1: 21-day & 3-day notices to owner		0	0	0	0	0	0	0	0	0	0				2027-08-18 16:00	2027-08-18 16:00		2027-08-18 16:00	2027-08-18 16:00	2027-08-18 16:00	2027-08-18 16:00	2027-08-18 16:00	2027-08-18 16:00	2027-08-18 16:00	2027-08-18 16:00		PT_Normal					0nltY9Xg1QRPsRkXu9wdIw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700008	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S1L	Shutdown 1: pump 1 offline, lock-out		0	0	8	0	0	0	8	0	0	0				2027-08-19 08:00	2027-08-19 16:00		2027-08-19 08:00	2027-08-19 16:00	2027-08-19 08:00	2027-08-19 16:00	2027-08-19 08:00	2027-08-19 16:00	2027-08-19 08:00	2027-08-19 16:00		PT_Normal					5sKF9QWCyzIaJS4t+faNjw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700009	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S1C	Shutdown 1: cut over pump 1 I/O to new PLC		0	0	24	0	0	0	24	0	0	0				2027-08-20 08:00	2027-08-24 16:00		2027-08-20 08:00	2027-08-24 16:00	2027-08-20 08:00	2027-08-24 16:00	2027-08-20 08:00	2027-08-24 16:00	2027-08-20 08:00	2027-08-24 16:00		PT_Normal					3Fy6IeTG002NZVp3LR5uVg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700010	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S1T	Shutdown 1: closed-loop test & return to service		0	0	16	0	0	0	16	0	0	0				2027-08-25 08:00	2027-08-26 16:00		2027-08-25 08:00	2027-08-26 16:00	2027-08-25 08:00	2027-08-26 16:00	2027-08-25 08:00	2027-08-26 16:00	2027-08-25 08:00	2027-08-26 16:00		PT_Normal					WzsnUdtjeo7s72ELK2lw4w				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700011	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	S2N	Shutdown 2: 21-day & 3-day notices to owner		0	0	0	0	0	0	0	0	0	0				2027-08-26 16:00	2027-08-26 16:00		2027-08-26 16:00	2027-08-26 16:00	2027-08-26 16:00	2027-08-26 16:00	2027-08-26 16:00	2027-08-26 16:00	2027-08-26 16:00	2027-08-26 16:00		PT_Normal					iPYaOT3pXfgSJQt/uhCEQA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700012	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S2L	Shutdown 2: pump 2 offline, lock-out		0	0	8	0	0	0	8	0	0	0				2027-08-27 08:00	2027-08-27 16:00		2027-08-27 08:00	2027-08-27 16:00	2027-08-27 08:00	2027-08-27 16:00	2027-08-27 08:00	2027-08-27 16:00	2027-08-27 08:00	2027-08-27 16:00		PT_Normal					cGUW1D8n/SwhyIBtC73IaQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700013	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S2C	Shutdown 2: cut over pump 2 I/O to new PLC		0	0	24	0	0	0	24	0	0	0				2027-08-30 08:00	2027-09-01 16:00		2027-08-30 08:00	2027-09-01 16:00	2027-08-30 08:00	2027-09-01 16:00	2027-08-30 08:00	2027-09-01 16:00	2027-08-30 08:00	2027-09-01 16:00		PT_Normal					AhOjm0/Qm6KXpN7s8zBM8g				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700014	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S2T	Shutdown 2: closed-loop test & return to service		0	0	16	0	0	0	16	0	0	0				2027-09-02 08:00	2027-09-03 16:00		2027-09-02 08:00	2027-09-03 16:00	2027-09-02 08:00	2027-09-03 16:00	2027-09-02 08:00	2027-09-03 16:00	2027-09-02 08:00	2027-09-03 16:00		PT_Normal					nqLlkdT2EXKL5beAxBfNeA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700015	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	S3N	Shutdown 3: 21-day & 3-day notices to owner		0	0	0	0	0	0	0	0	0	0				2027-09-03 16:00	2027-09-03 16:00		2027-09-03 16:00	2027-09-03 16:00	2027-09-03 16:00	2027-09-03 16:00	2027-09-03 16:00	2027-09-03 16:00	2027-09-03 16:00	2027-09-03 16:00		PT_Normal					x7T8hWiX0cE2SXzxOaLAvg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700016	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S3L	Shutdown 3: pump 3 offline, lock-out		0	0	8	0	0	0	8	0	0	0				2027-09-06 08:00	2027-09-06 16:00		2027-09-06 08:00	2027-09-06 16:00	2027-09-06 08:00	2027-09-06 16:00	2027-09-06 08:00	2027-09-06 16:00	2027-09-06 08:00	2027-09-06 16:00		PT_Normal					PBSDysnLSVnGGLGA2YZYZg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700017	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S3C	Shutdown 3: cut over pump 3 I/O to new PLC		0	0	24	0	0	0	24	0	0	0				2027-09-07 08:00	2027-09-09 16:00		2027-09-07 08:00	2027-09-09 16:00	2027-09-07 08:00	2027-09-09 16:00	2027-09-07 08:00	2027-09-09 16:00	2027-09-07 08:00	2027-09-09 16:00		PT_Normal					R1d/ZdUh8wyY1grYcwMq2g				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700018	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S3T	Shutdown 3: closed-loop test & return to service		0	0	16	0	0	0	16	0	0	0				2027-09-10 08:00	2027-09-13 16:00		2027-09-10 08:00	2027-09-13 16:00	2027-09-10 08:00	2027-09-13 16:00	2027-09-10 08:00	2027-09-13 16:00	2027-09-10 08:00	2027-09-13 16:00		PT_Normal					nLa2U+263sowYAoaBrQyoQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700019	5101	40206	7101	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	S4N	Shutdown 4: 21-day & 3-day notices to owner		0	0	0	0	0	0	0	0	0	0				2027-09-13 16:00	2027-09-13 16:00		2027-09-13 16:00	2027-09-13 16:00	2027-09-13 16:00	2027-09-13 16:00	2027-09-13 16:00	2027-09-13 16:00	2027-09-13 16:00	2027-09-13 16:00		PT_Normal					cu6ozFR2e2Z10ZJ290cE8Q				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700020	5101	40206	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S4L	Shutdown 4: pump 4 offline, lock-out		0	0	8	0	0	0	8	0	0	0				2027-09-14 08:00	2027-09-14 16:00		2027-09-14 08:00	2027-09-14 16:00	2027-09-14 08:00	2027-09-14 16:00	2027-09-14 08:00	2027-09-14 16:00	2027-09-14 08:00	2027-09-14 16:00		PT_Normal					jUdvEsl26FRiQh0esZFx8A				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700021	5101	40206	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S4C	Shutdown 4: cut over pump 4 I/O to new PLC		0	0	24	0	0	0	24	0	0	0				2027-09-15 08:00	2027-09-17 16:00		2027-09-15 08:00	2027-09-17 16:00	2027-09-15 08:00	2027-09-17 16:00	2027-09-15 08:00	2027-09-17 16:00	2027-09-15 08:00	2027-09-17 16:00		PT_Normal					Q3yohKlwf67dLTk4mr8uyw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700022	5101	40206	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S4T	Shutdown 4: closed-loop test & return to service		0	0	16	0	0	0	16	0	0	0				2027-09-20 08:00	2027-09-21 16:00		2027-09-20 08:00	2027-09-21 16:00	2027-09-20 08:00	2027-09-21 16:00	2027-09-20 08:00	2027-09-21 16:00	2027-09-20 08:00	2027-09-21 16:00		PT_Normal					s6hpo0Wg2SxMEgirpKwB6w				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700023	5101	40207	7101	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	S5N	Shutdown 5: 21-day & 3-day notices to owner		0	0	0	0	0	0	0	0	0	0				2027-09-21 16:00	2027-09-21 16:00		2027-09-21 16:00	2027-09-21 16:00	2027-09-21 16:00	2027-09-21 16:00	2027-09-21 16:00	2027-09-21 16:00	2027-09-21 16:00	2027-09-21 16:00		PT_Normal					GZSTPmkrJpDVdBl5zqbNpw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700024	5101	40207	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S5L	Shutdown 5: pump 5 offline, lock-out		0	0	8	0	0	0	8	0	0	0				2027-09-22 08:00	2027-09-22 16:00		2027-09-22 08:00	2027-09-22 16:00	2027-09-22 08:00	2027-09-22 16:00	2027-09-22 08:00	2027-09-22 16:00	2027-09-22 08:00	2027-09-22 16:00		PT_Normal					5biacX+Uqq6uWzEFlebWJA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700025	5101	40207	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S5C	Shutdown 5: cut over pump 5 I/O to new PLC		0	0	24	0	0	0	24	0	0	0				2027-09-23 08:00	2027-09-27 16:00		2027-09-23 08:00	2027-09-27 16:00	2027-09-23 08:00	2027-09-27 16:00	2027-09-23 08:00	2027-09-27 16:00	2027-09-23 08:00	2027-09-27 16:00		PT_Normal					5b8o/eAdqZiKHq3Q3om17Q				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700026	5101	40207	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	S5T	Shutdown 5: closed-loop test & return to service		0	0	16	0	0	0	16	0	0	0				2027-09-28 08:00	2027-09-29 16:00		2027-09-28 08:00	2027-09-29 16:00	2027-09-28 08:00	2027-09-29 16:00	2027-09-28 08:00	2027-09-29 16:00	2027-09-28 08:00	2027-09-29 16:00		PT_Normal					FJvvpB08slHy+cbaBXykBg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700027	5101	40208	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	DM100	Remove old PLC panel		152	0	24	0	0	0	24	0	0	0				2027-10-27 08:00	2027-10-29 16:00		2027-09-30 08:00	2027-10-04 16:00	2027-09-30 08:00	2027-10-04 16:00	2027-09-30 08:00	2027-10-04 16:00	2027-10-27 08:00	2027-10-29 16:00		PT_Normal					vTeeRzOANtjs+H6ngIEsng				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700028	5101	40208	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CX200	30-day performance period & training		0	0	176	0	0	0	176	0	0	0				2027-09-30 08:00	2027-10-29 16:00		2027-09-30 08:00	2027-10-29 16:00	2027-09-30 08:00	2027-10-29 16:00	2027-09-30 08:00	2027-10-29 16:00	2027-09-30 08:00	2027-10-29 16:00		PT_Normal					ozHSC5/2pU9dUF2AgFiLaw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700029	5101	40200	7101	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	MS999	Final acceptance		0	0	0	0	0	0	0	0	0	0				2027-10-29 16:00	2027-10-29 16:00		2027-10-29 16:00	2027-10-29 16:00	2027-10-29 16:00	2027-10-29 16:00	2027-10-29 16:00	2027-10-29 16:00	2027-10-29 16:00	2027-10-29 16:00		PT_Normal					ZL8wuFqP7bjxc8PMU94Q7Q				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%T	TASKPRED
+%F	task_pred_id	task_id	pred_task_id	proj_id	pred_proj_id	pred_type	lag_hr_cnt	comments	float_path	aref	arls
+%R	800001	700001	700000	5101	5101	PR_FS	0				
+%R	800002	700002	700001	5101	5101	PR_FS	0				
+%R	800003	700003	700001	5101	5101	PR_FS	0				
+%R	800004	700004	700002	5101	5101	PR_FS	0				
+%R	800005	700005	700004	5101	5101	PR_FS	0				
+%R	800006	700006	700005	5101	5101	PR_FS	0				
+%R	800007	700007	700006	5101	5101	PR_FS	0				
+%R	800008	700007	700003	5101	5101	PR_FS	0				
+%R	800009	700008	700007	5101	5101	PR_FS	0				
+%R	800010	700009	700008	5101	5101	PR_FS	0				
+%R	800011	700010	700009	5101	5101	PR_FS	0				
+%R	800012	700011	700006	5101	5101	PR_FS	0				
+%R	800013	700011	700003	5101	5101	PR_FS	0				
+%R	800014	700011	700010	5101	5101	PR_FS	0				
+%R	800015	700012	700011	5101	5101	PR_FS	0				
+%R	800016	700013	700012	5101	5101	PR_FS	0				
+%R	800017	700014	700013	5101	5101	PR_FS	0				
+%R	800018	700015	700006	5101	5101	PR_FS	0				
+%R	800019	700015	700003	5101	5101	PR_FS	0				
+%R	800020	700015	700014	5101	5101	PR_FS	0				
+%R	800021	700016	700015	5101	5101	PR_FS	0				
+%R	800022	700017	700016	5101	5101	PR_FS	0				
+%R	800023	700018	700017	5101	5101	PR_FS	0				
+%R	800024	700019	700006	5101	5101	PR_FS	0				
+%R	800025	700019	700003	5101	5101	PR_FS	0				
+%R	800026	700019	700018	5101	5101	PR_FS	0				
+%R	800027	700020	700019	5101	5101	PR_FS	0				
+%R	800028	700021	700020	5101	5101	PR_FS	0				
+%R	800029	700022	700021	5101	5101	PR_FS	0				
+%R	800030	700023	700006	5101	5101	PR_FS	0				
+%R	800031	700023	700003	5101	5101	PR_FS	0				
+%R	800032	700023	700022	5101	5101	PR_FS	0				
+%R	800033	700024	700023	5101	5101	PR_FS	0				
+%R	800034	700025	700024	5101	5101	PR_FS	0				
+%R	800035	700026	700025	5101	5101	PR_FS	0				
+%R	800036	700027	700026	5101	5101	PR_FS	0				
+%R	800037	700028	700026	5101	5101	PR_FS	0				
+%R	800038	700029	700027	5101	5101	PR_FS	0				
+%R	800039	700029	700028	5101	5101	PR_FS	0				
+%E

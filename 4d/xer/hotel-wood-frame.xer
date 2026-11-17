@@ -1,0 +1,178 @@
+ERMHDR	25.12	2026-08-29	Project	ADMIN	khale	dbxDatabaseNoName	Project Management	KD
+%T	CURRTYPE
+%F	curr_id	decimal_digit_cnt	curr_symbol	decimal_symbol	digit_group_symbol	pos_curr_fmt_type	neg_curr_fmt_type	curr_type	curr_short_name	group_digit_cnt	base_exch_rate
+%R	1	2	KD	.	,	#1.1	(#1.1)	Kuwait Dinar	KD	3	1
+%R	13	2	�	.	,	#1.1	(#1.1)	Pound Sterling	GBP	3	0.618603
+%R	14	2	�	.	,	#1.1	(#1.1)	Japanese Yen	JPY	3	91.2708
+%R	15	2	�	.	,	#1.1	(#1.1)	Euro	EUR	3	0.689711
+%R	16	2	�	.	,	#1.1	(#1.1)	Chinese Yuan Renminbi	CNY	3	6.82502
+%R	17	2	$	.	,	#1.1	(#1.1)	Canadian Dollar	CAD	3	1.03757
+%R	18	2	RUB	.	,	#1.1	(#1.1)	Russian Ruble	RUB	3	0.033948
+%R	19	2	$	.	,	#1.1	(#1.1)	Argentine Peso	ARS	3	3.79109
+%R	20	2	$b	.	,	#1.1	(#1.1)	Bolivian Boliviano	BOB	3	7.5708
+%R	21	2	R$	.	,	#1.1	(#1.1)	Brazilian Real	BRL	3	1.7665
+%R	22	2	$	.	,	#1.1	(#1.1)	Chilean Peso	CLP	3	507.58
+%R	23	2	$	.	,	#1.1	(#1.1)	Columbian Peso	COP	3	1957.74
+%R	24	2	$	.	,	#1.1	(#1.1)	Guyanese Dollar	GYD	3	202.95
+%R	25	2	Gs	.	,	#1.1	(#1.1)	Paraguayan Guarani	PYG	3	4640
+%R	26	2	S/.	.	,	#1.1	(#1.1)	Peruvian Nuevo Sol	PEN	3	2.7244
+%R	27	2	$	.	,	#1.1	(#1.1)	Surinamese Dollar	SRD	3	2.8
+%R	28	2	Bs	.	,	#1.1	(#1.1)	Venezuelan Bolivar Fuerto	VEF	3	2.1446
+%R	29	2	$U	.	,	#1.1	(#1.1)	Uruguayan Peso	UYU	3	21.247
+%R	30	2	I.E	.	,	#1.1	(#1.1)	Egyptian Pound	EGP	3	1
+%T	FINTMPL
+%F	fintmpl_id	fintmpl_name	default_flag
+%R	1	Calendar	Y
+%T	OBS
+%F	obs_id	parent_obs_id	guid	seq_num	obs_name	obs_descr
+%R	540			0	Enterprise	<html>  <head>      </head>  <body bgcolor=""#ffffff"">    Enterprise  </body></html>
+%R	1470	540	Xa6CQnIfnU8CbFYoCoyj5Y	4	Manufacturing	<html>  <head>      </head>  <body>    Manufacturing  </body></html>
+%T	PROJECT
+%F	proj_id	fy_start_month_num	rsrc_self_add_flag	allow_complete_flag	rsrc_multi_assign_flag	checkout_flag	project_flag	step_complete_flag	cost_qty_recalc_flag	batch_sum_flag	name_sep_char	def_complete_pct_type	proj_short_name	acct_id	orig_proj_id	source_proj_id	base_type_id	clndr_id	sum_base_proj_id	task_code_base	task_code_step	priority_num	wbs_max_sum_level	strgy_priority_num	last_checksum	critical_drtn_hr_cnt	def_cost_per_qty	last_recalc_date	plan_start_date	plan_end_date	scd_end_date	add_date	last_tasksum_date	fcst_start_date	def_duration_type	task_code_prefix	guid	def_qty_type	add_by_name	web_local_root_path	proj_url	def_rate_type	add_act_remain_flag	act_this_per_link_flag	def_task_type	act_pct_link_flag	critical_path_type	task_code_prefix_flag	def_rollup_dates_flag	use_project_baseline_flag	rem_target_link_flag	reset_planned_flag	allow_neg_act_flag	sum_assign_level	last_fin_dates_id	fintmpl_id	last_baseline_update_date	cr_external_key	apply_actuals_date	location_id	last_schedule_date	loaded_scope_level	export_flag	new_fin_dates_id	baselines_to_export	baseline_names_to_export	next_data_date	base_proj_id	base_proj_id1	base_proj_id2	close_period_flag	sum_refresh_date	trsrcsum_loaded	sumtask_loaded
+%R	5101	1	Y	Y	Y	N	Y	N	N	Y	.	CP_Drtn	HOTEL-WOOD-FRAME					7101		1000	10	10	2	500		0	0.0000	2027-03-01 08:00	2027-03-01 08:00		2027-11-18 16:00	2026-08-29 00:00			DT_FixedDUR2	A	POHLx4TTFSNcbbzdy25VJA	QT_Hour	ADMIN			COST_PER_QTY	N	Y	TT_Task	Y	CT_TotFloat	Y	Y	Y	Y	N	N	SL_Taskrsrc		1						7	Y											
+%T	SCHEDOPTIONS
+%F	schedoptions_id	proj_id	sched_outer_depend_type	sched_open_critical_flag	sched_lag_early_start_flag	sched_retained_logic	sched_setplantoforecast	sched_float_type	sched_calendar_on_relationship_lag	sched_use_expect_end_flag	sched_progress_override	sched_level_float_thrs_cnt	sched_level_outer_assign_flag	sched_level_outer_assign_priority	sched_level_over_alloc_pct	sched_level_within_float_flag	sched_level_keep_sched_date_flag	sched_level_all_rsrc_flag	sched_use_project_end_date_for_float	enable_multiple_longest_path_calc	limit_multiple_longest_path_calc	max_multiple_longest_path	use_total_float_multiple_longest_paths	key_activity_for_multiple_longest_paths	LevelPriorityList
+%R	9101	5101	SD_Both	N	N	Y	N	FT_FF	rcal_Predecessor	Y	N	0	N	1	25	N	Y	N	Y	N	N	10	N		priority_type,ASC
+%T	CALENDAR
+%F	clndr_id	default_flag	clndr_name	proj_id	base_clndr_id	last_chng_date	clndr_type	day_hr_cnt	week_hr_cnt	month_hr_cnt	year_hr_cnt	rsrc_private	clndr_data
+%R	7101	N	5-day x 8h	5101		2026-11-01 00:00	CA_Project	8	40	172	2080	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|16:00)())))    (0||3()(      (0||0(s|08:00|f|16:00)())))    (0||4()(      (0||0(s|08:00|f|16:00)())))    (0||5()(      (0||0(s|08:00|f|16:00)())))    (0||6()(      (0||0(s|08:00|f|16:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()())))
+%T	PROJWBS
+%F	wbs_id	proj_id	obs_id	seq_num	est_wt	proj_node_flag	sum_data_flag	status_code	wbs_short_name	wbs_name	phase_id	parent_wbs_id	ev_user_pct	ev_etc_user_value	orig_cost	indep_remain_total_cost	ann_dscnt_rate_pct	dscnt_period_type	indep_remain_work_qty	anticip_start_date	anticip_end_date	ev_compute_type	ev_etc_compute_type	guid	tmpl_guid	plan_open_state
+%R	40101	5101	1470	1	1	Y	N	WS_Open	HOTEL-WOOD-FRAME	Hotel, 4-Storey Wood Frame		18133	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	RDjhZGe1Mk7SYioJWjEbjQ		
+%R	40200	5101	1470	10	1	N	N	WS_Open	01	Milestones		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	hJUtWArSBAJwvO8+X6kyvA		
+%R	40201	5101	1470	20	1	N	N	WS_Open	02	Procurement		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	VtQDvVwBuv0dtsQYKeLiyw		
+%R	40202	5101	1470	30	1	N	N	WS_Open	03	Substructure		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	pY7d1QRujQD17uIfmngpCA		
+%R	40203	5101	1470	40	1	N	N	WS_Open	04	Wood frame		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	+XVWS2JeNkQZiZOTrrjnJA		
+%R	40204	5101	1470	50	1	N	N	WS_Open	05	Envelope		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	9MGO5w7SsT0w/9p9Nd5Arg		
+%R	40205	5101	1470	60	1	N	N	WS_Open	06	MEP & finishes		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	Quu0/97VUOTj6ssMT5pmWw		
+%R	40206	5101	1470	70	1	N	N	WS_Open	07	Close-out		40101	6	0.88	0	0						EC_Cmp_pct	EE_Rem_hr	jcHDenYfIz2sKTfPoSiecg		
+%T	TASK
+%F	task_id	proj_id	wbs_id	clndr_id	phys_complete_pct	rev_fdbk_flag	est_wt	lock_plan_flag	auto_compute_act_flag	complete_pct_type	task_type	duration_type	status_code	task_code	task_name	rsrc_id	total_float_hr_cnt	free_float_hr_cnt	remain_drtn_hr_cnt	act_work_qty	remain_work_qty	target_work_qty	target_drtn_hr_cnt	target_equip_qty	act_equip_qty	remain_equip_qty	cstr_date	act_start_date	act_end_date	late_start_date	late_end_date	expect_end_date	early_start_date	early_end_date	restart_date	reend_date	target_start_date	target_end_date	rem_late_start_date	rem_late_end_date	cstr_type	priority_type	suspend_date	resume_date	float_path	float_path_order	guid	tmpl_guid	cstr_date2	cstr_type2	driving_path_flag	act_this_per_work_qty	act_this_per_equip_qty	external_early_start_date	external_late_end_date	create_date	update_date	create_user	update_user	location_id
+%R	700000	5101	40200	7101	0	N	1	N	N	CP_Drtn	TT_Mile	DT_FixedDrtn	TK_NotStart	MS000	Notice to Proceed		0	0	0	0	0	0	0	0	0	0				2027-03-01 08:00	2027-03-01 08:00		2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00	2027-03-01 08:00		PT_Normal					DQHeRhI95Uj+js5l1yvQ/A				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700001	5101	40201	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	PR100	Wall panels & trusses: shop drawings & fabrication		0	0	320	0	0	0	320	0	0	0				2027-03-01 08:00	2027-04-23 16:00		2027-03-01 08:00	2027-04-23 16:00	2027-03-01 08:00	2027-04-23 16:00	2027-03-01 08:00	2027-04-23 16:00	2027-03-01 08:00	2027-04-23 16:00		PT_Normal					wMZ3R4c+/RqxAbHZSfbmCA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700002	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FD100	Foundations & underground utilities		96	0	160	0	0	0	160	0	0	0				2027-03-17 08:00	2027-04-13 16:00		2027-03-01 08:00	2027-03-26 16:00	2027-03-01 08:00	2027-03-26 16:00	2027-03-01 08:00	2027-03-26 16:00	2027-03-17 08:00	2027-04-13 16:00		PT_Normal					Awr18viKGYUIUq1wq5JQhw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700003	5101	40202	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	FD110	Slab on grade		96	0	64	0	0	0	64	0	0	0				2027-04-14 08:00	2027-04-23 16:00		2027-03-29 08:00	2027-04-07 16:00	2027-03-29 08:00	2027-04-07 16:00	2027-03-29 08:00	2027-04-07 16:00	2027-04-14 08:00	2027-04-23 16:00		PT_Normal					YKUiNJg7ktnz7ZHAa/MQ4w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700004	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	F00	Level 1 wing A: wood framing & sheathing		0	0	56	0	0	0	56	0	0	0				2027-04-26 08:00	2027-05-04 16:00		2027-04-26 08:00	2027-05-04 16:00	2027-04-26 08:00	2027-05-04 16:00	2027-04-26 08:00	2027-05-04 16:00	2027-04-26 08:00	2027-05-04 16:00		PT_Normal					xVJJbQblLCjGYWHV4r7x7g				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700005	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	F01	Level 1 wing B: wood framing & sheathing		0	0	56	0	0	0	56	0	0	0				2027-05-05 08:00	2027-05-13 16:00		2027-05-05 08:00	2027-05-13 16:00	2027-05-05 08:00	2027-05-13 16:00	2027-05-05 08:00	2027-05-13 16:00	2027-05-05 08:00	2027-05-13 16:00		PT_Normal					kAwXWQ7YObFyJttr95KUJw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700006	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	F10	Level 2 wing A: wood framing & sheathing		0	0	56	0	0	0	56	0	0	0				2027-05-05 08:00	2027-05-13 16:00		2027-05-05 08:00	2027-05-13 16:00	2027-05-05 08:00	2027-05-13 16:00	2027-05-05 08:00	2027-05-13 16:00	2027-05-05 08:00	2027-05-13 16:00		PT_Normal					5Kg1oZl9WDFOIRnzMLX9Mg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700007	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	F11	Level 2 wing B: wood framing & sheathing		0	0	56	0	0	0	56	0	0	0				2027-05-14 08:00	2027-05-24 16:00		2027-05-14 08:00	2027-05-24 16:00	2027-05-14 08:00	2027-05-24 16:00	2027-05-14 08:00	2027-05-24 16:00	2027-05-14 08:00	2027-05-24 16:00		PT_Normal					2soqjVlkpxymC5XDne2usw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700008	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	F20	Level 3 wing A: wood framing & sheathing		0	0	56	0	0	0	56	0	0	0				2027-05-14 08:00	2027-05-24 16:00		2027-05-14 08:00	2027-05-24 16:00	2027-05-14 08:00	2027-05-24 16:00	2027-05-14 08:00	2027-05-24 16:00	2027-05-14 08:00	2027-05-24 16:00		PT_Normal					9slaTV2zNN6Y/tyOhu4A6Q				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700009	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	F21	Level 3 wing B: wood framing & sheathing		0	0	56	0	0	0	56	0	0	0				2027-05-25 08:00	2027-06-02 16:00		2027-05-25 08:00	2027-06-02 16:00	2027-05-25 08:00	2027-06-02 16:00	2027-05-25 08:00	2027-06-02 16:00	2027-05-25 08:00	2027-06-02 16:00		PT_Normal					ZvZKYv2234V6vlDreGJFnA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700010	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	F30	Level 4 wing A: wood framing & sheathing		0	0	56	0	0	0	56	0	0	0				2027-05-25 08:00	2027-06-02 16:00		2027-05-25 08:00	2027-06-02 16:00	2027-05-25 08:00	2027-06-02 16:00	2027-05-25 08:00	2027-06-02 16:00	2027-05-25 08:00	2027-06-02 16:00		PT_Normal					P0dj+AS4YXH1w+fx1+y7xg				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700011	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	F31	Level 4 wing B: wood framing & sheathing		0	0	56	0	0	0	56	0	0	0				2027-06-03 08:00	2027-06-11 16:00		2027-06-03 08:00	2027-06-11 16:00	2027-06-03 08:00	2027-06-11 16:00	2027-06-03 08:00	2027-06-11 16:00	2027-06-03 08:00	2027-06-11 16:00		PT_Normal					t1dHUyZtuskdouB/0vzXkQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700012	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TR0	Wing A: roof trusses		16	0	40	0	0	0	40	0	0	0				2027-06-07 08:00	2027-06-11 16:00		2027-06-03 08:00	2027-06-09 16:00	2027-06-03 08:00	2027-06-09 16:00	2027-06-03 08:00	2027-06-09 16:00	2027-06-07 08:00	2027-06-11 16:00		PT_Normal					+G7usiwkGdAvSVxm5U7umQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700013	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	RF0	Wing A: roofing		56	0	48	0	0	0	48	0	0	0				2027-06-21 08:00	2027-06-28 16:00		2027-06-10 08:00	2027-06-17 16:00	2027-06-10 08:00	2027-06-17 16:00	2027-06-10 08:00	2027-06-17 16:00	2027-06-21 08:00	2027-06-28 16:00		PT_Normal					qepc0bCLXKNBtLKRf39uxA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700014	5101	40203	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	TR1	Wing B: roof trusses		0	0	40	0	0	0	40	0	0	0				2027-06-14 08:00	2027-06-18 16:00		2027-06-14 08:00	2027-06-18 16:00	2027-06-14 08:00	2027-06-18 16:00	2027-06-14 08:00	2027-06-18 16:00	2027-06-14 08:00	2027-06-18 16:00		PT_Normal					M6zQLXiI39Wy7+KBNTeFlQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700015	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	RF1	Wing B: roofing		0	0	48	0	0	0	48	0	0	0				2027-06-21 08:00	2027-06-28 16:00		2027-06-21 08:00	2027-06-28 16:00	2027-06-21 08:00	2027-06-28 16:00	2027-06-21 08:00	2027-06-28 16:00	2027-06-21 08:00	2027-06-28 16:00		PT_Normal					L5YEK90pbKDVbATRQ1/Nag				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700016	5101	40200	7101	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	DRY	Building dried-in		0	0	0	0	0	0	0	0	0	0				2027-06-28 16:00	2027-06-28 16:00		2027-06-28 16:00	2027-06-28 16:00	2027-06-28 16:00	2027-06-28 16:00	2027-06-28 16:00	2027-06-28 16:00	2027-06-28 16:00	2027-06-28 16:00		PT_Normal					hL990FqJ/xdrC7fnSUH/XA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700017	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	E00	Level 1 wing A: windows, WRB & siding		776	0	48	0	0	0	48	0	0	0				2027-09-17 08:00	2027-09-24 16:00		2027-05-05 08:00	2027-05-12 16:00	2027-05-05 08:00	2027-05-12 16:00	2027-05-05 08:00	2027-05-12 16:00	2027-09-17 08:00	2027-09-24 16:00		PT_Normal					0CfBctxkDhRLL0fxfMa4qA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700018	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	M00	Level 1 wing A: MEP rough-in		0	0	64	0	0	0	64	0	0	0				2027-06-29 08:00	2027-07-08 16:00		2027-06-29 08:00	2027-07-08 16:00	2027-06-29 08:00	2027-07-08 16:00	2027-06-29 08:00	2027-07-08 16:00	2027-06-29 08:00	2027-07-08 16:00		PT_Normal					fjTLf5D3RSVDUM4+0gXO3Q				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700019	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	I00	Level 1 wing A: drywall, finishes & FF&E		0	0	80	0	0	0	80	0	0	0				2027-07-09 08:00	2027-07-22 16:00		2027-07-09 08:00	2027-07-22 16:00	2027-07-09 08:00	2027-07-22 16:00	2027-07-09 08:00	2027-07-22 16:00	2027-07-09 08:00	2027-07-22 16:00		PT_Normal					z9TthefBQX7HsQX/Mb5P8A				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700020	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	E01	Level 1 wing B: windows, WRB & siding		768	0	48	0	0	0	48	0	0	0				2027-09-27 08:00	2027-10-04 16:00		2027-05-14 08:00	2027-05-21 16:00	2027-05-14 08:00	2027-05-21 16:00	2027-05-14 08:00	2027-05-21 16:00	2027-09-27 08:00	2027-10-04 16:00		PT_Normal					dnkXKOCXHYlGOMcHShdluA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700021	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	M01	Level 1 wing B: MEP rough-in		16	0	64	0	0	0	64	0	0	0				2027-07-13 08:00	2027-07-22 16:00		2027-07-09 08:00	2027-07-20 16:00	2027-07-09 08:00	2027-07-20 16:00	2027-07-09 08:00	2027-07-20 16:00	2027-07-13 08:00	2027-07-22 16:00		PT_Normal					3n1OwIVnVlLVptDiTyuzSg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700022	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	I01	Level 1 wing B: drywall, finishes & FF&E		0	0	80	0	0	0	80	0	0	0				2027-07-23 08:00	2027-08-05 16:00		2027-07-23 08:00	2027-08-05 16:00	2027-07-23 08:00	2027-08-05 16:00	2027-07-23 08:00	2027-08-05 16:00	2027-07-23 08:00	2027-08-05 16:00		PT_Normal					tCzygW10JNg5JoLzBgWb2g				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700023	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	E10	Level 2 wing A: windows, WRB & siding		768	0	48	0	0	0	48	0	0	0				2027-09-27 08:00	2027-10-04 16:00		2027-05-14 08:00	2027-05-21 16:00	2027-05-14 08:00	2027-05-21 16:00	2027-05-14 08:00	2027-05-21 16:00	2027-09-27 08:00	2027-10-04 16:00		PT_Normal					hPs9PwiznWOi5LgQ0qSwvg				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700024	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	M10	Level 2 wing A: MEP rough-in		32	0	64	0	0	0	64	0	0	0				2027-07-27 08:00	2027-08-05 16:00		2027-07-21 08:00	2027-07-30 16:00	2027-07-21 08:00	2027-07-30 16:00	2027-07-21 08:00	2027-07-30 16:00	2027-07-27 08:00	2027-08-05 16:00		PT_Normal					6plPIo76vK3/tDDrAGn8pw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700025	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	I10	Level 2 wing A: drywall, finishes & FF&E		0	0	80	0	0	0	80	0	0	0				2027-08-06 08:00	2027-08-19 16:00		2027-08-06 08:00	2027-08-19 16:00	2027-08-06 08:00	2027-08-19 16:00	2027-08-06 08:00	2027-08-19 16:00	2027-08-06 08:00	2027-08-19 16:00		PT_Normal					SbWgntUNC5gt1rx1cwAgMQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700026	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	E11	Level 2 wing B: windows, WRB & siding		760	0	48	0	0	0	48	0	0	0				2027-10-05 08:00	2027-10-12 16:00		2027-05-25 08:00	2027-06-01 16:00	2027-05-25 08:00	2027-06-01 16:00	2027-05-25 08:00	2027-06-01 16:00	2027-10-05 08:00	2027-10-12 16:00		PT_Normal					6Ad0QTcFu24zIQRSaWSm5w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700027	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	M11	Level 2 wing B: MEP rough-in		48	0	64	0	0	0	64	0	0	0				2027-08-10 08:00	2027-08-19 16:00		2027-08-02 08:00	2027-08-11 16:00	2027-08-02 08:00	2027-08-11 16:00	2027-08-02 08:00	2027-08-11 16:00	2027-08-10 08:00	2027-08-19 16:00		PT_Normal					ntSTq2AOiHukMy5g+R0SyA				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700028	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	I11	Level 2 wing B: drywall, finishes & FF&E		0	0	80	0	0	0	80	0	0	0				2027-08-20 08:00	2027-09-02 16:00		2027-08-20 08:00	2027-09-02 16:00	2027-08-20 08:00	2027-09-02 16:00	2027-08-20 08:00	2027-09-02 16:00	2027-08-20 08:00	2027-09-02 16:00		PT_Normal					v4/kobutt0HM5JkB1LXJGw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700029	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	E20	Level 3 wing A: windows, WRB & siding		760	0	48	0	0	0	48	0	0	0				2027-10-05 08:00	2027-10-12 16:00		2027-05-25 08:00	2027-06-01 16:00	2027-05-25 08:00	2027-06-01 16:00	2027-05-25 08:00	2027-06-01 16:00	2027-10-05 08:00	2027-10-12 16:00		PT_Normal					OZ3oy9V4ydWFTWGBmrG52w				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700030	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	M20	Level 3 wing A: MEP rough-in		64	0	64	0	0	0	64	0	0	0				2027-08-24 08:00	2027-09-02 16:00		2027-08-12 08:00	2027-08-23 16:00	2027-08-12 08:00	2027-08-23 16:00	2027-08-12 08:00	2027-08-23 16:00	2027-08-24 08:00	2027-09-02 16:00		PT_Normal					cDc4lcRL1Yr5hgN3nUiXIQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700031	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	I20	Level 3 wing A: drywall, finishes & FF&E		0	0	80	0	0	0	80	0	0	0				2027-09-03 08:00	2027-09-16 16:00		2027-09-03 08:00	2027-09-16 16:00	2027-09-03 08:00	2027-09-16 16:00	2027-09-03 08:00	2027-09-16 16:00	2027-09-03 08:00	2027-09-16 16:00		PT_Normal					oJj/htAanvevo8XXvI7D7A				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700032	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	E21	Level 3 wing B: windows, WRB & siding		752	0	48	0	0	0	48	0	0	0				2027-10-13 08:00	2027-10-20 16:00		2027-06-03 08:00	2027-06-10 16:00	2027-06-03 08:00	2027-06-10 16:00	2027-06-03 08:00	2027-06-10 16:00	2027-10-13 08:00	2027-10-20 16:00		PT_Normal					0XVYI24j4xoCtQt/vaIe5g				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700033	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	M21	Level 3 wing B: MEP rough-in		80	0	64	0	0	0	64	0	0	0				2027-09-07 08:00	2027-09-16 16:00		2027-08-24 08:00	2027-09-02 16:00	2027-08-24 08:00	2027-09-02 16:00	2027-08-24 08:00	2027-09-02 16:00	2027-09-07 08:00	2027-09-16 16:00		PT_Normal					0bVe6thxj08Y6ySh4KHsjw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700034	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	I21	Level 3 wing B: drywall, finishes & FF&E		0	0	80	0	0	0	80	0	0	0				2027-09-17 08:00	2027-09-30 16:00		2027-09-17 08:00	2027-09-30 16:00	2027-09-17 08:00	2027-09-30 16:00	2027-09-17 08:00	2027-09-30 16:00	2027-09-17 08:00	2027-09-30 16:00		PT_Normal					dNcUqhDVZYeDJ/hnsr1GwQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700035	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	E30	Level 4 wing A: windows, WRB & siding		752	0	48	0	0	0	48	0	0	0				2027-10-13 08:00	2027-10-20 16:00		2027-06-03 08:00	2027-06-10 16:00	2027-06-03 08:00	2027-06-10 16:00	2027-06-03 08:00	2027-06-10 16:00	2027-10-13 08:00	2027-10-20 16:00		PT_Normal					76awExFaIeenWkuZanb7uw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700036	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	M30	Level 4 wing A: MEP rough-in		96	0	64	0	0	0	64	0	0	0				2027-09-21 08:00	2027-09-30 16:00		2027-09-03 08:00	2027-09-14 16:00	2027-09-03 08:00	2027-09-14 16:00	2027-09-03 08:00	2027-09-14 16:00	2027-09-21 08:00	2027-09-30 16:00		PT_Normal					xQOk3gjcdXrlRwwxmYMJiQ				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700037	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	I30	Level 4 wing A: drywall, finishes & FF&E		0	0	80	0	0	0	80	0	0	0				2027-10-01 08:00	2027-10-14 16:00		2027-10-01 08:00	2027-10-14 16:00	2027-10-01 08:00	2027-10-14 16:00	2027-10-01 08:00	2027-10-14 16:00	2027-10-01 08:00	2027-10-14 16:00		PT_Normal					BpDcZXWMCaTMOeyH/SqNJQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700038	5101	40204	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	E31	Level 4 wing B: windows, WRB & siding		744	0	48	0	0	0	48	0	0	0				2027-10-21 08:00	2027-10-28 16:00		2027-06-14 08:00	2027-06-21 16:00	2027-06-14 08:00	2027-06-21 16:00	2027-06-14 08:00	2027-06-21 16:00	2027-10-21 08:00	2027-10-28 16:00		PT_Normal					qudhK7vmvFtnpr6vKUUwqw				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700039	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	M31	Level 4 wing B: MEP rough-in		112	0	64	0	0	0	64	0	0	0				2027-10-05 08:00	2027-10-14 16:00		2027-09-15 08:00	2027-09-24 16:00	2027-09-15 08:00	2027-09-24 16:00	2027-09-15 08:00	2027-09-24 16:00	2027-10-05 08:00	2027-10-14 16:00		PT_Normal					NJVNie6Ty4DgC/8c4k+55A				N					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700040	5101	40205	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	I31	Level 4 wing B: drywall, finishes & FF&E		0	0	80	0	0	0	80	0	0	0				2027-10-15 08:00	2027-10-28 16:00		2027-10-15 08:00	2027-10-28 16:00	2027-10-15 08:00	2027-10-28 16:00	2027-10-15 08:00	2027-10-28 16:00	2027-10-15 08:00	2027-10-28 16:00		PT_Normal					1dWoHUsPmyuxuT9GamB+Cw				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700041	5101	40206	7101	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDrtn	TK_NotStart	CX100	Life-safety tests, inspections & punch list		0	0	120	0	0	0	120	0	0	0				2027-10-29 08:00	2027-11-18 16:00		2027-10-29 08:00	2027-11-18 16:00	2027-10-29 08:00	2027-11-18 16:00	2027-10-29 08:00	2027-11-18 16:00	2027-10-29 08:00	2027-11-18 16:00		PT_Normal					0FFVdGreNN6BNk/XyD8GxQ				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%R	700042	5101	40200	7101	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	MS999	Certificate of occupancy		0	0	0	0	0	0	0	0	0	0				2027-11-18 16:00	2027-11-18 16:00		2027-11-18 16:00	2027-11-18 16:00	2027-11-18 16:00	2027-11-18 16:00	2027-11-18 16:00	2027-11-18 16:00	2027-11-18 16:00	2027-11-18 16:00		PT_Normal					1zJkNko7SW5u4Z3cAVYfBA				Y					2026-11-17 00:00	2026-11-17 00:00	admin	admin	
+%T	TASKPRED
+%F	task_pred_id	task_id	pred_task_id	proj_id	pred_proj_id	pred_type	lag_hr_cnt	comments	float_path	aref	arls
+%R	800001	700001	700000	5101	5101	PR_FS	0				
+%R	800002	700002	700000	5101	5101	PR_FS	0				
+%R	800003	700003	700002	5101	5101	PR_FS	0				
+%R	800004	700004	700003	5101	5101	PR_FS	0				
+%R	800005	700004	700001	5101	5101	PR_FS	0				
+%R	800006	700005	700003	5101	5101	PR_FS	0				
+%R	800007	700005	700004	5101	5101	PR_FS	0				
+%R	800008	700006	700004	5101	5101	PR_FS	0				
+%R	800009	700007	700005	5101	5101	PR_FS	0				
+%R	800010	700007	700006	5101	5101	PR_FS	0				
+%R	800011	700008	700006	5101	5101	PR_FS	0				
+%R	800012	700009	700007	5101	5101	PR_FS	0				
+%R	800013	700009	700008	5101	5101	PR_FS	0				
+%R	800014	700010	700008	5101	5101	PR_FS	0				
+%R	800015	700011	700009	5101	5101	PR_FS	0				
+%R	800016	700011	700010	5101	5101	PR_FS	0				
+%R	800017	700012	700010	5101	5101	PR_FS	0				
+%R	800018	700013	700012	5101	5101	PR_FS	0				
+%R	800019	700014	700011	5101	5101	PR_FS	0				
+%R	800020	700014	700012	5101	5101	PR_FS	0				
+%R	800021	700015	700014	5101	5101	PR_FS	0				
+%R	800022	700016	700013	5101	5101	PR_FS	0				
+%R	800023	700016	700015	5101	5101	PR_FS	0				
+%R	800024	700017	700004	5101	5101	PR_FS	0				
+%R	800025	700018	700004	5101	5101	PR_FS	0				
+%R	800026	700018	700016	5101	5101	PR_FS	0				
+%R	800027	700019	700018	5101	5101	PR_FS	0				
+%R	800028	700020	700005	5101	5101	PR_FS	0				
+%R	800029	700020	700017	5101	5101	PR_FS	0				
+%R	800030	700021	700005	5101	5101	PR_FS	0				
+%R	800031	700021	700016	5101	5101	PR_FS	0				
+%R	800032	700021	700018	5101	5101	PR_FS	0				
+%R	800033	700022	700021	5101	5101	PR_FS	0				
+%R	800034	700022	700019	5101	5101	PR_FS	0				
+%R	800035	700023	700006	5101	5101	PR_FS	0				
+%R	800036	700023	700017	5101	5101	PR_FS	0				
+%R	800037	700024	700006	5101	5101	PR_FS	0				
+%R	800038	700024	700016	5101	5101	PR_FS	0				
+%R	800039	700024	700021	5101	5101	PR_FS	0				
+%R	800040	700025	700024	5101	5101	PR_FS	0				
+%R	800041	700025	700022	5101	5101	PR_FS	0				
+%R	800042	700026	700007	5101	5101	PR_FS	0				
+%R	800043	700026	700020	5101	5101	PR_FS	0				
+%R	800044	700026	700023	5101	5101	PR_FS	0				
+%R	800045	700027	700007	5101	5101	PR_FS	0				
+%R	800046	700027	700016	5101	5101	PR_FS	0				
+%R	800047	700027	700024	5101	5101	PR_FS	0				
+%R	800048	700028	700027	5101	5101	PR_FS	0				
+%R	800049	700028	700025	5101	5101	PR_FS	0				
+%R	800050	700029	700008	5101	5101	PR_FS	0				
+%R	800051	700029	700023	5101	5101	PR_FS	0				
+%R	800052	700030	700008	5101	5101	PR_FS	0				
+%R	800053	700030	700016	5101	5101	PR_FS	0				
+%R	800054	700030	700027	5101	5101	PR_FS	0				
+%R	800055	700031	700030	5101	5101	PR_FS	0				
+%R	800056	700031	700028	5101	5101	PR_FS	0				
+%R	800057	700032	700009	5101	5101	PR_FS	0				
+%R	800058	700032	700026	5101	5101	PR_FS	0				
+%R	800059	700032	700029	5101	5101	PR_FS	0				
+%R	800060	700033	700009	5101	5101	PR_FS	0				
+%R	800061	700033	700016	5101	5101	PR_FS	0				
+%R	800062	700033	700030	5101	5101	PR_FS	0				
+%R	800063	700034	700033	5101	5101	PR_FS	0				
+%R	800064	700034	700031	5101	5101	PR_FS	0				
+%R	800065	700035	700010	5101	5101	PR_FS	0				
+%R	800066	700035	700029	5101	5101	PR_FS	0				
+%R	800067	700036	700010	5101	5101	PR_FS	0				
+%R	800068	700036	700016	5101	5101	PR_FS	0				
+%R	800069	700036	700033	5101	5101	PR_FS	0				
+%R	800070	700037	700036	5101	5101	PR_FS	0				
+%R	800071	700037	700034	5101	5101	PR_FS	0				
+%R	800072	700038	700011	5101	5101	PR_FS	0				
+%R	800073	700038	700032	5101	5101	PR_FS	0				
+%R	800074	700038	700035	5101	5101	PR_FS	0				
+%R	800075	700039	700011	5101	5101	PR_FS	0				
+%R	800076	700039	700016	5101	5101	PR_FS	0				
+%R	800077	700039	700036	5101	5101	PR_FS	0				
+%R	800078	700040	700039	5101	5101	PR_FS	0				
+%R	800079	700040	700037	5101	5101	PR_FS	0				
+%R	800080	700041	700040	5101	5101	PR_FS	0				
+%R	800081	700041	700038	5101	5101	PR_FS	0				
+%R	800082	700042	700041	5101	5101	PR_FS	0				
+%E
